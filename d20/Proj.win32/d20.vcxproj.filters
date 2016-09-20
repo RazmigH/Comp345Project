@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Layouts">
       <UniqueIdentifier>{dec5337d-6f41-4264-857f-f6240ff5438d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{a9a8069a-844e-49cd-a5c1-0303a90a62bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{27557d7b-af1f-4ac9-9b1e-fcfa8486bcf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp">
@@ -39,6 +45,12 @@
     <ClCompile Include="..\src\MapCreator.cpp">
       <Filter>Source Files\Layouts</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Tile.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Grid.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -55,6 +67,12 @@
     </ClInclude>
     <ClInclude Include="..\src\MapCreator.h">
       <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tile.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Grid.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
