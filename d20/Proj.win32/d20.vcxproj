@@ -113,11 +113,17 @@
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp" />
     <ClCompile Include="..\src\ImageResource.cpp" />
+    <ClCompile Include="..\src\Layout.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\MainMenu.cpp" />
+    <ClCompile Include="..\src\MapCreator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h" />
     <ClInclude Include="..\src\ImageResource.h" />
+    <ClInclude Include="..\src\Layout.h" />
+    <ClInclude Include="..\src\MainMenu.h" />
+    <ClInclude Include="..\src\MapCreator.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\data\res.xml" />
