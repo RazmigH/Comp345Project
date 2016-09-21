@@ -117,6 +117,7 @@
     <ClCompile Include="..\src\Layout.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\MainMenu.cpp" />
+    <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MapCreator.cpp" />
     <ClCompile Include="..\src\Tile.cpp" />
   </ItemGroup>
@@ -126,6 +127,7 @@
     <ClInclude Include="..\src\ImageResource.h" />
     <ClInclude Include="..\src\Layout.h" />
     <ClInclude Include="..\src\MainMenu.h" />
+    <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MapCreator.h" />
     <ClInclude Include="..\src\Tile.h" />
   </ItemGroup>

@@ -1,8 +1,11 @@
 #include <iostream>
 #include "MapCreator.h"
+#include "Map.h"
 
 MapCreator::MapCreator() {
-	setSize(600, 600);
+	spMap map = new Map();
+	addChild(map);
+	setSize(map->getSize());
 }
 MapCreator::~MapCreator() {
 
