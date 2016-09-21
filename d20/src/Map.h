@@ -4,6 +4,7 @@
 #include "Grid.h"
 using namespace oxygine;
 
+//contains the functionality of a game map
 class Map : public Grid {
 public:
 	Map(int = 10, int = 20);

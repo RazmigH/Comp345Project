@@ -71,13 +71,13 @@
     <ClInclude Include="..\src\MapCreator.h">
       <Filter>Header Files\Layouts</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Tile.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Grid.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tile.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>

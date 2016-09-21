@@ -3,5 +3,8 @@
   <set path="images" />
   <atlas>
     <image file="blank.png" />
+    <image file="grass-border.png" />
+    <image file="grass.png" />
+    <image file="chests.png" rows="5" cols="3"/>
   </atlas>
 </resource>

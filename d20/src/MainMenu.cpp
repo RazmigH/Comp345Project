@@ -24,6 +24,7 @@ MainMenu::MainMenu() {
 
 	//create menu option textfields
 	for (int i = 0; i < menu_size; i++) {
+		//create textfield
 		spTextField textfield = createTextField(menuTexts[i]);
 		textfield->setPosition(getWidth() / 2, title->getPosition().y + ((i+1) * 50));
 		textfield->addClickListener(CLOSURE(this, &MainMenu::onClick));
@@ -39,7 +40,7 @@ void MainMenu::onClick(Event* e) {
 	else if (e->target->getName() == "Create a map") {
 		cout << "Create" << endl;
 
-		getStage()->removeChildren();
+		getStage()->removeChild(this);
 		spMapCreator mc = new MapCreator();
 		getStage()->addChild(mc);
 		getStage()->setSize(mc->getSize());
@@ -56,6 +57,7 @@ MainMenu::~MainMenu() {
 
 }
 
+//method to create and style a menu option textfield
 spTextField MainMenu::createTextField(string text) {
 	spTextField temp = new TextField();
 	temp->setText(text);

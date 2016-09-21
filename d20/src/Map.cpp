@@ -2,6 +2,7 @@
 #include "Map.h"
 
 Map::Map(int rows, int cols) : Grid(rows, cols) {
+	//set default entry to bottom middle of map
 	entry = Vector2(rows - 1, cols / 2);
 }
 
@@ -13,13 +14,17 @@ Vector2 Map::getEntryPoint() {
 	return entry;
 }
 
+//moves a tile to provided location with a transition lasting "duration" milliseconds
 void Map::move(spActor actor, int row, int col, timeMS duration) {
+	//outer bounds check, dont move if attempting to move out of map
 	if (row >= rows || row < 0 || col >= cols || col < 0) {
 		std::cout << "Cant move '" << actor->getObjectID() << "' to " << row << "x" << col << " : Out of bounds" << std::endl;
 	}
 	else {
-		//new tile exists
+		//new tile we are moving to exists
 		spTile tile = tiles[row][col];
+
+		//dont move if tile is solid
 		if (tile->isSolid()) {
 			std::cout << "Cant move '" << actor->getObjectID() << "' to " << row << "x" << col << " : Tile is Solid" << std::endl;
 		}
@@ -27,6 +32,8 @@ void Map::move(spActor actor, int row, int col, timeMS duration) {
 			//actor->setPosition(tile->getPosition());
 			//spTweenQueue tQueue = new TweenQueue();
 			//tQueue->add();
+
+			//smooth transition to new tile
 			if (actor->getFirstTween() == NULL) {
 				std::cout << "Moving '" << actor->getObjectID() << "' to " << row << "x" << col << std::endl;
 
