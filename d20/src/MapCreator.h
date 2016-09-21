@@ -14,6 +14,7 @@ private:
 	spTile selected;
 	void onSelectTileOption(Event*);
 	void onSelectMapTile(Event*);
+	void onMoveOnMap(Event*);
 	spMap map;
 	spGrid selections;
 };

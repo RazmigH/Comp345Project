@@ -22,7 +22,7 @@ MapCreator::MapCreator(){
 
 	//create tile selection grid
 	spGrid selectGrid = new Grid(tile_count, 1);
-	selectGrid->addEventListener(TouchEvent::TOUCH_DOWN, CLOSURE(this, &MapCreator::onSelectTileOption));
+	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
 
 	//center grid in container
 	selectGrid->setAnchor(0.5, 0.5);
@@ -41,7 +41,8 @@ MapCreator::MapCreator(){
 
 	//map
 	spMap map = new Map();
-	map->addEventListener(TouchEvent::TOUCH_DOWN, CLOSURE(this, &MapCreator::onSelectMapTile));
+	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
+	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 	map->setPosition(selectPane->getWidth(), 0);
 	addChild(map);
 	this->map = map;
@@ -66,8 +67,16 @@ void MapCreator::onSelectMapTile(Event* e) {
 	TouchEvent* te = safeCast<TouchEvent*>(e);
 	Vector2 pos = te->localPosition;
 
-	Vector2 tileLoc = selections->getTileLocation(pos);
-	spTile newTile = new Tile(selected);
-	map->setTile(tileLoc, newTile);
-	//spTile tile = e->currentTarget;
+	Vector2 tileLoc = map->getTileLocation(pos);
+	spTile oldTile = map->getTile(tileLoc);
+	if (oldTile->getResAnim() != selected->getResAnim()) {
+		spTile newTile = new Tile(selected);
+		map->setTile(tileLoc, newTile);
+	}
+}
+
+void MapCreator::onMoveOnMap(Event* e) {
+	TouchEvent* te = safeCast<TouchEvent*>(e);
+	if(te->getPointer()->isPressed())
+		onSelectMapTile(e);
 }
