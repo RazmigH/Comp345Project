@@ -55,6 +55,13 @@ void Grid::setTile(int row, int col, spTile tile) {
 void Grid::setTile(Vector2 loc, spTile tile) {
 	setTile(loc.x, loc.y, tile);
 };
+void Grid::setTiles(spTile tile) {
+	for (int r = 0; r < rows; r++) {
+		for (int c = 0; c < cols; c++) {
+			setTile(r, c, new Tile(tile));
+		}
+	}
+}
 
 //returns the tile at the provided location
 spTile Grid::getTile(int row, int col) {

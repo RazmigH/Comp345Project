@@ -17,6 +17,7 @@ class Grid : public Actor {
 		void addToGrid(spActor, int, int);
 		void setTile(int, int, spTile);
 		void setTile(Vector2, spTile);
+		void setTiles(spTile);
 protected:
 	int cols;
 	int rows;

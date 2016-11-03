@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MapCreator.h"
 #include "Map.h"
+#include "TextButton.h"
 
 MapCreator::MapCreator(){
 	//tile selections
@@ -23,6 +24,10 @@ MapCreator::MapCreator(){
 	spGrid selectGrid = new Grid(tile_count, 1);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
 
+	//create buttons
+	spTextButton fillBtn = new TextButton("fill");
+	fillBtn->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::fill));
+
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
 		spTile tile = tiles[i];
@@ -37,16 +42,23 @@ MapCreator::MapCreator(){
 	this->map = map;
 
 	//position selections
-	int minheight = tile_count * Tile::TILE_SIZE;
-	selectPane->setSize(150, map->getHeight() < minheight ? minheight : map->getHeight());
+	selectPane->setSize(150, 300);
 	selectGrid->setAnchor(0.5, 0.5);
 	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
+
+	//position buttons
+	fillBtn->setAnchor(0.5, 0.5);
+	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight()/2 + 25);
+
+	selectPane->addChild(fillBtn);
 	selectPane->addChild(selectGrid);
 	addChild(selectPane);
+
 
 	//position map
 	map->setPosition(selectPane->getWidth(), 0);
 	addChild(map);
+
 
 	//fit children
 	setSize(this->calculateSize());
@@ -80,4 +92,9 @@ void MapCreator::onMoveOnMap(Event* e) {
 	TouchEvent* te = safeCast<TouchEvent*>(e);
 	if(te->getPointer()->isPressed())
 		onSelectMapTile(e);
+}
+
+void MapCreator::fill(Event* e) {
+	cout << "fill" << endl;
+	map->setTiles(selected);
 }
