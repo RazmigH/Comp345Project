@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Tile.h"
 #include "ImageResource.h"
 
@@ -31,4 +32,14 @@ void Tile::isSolid(bool solid) {
 
 bool Tile::isSolid() {
 	return solid;
+}
+
+bool Tile::operator==(const Tile& other) const {
+	return	this->getResAnim() == other.getResAnim() &&
+		this->getColumn() == other.getColumn() &&
+		this->getRow() == other.getRow();
+}
+
+bool Tile::operator!=(const Tile& other) const {
+	return !(*this == other);
 }

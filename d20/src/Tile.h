@@ -15,6 +15,9 @@ public:
 	void setImage(const ResAnim*, int = 0, int = 0);
 	bool isSolid();
 	void isSolid(bool);
+
+	bool operator==(const Tile&) const;
+	bool operator!=(const Tile&) const;
 private:
 	bool solid;
 };

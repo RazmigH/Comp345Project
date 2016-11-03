@@ -18,34 +18,35 @@ MapCreator::MapCreator(){
 
 	//create container for tile selection grid
 	spActor selectPane = new Actor();
-	selectPane->setSize(150, 300);
 
 	//create tile selection grid
 	spGrid selectGrid = new Grid(tile_count, 1);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
-
-	//center grid in container
-	selectGrid->setAnchor(0.5, 0.5);
-	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
 
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
 		spTile tile = tiles[i];
 		selectGrid->setTile(i, 0, tile);
 	}
-	selectPane->addChild(selectGrid);
-
 	this->selections = selectGrid;
-	addChild(selectPane);
-
 
 	//map
 	spMap map = new Map();
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
+	this->map = map;
+
+	//position selections
+	int minheight = tile_count * Tile::TILE_SIZE;
+	selectPane->setSize(150, map->getHeight() < minheight ? minheight : map->getHeight());
+	selectGrid->setAnchor(0.5, 0.5);
+	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
+	selectPane->addChild(selectGrid);
+	addChild(selectPane);
+
+	//position map
 	map->setPosition(selectPane->getWidth(), 0);
 	addChild(map);
-	this->map = map;
 
 	//fit children
 	setSize(this->calculateSize());
@@ -69,7 +70,7 @@ void MapCreator::onSelectMapTile(Event* e) {
 
 	Vector2 tileLoc = map->getTileLocation(pos);
 	spTile oldTile = map->getTile(tileLoc);
-	if (oldTile->getResAnim() != selected->getResAnim()) {
+	if (*oldTile != *selected) {
 		spTile newTile = new Tile(selected);
 		map->setTile(tileLoc, newTile);
 	}
