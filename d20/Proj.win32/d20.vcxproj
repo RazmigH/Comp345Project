@@ -112,7 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp" />
-    <ClCompile Include="..\src\CharacterDisplay.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
     <ClCompile Include="..\src\ImageResource.cpp" />
     <ClCompile Include="..\src\Layout.cpp" />
@@ -120,25 +119,20 @@
     <ClCompile Include="..\src\MainMenu.cpp" />
     <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MapCreator.cpp" />
-    <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h" />
-    <ClInclude Include="..\src\CharacterDisplay.h" />
     <ClInclude Include="..\src\Grid.h" />
     <ClInclude Include="..\src\ImageResource.h" />
     <ClInclude Include="..\src\Layout.h" />
     <ClInclude Include="..\src\MainMenu.h" />
     <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MapCreator.h" />
-    <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\Tile.h" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\data\res.xml">
-      <SubType>Designer</SubType>
-    </Xml>
+    <Xml Include="..\data\res.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

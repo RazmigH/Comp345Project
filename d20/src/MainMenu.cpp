@@ -1,7 +1,6 @@
 #include <iostream>
 #include "MainMenu.h"
 #include "MapCreator.h"
-#include "Play.h"
 
 MainMenu::MainMenu() {
 	//Amount of menu options
@@ -37,14 +36,6 @@ MainMenu::MainMenu() {
 void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
-		
-		getStage()->removeChild(this);
-		spPlay pc = new Play();
-		getStage()->addChild(pc);
-		getStage()->setSize(pc->getSize());
-
-		//resize window to fit layout
-		SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 	}
 	else if (e->target->getName() == "Create a map") {
 		cout << "Create" << endl;

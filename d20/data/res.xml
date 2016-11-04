@@ -5,21 +5,6 @@
     <image file="blank.png" />
     <image file="grass-border.png" />
     <image file="grass.png" />
-    <image file="helm.png" />
-    <image file="boots.png" />
-    <image file="belt.png" />
-    <image file="weapon.png" />
-    <image file="shield.png" />
-    <image file="ring.png" />
-    <image file="armor.png" />
-    <image file="default-armor.png" />
-    <image file="default-helm.png" />
-    <image file="default-weapon.png" />
-    <image file="default-shield.png" />
-    <image file="default-boots.png" />
-    <image file="default-ring.png" />
-    <image file="default-belt.png" />
-    <image file="stone.png" />
     <image file="chests.png" rows="5" cols="3"/>
   </atlas>
 </resource>
