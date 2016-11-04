@@ -2,15 +2,22 @@
 #include "Play.h"
 #include "Map.h"
 #include "CharacterDisplay.h"
+#include "InventoryDisplay.h"
 
 Play::Play(){
 	spCharacterDisplay sc = new CharacterDisplay();
-	sc->setSize(96, 640);
+	sc->setSize(96, 320);
 	sc->setPosition(0, 96);
 
 	spMap map = new Map();
 	map->setPosition(96, 96);
-	
+	map->setTiles(new Tile("grass"));
+
+
+	spInventoryDisplay iDisplay = new InventoryDisplay();
+	iDisplay->setSize(96, 320);
+	iDisplay->setPosition(736, 96);
+
 	
 	this->map = map;
 
@@ -23,6 +30,7 @@ Play::Play(){
 
 	addChild(sc);
 	addChild(map);
+	addChild(iDisplay);
 	//fit children
 	//setSize(this->calculateSize());
 }

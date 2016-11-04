@@ -20,6 +20,7 @@
     <image file="default-ring.png" />
     <image file="default-belt.png" />
     <image file="stone.png" />
+    <image file="inventory-slot.png" />
     <image file="chests.png" rows="5" cols="3"/>
     <image file="button.png"/>
   </atlas>
