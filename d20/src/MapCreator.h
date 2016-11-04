@@ -15,6 +15,7 @@ private:
 	void onSelectTileOption(Event*);
 	void onSelectMapTile(Event*);
 	void onMoveOnMap(Event*);
+	void fill(Event*);
 	spMap map;
 	spGrid selections;
 };

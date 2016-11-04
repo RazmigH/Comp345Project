@@ -6,5 +6,9 @@
     <image file="grass-border.png" />
     <image file="grass.png" />
     <image file="chests.png" rows="5" cols="3"/>
+    <image file="button.png"/>
   </atlas>
+
+  <set path="fonts" />
+  <font file="font.fnt" />
 </resource>
