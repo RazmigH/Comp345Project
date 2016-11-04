@@ -112,6 +112,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp" />
+    <ClCompile Include="..\src\CharacterDisplay.cpp" />
+    <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
     <ClCompile Include="..\src\ImageResource.cpp" />
@@ -124,6 +126,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h" />
+    <ClInclude Include="..\src\CharacterDisplay.h" />
+    <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />
     <ClInclude Include="..\src\ImageResource.h" />
