@@ -4,7 +4,7 @@
 Grid::Grid(int rows, int cols) : rows(rows), cols(cols) {
 	//set vector sizes
 	tiles.resize(rows);
-	for (int i = 0; i < rows; ++i) {
+	for (int i = 0; i < rows; i++) {
 		tiles.at(i).resize(cols);
 	}
 

@@ -54,6 +54,12 @@
     <ClCompile Include="..\src\Map.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Play.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -79,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="..\src\Tile.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Play.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterDisplay.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
