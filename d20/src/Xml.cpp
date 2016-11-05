@@ -27,7 +27,7 @@ int Xml::createXml(const string rootName) {
 	doc.InsertFirstChild(pRoot);
 	
 	int retCode = saveFile();
-	return 0;
+	return retCode;
 }
 
 //! addToRoot(elemName, tags, attrs) -> adds to the root element a new element using the provided name
@@ -102,6 +102,7 @@ vector<string> Xml::readDataByID(int id) {
 bool Xml::isEmpty() {
 	openFile();
 	XMLNode *pRoot = doc.FirstChild();
+	saveFile();
 	return (pRoot == nullptr) ? true : false;
 }
 
@@ -110,6 +111,7 @@ int Xml::findNextID() {
 	openFile();
 	const char *pID = doc.FirstChildElement()->Attribute("next_id");
 	id = atoi(pID);
+	saveFile();
 	return id;
 }
 

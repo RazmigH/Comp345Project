@@ -11,9 +11,10 @@ using namespace std;
 //! Fighter class derived from Character
 class Fighter : public Character {
 public:
-	Fighter(string charName);
-	Fighter(string charName, int lvl);
-	Fighter(string charName, int lvl, int, int, int, int, int, int);
+	Fighter(string charName, int equipID, int invID);
+	Fighter(string charName, int lvl, int equipID, int invID);
+	Fighter(string charName, int lvl, int maxHP, int currHP, 
+		int, int, int, int, int, int, int equipID, int invID);
 	int getAtkBonus() const;
 	int getDmgBonus() const;
 private:

@@ -11,10 +11,35 @@ class XmlCharacter : public Xml {
 public:
 	XmlCharacter();
 	int createXml();
-	int addToRoot(string charClass, string charName, int level, int strength, 
-		int constitution, int dexterity, int intelligence, int wisdom, int charisma);
+	int addToRoot(
+		string charClass, 
+		string charName,
+		int level, 
+		int maxHP, 
+		int currHP,
+		int strength, 
+		int constitution, 
+		int dexterity,
+		int intelligence,
+		int wisdom, 
+		int charisma, 
+		int equipmentID, 
+		int inventoryID);
 	int addToRoot(Fighter&);
 	Fighter& createCharacter(int id);
-	const string tags[9] = { "Class", "Name", "Level", "Strength", "Constitution", "Dexterity", "Intelligence",
-		"Wisdom", "Charisma" };
+	const string tags[13] = { 
+		"Class",
+		"Name", 
+		"Level", 
+		"MaxHP" ,
+		"CurrentHP" , 
+		"Strength", 
+		"Constitution", 
+		"Dexterity", 
+		"Intelligence",
+		"Wisdom", 
+		"Charisma" , 
+		"EquipmentID", 
+		"InventoryID" 
+	};
 };

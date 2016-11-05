@@ -47,17 +47,20 @@ int mainloop()
 void charXmlTest() {
 	using namespace std;
 	cout << "******************CharTest()*********************" << endl;
-	Fighter test("Derp Test1", 10);
-	Fighter test2("Derp Test2", 4);
-	
+	Fighter test("Derp Test1", 10, 1, 1);
+	Fighter test2("Derp Test2", 4, 2, 2);
+
 	XmlCharacter xmlTest;
+	// adds the Fighter to the xml
 	xmlTest.addToRoot(test);
 	xmlTest.addToRoot(test2);
-
+	
+	// creates the Fighter from the xml
 	Fighter readTest = xmlTest.createCharacter(1);
 	Fighter readTest2 = xmlTest.createCharacter(2);
 	readTest.printStats();
 	readTest2.printStats();
+	
 	
 	cout << endl << "*************************************************" << endl;
 

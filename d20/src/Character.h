@@ -33,7 +33,10 @@ public:
 	string getName() const;
 	string getCharacterClass() const;
 	int getArmor() const;
-	int getHitPoints() const;
+	int getHP() const;
+	int getMaxHP() const;
+	int getInvID() const;
+	int getEquipID() const;
 	virtual int getAtkBonus() const = 0;
 	virtual int getDmgBonus() const = 0;
 	int statChooser() const;
@@ -51,9 +54,11 @@ protected:
 	int abilityScores[NUM_STATS];
 	int lvl;
 	int maxHP;
-	int currentHitPoints;
+	int currentHP;
+	int equipID;
+	int invID;
 	
-	Character(string charClass, string charName);
+	Character(string charClass, string charName, int equipID, int invID);
 	~Character();
 	vector<int> rollAbilityScores() const;
 	int roll6() const;

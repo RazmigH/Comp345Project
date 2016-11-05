@@ -5,7 +5,8 @@
 #pragma once
 #include "Fighter.h"
 
-Fighter::Fighter(string characterName) : Character("Fighter", characterName){
+Fighter::Fighter(string characterName, int equipmentID, int inventoryID) : 
+	Character("Fighter", characterName, equipmentID, inventoryID){
 	vector<int> scores;
 	scores = rollAbilityScores();
 	//! sort from low to high in order to decide the assigment priority
@@ -19,25 +20,40 @@ Fighter::Fighter(string characterName) : Character("Fighter", characterName){
 	abilityScores[CON] = scores.at(4);
 	abilityScores[STR] = scores.at(5);
 	maxHP = 10 + getModifier(CON); //! first lvl hp always 10 + constitution modifier
-	currentHitPoints = maxHP;
+	currentHP = maxHP;
 }
 
-Fighter::Fighter(string characterName, int level): Fighter(characterName) {
+Fighter::Fighter(string characterName, int level, int equipmentID, int inventoryID) : 
+	Fighter(characterName, equipmentID, inventoryID) {
 	for (int i = lvl; i < level; ++i) {
 		levelUp();
 	}
 }
 
-Fighter::Fighter(string charName, int lvl, int strength, int constitution, int dexterity, 
-	int intelligence, int wisdom, int charisma) : Fighter(charName, lvl){
+Fighter::Fighter(
+	string charName, 
+	int lvl, 
+	int maxHP, 
+	int currHP,
+	int strength, 
+	int constitution, 
+	int dexterity,
+	int intelligence, 
+	int wisdom, 
+	int charisma,
+	int equipmentID, 
+	int inventoryID) : Character("Fighter", charName, equipmentID, inventoryID)
+{
+	this->lvl = lvl;
 	abilityScores[STR] = strength;
 	abilityScores[CON] = constitution;
 	abilityScores[DEX] = dexterity;
 	abilityScores[INT] = intelligence;
 	abilityScores[WIS] = wisdom;
 	abilityScores[CHA] = charisma;
-	maxHP = 10 + getModifier(CON); //! first lvl hp always 10 + constitution modifier
-	currentHitPoints = maxHP;
+	this->maxHP = maxHP;
+	currentHP = currHP;
+
 }
 
 //! Fighter::levelUP() -> increases the level, increases the hp, assigns an ability point
@@ -46,7 +62,7 @@ void Fighter::levelUp() {
 	++lvl;
 	cout << "Level up! Level " << lvl << " reached!" << endl;
 	maxHP += roll10() + getModifier(CON);
-	currentHitPoints = maxHP;
+	currentHP = maxHP;
 
 	if (lvl % 4 == 0) {
 		if (lvl % 8 == 0) {

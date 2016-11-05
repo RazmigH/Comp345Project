@@ -4,10 +4,12 @@
 
 #include "Character.h"
 
-Character::Character(string characterClass, string characterName){
+Character::Character(string characterClass, string characterName, int equipmentID, int inventoryID){
 	charClass = characterClass;
 	charName = characterName;
 	lvl = 1;
+	equipID = equipmentID;
+	invID = inventoryID;
 	srand(time(NULL)); //! seed for random generator based on time
 }
 
@@ -71,12 +73,12 @@ int Character::calcModifier(int num) const {
 }
 
 int Character::hit(int dmg) {
-	currentHitPoints -= dmg;
+	currentHP -= dmg;
 	//! calls notify every time the character gets hit
-	if (currentHitPoints <= 0) {
+	if (currentHP <= 0) {
 		cout << "You DIED!";
 	}
-	return currentHitPoints;
+	return currentHP;
 }
 
 int Character::getLevel() const {
@@ -85,6 +87,14 @@ int Character::getLevel() const {
 
 string Character::getName() const {
 	return charName;
+}
+
+int Character::getInvID() const {
+	return invID;
+}
+
+int Character::getEquipID() const {
+	return equipID;
 }
 
 int Character::getStat(Stats stat) const {
@@ -117,8 +127,12 @@ int Character::getArmor() const {
 	return 10 + getModifier(DEX);
 }
 
-int Character::getHitPoints() const {
-	return currentHitPoints;
+int Character::getHP() const {
+	return currentHP;
+}
+
+int Character::getMaxHP() const {
+	return maxHP;
 }
 
 //! TODO: prob will not be used for the project
@@ -155,16 +169,18 @@ bool Character::validateNewCharacter() {
 
 void Character::printStats() const {
 	cout << "****Character Info****" << endl;
-	cout << "Name: " << charName << endl;
-	cout << "Level: " << lvl << endl;
-	cout << "Class: " << charClass << endl;
-	cout << "Max HP: " << maxHP << endl;
-	cout << "Current HP: " << currentHitPoints << endl;
+	cout << "Name: " << getName() << endl;
+	cout << "Level: " << getLevel() << endl;
+	cout << "Class: " << getCharacterClass() << endl;
+	cout << "Max HP: " << getMaxHP() << endl;
+	cout << "Current HP: " << getHP() << endl;
 	cout << "Strength: " << abilityScores[STR] << endl;
 	cout << "Constitution: " << abilityScores[CON] << endl;
 	cout << "Dexterity: " << abilityScores[DEX] << endl;
 	cout << "Inteligence: " << abilityScores[INT] << endl;
 	cout << "Wisdom: " << abilityScores[WIS] << endl;
 	cout << "Charisma: " << abilityScores[CHA] << endl;
+	cout << "Equipment ID: " << getEquipID() << endl;
+	cout << "Inventory ID: " << getInvID() << endl;
 
 }
