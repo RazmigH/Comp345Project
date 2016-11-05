@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include "XmlCharacter.h"
 
 XmlCharacter::XmlCharacter() : Xml("Characters.xml", 8) {

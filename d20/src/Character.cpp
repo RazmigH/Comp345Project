@@ -2,9 +2,7 @@
 //! @brief Implementation file for the Character class  
 //!
 
-#include "stdafx.h"
 #include "Character.h"
-
 
 Character::Character(string characterClass, string characterName){
 	charClass = characterClass;

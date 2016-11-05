@@ -3,7 +3,7 @@
 //!
 
 #pragma once
-#include "stdafx.h"
+#include <string>
 #include "Character.h"
 
 using namespace std;

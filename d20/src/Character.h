@@ -3,9 +3,11 @@
 //!
 
 #pragma once
-#include "stdafx.h"
+#include <vector>
 #include <algorithm>
 #include <time.h>
+#include <iostream>
+#include <string>
 
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6

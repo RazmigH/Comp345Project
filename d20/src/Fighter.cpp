@@ -3,7 +3,6 @@
 //!
 
 #pragma once
-#include "stdafx.h"
 #include "Fighter.h"
 
 Fighter::Fighter(string characterName) : Character("Fighter", characterName){

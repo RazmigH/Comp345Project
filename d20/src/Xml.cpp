@@ -1,4 +1,7 @@
-#include "stdafx.h"
+//! @file 
+//! @brief Implementation file for the Fighter class  
+//!
+
 #include "Xml.h"
 
 XMLDocument doc;
