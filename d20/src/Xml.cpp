@@ -8,17 +8,18 @@ XMLDocument doc;
 const char *fileName;
 int id = 1;
 
+//! Xml(fName, numElem) -> constructor which takes the Xml file name along with the number of elements each node will have
 Xml::Xml(char *fName, const int numElements) {
 	fileName = fName;
 	this->numElements = numElements;
 }
 
+//! createXmml(rootName) -> creates the xml file and adds a root element using the given name
 int Xml::createXml(const string rootName) {
 	if (!isEmpty()) {
 		cerr << "Can't create XML: file is not empty!";
 		return -1;
 	}
-
 	openFile();
 	
 	XMLElement *pRoot = doc.NewElement(rootName.c_str());
@@ -29,6 +30,8 @@ int Xml::createXml(const string rootName) {
 	return 0;
 }
 
+//! addToRoot(elemName, tags, attrs) -> adds to the root element a new element using the provided name
+//! then adds text content using the tags and attrs parameters
 int Xml::addToRoot(const string name, const string tags[], const string attrs[]) {
 	if (isEmpty()) {
 		cerr << "Can't add: root element was not created!";
@@ -50,10 +53,11 @@ int Xml::addToRoot(const string name, const string tags[], const string attrs[])
 	}
 	
 	int retCode = saveFile();
-	updateCurrentID();
+	updateNextID();
 	return retCode;
 }
 
+//! readDataByID(id) -> returns all the params of the element given by the id
 vector<string> Xml::readDataByID(int id) {
 	int lastID = findNextID() - 1;
 	if (id > lastID || id < 0) {
@@ -94,12 +98,14 @@ vector<string> Xml::readDataByID(int id) {
 	return results;
 }
 
+//! isEmtpy() -> verifies if the Xml document is empty
 bool Xml::isEmpty() {
 	openFile();
 	XMLNode *pRoot = doc.FirstChild();
 	return (pRoot == nullptr) ? true : false;
 }
 
+//! findNextID() -> finds the next available id for the xml node
 int Xml::findNextID() {
 	openFile();
 	const char *pID = doc.FirstChildElement()->Attribute("next_id");
@@ -107,7 +113,8 @@ int Xml::findNextID() {
 	return id;
 }
 
-int Xml::updateCurrentID() {
+//! updateNextID() -> increases the available next ID by 1
+int Xml::updateNextID() {
 	openFile();
 
 	doc.FirstChildElement()->SetAttribute("next_id", ++id);

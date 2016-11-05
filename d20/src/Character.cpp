@@ -45,8 +45,9 @@ vector<int> Character::rollAbilityScores() const {
 	
 	cout << "Character stats roll result: ";
 	for (int i = 0; i < scores.size(); ++i) {
-		cout << scores.at(i) << ", ";
+		cout << scores.at(i) << " ";
 	}
+	cout << endl;
 
 	return scores;
 }
@@ -76,6 +77,14 @@ int Character::hit(int dmg) {
 		cout << "You DIED!";
 	}
 	return currentHitPoints;
+}
+
+int Character::getLevel() const {
+	return lvl;
+}
+
+string Character::getName() const {
+	return charName;
 }
 
 int Character::getStat(Stats stat) const {
@@ -112,6 +121,7 @@ int Character::getHitPoints() const {
 	return currentHitPoints;
 }
 
+//! TODO: prob will not be used for the project
 int Character::statChooser() const {
 	cout << "Please choose the stat: " << endl;
 	cout << "Strength -> 1" << endl;

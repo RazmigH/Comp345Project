@@ -8,6 +8,8 @@
 #include "Stage.h"
 #include "DebugActor.h"
 #include "app.h"
+#include <iostream>
+#include "XmlCharacter.h"
 
 
 using namespace oxygine;
@@ -41,6 +43,25 @@ int mainloop()
     return done ? 1 : 0;
 }
 
+//! test method for character with Xml integration
+void charXmlTest() {
+	using namespace std;
+	cout << "******************CharTest()*********************" << endl;
+	Fighter test("Derp Test1", 10);
+	Fighter test2("Derp Test2", 4);
+	
+	XmlCharacter xmlTest;
+	xmlTest.addToRoot(test);
+	xmlTest.addToRoot(test2);
+
+	Fighter readTest = xmlTest.createCharacter(1);
+	Fighter readTest2 = xmlTest.createCharacter(2);
+	readTest.printStats();
+	readTest2.printStats();
+	
+	cout << endl << "*************************************************" << endl;
+
+}
 // Application entry point
 void run()
 {
@@ -57,7 +78,6 @@ void run()
     // Marmalade settings can be modified from the emulator's menu
 #endif
 
-
 	app_preinit();
     core::init(&desc);
 
@@ -73,6 +93,9 @@ void run()
 
     // Initializes our game.
 	app_init();
+
+	//! calling the test method
+	charXmlTest();
 
 #ifdef EMSCRIPTEN
     /*

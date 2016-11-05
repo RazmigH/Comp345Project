@@ -14,9 +14,10 @@ public:
 	int createXml(const string);
 	int addToRoot(const string, const string[], const string[]);
 	vector<string> readDataByID(int);
+	//! TODO: change to private
 	bool isEmpty();  // private
 	int findNextID(); //private
-	int updateCurrentID(); //private
+	int updateNextID(); //private
 	int openFile();
 	int saveFile();
 private:

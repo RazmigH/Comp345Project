@@ -29,6 +29,8 @@ public:
 	int hit(int);
 	int getStat(Stats stat) const;
 	int getModifier(Stats stat) const;
+	int getLevel() const;
+	string getName() const;
 	string getCharacterClass() const;
 	int getArmor() const;
 	int getHitPoints() const;

@@ -28,8 +28,8 @@ Fighter::Fighter(string characterName, int level): Fighter(characterName) {
 	}
 }
 
-Fighter::Fighter(string charName, int strength, int constitution, int dexterity, 
-	int intelligence, int wisdom, int charisma) : Character(charName, "Fighter"){
+Fighter::Fighter(string charName, int lvl, int strength, int constitution, int dexterity, 
+	int intelligence, int wisdom, int charisma) : Fighter(charName, lvl){
 	abilityScores[STR] = strength;
 	abilityScores[CON] = constitution;
 	abilityScores[DEX] = dexterity;
@@ -40,6 +40,8 @@ Fighter::Fighter(string charName, int strength, int constitution, int dexterity,
 	currentHitPoints = maxHP;
 }
 
+//! Fighter::levelUP() -> increases the level, increases the hp, assigns an ability point
+//! every 4 levels (alternates between strength-condition)
 void Fighter::levelUp() {
 	++lvl;
 	cout << "Level up! Level " << lvl << " reached!" << endl;
@@ -47,10 +49,20 @@ void Fighter::levelUp() {
 	currentHitPoints = maxHP;
 
 	if (lvl % 4 == 0) {
+		if (lvl % 8 == 0) {
+			abilityScores[CON] += 1;
+		}
+		else {
+			abilityScores[STR] += 1;
+		}
+	}
+	/*
+	if (lvl % 4 == 0) {
 		cout << "New ability point awarded! Where do you want to asign it?" << endl;
 		int choice = statChooser();
 		abilityScores[choice] += 1;
 	}
+	*/
 }
 
 int Fighter::getAtkBonus() const {
