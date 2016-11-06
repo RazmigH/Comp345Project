@@ -15,8 +15,6 @@ InventoryDisplay::InventoryDisplay()
 	}
 
 	//Sets display for an empty inventory
-
-
 	spTextField textfield = new TextField();
 	textfield->setAnchor(0.5, 0.5);
 	textfield->setPosition(32, 10);

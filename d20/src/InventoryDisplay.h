@@ -1,6 +1,7 @@
 #pragma once
 #include "Tile.h"
 #include "oxygine-framework.h"
+#include "Grid.h"
 
 using namespace oxygine;
 
