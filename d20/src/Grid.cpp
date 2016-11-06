@@ -58,7 +58,7 @@ void Grid::setTile(Vector2 loc, spTile tile) {
 void Grid::setTiles(spTile tile) {
 	for (int r = 0; r < rows; r++) {
 		for (int c = 0; c < cols; c++) {
-			setTile(r, c, new Tile(tile));
+			setTile(r, c, tile->clone());
 		}
 	}
 }

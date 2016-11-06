@@ -112,8 +112,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp" />
+    <ClCompile Include="..\src\Character.cpp" />
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
+    <ClCompile Include="..\src\Chest.cpp" />
+    <ClCompile Include="..\src\ChestEditPane.cpp" />
+    <ClCompile Include="..\src\Fighter.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
+    <ClCompile Include="..\src\MapTile.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -124,11 +129,19 @@
     <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MapCreator.cpp" />
     <ClCompile Include="..\src\Tile.cpp" />
+    <ClCompile Include="..\src\tinyxml2.cpp" />
+    <ClCompile Include="..\src\Xml.cpp" />
+    <ClCompile Include="..\src\XmlCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h" />
+    <ClInclude Include="..\src\Character.h" />
     <ClInclude Include="..\src\CharacterDisplay.h" />
+    <ClInclude Include="..\src\Chest.h" />
+    <ClInclude Include="..\src\ChestEditPane.h" />
+    <ClInclude Include="..\src\Fighter.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
+    <ClInclude Include="..\src\MapTile.h" />
     <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />
@@ -138,6 +151,9 @@
     <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MapCreator.h" />
     <ClInclude Include="..\src\Tile.h" />
+    <ClInclude Include="..\src\tinyxml2.h" />
+    <ClInclude Include="..\src\Xml.h" />
+    <ClInclude Include="..\src\XmlCharacter.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\data\res.xml" />

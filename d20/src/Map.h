@@ -1,6 +1,6 @@
 #pragma once
 #include "oxygine-framework.h"
-#include "Tile.h"
+#include "MapTile.h"
 #include "Grid.h"
 using namespace oxygine;
 
