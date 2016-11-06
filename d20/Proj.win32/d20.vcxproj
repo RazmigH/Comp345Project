@@ -114,8 +114,11 @@
     <ClCompile Include="..\src\app.cpp" />
     <ClCompile Include="..\src\Character.cpp" />
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
+    <ClCompile Include="..\src\Chest.cpp" />
+    <ClCompile Include="..\src\ChestEditPane.cpp" />
     <ClCompile Include="..\src\Fighter.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
+    <ClCompile Include="..\src\MapTile.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -134,8 +137,11 @@
     <ClInclude Include="..\src\app.h" />
     <ClInclude Include="..\src\Character.h" />
     <ClInclude Include="..\src\CharacterDisplay.h" />
+    <ClInclude Include="..\src\Chest.h" />
+    <ClInclude Include="..\src\ChestEditPane.h" />
     <ClInclude Include="..\src\Fighter.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
+    <ClInclude Include="..\src\MapTile.h" />
     <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />
