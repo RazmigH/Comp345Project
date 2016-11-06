@@ -1,6 +1,5 @@
 #pragma once
 #include "Tile.h"
-#include <iostream>
 
 DECLARE_SMART(MapTile, spMapTile);
 class MapTile : public Tile {
@@ -9,8 +8,7 @@ public:
 	~MapTile();
 	bool isSolid();
 	void isSolid(bool);
-	virtual spActor getEditLayout() {
-		std::cout << "Tile edit layout" << std::endl;
+	spActor getEditLayout() {
 		spActor actor = new Actor();
 		return actor;
 	};

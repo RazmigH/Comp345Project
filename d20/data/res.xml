@@ -23,8 +23,10 @@
     <image file="inventory-slot.png" />
     <image file="chests.png" rows="5" cols="3"/>
     <image file="button.png"/>
+    <image file="cursor.png"/>
   </atlas>
 
   <set path="fonts" />
   <font file="font.fnt" />
+  <font file="small.fnt" />
 </resource>
