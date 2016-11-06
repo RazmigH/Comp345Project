@@ -61,7 +61,7 @@ Fighter::Fighter(
 void Fighter::levelUp() {
 	++lvl;
 	cout << "Level up! Level " << lvl << " reached!" << endl;
-	maxHP += roll10() + getModifier(CON);
+	maxHP += die.roll10() + getModifier(CON);
 	currentHP = maxHP;
 
 	if (lvl % 4 == 0) {
@@ -82,10 +82,10 @@ void Fighter::levelUp() {
 }
 
 int Fighter::getAtkBonus() const {
-	return roll20() + getModifier(STR);
+	return die.roll20() + getModifier(STR);
 }
 
 int Fighter::getDmgBonus() const {
-	return roll6() + getModifier(STR);
+	return die.roll6() + getModifier(STR);
 }
 

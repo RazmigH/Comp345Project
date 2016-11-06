@@ -82,4 +82,3 @@ void CharacterDisplay::setBelt(Tile t)
 {
 	belt = new Tile(t);
 }
-;

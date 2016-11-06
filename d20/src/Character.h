@@ -8,6 +8,7 @@
 #include <time.h>
 #include <iostream>
 #include <string>
+#include "Die.h"
 
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6
@@ -42,10 +43,12 @@ public:
 	int statChooser() const;
 	bool validateNewCharacter();
 	void printStats() const;
+	Die die;
 	
 private:
 	virtual void levelUp() = 0;
 	int calcModifier(int) const;
+	
 
 protected:
 	string charName;
@@ -61,8 +64,5 @@ protected:
 	Character(string charClass, string charName, int equipID, int invID);
 	~Character();
 	vector<int> rollAbilityScores() const;
-	int roll6() const;
-	int roll10() const;
-	int roll20() const;
 	int rollHP() const;
 };

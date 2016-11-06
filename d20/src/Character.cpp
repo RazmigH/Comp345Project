@@ -10,23 +10,10 @@ Character::Character(string characterClass, string characterName, int equipmentI
 	lvl = 1;
 	equipID = equipmentID;
 	invID = inventoryID;
-	srand(time(NULL)); //! seed for random generator based on time
+	srand(time(NULL)); //! seed for random generator based on timeD
 }
 
 Character::~Character() {
-}
-
-
-int Character::roll6() const {
-	return (rand() % 6) + 1;
-}
-
-int Character::roll10() const {
-	return (rand() % 10) + 1;
-}
-
-int Character::roll20() const {
-	return (rand() % 20) + 1;
 }
 
 vector<int> Character::rollAbilityScores() const {
@@ -34,7 +21,7 @@ vector<int> Character::rollAbilityScores() const {
 	for (int i = 0; i < NUM_STATS; ++i) {
 		vector<int> rolls;
 		for (int j = 0; j < 4; ++j) {
-			rolls.push_back(roll6());
+			rolls.push_back(die.roll6());
 		}
 		sort(rolls.begin(), rolls.end()); //! sort ascending order
 		int stat = 0;
@@ -55,7 +42,7 @@ vector<int> Character::rollAbilityScores() const {
 }
 
 int Character::rollHP() const {
-	return roll10();
+	return die.roll10();
 }
 
 int Character::calcModifier(int num) const {
