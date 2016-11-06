@@ -1,4 +1,4 @@
-<Characters next_id="7">
+<Characters next_id="11">
     <Character id="1">
         <Class>Fighter</Class>
         <Name>Derp Test1</Name>
@@ -86,6 +86,66 @@
         <Intelligence>8</Intelligence>
         <Wisdom>11</Wisdom>
         <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="7">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>78</MaxHP>
+        <CurrentHP>78</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="8">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>37</MaxHP>
+        <CurrentHP>37</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="9">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>65</MaxHP>
+        <CurrentHP>65</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="10">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>29</MaxHP>
+        <CurrentHP>29</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
         <EquipmentID>2</EquipmentID>
         <InventoryID>2</InventoryID>
     </Character>

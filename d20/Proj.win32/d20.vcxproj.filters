@@ -25,6 +25,30 @@
     <Filter Include="Source Files\Map">
       <UniqueIdentifier>{27557d7b-af1f-4ac9-9b1e-fcfa8486bcf3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Item">
+      <UniqueIdentifier>{f1889a94-266e-41b0-8ae6-55ccba45b021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Item">
+      <UniqueIdentifier>{60184c51-7700-49b2-a37c-6ff17bf82eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\External library">
+      <UniqueIdentifier>{9ff0be6e-94c0-449c-a247-edb5ad63c70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\External library">
+      <UniqueIdentifier>{aee66392-010d-4aa6-9521-b6386b3a99ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character">
+      <UniqueIdentifier>{0a0b3bd6-25d0-44d6-b87f-88c0a02ac6e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character">
+      <UniqueIdentifier>{62aadd53-d866-4f92-9680-2660b6b74bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpful Components">
+      <UniqueIdentifier>{b6ea1149-76a6-4225-a8b4-8a010212d46a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpful Components">
+      <UniqueIdentifier>{3de59528-1a9b-46b1-8d94-2982fc9f1ea3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp">
@@ -45,40 +69,13 @@
     <ClCompile Include="..\src\MapCreator.cpp">
       <Filter>Source Files\Layouts</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Tile.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Grid.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Map.cpp">
       <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TextButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CharacterDisplay.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Play.cpp">
       <Filter>Source Files\Layouts</Filter>
     </ClCompile>
     <ClCompile Include="..\src\InventoryDisplay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Character.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Fighter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\tinyxml2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Xml.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\XmlCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Chest.cpp">
@@ -92,6 +89,45 @@
     </ClCompile>
     <ClCompile Include="..\src\Die.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Item.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemContainer.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemCreation.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Enhancement.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinyxml2.cpp">
+      <Filter>Source Files\External library</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterDisplay.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Character.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Fighter.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\XmlCharacter.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Xml.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextButton.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,40 +146,13 @@
     <ClInclude Include="..\src\MapCreator.h">
       <Filter>Header Files\Layouts</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Grid.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Map.h">
       <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Tile.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TextButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CharacterDisplay.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Play.h">
       <Filter>Header Files\Layouts</Filter>
     </ClInclude>
     <ClInclude Include="..\src\InventoryDisplay.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Character.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Fighter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\tinyxml2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Xml.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\XmlCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Chest.h">
@@ -157,6 +166,45 @@
     </ClInclude>
     <ClInclude Include="..\src\Die.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Item.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemContainer.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemCreation.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Enhancement.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tinyxml2.h">
+      <Filter>Header Files\External library</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Character.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterDisplay.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Fighter.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\XmlCharacter.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Xml.h">
+      <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextButton.h">
+      <Filter>Header Files\Helpful Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
