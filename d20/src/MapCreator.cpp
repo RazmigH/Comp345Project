@@ -74,7 +74,15 @@ MapCreator::MapCreator(){
 	highlight->setColor(Color::Red);
 	highlight->setAlpha(50000);
 
+	//top pane
+	spActor topPane = new Actor();
+	topPane->setHeight(50);
+	spTextButton resetPoints = new TextButton("Reset pt.");
+	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
+	resetPoints->setWidth(100);
+
 	//position selections
+	selectPane->setPosition(0, topPane->getHeight());
 	selectGrid->setAnchor(0.5, 0.5);
 	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
 
@@ -92,11 +100,11 @@ MapCreator::MapCreator(){
 	addChild(selectPane);
 
 	//position map
-	map->setPosition(selectPane->getWidth(), 0);
+	map->setPosition(selectPane->getWidth(), selectPane->getY());
 	addChild(map);
 
 	//position details pane
-	detailsPane->setPosition(map->getX() + map->getWidth(), 0);
+	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
 
 	detailsTitle->setPosition(0, 5);
 	detailsTitle->setWidth(detailsPane->getWidth());
@@ -107,6 +115,13 @@ MapCreator::MapCreator(){
 	detailsPane->addChild(currentDetails);
 
 	addChild(detailsPane);
+
+	//position top pane
+	topPane->setWidth(this->calculateSize().x);
+	resetPoints->setAnchor(0.5, 0.5);
+	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
+	topPane->addChild(resetPoints);
+	addChild(topPane);
 
 	//fit children
 	setSize(this->calculateSize());
@@ -143,6 +158,8 @@ void MapCreator::onSelectMapTile(Event* e) {
 		map->setTile(tileLoc, newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
+		cout << "Entry Point (" << map->getEntryPoint().x << "," << map->getEntryPoint().y << endl;
+		cout << "Finish Point (" << map->getExitPoint().x << "," << map->getExitPoint().y << endl;
 		Vector2 loc = map->getTileLocation(tile);
 		if (loc == map->getTileLocation(highlight)) {
 			if (highlight->getParent() == (spActor)map)
@@ -174,4 +191,15 @@ void MapCreator::onMoveOnMap(Event* e) {
 void MapCreator::fill(Event* e) {
 	cout << "fill" << endl;
 	map->setTiles(selected);
+}
+
+void MapCreator::resetPts(Event* e) {
+	for (int r = 0; r < map->getRows(); r++) {
+		for (int c = 0; c < map->getCols(); c++) {
+			spTile tile = map->getTile(r, c);
+			tile->isEntryTile(false);
+			tile->isFinishTile(false);
+		}
+	}
+	cout << "Entry and Exit points were reset to default." << endl;
 }

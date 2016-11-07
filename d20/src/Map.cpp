@@ -2,16 +2,45 @@
 #include "Map.h"
 
 Map::Map(int rows, int cols) : Grid(rows, cols) {
-	//set default entry to bottom middle of map
-	//entry = Vector2(rows - 1, cols / 2);
+	entryHighlight = new ColorRectSprite();
+	entryHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	entryHighlight->setColor(Color::LimeGreen);
+	entryHighlight->setAlpha(50000);
+	//addToGrid(entryHighlight, getEntryPoint().x, getEntryPoint().y);
+
+	exitHighlight = new ColorRectSprite();
+	exitHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	exitHighlight->setColor(Color::YellowGreen);
+	exitHighlight->setAlpha(50000);
+	//addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
 }
 
 Map::~Map() {
 
 }
 
-spTile Map::getEntryPoint() {
-	return NULL;
+Vector2 Map::getEntryPoint() {
+	for (int row = 0; row < rows; row++) {
+		for (int col = 0; col < cols; col++) {
+			spTile tile = tiles[row][col];
+			if (tile->isEntryTile()) {
+				return this->getTileLocation(tile);
+			}
+		}
+	}
+	return Vector2(rows - 1, cols / 2);
+}
+
+Vector2 Map::getExitPoint() {
+	for (int row = 0; row < rows; row++) {
+		for (int col = 0; col < cols; col++) {
+			spTile tile = tiles[row][col];
+			if (tile->isFinishTile()) {
+				return this->getTileLocation(tile);
+			}
+		}
+	}
+	return Vector2(0, cols / 2);
 }
 
 //moves a tile to provided location with a transition lasting "duration" milliseconds
@@ -41,4 +70,13 @@ void Map::move(spActor actor, int row, int col, timeMS duration) {
 			}
 		}
 	}
+}
+
+void Map::render(const RenderState &rs) {
+	Grid::render(rs);
+	addToGrid(entryHighlight, getEntryPoint().x, getEntryPoint().y);
+	addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
+	//entryHighlight->render(rs);
+	//exitHighlight->render(rs);
+	//std::cout << "yo" << std::endl;
 }

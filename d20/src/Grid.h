@@ -7,17 +7,19 @@ using namespace oxygine;
 //this class generates and provides options to manipulate a grid
 //made of equal-sized cells
 class Grid : public Actor {
-	public:
-		Grid(int, int);
-		~Grid();
-		Vector2 getTileLocation(spActor);
-		Vector2 getTileLocation(Vector2);
-		spTile getTile(int, int);
-		spTile getTile(Vector2);
-		void addToGrid(spActor, int, int);
-		void setTile(int, int, spTile);
-		void setTile(Vector2, spTile);
-		void setTiles(spTile);
+public:
+	Grid(int rows, int cols);
+	~Grid();
+	Vector2 getTileLocation(spActor);
+	Vector2 getTileLocation(Vector2 position);
+	spTile getTile(int row, int col);
+	spTile getTile(Vector2);
+	void addToGrid(spActor, int row, int col);
+	void setTile(int row, int col, spTile);
+	void setTile(Vector2, spTile);
+	void setTiles(spTile);
+	int getCols();
+	int getRows();
 protected:
 	int cols;
 	int rows;

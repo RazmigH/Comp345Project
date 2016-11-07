@@ -8,13 +8,12 @@ class Map : public Grid {
 public:
 	Map(int = 10, int = 20);
 	~Map();
-	spTile getEntryPoint();
+	Vector2 getEntryPoint();
+	Vector2 getExitPoint();
 	void move(spActor, int, int, timeMS = 200);
-
-	//problem with this, what if we call with a tile thats not part of the map?
-	//void Map::setEntryTile(spTile tile);
+	void render(const RenderState &rs);
 private:
-	//spTile entry;
-	//spTile finish;
+	spColorRectSprite entryHighlight;
+	spColorRectSprite exitHighlight;
 };
 typedef oxygine::intrusive_ptr<Map>spMap;

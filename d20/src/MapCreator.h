@@ -20,6 +20,7 @@ private:
 	void onSelectMapTile(Event*);
 	void onMoveOnMap(Event*);
 	void fill(Event*);
+	void resetPts(Event*);
 	spMap map;
 	spGrid selections;
 	CreatorAction currentAction;
