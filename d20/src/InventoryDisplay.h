@@ -12,12 +12,10 @@ class InventoryDisplay : public Actor {
 public:
 	InventoryDisplay();
 	~InventoryDisplay();
-
+	spGrid inventoryGrid;
 	void setEmptyInventory();
 	void setInventoryDisplaySlot(spTile, int, int);
+	void onClickInventorySlot(Event* e );
 private:
-	spTile items[4][3];
-	int inventorySlots = 12;
-	int rows = 4;
-	int cols = 3;
+	spTile items[5][3];
 };

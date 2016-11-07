@@ -44,6 +44,22 @@ CharacterDisplay::CharacterDisplay() {
 	spTile belt = new Tile("default-belt");
 	belt->setPosition(0, 128);
 	addChild(belt);
+
+
+	spTextField title = new TextField();
+	TextStyle style;
+	//title->setAnchor(0.5, 0.5);
+	title->setPosition(50, 32);
+
+	style.font = res::resources.getResFont("font");
+	style.fontSize = 14;
+	style.color = Color::Black;
+	style.vAlign = TextStyle::VALIGN_MIDDLE;
+	style.hAlign = TextStyle::HALIGN_CENTER;
+	title->setStyle(style);
+	title->setText("Equipement");
+
+	addChild(title);
 };
 
 CharacterDisplay::~CharacterDisplay() {

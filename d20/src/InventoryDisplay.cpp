@@ -4,13 +4,20 @@
 
 InventoryDisplay::InventoryDisplay()
 {
-	//Make a stone background for the character display using tiles.
+	//! 3X3 Inventory Grid item.
+	inventoryGrid = new Grid(5, 3);
+
+	//Create event listener for when the user clicks on a grid tile.
+	//inventoryGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &InventoryDisplay::onClickInventorySlot));
+
+
+	//Make a stone background for the character inventory using tiles.
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 3; j++)
 		{
 			spTile temp = new Tile("stone");
 			temp->setPosition(j * 32, i * 32);
-			addChild(temp);
+			inventoryGrid->addChild(temp);
 		}
 	}
 
@@ -29,8 +36,10 @@ InventoryDisplay::InventoryDisplay()
 	textfield->setStyle(style);
 	textfield->setText("Inventory");
 
-	addChild(textfield);
+	
+	addChild(inventoryGrid);
 	setEmptyInventory();
+	addChild(textfield);
 }
 
 InventoryDisplay::~InventoryDisplay()
@@ -41,9 +50,9 @@ InventoryDisplay::~InventoryDisplay()
 void InventoryDisplay::setEmptyInventory()
 {
 	//Set all the inventory default tiles.
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < inventoryGrid->getRows(); i++)
 	{
-		for (int j = 0; j < cols; j++)
+		for (int j = 0; j < inventoryGrid->getCols(); j++)
 		{
 			setInventoryDisplaySlot(new Tile("inventory-slot"), j, i);
 		}
@@ -57,3 +66,14 @@ void InventoryDisplay::setInventoryDisplaySlot(spTile tile, int row, int col)
 	items[row][col]->setPosition((row * 32), (col * 32)+32);
 	addChild(items[row][col]);
 }
+void InventoryDisplay::onClickInventorySlot(Event* e) {
+	//Invoque item's action when clicked.
+	// i.e : Item i = getItemAtPosition(row,rol);
+	//			  i.OnClickAction();
+
+}
+
+//!Method to be implemented
+/*Item InventoryDisplay::getItemInInventoryGrid(int row, int col, int InventoryID) {
+
+}*/

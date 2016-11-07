@@ -1,5 +1,7 @@
 #pragma once
 #include "Tile.h"
+#include "TextField.h"
+#include "ImageResource.h"
 #include "oxygine-framework.h"
 
 using namespace oxygine;
