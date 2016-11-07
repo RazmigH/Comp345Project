@@ -116,6 +116,7 @@
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
     <ClCompile Include="..\src\Chest.cpp" />
     <ClCompile Include="..\src\ChestEditPane.cpp" />
+    <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
     <ClCompile Include="..\src\Fighter.cpp" />
@@ -123,7 +124,6 @@
     <ClCompile Include="..\src\Item.cpp" />
     <ClCompile Include="..\src\ItemContainer.cpp" />
     <ClCompile Include="..\src\ItemCreation.cpp" />
-    <ClCompile Include="..\src\MapTile.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -144,6 +144,7 @@
     <ClInclude Include="..\src\CharacterDisplay.h" />
     <ClInclude Include="..\src\Chest.h" />
     <ClInclude Include="..\src\ChestEditPane.h" />
+    <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
     <ClInclude Include="..\src\Enhancement.h" />
     <ClInclude Include="..\src\Fighter.h" />
@@ -151,7 +152,6 @@
     <ClInclude Include="..\src\Item.h" />
     <ClInclude Include="..\src\ItemContainer.h" />
     <ClInclude Include="..\src\ItemCreation.h" />
-    <ClInclude Include="..\src\MapTile.h" />
     <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />

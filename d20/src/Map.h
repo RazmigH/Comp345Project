@@ -1,6 +1,5 @@
 #pragma once
 #include "oxygine-framework.h"
-#include "MapTile.h"
 #include "Grid.h"
 using namespace oxygine;
 
@@ -10,8 +9,11 @@ public:
 	Map(int = 10, int = 20);
 	~Map();
 	Vector2 getEntryPoint();
+	Vector2 getExitPoint();
 	void move(spActor, int, int, timeMS = 200);
+	void render(const RenderState &rs);
 private:
-	Vector2 entry;
+	spColorRectSprite entryHighlight;
+	spColorRectSprite exitHighlight;
 };
 typedef oxygine::intrusive_ptr<Map>spMap;

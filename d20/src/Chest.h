@@ -1,14 +1,14 @@
 #pragma once
-#include "MapTile.h"
+#include "Tile.h"
 #include <vector>
 
-enum ChestState {
-	CLOSED, OPEN
-};
 
 DECLARE_SMART(Chest, spChest);
-class Chest : public MapTile {
+class Chest : public Tile {
 public:
+	enum ChestState {
+		CLOSED, OPEN
+	};
 	Chest(ChestState = ChestState::OPEN);
 	~Chest();
 	spActor getEditLayout();
