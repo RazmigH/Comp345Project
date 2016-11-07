@@ -74,10 +74,10 @@ int XmlCharacter::addToRoot(Fighter& c) {
 }
 
 //! createCharacter(id) -> builds a character that has the give id,  by using the character parameters from the xml file
+//! Assuming it's only a fighter class that can be found, because it's the only one implemented
 Fighter& XmlCharacter::createCharacter(int id) {
 	vector<string> charParams = readDataByID(id);
 	//! CAREFULL: that part needs an allocation on the heap
-	//! Assuming it's only a fighter class that can be found, because it's the only one implemented
 	Fighter* builder = new Fighter(
 		charParams.at(1), 
 		stoi(charParams.at(2)),

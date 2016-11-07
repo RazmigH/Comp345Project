@@ -27,7 +27,7 @@ using namespace std;
 class Character {
 
 public:
-	int hit(int);
+	virtual int takeDmg(int);
 	int getStat(Stats stat) const;
 	int getModifier(Stats stat) const;
 	int getLevel() const;
@@ -42,7 +42,8 @@ public:
 	virtual int getDmgBonus() const = 0;
 	int statChooser() const;
 	bool validateNewCharacter();
-	void printStats() const;
+	virtual void printStats() const;
+	bool isDead() const;
 	Die die;
 	
 private:
@@ -60,9 +61,11 @@ protected:
 	int currentHP;
 	int equipID;
 	int invID;
+	bool dead;
 	
 	Character(string charClass, string charName, int equipID, int invID);
 	~Character();
 	vector<int> rollAbilityScores() const;
 	int rollHP() const;
+	void endGame();
 };
