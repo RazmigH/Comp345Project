@@ -3,15 +3,15 @@
 
 Map::Map(int rows, int cols) : Grid(rows, cols) {
 	//set default entry to bottom middle of map
-	entry = Vector2(rows - 1, cols / 2);
+	//entry = Vector2(rows - 1, cols / 2);
 }
 
 Map::~Map() {
 
 }
 
-Vector2 Map::getEntryPoint() {
-	return entry;
+spTile Map::getEntryPoint() {
+	return NULL;
 }
 
 //moves a tile to provided location with a transition lasting "duration" milliseconds

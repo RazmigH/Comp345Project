@@ -16,10 +16,7 @@ public:
 		spTile tile = new Tile(this->getResAnim()->getName(), this->getColumn(), this->getRow());
 		return tile;
 	}
-	virtual spActor getEditLayout() {
-		spActor actor = new Actor();
-		return actor;
-	};
+	virtual spActor getEditLayout();
 
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;

@@ -13,7 +13,7 @@ TextButton::TextButton(std::string text) {
 	textfield->setPosition(this->getWidth() / 2, this->getHeight() / 2);
 
 	TextStyle style;
-	style.font = res::resources.getResFont("font");
+	style.font = res::resources.getResFont("24ptblack");
 	style.color = Color::Black;
 	style.vAlign = TextStyle::VALIGN_MIDDLE;
 	style.hAlign = TextStyle::HALIGN_CENTER;

@@ -34,3 +34,8 @@ bool Tile::operator==(const Tile& other) const {
 bool Tile::operator!=(const Tile& other) const {
 	return !(*this == other);
 }
+
+spActor Tile::getEditLayout() {
+	spActor actor = new Actor();
+	return actor;
+}

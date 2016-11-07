@@ -93,6 +93,7 @@ void run()
     // DebugActor is a helper actor node. It shows FPS, memory usage and other useful stuff
     DebugActor::show();
 
+	DebugActor::hide();
 
     // Initializes our game.
 	app_init();

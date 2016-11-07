@@ -5,13 +5,12 @@
 #include "Map.h"
 using namespace std;
 
-enum CreatorAction {
-	SELECT, TILE_EDIT
-};
-
 //This class is for the map creation window / layout
 class MapCreator : public Layout {
 public:
+	enum CreatorAction {
+		SELECT, TILE_EDIT
+	};
 	MapCreator();
 	~MapCreator();
 private:

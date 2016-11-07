@@ -2,13 +2,13 @@
 #include "MapTile.h"
 #include <vector>
 
-enum ChestState {
-	CLOSED, OPEN
-};
 
 DECLARE_SMART(Chest, spChest);
 class Chest : public MapTile {
 public:
+	enum ChestState {
+		CLOSED, OPEN
+	};
 	Chest(ChestState = ChestState::OPEN);
 	~Chest();
 	spActor getEditLayout();

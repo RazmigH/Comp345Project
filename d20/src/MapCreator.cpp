@@ -6,16 +6,18 @@
 #include "ImageResource.h" 
 
 MapCreator::MapCreator(){
+	this->currentAction = CreatorAction::SELECT;
+
 	//tile selections
 	const int tile_count = 5;
 
 	//all tiles to appear in tile selection grid
-	spChest closedChest = new Chest(ChestState::CLOSED);
-	spChest openChest = new Chest(ChestState::OPEN);
+	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
+	spChest openChest = new Chest(Chest::ChestState::OPEN);
 	spMapTile tiles[tile_count] = {
 		new MapTile(), 
 		new MapTile("grass"),
-		new MapTile("grass-border"),
+		new MapTile("grass-border", true),
 		closedChest,
 		openChest
 	};
@@ -49,6 +51,7 @@ MapCreator::MapCreator(){
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 	this->map = map;
+	map->setTiles(tiles[0]);
 
 	//details pane
 	detailsPane = new Actor();
@@ -102,6 +105,7 @@ MapCreator::MapCreator(){
 	//fit children
 	setSize(this->calculateSize());
 }
+
 MapCreator::~MapCreator() {
 
 }

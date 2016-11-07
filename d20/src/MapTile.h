@@ -8,14 +8,18 @@ public:
 	~MapTile();
 	bool isSolid();
 	void isSolid(bool);
-	spActor getEditLayout() {
-		spActor actor = new Actor();
-		return actor;
-	};
+	spActor getEditLayout();
 	spTile clone() {
 		spMapTile tile = new MapTile(this->getResAnim()->getName(), this->solid, this->getColumn(), this->getRow());
 		return tile;
 	}
+
+	bool MapTile::isEntryTile();
+	void MapTile::isEntryTile(bool);
+	bool MapTile::isFinishTile();
+	void MapTile::isFinishTile(bool);
 private:
 	bool solid;
+	bool isEntry = false;
+	bool isFinish = false;
 };

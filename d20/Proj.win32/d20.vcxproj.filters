@@ -129,6 +129,9 @@
     <ClCompile Include="..\src\TextButton.cpp">
       <Filter>Source Files\Helpful Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\DefaultEditPane.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="..\src\TextButton.h">
       <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DefaultEditPane.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
