@@ -11,6 +11,7 @@ public:
 	~DefaultEditPane();
 
 	void setStartPoint(Event*);
+	void setEndPoint(Event*);
 private: 
 	spMapTile tile;
 };

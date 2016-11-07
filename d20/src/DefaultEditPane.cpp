@@ -2,6 +2,7 @@
 #include "ImageResource.h"
 #include "TextButton.h"
 #include "Map.h"
+#include <iostream>
 
 DefaultEditPane::DefaultEditPane(spMapTile t) {
 	this->tile = t;
@@ -33,12 +34,14 @@ DefaultEditPane::DefaultEditPane(spMapTile t) {
 	spTextButton setstart = new TextButton("Start Pt.");
 	setstart->setAnchor(0.5, 0.5);
 	setstart->setPosition(getWidth() / 2, currentY);
+	setstart->addEventListener(TouchEvent::CLICK, CLOSURE(this, &DefaultEditPane::setStartPoint));
 	this->addChild(setstart);
 	currentY = setstart->getY() + setstart->getHeight() + 15;
 
 	spTextButton setend = new TextButton("End Pt.");
 	setend->setAnchor(0.5, 0.5);
 	setend->setPosition(getWidth() / 2, currentY);
+	setend->addEventListener(TouchEvent::CLICK, CLOSURE(this, &DefaultEditPane::setEndPoint));
 	this->addChild(setend);
 	currentY = setend->getY() + setend->getHeight() + 15;
 }
@@ -47,7 +50,17 @@ DefaultEditPane::~DefaultEditPane() {
 
 }
 
+
 void DefaultEditPane::setStartPoint(Event* e) {
+	std::cout << "Set tile " << tile->getName() << " isEntry to " << !tile->isEntryTile() << std::endl;
+	tile->isEntryTile(!tile->isEntryTile());
+	//spActor mapActor = this->tile->getParent();
+	//spMap map = dynamic_cast<Map*>(mapActor);
+}
+
+void DefaultEditPane::setEndPoint(Event* e) {
+	std::cout << "Set tile " << tile->getName() << " isFinsh to " << !tile->isFinishTile() << std::endl;
+	tile->isFinishTile(!tile->isFinishTile());
 	//spActor mapActor = this->tile->getParent();
 	//spMap map = dynamic_cast<Map*>(mapActor);
 }
