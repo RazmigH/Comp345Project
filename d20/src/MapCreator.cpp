@@ -68,6 +68,12 @@ MapCreator::MapCreator(){
 
 	currentDetails = new Actor();
 
+	//selection highlight
+	highlight = new ColorRectSprite();
+	highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	highlight->setColor(Color::Red);
+	highlight->setAlpha(50000);
+
 	//position selections
 	selectGrid->setAnchor(0.5, 0.5);
 	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
@@ -122,6 +128,7 @@ void MapCreator::onSelectTileOption(Event* e) {
 //event handler for when the select tool is selected
 void MapCreator::onSelectToolClicked(Event* e) {
 	this->currentAction = CreatorAction::SELECT;
+	cout << "Select Tool selected" << selected->getName() << endl;
 }
 
 //Event handler for when a tile on the map is clicked
@@ -136,11 +143,23 @@ void MapCreator::onSelectMapTile(Event* e) {
 		map->setTile(tileLoc, newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
-		detailsPane->removeChild(currentDetails);
-		currentDetails = tile->getEditLayout();
-		currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
-		//currentDetails->setWidth(detailsPane->getWidth());
-		detailsPane->addChild(currentDetails);
+		Vector2 loc = map->getTileLocation(tile);
+		if (loc == map->getTileLocation(highlight)) {
+			if (highlight->getParent() == (spActor)map)
+				map->removeChild(highlight);
+			if (currentDetails->getParent() == (spActor)detailsPane)
+				detailsPane->removeChild(currentDetails);
+			highlight->setPosition(highlight->getX() - 100, highlight->getY() - 100); //invalidate hack
+		}
+		else {
+			map->addToGrid(highlight, loc.x, loc.y);
+			if (currentDetails->getParent() == (spActor)detailsPane)
+				detailsPane->removeChild(currentDetails);
+			currentDetails = tile->getEditLayout();
+			currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
+			//currentDetails->setWidth(detailsPane->getWidth());
+			detailsPane->addChild(currentDetails);
+		}
 	}
 }
 
