@@ -1,4 +1,4 @@
-<Characters next_id="95">
+<Characters next_id="97">
     <Character id="1">
         <Class>Fighter</Class>
         <Name>Derp Test1</Name>
@@ -1406,6 +1406,36 @@
         <Intelligence>10</Intelligence>
         <Wisdom>14</Wisdom>
         <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="95">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>75</MaxHP>
+        <CurrentHP>75</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="96">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
         <EquipmentID>2</EquipmentID>
         <InventoryID>2</InventoryID>
     </Character>

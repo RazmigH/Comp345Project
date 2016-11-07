@@ -4,7 +4,7 @@
 #include "Map.h"
 #include <iostream>
 
-DefaultEditPane::DefaultEditPane(spMapTile t) {
+DefaultEditPane::DefaultEditPane(spTile t) {
 	this->tile = t;
 	setWidth(150);
 

@@ -14,10 +14,10 @@ MapCreator::MapCreator(){
 	//all tiles to appear in tile selection grid
 	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
 	spChest openChest = new Chest(Chest::ChestState::OPEN);
-	spMapTile tiles[tile_count] = {
-		new MapTile(), 
-		new MapTile("grass"),
-		new MapTile("grass-border", true),
+	spTile tiles[tile_count] = {
+		new Tile(), 
+		new Tile("grass"),
+		new Tile("grass-border", true),
 		closedChest,
 		openChest
 	};
@@ -41,7 +41,7 @@ MapCreator::MapCreator(){
 
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
-		spMapTile tile = tiles[i];
+		spTile tile = tiles[i];
 		selectGrid->setTile(i, 0, tile);
 	}
 	this->selections = selectGrid;

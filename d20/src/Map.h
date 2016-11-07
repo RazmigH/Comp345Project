@@ -1,6 +1,5 @@
 #pragma once
 #include "oxygine-framework.h"
-#include "MapTile.h"
 #include "Grid.h"
 using namespace oxygine;
 
@@ -11,8 +10,6 @@ public:
 	~Map();
 	spTile getEntryPoint();
 	void move(spActor, int, int, timeMS = 200);
-	void setEntryTile(int col, int row);
-	void setFinishTile(int col, int row);
 
 	//problem with this, what if we call with a tile thats not part of the map?
 	//void Map::setEntryTile(spTile tile);

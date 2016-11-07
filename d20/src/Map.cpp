@@ -22,8 +22,7 @@ void Map::move(spActor actor, int row, int col, timeMS duration) {
 	}
 	else {
 		//new tile we are moving to exists
-		Tile rawtile = tiles[row][col];
-		spMapTile tile = dynamic_cast<MapTile*>(&rawtile);
+		spTile tile = tiles[row][col];
 
 		//dont move if tile is solid
 		if (tile->isSolid()) {

@@ -1,10 +1,10 @@
 #pragma once
-#include "MapTile.h"
+#include "Tile.h"
 #include <vector>
 
 
 DECLARE_SMART(Chest, spChest);
-class Chest : public MapTile {
+class Chest : public Tile {
 public:
 	enum ChestState {
 		CLOSED, OPEN

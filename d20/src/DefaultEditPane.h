@@ -1,17 +1,17 @@
 #pragma once
 
 #include "oxygine-framework.h"
-#include "MapTile.h"
+#include "Tile.h"
 using namespace oxygine;
 
 DECLARE_SMART(DefaultEditPane, spDefaultEditPane);
 class DefaultEditPane : public Actor {
 public:
-	DefaultEditPane(spMapTile);
+	DefaultEditPane(spTile);
 	~DefaultEditPane();
 
 	void setStartPoint(Event*);
 	void setEndPoint(Event*);
 private: 
-	spMapTile tile;
+	spTile tile;
 };
