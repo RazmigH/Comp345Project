@@ -1,0 +1,70 @@
+<NPCs next_id="5">
+    <Character id="1">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="2">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="3">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="4">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+</NPCs>

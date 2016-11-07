@@ -10,7 +10,7 @@ Character::Character(string characterClass, string characterName, int equipmentI
 	lvl = 1;
 	equipID = equipmentID;
 	invID = inventoryID;
-	srand(time(NULL)); //! seed for random generator based on timeD
+	dead = false;
 }
 
 Character::~Character() {
@@ -59,13 +59,19 @@ int Character::calcModifier(int num) const {
 	}
 }
 
-int Character::hit(int dmg) {
+int Character::takeDmg(int dmg) {
 	currentHP -= dmg;
 	//! calls notify every time the character gets hit
 	if (currentHP <= 0) {
+		dead = true;
 		cout << "You DIED!";
+		endGame();
 	}
 	return currentHP;
+}
+
+void Character::endGame() {
+
 }
 
 int Character::getLevel() const {
@@ -120,6 +126,10 @@ int Character::getHP() const {
 
 int Character::getMaxHP() const {
 	return maxHP;
+}
+
+bool Character::isDead() const {
+	return (dead == true) ? true : false;
 }
 
 //! TODO: prob will not be used for the project

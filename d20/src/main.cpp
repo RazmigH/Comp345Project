@@ -10,6 +10,7 @@
 #include "app.h"
 #include <iostream>
 #include "XmlCharacter.h"
+#include "XmlNpc.h"
 
 
 using namespace oxygine;
@@ -49,17 +50,28 @@ void charXmlTest() {
 	cout << "******************CharTest()*********************" << endl;
 	Fighter test("Derp Test1", 10, 1, 1);
 	Fighter test2("Derp Test2", 4, 2, 2);
+	Npc npc1("NPC Test1", 2, 4, 4);
+	Npc npc2("NPC Test2", 4, 5, 5, true, "git gud!");
 
+	XmlNpc xmlNpcTest;
 	XmlCharacter xmlTest;
 	// adds the Fighter to the xml
 	xmlTest.addToRoot(test);
 	xmlTest.addToRoot(test2);
+
+	xmlNpcTest.addToRoot(npc1);
+	xmlNpcTest.addToRoot(npc2);
 	
 	// creates the Fighter from the xml
 	Fighter readTest = xmlTest.createCharacter(1);
 	Fighter readTest2 = xmlTest.createCharacter(2);
 	readTest.printStats();
 	readTest2.printStats();
+	
+	Npc readNpcTest1 = xmlNpcTest.createNpc(1);
+	Npc readNpcTest2 = xmlNpcTest.createNpc(2);
+	readNpcTest1.printStats();
+	readNpcTest2.printStats();
 	
 	
 	cout << endl << "*************************************************" << endl;
