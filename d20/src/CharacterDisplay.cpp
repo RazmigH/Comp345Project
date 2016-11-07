@@ -1,5 +1,6 @@
 #pragma once
 #include "CharacterDisplay.h"
+#include "Character.h"
 
 CharacterDisplay::CharacterDisplay() {
 

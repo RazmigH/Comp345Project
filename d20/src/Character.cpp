@@ -169,5 +169,4 @@ void Character::printStats() const {
 	cout << "Charisma: " << abilityScores[CHA] << endl;
 	cout << "Equipment ID: " << getEquipID() << endl;
 	cout << "Inventory ID: " << getInvID() << endl;
-
 }
