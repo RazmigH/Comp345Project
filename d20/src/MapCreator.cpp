@@ -6,16 +6,18 @@
 #include "ImageResource.h" 
 
 MapCreator::MapCreator(){
+	this->currentAction = CreatorAction::SELECT;
+
 	//tile selections
 	const int tile_count = 5;
 
 	//all tiles to appear in tile selection grid
-	spChest closedChest = new Chest(ChestState::CLOSED);
-	spChest openChest = new Chest(ChestState::OPEN);
-	spMapTile tiles[tile_count] = {
-		new MapTile(), 
-		new MapTile("grass"),
-		new MapTile("grass-border"),
+	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
+	spChest openChest = new Chest(Chest::ChestState::OPEN);
+	spTile tiles[tile_count] = {
+		new Tile(), 
+		new Tile("grass"),
+		new Tile("grass-border", true),
 		closedChest,
 		openChest
 	};
@@ -39,7 +41,7 @@ MapCreator::MapCreator(){
 
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
-		spMapTile tile = tiles[i];
+		spTile tile = tiles[i];
 		selectGrid->setTile(i, 0, tile);
 	}
 	this->selections = selectGrid;
@@ -49,6 +51,7 @@ MapCreator::MapCreator(){
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 	this->map = map;
+	map->setTiles(tiles[0]);
 
 	//details pane
 	detailsPane = new Actor();
@@ -65,7 +68,21 @@ MapCreator::MapCreator(){
 
 	currentDetails = new Actor();
 
+	//selection highlight
+	highlight = new ColorRectSprite();
+	highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	highlight->setColor(Color::Red);
+	highlight->setAlpha(50000);
+
+	//top pane
+	spActor topPane = new Actor();
+	topPane->setHeight(50);
+	spTextButton resetPoints = new TextButton("Reset pt.");
+	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
+	resetPoints->setWidth(100);
+
 	//position selections
+	selectPane->setPosition(0, topPane->getHeight());
 	selectGrid->setAnchor(0.5, 0.5);
 	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
 
@@ -83,11 +100,11 @@ MapCreator::MapCreator(){
 	addChild(selectPane);
 
 	//position map
-	map->setPosition(selectPane->getWidth(), 0);
+	map->setPosition(selectPane->getWidth(), selectPane->getY());
 	addChild(map);
 
 	//position details pane
-	detailsPane->setPosition(map->getX() + map->getWidth(), 0);
+	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
 
 	detailsTitle->setPosition(0, 5);
 	detailsTitle->setWidth(detailsPane->getWidth());
@@ -99,9 +116,17 @@ MapCreator::MapCreator(){
 
 	addChild(detailsPane);
 
+	//position top pane
+	topPane->setWidth(this->calculateSize().x);
+	resetPoints->setAnchor(0.5, 0.5);
+	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
+	topPane->addChild(resetPoints);
+	addChild(topPane);
+
 	//fit children
 	setSize(this->calculateSize());
 }
+
 MapCreator::~MapCreator() {
 
 }
@@ -118,6 +143,7 @@ void MapCreator::onSelectTileOption(Event* e) {
 //event handler for when the select tool is selected
 void MapCreator::onSelectToolClicked(Event* e) {
 	this->currentAction = CreatorAction::SELECT;
+	cout << "Select Tool selected" << selected->getName() << endl;
 }
 
 //Event handler for when a tile on the map is clicked
@@ -132,11 +158,25 @@ void MapCreator::onSelectMapTile(Event* e) {
 		map->setTile(tileLoc, newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
-		detailsPane->removeChild(currentDetails);
-		currentDetails = tile->getEditLayout();
-		currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
-		//currentDetails->setWidth(detailsPane->getWidth());
-		detailsPane->addChild(currentDetails);
+		cout << "Entry Point (" << map->getEntryPoint().x << "," << map->getEntryPoint().y << endl;
+		cout << "Finish Point (" << map->getExitPoint().x << "," << map->getExitPoint().y << endl;
+		Vector2 loc = map->getTileLocation(tile);
+		if (loc == map->getTileLocation(highlight)) {
+			if (highlight->getParent() == (spActor)map)
+				map->removeChild(highlight);
+			if (currentDetails->getParent() == (spActor)detailsPane)
+				detailsPane->removeChild(currentDetails);
+			highlight->setPosition(highlight->getX() - 100, highlight->getY() - 100); //invalidate hack
+		}
+		else {
+			map->addToGrid(highlight, loc.x, loc.y);
+			if (currentDetails->getParent() == (spActor)detailsPane)
+				detailsPane->removeChild(currentDetails);
+			currentDetails = tile->getEditLayout();
+			currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
+			//currentDetails->setWidth(detailsPane->getWidth());
+			detailsPane->addChild(currentDetails);
+		}
 	}
 }
 
@@ -151,4 +191,15 @@ void MapCreator::onMoveOnMap(Event* e) {
 void MapCreator::fill(Event* e) {
 	cout << "fill" << endl;
 	map->setTiles(selected);
+}
+
+void MapCreator::resetPts(Event* e) {
+	for (int r = 0; r < map->getRows(); r++) {
+		for (int c = 0; c < map->getCols(); c++) {
+			spTile tile = map->getTile(r, c);
+			tile->isEntryTile(false);
+			tile->isFinishTile(false);
+		}
+	}
+	cout << "Entry and Exit points were reset to default." << endl;
 }

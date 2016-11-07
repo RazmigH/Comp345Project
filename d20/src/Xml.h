@@ -20,6 +20,7 @@ public:
 	int updateNextID(); //private
 	int openFile();
 	int saveFile();
+
 private:
 	int id;
 	int numElements;

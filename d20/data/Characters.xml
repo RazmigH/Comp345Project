@@ -1,4 +1,4 @@
-<Characters next_id="11">
+<Characters next_id="101">
     <Character id="1">
         <Class>Fighter</Class>
         <Name>Derp Test1</Name>
@@ -144,6 +144,1356 @@
         <Constitution>14</Constitution>
         <Dexterity>14</Dexterity>
         <Intelligence>7</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="11">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>67</MaxHP>
+        <CurrentHP>67</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="12">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>25</MaxHP>
+        <CurrentHP>25</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="13">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>75</MaxHP>
+        <CurrentHP>75</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>12</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="14">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>35</MaxHP>
+        <CurrentHP>35</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>12</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="15">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>79</MaxHP>
+        <CurrentHP>79</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>12</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="16">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>32</MaxHP>
+        <CurrentHP>32</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>12</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="17">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>74</MaxHP>
+        <CurrentHP>74</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>13</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="18">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>32</MaxHP>
+        <CurrentHP>32</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>13</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="19">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>83</MaxHP>
+        <CurrentHP>83</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="20">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="21">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>64</MaxHP>
+        <CurrentHP>64</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="22">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>32</MaxHP>
+        <CurrentHP>32</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="23">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>83</MaxHP>
+        <CurrentHP>83</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="24">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>34</MaxHP>
+        <CurrentHP>34</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="25">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>84</MaxHP>
+        <CurrentHP>84</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="26">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>34</MaxHP>
+        <CurrentHP>34</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="27">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>83</MaxHP>
+        <CurrentHP>83</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="28">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="29">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>82</MaxHP>
+        <CurrentHP>82</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="30">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>31</MaxHP>
+        <CurrentHP>31</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="31">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>69</MaxHP>
+        <CurrentHP>69</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="32">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>31</MaxHP>
+        <CurrentHP>31</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>12</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="33">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>90</MaxHP>
+        <CurrentHP>90</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="34">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="35">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>89</MaxHP>
+        <CurrentHP>89</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="36">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="37">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>70</MaxHP>
+        <CurrentHP>70</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>9</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="38">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>26</MaxHP>
+        <CurrentHP>26</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>9</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="39">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>79</MaxHP>
+        <CurrentHP>79</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>18</Constitution>
+        <Dexterity>16</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="40">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>38</MaxHP>
+        <CurrentHP>38</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>16</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="41">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>62</MaxHP>
+        <CurrentHP>62</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>12</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="42">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>30</MaxHP>
+        <CurrentHP>30</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>11</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="43">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>90</MaxHP>
+        <CurrentHP>90</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="44">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="45">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>81</MaxHP>
+        <CurrentHP>81</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="46">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="47">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>81</MaxHP>
+        <CurrentHP>81</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="48">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>34</MaxHP>
+        <CurrentHP>34</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="49">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>77</MaxHP>
+        <CurrentHP>77</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="50">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>31</MaxHP>
+        <CurrentHP>31</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="51">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>84</MaxHP>
+        <CurrentHP>84</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="52">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="53">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>80</MaxHP>
+        <CurrentHP>80</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="54">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>41</MaxHP>
+        <CurrentHP>41</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="55">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>71</MaxHP>
+        <CurrentHP>71</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="56">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>28</MaxHP>
+        <CurrentHP>28</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="57">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>74</MaxHP>
+        <CurrentHP>74</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="58">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="59">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>93</MaxHP>
+        <CurrentHP>93</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>15</Wisdom>
+        <Charisma>15</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="60">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>34</MaxHP>
+        <CurrentHP>34</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>15</Wisdom>
+        <Charisma>15</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="61">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>87</MaxHP>
+        <CurrentHP>87</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>8</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="62">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>43</MaxHP>
+        <CurrentHP>43</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>8</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="63">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>73</MaxHP>
+        <CurrentHP>73</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="64">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>37</MaxHP>
+        <CurrentHP>37</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="65">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>76</MaxHP>
+        <CurrentHP>76</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="66">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>38</MaxHP>
+        <CurrentHP>38</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="67">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>81</MaxHP>
+        <CurrentHP>81</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="68">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="69">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>56</MaxHP>
+        <CurrentHP>56</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>11</Constitution>
+        <Dexterity>10</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="70">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>32</MaxHP>
+        <CurrentHP>32</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>10</Constitution>
+        <Dexterity>10</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="71">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>78</MaxHP>
+        <CurrentHP>78</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="72">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>27</MaxHP>
+        <CurrentHP>27</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="73">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>66</MaxHP>
+        <CurrentHP>66</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="74">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>25</MaxHP>
+        <CurrentHP>25</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>7</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="75">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>69</MaxHP>
+        <CurrentHP>69</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="76">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>27</MaxHP>
+        <CurrentHP>27</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="77">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>87</MaxHP>
+        <CurrentHP>87</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="78">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>37</MaxHP>
+        <CurrentHP>37</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>13</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="79">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>69</MaxHP>
+        <CurrentHP>69</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="80">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>12</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>6</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="81">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>53</MaxHP>
+        <CurrentHP>53</CurrentHP>
+        <Strength>14</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="82">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>14</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="83">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>90</MaxHP>
+        <CurrentHP>90</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>18</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="84">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>36</MaxHP>
+        <CurrentHP>36</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="85">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>69</MaxHP>
+        <CurrentHP>69</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="86">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>30</MaxHP>
+        <CurrentHP>30</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>11</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="87">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>59</MaxHP>
+        <CurrentHP>59</CurrentHP>
+        <Strength>14</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>9</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="88">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>25</MaxHP>
+        <CurrentHP>25</CurrentHP>
+        <Strength>14</Strength>
+        <Constitution>12</Constitution>
+        <Dexterity>9</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>9</Wisdom>
+        <Charisma>8</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="89">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>95</MaxHP>
+        <CurrentHP>95</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>10</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="90">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>40</MaxHP>
+        <CurrentHP>40</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>16</Constitution>
+        <Dexterity>10</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="91">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>83</MaxHP>
+        <CurrentHP>83</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>18</Constitution>
+        <Dexterity>17</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="92">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>17</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="93">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>103</MaxHP>
+        <CurrentHP>103</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>18</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="94">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>38</MaxHP>
+        <CurrentHP>38</CurrentHP>
+        <Strength>19</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>15</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>14</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="95">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>75</MaxHP>
+        <CurrentHP>75</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="96">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>7</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>10</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="97">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>59</MaxHP>
+        <CurrentHP>59</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="98">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>19</MaxHP>
+        <CurrentHP>19</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>11</Dexterity>
+        <Intelligence>8</Intelligence>
+        <Wisdom>10</Wisdom>
+        <Charisma>9</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <InventoryID>2</InventoryID>
+    </Character>
+    <Character id="99">
+        <Class>Fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>10</Level>
+        <MaxHP>89</MaxHP>
+        <CurrentHP>89</CurrentHP>
+        <Strength>18</Strength>
+        <Constitution>18</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>11</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <InventoryID>1</InventoryID>
+    </Character>
+    <Character id="100">
+        <Class>Fighter</Class>
+        <Name>Derp Test2</Name>
+        <Level>4</Level>
+        <MaxHP>39</MaxHP>
+        <CurrentHP>39</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>10</Intelligence>
         <Wisdom>13</Wisdom>
         <Charisma>12</Charisma>
         <EquipmentID>2</EquipmentID>

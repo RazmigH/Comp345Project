@@ -5,13 +5,12 @@
 #include "Map.h"
 using namespace std;
 
-enum CreatorAction {
-	SELECT, TILE_EDIT
-};
-
 //This class is for the map creation window / layout
 class MapCreator : public Layout {
 public:
+	enum CreatorAction {
+		SELECT, TILE_EDIT
+	};
 	MapCreator();
 	~MapCreator();
 private:
@@ -21,11 +20,13 @@ private:
 	void onSelectMapTile(Event*);
 	void onMoveOnMap(Event*);
 	void fill(Event*);
+	void resetPts(Event*);
 	spMap map;
 	spGrid selections;
 	CreatorAction currentAction;
 	spTextField detailsTitle;
 	spActor detailsPane;
 	spActor currentDetails;
+	spColorRectSprite highlight;
 };
 typedef oxygine::intrusive_ptr<MapCreator>spMapCreator;

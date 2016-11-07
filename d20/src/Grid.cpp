@@ -70,3 +70,11 @@ spTile Grid::getTile(int row, int col) {
 spTile Grid::getTile(Vector2 loc) {
 	return getTile(loc.x, loc.y);
 };
+
+int Grid::getCols() {
+	return cols;
+}
+
+int Grid::getRows() {
+	return rows;
+}

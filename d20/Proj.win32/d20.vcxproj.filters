@@ -84,9 +84,6 @@
     <ClCompile Include="..\src\ChestEditPane.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MapTile.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Die.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -141,6 +138,15 @@
     <ClCompile Include="..\src\ItemContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\DefaultEditPane.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Npc.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\XmlNpc.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -171,9 +177,6 @@
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="..\src\ChestEditPane.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MapTile.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Die.h">
@@ -229,6 +232,15 @@
     </ClInclude>
     <ClInclude Include="..\src\Item.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DefaultEditPane.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Npc.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\XmlNpc.h">
+      <Filter>Header Files\Character</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
