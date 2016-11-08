@@ -4,13 +4,12 @@
 
 #include "Character.h"
 
-Character::Character(string characterClass, string characterName, int equipmentID, int inventoryID){
-	charClass = characterClass;
-	charName = characterName;
+Character::Character(Class characterClass, string characterName, int equipmentID, int inventoryID) 
+	: charClass(characterClass), equipID(equipmentID), invID(inventoryID){
+	setName(characterName);
 	lvl = 1;
-	equipID = equipmentID;
-	invID = inventoryID;
 	dead = false;
+	id = -1;
 }
 
 Character::~Character() {
@@ -74,46 +73,56 @@ void Character::endGame() {
 
 }
 
+int Character::getId() const{
+	return id;
+}
+void Character::setId(int id) {
+	this->id = id;
+}
+
 int Character::getLevel() const {
 	return lvl;
 }
 
-string Character::getName() const {
-	return charName;
+void Character::setLevel(int level) {
+	lvl = level;
 }
 
 int Character::getInvID() const {
 	return invID;
 }
 
+void Character::setInvID(int id) {
+	invID = id;
+}
+
 int Character::getEquipID() const {
 	return equipID;
 }
 
+void Character::setEquipID(int id) {
+	equipID = id;
+}
+
 int Character::getStat(Stats stat) const {
-	switch (stat) {
-	case STR: return abilityScores[STR]; break;
-	case CON: return abilityScores[CON]; break;
-	case DEX: return abilityScores[DEX]; break;
-	case INT: return abilityScores[INT]; break;
-	case WIS: return abilityScores[WIS]; break;
-	case CHA: return abilityScores[CHA]; break;
-	}
+	return abilityScores[stat];
+}
+
+void Character::setStat(Stats stat, int value) {
+	abilityScores[stat] = value;
 }
 
 int Character::getModifier(Stats stat) const {
-	switch (stat) {
-	case STR: return calcModifier(abilityScores[STR]); break;
-	case CON: return calcModifier(abilityScores[CON]); break;
-	case DEX: return calcModifier(abilityScores[DEX]); break;
-	case INT: return calcModifier(abilityScores[INT]); break;
-	case WIS: return calcModifier(abilityScores[WIS]); break;
-	case CHA: return calcModifier(abilityScores[CHA]); break;
-	}
+	return calcModifier(abilityScores[stat]);
 }
 
-string Character::getCharacterClass() const {
+Character::Class Character::getCharacterClass() const {
 	return charClass;
+}
+
+void Character::setCharacterClass(Class c)
+{
+	this->charClass = c;
 }
 
 int Character::getArmor() const {
@@ -124,8 +133,16 @@ int Character::getHP() const {
 	return currentHP;
 }
 
+void Character::setHP(int hp) {
+	this->currentHP = hp;
+}
+
 int Character::getMaxHP() const {
 	return maxHP;
+}
+
+void Character::setMaxHP(int hp) {
+	maxHP = hp;
 }
 
 bool Character::isDead() const {
@@ -166,6 +183,7 @@ bool Character::validateNewCharacter() {
 
 void Character::printStats() const {
 	cout << "****Character Info****" << endl;
+	cout << "Id: " << getId() << endl;
 	cout << "Name: " << getName() << endl;
 	cout << "Level: " << getLevel() << endl;
 	cout << "Class: " << getCharacterClass() << endl;
@@ -179,4 +197,64 @@ void Character::printStats() const {
 	cout << "Charisma: " << abilityScores[CHA] << endl;
 	cout << "Equipment ID: " << getEquipID() << endl;
 	cout << "Inventory ID: " << getInvID() << endl;
+}
+
+
+int Character::getAtkBonus() const {
+	return die.roll20() + getModifier(STR);
+}
+
+int Character::getDmgBonus() const {
+	return die.roll6() + getModifier(STR);
+}
+
+//! Character::levelUP() -> increases the level, increases the hp, assigns an ability point
+//! every 4 levels (alternates between strength-condition)
+void Character::levelUp() {
+	++lvl;
+	cout << "Level up! Level " << lvl << " reached!" << endl;
+	maxHP += die.roll10() + getModifier(CON);
+	currentHP = maxHP;
+
+	if (lvl % 4 == 0) {
+		if (lvl % 8 == 0) {
+			abilityScores[CON] += 1;
+		}
+		else {
+			abilityScores[STR] += 1;
+		}
+	}
+}
+
+
+bool Character::isHostile() const {
+	return hostile;
+}
+
+void Character::isHostile(bool h) {
+	hostile = h;
+}
+
+string Character::getTalk() const {
+	return strTalk;
+}
+
+void Character::setTalk(string t) {
+	strTalk = t;
+}
+
+int Character::inflictDamage(int dmg) {
+	if (!isHostile()) {
+		cout << "Cannot attack a non-hostile enemy!";
+		return currentHP;
+	}
+
+	currentHP -= dmg;
+	if (currentHP <= 0) {
+		dead = true;
+		cout << getName() + " was killed!";
+		//getItems();
+		//removeFromMap();
+	}
+	return currentHP;
 }

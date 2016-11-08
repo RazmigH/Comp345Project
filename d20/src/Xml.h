@@ -7,23 +7,22 @@
 using namespace std;
 using namespace tinyxml2;
 
-class Xml {
+class Xml : XMLDocument {
 
 public:
-	Xml(char* fName, const int numElements);
-	int createXml(const string);
-	int addToRoot(const string, const string[], const string[]);
-	vector<string> readDataByID(int);
-	//! TODO: change to private
-	bool isEmpty();  // private
-	int findNextID(); //private
-	int updateNextID(); //private
-	int openFile();
-	int saveFile();
-
+	Xml(string fName);
+	~Xml();
+	XMLElement* Xml::getRoot();
+	XMLElement* createElement(string name);
+	int addElement(XMLElement*);
+	vector<XMLElement*> getElements();
+	XMLElement* getElement(string id);
 private:
-	int id;
-	int numElements;
-	XMLDocument doc;
-	char *fileName;
+	int loadFile();
+	int saveFile();
+	bool isEmpty();
+
+	int getNextID();
+	int updateNextID();
+	string fileName;
 };
