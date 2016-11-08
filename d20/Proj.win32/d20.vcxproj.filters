@@ -108,17 +108,11 @@
     <ClCompile Include="..\src\Character.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Fighter.cpp">
-      <Filter>Source Files\Character</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Tile.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\XmlCharacter.cpp">
-      <Filter>Source Files\Character</Filter>
     </ClCompile>
     <ClCompile Include="..\src\Xml.cpp">
       <Filter>Source Files\Helpful Components</Filter>
@@ -141,10 +135,7 @@
     <ClCompile Include="..\src\DefaultEditPane.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Npc.cpp">
-      <Filter>Source Files\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\XmlNpc.cpp">
+    <ClCompile Include="..\src\CharacterDao.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
   </ItemGroup>
@@ -203,17 +194,11 @@
     <ClInclude Include="..\src\CharacterDisplay.h">
       <Filter>Header Files\Character</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Fighter.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Grid.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\XmlCharacter.h">
-      <Filter>Header Files\Character</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Xml.h">
       <Filter>Header Files\Helpful Components</Filter>
@@ -236,10 +221,7 @@
     <ClInclude Include="..\src\DefaultEditPane.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Npc.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\XmlNpc.h">
+    <ClInclude Include="..\src\CharacterDao.h">
       <Filter>Header Files\Character</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,8 @@
 #pragma once
 #include "CharacterDisplay.h"
-#include "Fighter.h"
+#include "Character.h"
 
 CharacterDisplay::CharacterDisplay() {
-
-
 	//Make a stone background for the character display using tiles.
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 3; j++)
@@ -62,7 +60,7 @@ CharacterDisplay::CharacterDisplay() {
 	addChild(title);
 
 	//Fighter Object and stats
-	Fighter f("Camilo", 1, 1);
+	Character f(Character::Class::FIGHTER, "Camilo", 1, 1);
 	const enum Stats {
 		STR = 0, CON, DEX, INT, WIS, CHA
 	};
