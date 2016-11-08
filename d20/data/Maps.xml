@@ -1,7 +1,7 @@
 <Maps next_id="2">
     <Map id="1" cols="10" rows="5">
         <Tile col="0" row="0">
-            <Sprite row="0" col="0">blank</Sprite>
+            <Sprite row="0" col="0">grass-border</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
             <Finish>0</Finish>
@@ -187,7 +187,7 @@
             <Finish>0</Finish>
         </Tile>
         <Tile col="1" row="3">
-            <Sprite row="0" col="0">blank</Sprite>
+            <Sprite row="0" col="0">grass-border</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
             <Finish>0</Finish>

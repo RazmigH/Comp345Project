@@ -17,5 +17,4 @@ public:
 	void setInventoryDisplaySlot(spTile, int, int);
 	void onClickInventorySlot(Event* e );
 private:
-	spTile items[5][3];
 };

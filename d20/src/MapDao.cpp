@@ -37,7 +37,7 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	const char* rowsStr = element->Attribute("rows");
 
 	if (colsStr != nullptr && rowsStr != nullptr)
-		map = new Map(stoi(rowsStr), stoi(colsStr));
+		map = new Map(stoi(colsStr), stoi(rowsStr));
 	else
 		map = new Map();
 
@@ -54,7 +54,7 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 		const char* colStr = tileElement->Attribute("col");
 		const char* rowStr = tileElement->Attribute("row");
 		if (colStr != nullptr && rowStr != nullptr)
-			map->setTile(stoi(rowStr), stoi(colStr), tile);
+			map->setTile(stoi(colStr), stoi(rowStr), tile);
 		//else ignore (as it is currently) or set at 0,0 ?
 		
 		//TODO validate col/row attrs in here or in setTile
@@ -74,7 +74,7 @@ XMLElement* MapDao::MapToXml(spMap map) {
 
 	for (int r = 0; r < map->getRows(); r++) {
 		for (int c = 0; c < map->getCols(); c++) {
-			spTile tile = map->getTile(r, c);
+			spTile tile = map->getTile(c, r);
 			XMLElement* tileXml = tile->getXML(xml);
 			tileXml->SetAttribute("col", c);
 			tileXml->SetAttribute("row", r);

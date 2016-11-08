@@ -8,14 +8,14 @@ using namespace oxygine;
 //made of equal-sized cells
 class Grid : public Actor {
 public:
-	Grid(int rows, int cols);
+	Grid(int cols, int rows);
 	~Grid();
 	Vector2 getTileLocation(spActor);
 	Vector2 getTileLocation(Vector2 position);
-	spTile getTile(int row, int col);
+	spTile getTile(int col, int row);
 	spTile getTile(Vector2);
-	void addToGrid(spActor, int row, int col);
-	void setTile(int row, int col, spTile);
+	void addToGrid(spActor, int col, int row);
+	void setTile(int col, int row, spTile);
 	void setTile(Vector2, spTile);
 	void setTiles(spTile);
 	int getCols();

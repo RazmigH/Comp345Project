@@ -29,7 +29,7 @@ MapCreator::MapCreator(){
 	selectPane->setSize(150, 300);
 
 	//create tile selection grid
-	spGrid selectGrid = new Grid(tile_count, 1);
+	spGrid selectGrid = new Grid(1, tile_count);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
 
 	//create buttons
@@ -43,7 +43,7 @@ MapCreator::MapCreator(){
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
 		spTile tile = tiles[i];
-		selectGrid->setTile(i, 0, tile);
+		selectGrid->setTile(0, i, tile);
 	}
 	this->selections = selectGrid;
 
@@ -51,7 +51,7 @@ MapCreator::MapCreator(){
 	MapDao* dao = new MapDao();
 	spMap map = dao->getMap("1");// new Map(5, 10);
 	if (!map) {
-		map = new Map(5, 10);
+		map = new Map(10, 5);
 	}
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
@@ -208,7 +208,7 @@ void MapCreator::fill(Event* e) {
 void MapCreator::resetPts(Event* e) {
 	for (int r = 0; r < map->getRows(); r++) {
 		for (int c = 0; c < map->getCols(); c++) {
-			spTile tile = map->getTile(r, c);
+			spTile tile = map->getTile(c, r);
 			tile->isEntryTile(false);
 			tile->isFinishTile(false);
 		}

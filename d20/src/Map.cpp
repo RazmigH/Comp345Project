@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Map.h"
 
-Map::Map(int rows, int cols) : Grid(rows, cols) {
+Map::Map(int cols, int rows) : Grid(cols, rows) {
 	entryHighlight = new ColorRectSprite();
 	entryHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	entryHighlight->setColor(Color::LimeGreen);
@@ -30,7 +30,7 @@ Vector2 Map::getEntryPoint() {
 			}
 		}
 	}
-	return Vector2(rows - 1, cols / 2);
+	return Vector2(cols / 2, rows - 1);
 }
 
 Vector2 Map::getExitPoint() {
@@ -42,14 +42,14 @@ Vector2 Map::getExitPoint() {
 			}
 		}
 	}
-	return Vector2(0, cols / 2);
+	return Vector2(cols / 2, 0);
 }
 
 //moves a tile to provided location with a transition lasting "duration" milliseconds
-void Map::move(spActor actor, int row, int col, timeMS duration) {
+void Map::move(spActor actor, int col, int row, timeMS duration) {
 	//outer bounds check, dont move if attempting to move out of map
 	if (row >= rows || row < 0 || col >= cols || col < 0) {
-		std::cout << "Cant move '" << actor->getObjectID() << "' to " << row << "x" << col << " : Out of bounds" << std::endl;
+		std::cout << "Cant move '" << actor->getObjectID() << "' to " << col << "x" << row << " : Out of bounds" << std::endl;
 	}
 	else {
 		//new tile we are moving to exists
@@ -57,7 +57,7 @@ void Map::move(spActor actor, int row, int col, timeMS duration) {
 
 		//dont move if tile is solid
 		if (tile->isSolid()) {
-			std::cout << "Cant move '" << actor->getObjectID() << "' to " << row << "x" << col << " : Tile is Solid" << std::endl;
+			std::cout << "Cant move '" << actor->getObjectID() << "' to " << col << "x" << row << " : Tile is Solid" << std::endl;
 		}
 		else {
 			//actor->setPosition(tile->getPosition());
@@ -66,7 +66,7 @@ void Map::move(spActor actor, int row, int col, timeMS duration) {
 
 			//smooth transition to new tile
 			if (actor->getFirstTween() == NULL) {
-				std::cout << "Moving '" << actor->getObjectID() << "' to " << row << "x" << col << std::endl;
+				std::cout << "Moving '" << actor->getObjectID() << "' to " << col << "x" << row << std::endl;
 
 				actor->addTween(Sprite::TweenPosition(tile->getPosition()), duration);
 			}
