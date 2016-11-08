@@ -8,9 +8,6 @@
 #include "Stage.h"
 #include "DebugActor.h"
 #include "app.h"
-#include <iostream>
-#include "XmlCharacter.h"
-#include "XmlNpc.h"
 
 
 using namespace oxygine;
@@ -44,39 +41,6 @@ int mainloop()
     return done ? 1 : 0;
 }
 
-//! test method for character with Xml integration
-void charXmlTest() {
-	using namespace std;
-	cout << "******************CharTest()*********************" << endl;
-	Fighter test("Derp Test1", 10, 1, 1);
-	Fighter test2("Derp Test2", 4, 2, 2);
-	Npc npc1("NPC Test1", 2, 4, 4);
-	Npc npc2("NPC Test2", 4, 5, 5, true, "git gud!");
-
-	XmlNpc xmlNpcTest;
-	XmlCharacter xmlTest;
-	// adds the Fighter to the xml
-	xmlTest.addToRoot(test);
-	xmlTest.addToRoot(test2);
-
-	xmlNpcTest.addToRoot(npc1);
-	xmlNpcTest.addToRoot(npc2);
-	
-	// creates the Fighter from the xml
-	Fighter readTest = xmlTest.createCharacter(1);
-	Fighter readTest2 = xmlTest.createCharacter(2);
-	readTest.printStats();
-	readTest2.printStats();
-	
-	Npc readNpcTest1 = xmlNpcTest.createNpc(1);
-	Npc readNpcTest2 = xmlNpcTest.createNpc(2);
-	readNpcTest1.printStats();
-	readNpcTest2.printStats();
-	
-	
-	cout << endl << "*************************************************" << endl;
-
-}
 // Application entry point
 void run()
 {
@@ -84,7 +48,7 @@ void run()
 
     // Initialize Oxygine's internal stuff
     core::init_desc desc;
-    desc.title = "Oxygine Application";
+    desc.title = "D20 RPG - Made with Oxygine";
 
 #if OXYGINE_SDL || OXYGINE_EMSCRIPTEN
     // The initial window size can be set up here on SDL builds
@@ -109,9 +73,6 @@ void run()
 
     // Initializes our game.
 	app_init();
-
-	//! calling the test method
-	charXmlTest();
 
 #ifdef EMSCRIPTEN
     /*

@@ -9,51 +9,95 @@
 #include <iostream>
 #include <string>
 #include "Die.h"
+#include "Tile.h"
 
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6
 
-const enum Stats {
-	STR = 0, CON, DEX, INT, WIS, CHA
-};
-
-const enum Equipment {
-	ARMOR = 0, SHIELD, WEAPON, BOOTS, RING, HELMET
-};
-
 using namespace std;
 
 //! Character class
-class Character {
+DECLARE_SMART(Character, spCharacter);
+class Character : public Tile{
 
 public:
+	const enum Stats {
+		STR = 0, CON, DEX, INT, WIS, CHA
+	};
+
+	const enum Class {
+		FIGHTER = 0, ARCHER, BLABLA
+	};
+
+	//put into items when ready
+	const enum Equipment {
+		ARMOR = 0, SHIELD, WEAPON, BOOTS, RING, HELMET
+	};
+
+	Character(Class = Class::FIGHTER, string name = "Character", int equipmentID = 0, int invID = 0);
+	~Character(); 
+	
 	virtual int takeDmg(int);
+
+	//id
+	int getId() const;
+	void setId(int);
+
+	//Stats
 	int getStat(Stats stat) const;
+	void setStat(Stats stat, int value);
+
 	int getModifier(Stats stat) const;
 	int getLevel() const;
-	string getName() const;
-	string getCharacterClass() const;
+	void setLevel(int);
+
+	//Character Class
+	Class getCharacterClass() const;
+	void setCharacterClass(Class);
+
 	int getArmor() const;
+
+	//Hitpoints
 	int getHP() const;
+	void setHP(int);
+
+	//Max hitpoints
 	int getMaxHP() const;
+	void setMaxHP(int);
+
+	//Inventory
 	int getInvID() const;
+	void setInvID(int);
+
+	//Equipment
 	int getEquipID() const;
-	virtual int getAtkBonus() const = 0;
-	virtual int getDmgBonus() const = 0;
+	void setEquipID(int);
+
+
+	virtual int getAtkBonus() const;
+	virtual int getDmgBonus() const;
 	int statChooser() const;
 	bool validateNewCharacter();
 	virtual void printStats() const;
 	bool isDead() const;
 	Die die;
+
+	string getTalk() const;
+	void setTalk(string);
+
+	//hostile
+	bool isHostile() const; 
+	void isHostile(bool);
+
+	int inflictDamage(int);
 	
 private:
-	virtual void levelUp() = 0;
+	virtual void levelUp();
 	int calcModifier(int) const;
 	
-
 protected:
-	string charName;
-	string charClass;
+	int id;
+	Class charClass;
 	int equipment[NUM_EQUIPMENT];
 	int abilityScores[NUM_STATS];
 	int lvl;
@@ -63,9 +107,10 @@ protected:
 	int invID;
 	bool dead;
 	
-	Character(string charClass, string charName, int equipID, int invID);
-	~Character();
 	vector<int> rollAbilityScores() const;
 	int rollHP() const;
 	void endGame();
+
+	string strTalk;
+	bool hostile;
 };

@@ -4,6 +4,7 @@
 #include "TextButton.h"
 #include "Chest.h"
 #include "ImageResource.h" 
+#include "CharacterDao.h" 
 
 MapCreator::MapCreator(){
 	this->currentAction = CreatorAction::SELECT;
@@ -47,7 +48,7 @@ MapCreator::MapCreator(){
 	this->selections = selectGrid;
 
 	//map
-	spMap map = new Map(5, 5);
+	spMap map = new Map(5, 10);
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 	this->map = map;

@@ -113,18 +113,17 @@
   <ItemGroup>
     <ClCompile Include="..\src\app.cpp" />
     <ClCompile Include="..\src\Character.cpp" />
+    <ClCompile Include="..\src\CharacterDao.cpp" />
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
     <ClCompile Include="..\src\Chest.cpp" />
     <ClCompile Include="..\src\ChestEditPane.cpp" />
     <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
-    <ClCompile Include="..\src\Fighter.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
     <ClCompile Include="..\src\ItemContainer.cpp" />
     <ClCompile Include="..\src\ItemCreation.cpp" />
-    <ClCompile Include="..\src\Npc.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -137,24 +136,21 @@
     <ClCompile Include="..\src\Tile.cpp" />
     <ClCompile Include="..\src\tinyxml2.cpp" />
     <ClCompile Include="..\src\Xml.cpp" />
-    <ClCompile Include="..\src\XmlCharacter.cpp" />
-    <ClCompile Include="..\src\XmlNpc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h" />
     <ClInclude Include="..\src\Character.h" />
+    <ClInclude Include="..\src\CharacterDao.h" />
     <ClInclude Include="..\src\CharacterDisplay.h" />
     <ClInclude Include="..\src\Chest.h" />
     <ClInclude Include="..\src\ChestEditPane.h" />
     <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
     <ClInclude Include="..\src\Enhancement.h" />
-    <ClInclude Include="..\src\Fighter.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />
     <ClInclude Include="..\src\ItemContainer.h" />
     <ClInclude Include="..\src\ItemCreation.h" />
-    <ClInclude Include="..\src\Npc.h" />
     <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />
@@ -166,8 +162,6 @@
     <ClInclude Include="..\src\Tile.h" />
     <ClInclude Include="..\src\tinyxml2.h" />
     <ClInclude Include="..\src\Xml.h" />
-    <ClInclude Include="..\src\XmlCharacter.h" />
-    <ClInclude Include="..\src\XmlNpc.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\data\res.xml" />
