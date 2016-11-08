@@ -3,8 +3,13 @@
 #include "Map.h"
 #include "CharacterDisplay.h"
 #include "InventoryDisplay.h"
+#include "MainMenu.h" 
+
 
 Play::Play(){
+	spMainMenu mainMenu = new MainMenu();
+	setBackButton(mainMenu);
+
 	spCharacterDisplay sc = new CharacterDisplay();
 	sc->setSize(96, 320);
 	sc->setPosition(0, 96);

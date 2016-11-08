@@ -1,4 +1,5 @@
 #include "Layout.h"
+#include "TextButton.h"
 
 Layout::Layout() {
 
@@ -27,4 +28,23 @@ Vector2 Layout::calculateSize() {
 	}
 
 	return Vector2(maxRequiredWidth, maxRequiredHeight);
+}
+
+void Layout::setBackButton(spLayout layout) {
+	backLayout = layout;
+
+	//create back button
+	spTextButton back = new TextButton("back");
+	back->setPosition(5, 5);
+	back->addEventListener(TouchEvent::CLICK, CLOSURE(this, &Layout::onBack));
+	addChild(back);
+}
+
+void Layout::onBack(Event* e) {
+	getStage()->removeChild(this);
+	getStage()->addChild(backLayout);
+	getStage()->setSize(backLayout->getSize());
+
+	//resize window to fit layout
+	SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 }

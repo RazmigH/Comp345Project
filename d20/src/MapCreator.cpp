@@ -5,8 +5,12 @@
 #include "Chest.h"
 #include "ImageResource.h" 
 #include "MapDao.h" 
+#include "MainMenu.h" 
 
 MapCreator::MapCreator(){
+	spMainMenu mainMenu = new MainMenu();
+	setBackButton(mainMenu);
+
 	this->currentAction = CreatorAction::SELECT;
 
 	//tile selections

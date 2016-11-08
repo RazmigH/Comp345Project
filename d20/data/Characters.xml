@@ -1,4 +1,4 @@
-<Characters next_id="161">
+<Characters next_id="173">
     <Character id="1">
         <Class>fighter</Class>
         <Name>Derp Test1</Name>
@@ -2509,7 +2509,7 @@
         <Charisma>-858993460</Charisma>
         <EquipmentID>1</EquipmentID>
         <Hostile>1</Hostile>
-        <Talk></Talk>
+        <Talk/>
     </Character>
     <Character id="158">
         <Class>archer</Class>
@@ -2525,7 +2525,7 @@
         <Charisma>-858993460</Charisma>
         <EquipmentID>2</EquipmentID>
         <Hostile>1</Hostile>
-        <Talk></Talk>
+        <Talk/>
     </Character>
     <Character id="159">
         <Class>fighter</Class>
@@ -2541,9 +2541,201 @@
         <Charisma>-858993460</Charisma>
         <EquipmentID>2</EquipmentID>
         <Hostile>1</Hostile>
-        <Talk></Talk>
+        <Talk/>
     </Character>
     <Character id="160">
+        <Class>fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="161">
+        <Class>fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="162">
+        <Class>archer</Class>
+        <Name>Derp Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="163">
+        <Class>fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="164">
+        <Class>fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="165">
+        <Class>fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="166">
+        <Class>archer</Class>
+        <Name>Derp Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="167">
+        <Class>fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk/>
+    </Character>
+    <Character id="168">
+        <Class>fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="169">
+        <Class>fighter</Class>
+        <Name>Derp Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>1</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk></Talk>
+    </Character>
+    <Character id="170">
+        <Class>archer</Class>
+        <Name>Derp Test2</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk></Talk>
+    </Character>
+    <Character id="171">
+        <Class>fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>1</Level>
+        <MaxHP>-858993460</MaxHP>
+        <CurrentHP>-858993460</CurrentHP>
+        <Strength>-858993460</Strength>
+        <Constitution>-858993460</Constitution>
+        <Dexterity>-858993460</Dexterity>
+        <Intelligence>-858993460</Intelligence>
+        <Wisdom>-858993460</Wisdom>
+        <Charisma>-858993460</Charisma>
+        <EquipmentID>2</EquipmentID>
+        <Hostile>1</Hostile>
+        <Talk></Talk>
+    </Character>
+    <Character id="172">
         <Class>fighter</Class>
         <Name>NPC Test2</Name>
         <Level>1</Level>
