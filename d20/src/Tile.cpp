@@ -64,3 +64,56 @@ spActor Tile::getEditLayout() {
 	spDefaultEditPane actor = new DefaultEditPane(this);
 	return actor;
 }
+
+tinyxml2::XMLElement* Tile::getXML(Xml* xml) {
+	XMLElement* parent = xml->createElement("Tile");
+
+	XMLElement* sprite = xml->createElement("Sprite");
+	sprite->SetAttribute("row", this->getRow());
+	sprite->SetAttribute("col", this->getColumn());
+	sprite->SetText(this->getResAnim()->getName().c_str());
+	parent->InsertEndChild(sprite);
+
+	XMLElement* solid = xml->createElement("Solid");
+	solid->SetText(isSolid() ? "1" : "0");
+	parent->InsertEndChild(solid);
+
+	XMLElement* entry = xml->createElement("Start");
+	entry->SetText(isEntryTile() ? "1" : "0");
+	parent->InsertEndChild(entry);
+
+	XMLElement* finish = xml->createElement("Finish");
+	finish->SetText(isFinishTile() ? "1" : "0");
+	parent->InsertEndChild(finish);
+
+	return parent;
+}
+
+void Tile::setFromXML(XMLElement* element) {
+	XMLElement* sprite = element->FirstChildElement("Sprite");
+	if (sprite != nullptr) {
+		int col = 0, row = 0;
+		const char* colattr = sprite->Attribute("col");
+		const char* rowattr = sprite->Attribute("row");;
+		if (colattr != nullptr)
+			col = stoi(colattr);
+		if (rowattr != nullptr)
+			row = stoi(rowattr);
+		setImage(sprite->GetText(), col, row);
+	}
+
+	XMLElement* solid = element->FirstChildElement("Solid");
+	if (solid != nullptr) {
+		this->isSolid(solid->GetText() == "1" ? true : false);
+	}
+
+	XMLElement* entry = element->FirstChildElement("Start");
+	if (entry != nullptr) {
+		this->isEntryTile(entry->GetText() == "1" ? true : false);
+	}
+
+	XMLElement* finish = element->FirstChildElement("Finish");
+	if (finish != nullptr) {
+		this->isFinishTile(finish->GetText() == "1" ? true : false);
+	}
+}

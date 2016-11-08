@@ -21,6 +21,7 @@ private:
 	void onMoveOnMap(Event*);
 	void fill(Event*);
 	void resetPts(Event*);
+	void saveMap(Event*);
 	spMap map;
 	spGrid selections;
 	CreatorAction currentAction;

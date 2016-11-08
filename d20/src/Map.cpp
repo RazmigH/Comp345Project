@@ -13,6 +13,8 @@ Map::Map(int rows, int cols) : Grid(rows, cols) {
 	exitHighlight->setColor(Color::YellowGreen);
 	exitHighlight->setAlpha(50000);
 	//addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
+
+	id = -1;
 }
 
 Map::~Map() {
@@ -79,4 +81,12 @@ void Map::render(const RenderState &rs) {
 	//entryHighlight->render(rs);
 	//exitHighlight->render(rs);
 	//std::cout << "yo" << std::endl;
+}
+
+int Map::getId() {
+	return id;
+}
+
+void Map::setId(int id) {
+	this->id = id;
 }

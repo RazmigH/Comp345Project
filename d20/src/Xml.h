@@ -15,7 +15,8 @@ public:
 	XMLElement* Xml::getRoot();
 	XMLElement* createElement(string name);
 	int addElement(XMLElement*);
-	vector<XMLElement*> getElements();
+	vector<XMLElement*> getElements(); //! Returns the direct children of the root element.
+	vector<XMLElement*> getChildren(XMLElement*); //! Returns the direct children of the passed element.
 	XMLElement* getElement(string id);
 private:
 	int loadFile();
