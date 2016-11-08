@@ -4,7 +4,7 @@
 #include "TextButton.h"
 #include "Chest.h"
 #include "ImageResource.h" 
-#include "CharacterDao.h" 
+#include "MapDao.h" 
 
 MapCreator::MapCreator(){
 	this->currentAction = CreatorAction::SELECT;
@@ -29,7 +29,7 @@ MapCreator::MapCreator(){
 	selectPane->setSize(150, 300);
 
 	//create tile selection grid
-	spGrid selectGrid = new Grid(tile_count, 1);
+	spGrid selectGrid = new Grid(1, tile_count);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
 
 	//create buttons
@@ -43,16 +43,20 @@ MapCreator::MapCreator(){
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
 		spTile tile = tiles[i];
-		selectGrid->setTile(i, 0, tile);
+		selectGrid->setTile(0, i, tile);
 	}
 	this->selections = selectGrid;
 
 	//map
-	spMap map = new Map(5, 10);
+	MapDao* dao = new MapDao();
+	spMap map = dao->getMap("1");// new Map(5, 10);
+	if (!map) {
+		map = new Map(10, 5);
+	}
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 	this->map = map;
-	map->setTiles(tiles[0]);
+	//map->setTiles(tiles[0]);
 
 	//details pane
 	detailsPane = new Actor();
@@ -68,6 +72,10 @@ MapCreator::MapCreator(){
 	detailsTitle->setStyle(style);
 
 	currentDetails = new Actor();
+
+	//save button
+	spTextButton save = new TextButton("Save");
+	save->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::saveMap));
 
 	//selection highlight
 	highlight = new ColorRectSprite();
@@ -114,6 +122,9 @@ MapCreator::MapCreator(){
 	currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
 	currentDetails->setWidth(detailsPane->getWidth());
 	detailsPane->addChild(currentDetails);
+
+	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 10);
+	detailsPane->addChild(save);
 
 	addChild(detailsPane);
 
@@ -197,10 +208,18 @@ void MapCreator::fill(Event* e) {
 void MapCreator::resetPts(Event* e) {
 	for (int r = 0; r < map->getRows(); r++) {
 		for (int c = 0; c < map->getCols(); c++) {
-			spTile tile = map->getTile(r, c);
+			spTile tile = map->getTile(c, r);
 			tile->isEntryTile(false);
 			tile->isFinishTile(false);
 		}
 	}
 	cout << "Entry and Exit points were reset to default." << endl;
+}
+
+void MapCreator::saveMap(Event* e) {
+	MapDao* dao = new MapDao();
+	dao->addMap(map);
+	delete(dao);
+
+	cout << "Saved map" << endl;
 }

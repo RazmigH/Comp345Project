@@ -72,8 +72,12 @@ int Xml::addElement(XMLElement* e) {
 
 //! getElements() -> returns all of the children of the root node
 vector<XMLElement*> Xml::getElements() {
+	return getChildren(getRoot());
+}
+
+vector<XMLElement*> Xml::getChildren(XMLElement* root) {
 	vector<XMLElement*> elements;
-	XMLElement* ele = getRoot()->FirstChildElement();
+	XMLElement* ele = root->FirstChildElement();
 	while (ele != nullptr) {
 		elements.push_back(ele);
 		ele = ele->NextSiblingElement();

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Grid.h"
 
-Grid::Grid(int rows, int cols) : rows(rows), cols(cols) {
+Grid::Grid(int cols, int rows) : rows(rows), cols(cols) {
 	//set vector sizes
 	tiles.resize(rows);
 	for (int i = 0; i < rows; ++i) {
@@ -29,7 +29,7 @@ Grid::~Grid() {
 Vector2 Grid::getTileLocation(Vector2 position) {
 	int row = position.y / Tile::TILE_SIZE;
 	int col = position.x / Tile::TILE_SIZE;
-	return Vector2(row, col);
+	return Vector2(col, row);
 }
 
 Vector2 Grid::getTileLocation(spActor actor) {
@@ -38,15 +38,15 @@ Vector2 Grid::getTileLocation(spActor actor) {
 
 //adds an actor to the grid
 //the actor remains untracked / independent of the grid
-void Grid::addToGrid(spActor actor, int row, int col) {
+void Grid::addToGrid(spActor actor, int col, int row) {
 	actor->setPosition(tiles[row][col]->getPosition());
 
 	addChild(actor);
 };
 
 //replaces a tile with the provided one
-void Grid::setTile(int row, int col, spTile tile) {
-	std::cout << "Setting tile " << row << "x" << col << " to : " << tile->getName() << std::endl;
+void Grid::setTile(int col, int row, spTile tile) {
+	std::cout << "Setting tile " << col << "x" << row << " to : " << tile->getName() << std::endl;
 	removeChild(tiles[row][col]);
 	tile->setPosition(Tile::TILE_SIZE * col, Tile::TILE_SIZE * row);
 	tiles[row][col] = tile;
@@ -58,13 +58,13 @@ void Grid::setTile(Vector2 loc, spTile tile) {
 void Grid::setTiles(spTile tile) {
 	for (int r = 0; r < rows; r++) {
 		for (int c = 0; c < cols; c++) {
-			setTile(r, c, tile->clone());
+			setTile(c, r, tile->clone());
 		}
 	}
 }
 
 //returns the tile at the provided location
-spTile Grid::getTile(int row, int col) {
+spTile Grid::getTile(int col, int row) {
 	return tiles[row][col];
 };
 spTile Grid::getTile(Vector2 loc) {

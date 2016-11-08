@@ -1,7 +1,6 @@
 #include "DefaultEditPane.h"
 #include "ImageResource.h"
 #include "TextButton.h"
-#include "Map.h"
 #include <iostream>
 
 DefaultEditPane::DefaultEditPane(spTile t) {

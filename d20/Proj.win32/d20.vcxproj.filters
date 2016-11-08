@@ -138,6 +138,9 @@
     <ClCompile Include="..\src\CharacterDao.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\MapDao.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -223,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="..\src\CharacterDao.h">
       <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MapDao.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,7 +5,7 @@
 InventoryDisplay::InventoryDisplay()
 {
 	//! 3X3 Inventory Grid item.
-	inventoryGrid = new Grid(5, 3);
+	inventoryGrid = new Grid(3, 5);
 
 	//Create event listener for when the user clicks on a grid tile.
 	//inventoryGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &InventoryDisplay::onClickInventorySlot));
@@ -49,22 +49,12 @@ InventoryDisplay::~InventoryDisplay()
 
 void InventoryDisplay::setEmptyInventory()
 {
-	//Set all the inventory default tiles.
-	for (int i = 0; i < inventoryGrid->getRows(); i++)
-	{
-		for (int j = 0; j < inventoryGrid->getCols(); j++)
-		{
-			setInventoryDisplaySlot(new Tile("inventory-slot"), j, i);
-		}
-	}
-
+	inventoryGrid->setTiles(new Tile("inventory-slot"));
 }
 
-void InventoryDisplay::setInventoryDisplaySlot(spTile tile, int row, int col)
+void InventoryDisplay::setInventoryDisplaySlot(spTile tile, int col, int row)
 {
-	items[row][col] = tile;
-	items[row][col]->setPosition((row * 32), (col * 32)+32);
-	addChild(items[row][col]);
+	inventoryGrid->setTile(col, row, tile);
 }
 void InventoryDisplay::onClickInventorySlot(Event* e) {
 	//Invoque item's action when clicked.

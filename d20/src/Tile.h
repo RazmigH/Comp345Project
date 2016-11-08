@@ -1,6 +1,7 @@
 #pragma once
 
 #include "oxygine-framework.h"
+#include "Xml.h"
 using namespace oxygine;
 
 DECLARE_SMART(Tile, spTile);
@@ -26,11 +27,14 @@ public:
 		return tile;
 	}
 	virtual spActor getEditLayout();
+	virtual tinyxml2::XMLElement* getXML(Xml*); //! return an XML representation of the tile.
+	virtual void setFromXML(XMLElement*); //! replace Tile properties with those provided in the XML.
 
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;
 private:
 	bool solid;
+
 	bool isEntry = false;
 	bool isFinish = false;
 };
