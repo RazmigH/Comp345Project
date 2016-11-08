@@ -1,7 +1,7 @@
 <Maps next_id="2">
-    <Map id="1" cols="10" rows="5">
+    <Map cols="10" rows="5" id="1">
         <Tile col="0" row="0">
-            <Sprite row="0" col="0">grass-border</Sprite>
+            <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
             <Finish>0</Finish>
@@ -24,12 +24,9 @@
             <Start>0</Start>
             <Finish>0</Finish>
         </Tile>
-        <Tile col="4" row="0">
-            <Sprite row="0" col="1">chests</Sprite>
-            <Solid>0</Solid>
-            <Start>0</Start>
-            <Finish>0</Finish>
-        </Tile>
+        <Chest col="4" row="0">
+            <State>open</State>
+        </Chest>
         <Tile col="5" row="0">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
@@ -72,12 +69,9 @@
             <Start>0</Start>
             <Finish>0</Finish>
         </Tile>
-        <Tile col="2" row="1">
-            <Sprite row="0" col="1">chests</Sprite>
-            <Solid>0</Solid>
-            <Start>0</Start>
-            <Finish>0</Finish>
-        </Tile>
+        <Chest col="2" row="1">
+            <State>closed</State>
+        </Chest>
         <Tile col="3" row="1">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
@@ -96,12 +90,9 @@
             <Start>0</Start>
             <Finish>0</Finish>
         </Tile>
-        <Tile col="6" row="1">
-            <Sprite row="0" col="1">chests</Sprite>
-            <Solid>0</Solid>
-            <Start>0</Start>
-            <Finish>0</Finish>
-        </Tile>
+        <Chest col="6" row="1">
+            <State>closed</State>
+        </Chest>
         <Tile col="7" row="1">
             <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
@@ -123,7 +114,7 @@
         <Tile col="0" row="2">
             <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
-            <Start>1</Start>
+            <Start>0</Start>
             <Finish>0</Finish>
         </Tile>
         <Tile col="1" row="2">
@@ -178,7 +169,7 @@
             <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
-            <Finish>1</Finish>
+            <Finish>0</Finish>
         </Tile>
         <Tile col="0" row="3">
             <Sprite row="0" col="0">blank</Sprite>
@@ -187,7 +178,7 @@
             <Finish>0</Finish>
         </Tile>
         <Tile col="1" row="3">
-            <Sprite row="0" col="0">grass-border</Sprite>
+            <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
             <Finish>0</Finish>
@@ -241,7 +232,7 @@
             <Finish>0</Finish>
         </Tile>
         <Tile col="0" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
+            <Sprite row="0" col="0">blank</Sprite>
             <Solid>0</Solid>
             <Start>0</Start>
             <Finish>0</Finish>

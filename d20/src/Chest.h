@@ -9,13 +9,21 @@ public:
 	enum ChestState {
 		CLOSED, OPEN
 	};
+
+	static const string IDENTIFIER;
+
 	Chest(ChestState = ChestState::OPEN);
 	~Chest();
+	ChestState getState();
+	void setState(ChestState);
+
 	spActor getEditLayout();
 	spTile clone() {
 		spChest tile = new Chest(state);
 		return tile;
 	}
+	tinyxml2::XMLElement* getXML(Xml*);
+	static spTile getFromXML(XMLElement*);
 private:
 	ChestState state;
 	//std::vector<Item> items;

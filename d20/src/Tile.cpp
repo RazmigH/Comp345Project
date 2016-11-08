@@ -2,6 +2,9 @@
 #include "Tile.h"
 #include "ImageResource.h"
 #include "DefaultEditPane.h"
+#include "Chest.h"
+
+const string Tile::IDENTIFIER = "Tile";
 
 Tile::Tile(std::string image, bool solid, int img_row, int img_col) : solid(solid) {
 	setSize(TILE_SIZE, TILE_SIZE);
@@ -66,7 +69,7 @@ spActor Tile::getEditLayout() {
 }
 
 tinyxml2::XMLElement* Tile::getXML(Xml* xml) {
-	XMLElement* parent = xml->createElement("Tile");
+	XMLElement* parent = xml->createElement(IDENTIFIER);
 
 	XMLElement* sprite = xml->createElement("Sprite");
 	sprite->SetAttribute("row", this->getRow());
@@ -89,7 +92,12 @@ tinyxml2::XMLElement* Tile::getXML(Xml* xml) {
 	return parent;
 }
 
-void Tile::setFromXML(XMLElement* element) {
+spTile Tile::getFromXML(XMLElement* element) {
+	if (element->Name() == Chest::IDENTIFIER) {
+		return Chest::getFromXML(element);
+	}
+
+	spTile tile = new Tile();
 	XMLElement* sprite = element->FirstChildElement("Sprite");
 	if (sprite != nullptr) {
 		int col = 0, row = 0;
@@ -99,21 +107,22 @@ void Tile::setFromXML(XMLElement* element) {
 			col = stoi(colattr);
 		if (rowattr != nullptr)
 			row = stoi(rowattr);
-		setImage(sprite->GetText(), col, row);
+		tile->setImage(sprite->GetText(), col, row);
 	}
 
 	XMLElement* solid = element->FirstChildElement("Solid");
 	if (solid != nullptr) {
-		this->isSolid(solid->GetText() == "1" ? true : false);
+		tile->isSolid(solid->GetText() == "1" ? true : false);
 	}
 
 	XMLElement* entry = element->FirstChildElement("Start");
 	if (entry != nullptr) {
-		this->isEntryTile(entry->GetText() == "1" ? true : false);
+		tile->isEntryTile(entry->GetText() == "1" ? true : false);
 	}
 
 	XMLElement* finish = element->FirstChildElement("Finish");
 	if (finish != nullptr) {
-		this->isFinishTile(finish->GetText() == "1" ? true : false);
+		tile->isFinishTile(finish->GetText() == "1" ? true : false);
 	}
+	return tile;
 }

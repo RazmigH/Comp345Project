@@ -8,6 +8,7 @@ DECLARE_SMART(Tile, spTile);
 class Tile : public Sprite {
 public:
 	static const int TILE_SIZE = 32;
+	static const string IDENTIFIER;
 
 	Tile(std::string = "blank", bool solid = false, int col = 0, int row = 0);
 	Tile(const spTile);
@@ -28,10 +29,11 @@ public:
 	}
 	virtual spActor getEditLayout();
 	virtual tinyxml2::XMLElement* getXML(Xml*); //! return an XML representation of the tile.
-	virtual void setFromXML(XMLElement*); //! replace Tile properties with those provided in the XML.
+	static spTile getFromXML(XMLElement*); //! get Tile with properties provided in XML.
 
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;
+
 private:
 	bool solid;
 

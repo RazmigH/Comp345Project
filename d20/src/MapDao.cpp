@@ -49,7 +49,7 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	for (vector<XMLElement*>::iterator it = tileElements.begin(); it != tileElements.end(); ++it) {
 		XMLElement* tileElement = *it;
 		spTile tile = new Tile();
-		tile->setFromXML(tileElement);
+		tile = tile->getFromXML(tileElement);
 
 		const char* colStr = tileElement->Attribute("col");
 		const char* rowStr = tileElement->Attribute("row");
