@@ -100,8 +100,8 @@ Character* CharacterDao::XmlToCharacter(XMLElement* element) {
 	}
 
 	temp = element->FirstChildElement("Hostile");
-	if (temp != nullptr) {
-		c->isHostile(temp->GetText() == "1" ? true : false);
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->isHostile(i == 1 ? true : false);
 	}
 
 	temp = element->FirstChildElement("Talk");

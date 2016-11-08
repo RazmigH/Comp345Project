@@ -110,19 +110,22 @@ spTile Tile::getFromXML(XMLElement* element) {
 		tile->setImage(sprite->GetText(), col, row);
 	}
 
-	XMLElement* solid = element->FirstChildElement("Solid");
-	if (solid != nullptr) {
-		tile->isSolid(solid->GetText() == "1" ? true : false);
+	XMLElement* solidXml = element->FirstChildElement("Solid");
+	int solid;
+	if (solidXml != nullptr && solidXml->QueryIntText(&solid) == XML_SUCCESS) {
+		tile->isSolid(solid == 1 ? true : false);
 	}
 
-	XMLElement* entry = element->FirstChildElement("Start");
-	if (entry != nullptr) {
-		tile->isEntryTile(entry->GetText() == "1" ? true : false);
+	XMLElement* startXml = element->FirstChildElement("Start");
+	int start;
+	if (startXml != nullptr && startXml->QueryIntText(&start) == XML_SUCCESS) {
+		tile->isEntryTile(start == 1 ? true : false);
 	}
 
-	XMLElement* finish = element->FirstChildElement("Finish");
-	if (finish != nullptr) {
-		tile->isFinishTile(finish->GetText() == "1" ? true : false);
+	XMLElement* finishXml = element->FirstChildElement("Finish");
+	int finish;
+	if (finishXml != nullptr && finishXml->QueryIntText(&finish) == XML_SUCCESS) {
+		tile->isFinishTile(finish == 1 ? true : false);
 	}
 	return tile;
 }
