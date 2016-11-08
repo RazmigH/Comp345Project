@@ -1,4 +1,4 @@
-<NPCs next_id="57">
+<NPCs next_id="93">
     <Character id="1">
         <Class>Fighter</Class>
         <Name>NPC Test1</Name>
@@ -935,6 +935,618 @@
         <Talk>Good luck!</Talk>
     </Character>
     <Character id="56">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="57">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="58">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="59">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="60">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="61">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="62">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="63">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="64">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="65">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="66">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="67">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="68">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="69">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="70">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="71">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="72">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="73">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="74">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="75">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="76">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="77">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="78">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="79">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="80">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="81">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="82">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="83">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="84">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="85">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="86">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="87">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="88">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="89">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="90">
+        <Class>Fighter</Class>
+        <Name>NPC Test2</Name>
+        <Level>4</Level>
+        <MaxHP>33</MaxHP>
+        <CurrentHP>33</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
+        <Hostile>1</Hostile>
+        <Talk>git gud!</Talk>
+    </Character>
+    <Character id="91">
+        <Class>Fighter</Class>
+        <Name>NPC Test1</Name>
+        <Level>2</Level>
+        <MaxHP>21</MaxHP>
+        <CurrentHP>21</CurrentHP>
+        <Strength>15</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
+    </Character>
+    <Character id="92">
         <Class>Fighter</Class>
         <Name>NPC Test2</Name>
         <Level>4</Level>

@@ -1,6 +1,6 @@
 #pragma once
 #include "CharacterDisplay.h"
-#include "Character.h"
+#include "Fighter.h"
 
 CharacterDisplay::CharacterDisplay() {
 
@@ -14,7 +14,7 @@ CharacterDisplay::CharacterDisplay() {
 			addChild(temp);
 		}
 	}
-	
+
 
 	//Set And display default equipement
 	spTile helm = new Tile("default-helm");
@@ -36,7 +36,7 @@ CharacterDisplay::CharacterDisplay() {
 	spTile ring = new Tile("default-ring");
 	ring->setPosition(64, 128);
 	addChild(ring);
-	
+
 	spTile boots = new Tile("default-boots");
 	boots->setPosition(32, 128);
 	addChild(boots);
@@ -46,9 +46,9 @@ CharacterDisplay::CharacterDisplay() {
 	addChild(belt);
 
 
+	// Title for Equipement
 	spTextField title = new TextField();
 	TextStyle style;
-	//title->setAnchor(0.5, 0.5);
 	title->setPosition(50, 32);
 
 	style.font = res::resources.getResFont("font");
@@ -60,6 +60,70 @@ CharacterDisplay::CharacterDisplay() {
 	title->setText("Equipement");
 
 	addChild(title);
+
+	//Fighter Object and stats
+	Fighter f("Camilo", 1, 1);
+	const enum Stats {
+		STR = 0, CON, DEX, INT, WIS, CHA
+	};
+	string stats[] = {"STR: ", 
+					  "CON: ", 
+		              "DEX: ", 
+					  "INT: ", 
+		              "WIS: ", 
+		              "CHA: " };
+
+
+	//Set a Style for the stat display text.
+	TextStyle statStyle;
+	statStyle.font = res::resources.getResFont("font");
+	statStyle.fontSize = 14;
+	statStyle.color = Color::Black;
+	statStyle.vAlign = TextStyle::VALIGN_MIDDLE;
+	statStyle.hAlign = TextStyle::HALIGN_CENTER;
+
+
+	//Textfields to display the stats.
+	spTextField strStat = new TextField();
+	strStat->setStyle(statStyle);
+	strStat->setPosition(32, 192);
+	strStat->setText(stats[0] + "10");
+	addChild(strStat);
+
+	spTextField conStat = new TextField();
+	conStat->setStyle(statStyle);
+	conStat->setPosition(32, 208);
+	conStat->setText(stats[1] + "10");
+	addChild(conStat);
+	
+	spTextField dexStat = new TextField();
+	dexStat->setStyle(statStyle);
+	dexStat->setPosition(32, 224);
+	dexStat->setText(stats[2] + "10");
+	addChild(dexStat);
+	
+	spTextField intStat = new TextField();
+	intStat->setStyle(statStyle);
+	intStat->setPosition(32, 240);
+	intStat->setText(stats[3] + "10");
+	addChild(intStat);
+	
+	spTextField wisStat = new TextField();
+	wisStat->setStyle(statStyle);
+	wisStat->setPosition(32, 256);
+	wisStat->setText(stats[4] + "10");
+	addChild(wisStat);
+	
+	spTextField charStat = new TextField();
+	charStat->setStyle(statStyle);
+	charStat->setPosition(32, 272);
+	charStat->setText(stats[5] + "10");
+	addChild(charStat);
+	
+
+
+
+
 };
 
 CharacterDisplay::~CharacterDisplay() {
