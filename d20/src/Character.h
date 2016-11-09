@@ -67,6 +67,7 @@ public:
 
 	int getArmor() const;
 
+
 	//Hitpoints
 	int getHP() const;
 	void setHP(int);
@@ -89,8 +90,8 @@ public:
 
 	string getNameCharacterClass() const;
 
-	virtual int getAtkBonus() const;
-	virtual int getDmgBonus() const;
+	int getAtkBonus() const;
+	int getDmgBonus() const;
 	int statChooser() const;
 	bool validateNewCharacter();
 	virtual void printStats() const;
@@ -104,6 +105,17 @@ public:
 	bool isHostile() const; 
 	void setHostile(bool);
 
+	//armor
+	int getArmorVar() const;
+	void setArmorVar(int);
+
+	//atkBonus
+	int getAtkBonusVar() const;
+	void setAtkBonusVar(int);
+
+	//dmgBonus
+	int getDmgBonusVar() const;
+	void setDmgBonusVar(int);
 	bool isPlayer() const;
 
 	int inflictDamage(Character &);
@@ -120,6 +132,9 @@ protected:
 	int abilityScores[NUM_STATS];
 	int lvl;
 	int maxHP;
+	int armor;
+	int atkBonus;
+	int dmgBonus;
 	int currentHP;
 	int equipID;
 	int invID;

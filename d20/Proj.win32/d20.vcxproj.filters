@@ -93,12 +93,6 @@
     <ClCompile Include="..\src\Item.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ItemContainer.cpp">
-      <Filter>Source Files\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ItemCreation.cpp">
-      <Filter>Source Files\Item</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Enhancement.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
@@ -159,6 +153,12 @@
     <ClCompile Include="..\src\MapPicker.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\EquipableItem.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\UsableItem.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -195,12 +195,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Item.h">
-      <Filter>Header Files\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ItemContainer.h">
-      <Filter>Header Files\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ItemCreation.h">
       <Filter>Header Files\Item</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Enhancement.h">
@@ -262,6 +256,12 @@
     </ClInclude>
     <ClInclude Include="..\src\MapPicker.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EquipableItem.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UsableItem.h">
+      <Filter>Header Files\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
