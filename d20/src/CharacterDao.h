@@ -8,12 +8,13 @@ class CharacterDao{
 public:
 	CharacterDao();
 	~CharacterDao();
-	vector<Character*> getCharacters();
-	int addCharacter(Character* c);
+	vector<spCharacter> getCharacters();
+	spCharacter getCharacter(string id);
+	int addCharacter(spCharacter c);
 private: 
 	Xml* xml;
-	Character* XmlToCharacter(XMLElement*);
-	XMLElement* CharacterToXml(Character*);
+	spCharacter XmlToCharacter(XMLElement*);
+	XMLElement* CharacterToXml(spCharacter);
 
 	string classToString(Character::Class);
 	Character::Class stringToClass(string);

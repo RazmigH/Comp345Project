@@ -14,6 +14,7 @@ public:
 	Vector2 getTileLocation(Vector2 position);
 	spTile getTile(int col, int row);
 	spTile getTile(Vector2);
+	spTile getTile(Event*);
 	void addToGrid(spActor, int col, int row);
 	void setTile(int col, int row, spTile);
 	void setTile(Vector2, spTile);
@@ -24,5 +25,8 @@ protected:
 	int cols;
 	int rows;
 	std::vector<std::vector<spTile>> tiles;
+
+	spColorRectSprite highlightRect;
+	bool highlight = false;
 };
 typedef oxygine::intrusive_ptr<Grid>spGrid;

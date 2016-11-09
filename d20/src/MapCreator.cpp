@@ -21,7 +21,7 @@ MapCreator::MapCreator(spMap useMap){
 	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
 	spChest openChest = new Chest(Chest::ChestState::OPEN);
 	spTile tiles[tile_count] = {
-		new Tile(), 
+		new Tile("blank"), 
 		new Tile("grass"),
 		new Tile("grass-border", true),
 		closedChest,
@@ -145,9 +145,7 @@ MapCreator::~MapCreator() {
 //Event handler for when a tile is clicked in the tile option select pane
 void MapCreator::onSelectTileOption(Event* e) {
 	this->currentAction = CreatorAction::TILE_EDIT;
-	TouchEvent* te = safeCast<TouchEvent*>(e);
-	Vector2 pos = te->localPosition;
-	selected = selections->getTile(selections->getTileLocation(pos));
+	selected = selections->getTile(e);
 	cout << "Selected " << selected->getName() << endl;
 }
 
@@ -159,14 +157,10 @@ void MapCreator::onSelectToolClicked(Event* e) {
 
 //Event handler for when a tile on the map is clicked
 void MapCreator::onSelectMapTile(Event* e) {
-	TouchEvent* te = safeCast<TouchEvent*>(e);
-	Vector2 pos = te->localPosition;
-
-	Vector2 tileLoc = map->getTileLocation(pos);
-	spTile tile = map->getTile(tileLoc);
+	spTile tile = map->getTile(e);
 	if (this->currentAction == CreatorAction::TILE_EDIT && *tile != *selected) {
 		spTile newTile = selected->clone();
-		map->setTile(tileLoc, newTile);
+		map->setTile(map->getTileLocation(tile), newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
 		Vector2 loc = map->getTileLocation(tile);

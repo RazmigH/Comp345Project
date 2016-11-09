@@ -1,29 +1,42 @@
 #include "MapPicker.h"
-#include "TextButton.h"
 #include "MapCreator.h"
 #include <iostream>
 using namespace std;
 
 MapPicker::MapPicker(){
 	setName("Map Picker");
-	setSize(getStage()->getSize());
-	addBackButton();
-
-	spTextButton btn = new TextButton("Ok");
-	btn->setPosition(getWidth() - btn->getWidth() - 5, getHeight() - btn->getHeight() - 5);
-	btn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		if (!map) { finish(); }
-		else {
-			flow::show(new MapCreator(map));
-		}
-	});
-	addChild(btn);
 
 	highlight = new TextField();
 	highlight->setText("<");
 	highlight->setFontSize(20);
 	highlight->setColor(Color::White);
+
+	okbtn = new TextButton("Ok");
+	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
+		if (!map) { finish(); }
+		else {
+			flow::show(new MapCreator(map), [=](Event*) {
+				load();
+			});
+		}
+	});
+
+	load();
+}
+
+MapPicker::~MapPicker() {
+	delete(dao);
+}
+
+void MapPicker::load() {
+	this->clear();
+
+	setSize(getStage()->getSize());
 	highlight->setPosition(-100, -100);
+	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
+
+	addChild(okbtn);
+	addBackButton();
 	addChild(highlight);
 
 	dao = new MapDao();
@@ -44,10 +57,6 @@ MapPicker::MapPicker(){
 		addChild(tf);
 		y += 25;
 	}
-}
-
-MapPicker::~MapPicker() {
-	delete(dao);
 }
 
 void MapPicker::onSelect(Event* e) {

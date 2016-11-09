@@ -54,7 +54,7 @@ void Tile::isFinishTile(bool b) {
 }
 
 bool Tile::operator==(const Tile& other) const {
-	return	this->getResAnim() == other.getResAnim() &&
+	return this->getResAnim() == other.getResAnim() &&
 		this->getColumn() == other.getColumn() &&
 		this->getRow() == other.getRow();
 }
@@ -128,4 +128,8 @@ spTile Tile::getFromXML(XMLElement* element) {
 		tile->isFinishTile(finish == 1 ? true : false);
 	}
 	return tile;
+}
+
+string Tile::getImageName() const{
+	return getResAnim()->getName();
 }

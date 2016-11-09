@@ -50,13 +50,20 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	else
 		map = new Map();
 
-	const char* id = element->Attribute("id");
-	if (id != nullptr && id != "-1")
-		map->setId(stoi(id));
-
 	const char* name = element->Attribute("name");
 	if (name != nullptr)
 		map->setName(name);
+
+	const char* id = element->Attribute("id");
+	if (id != nullptr) {
+		if (atoi(id) == -1) {
+			map->setTiles(new Tile("blank"));
+			return map;
+		}
+		else {
+			map->setId(stoi(id));
+		}
+	}
 
 	vector<XMLElement*> tileElements = xml->getChildren(element);
 	for (vector<XMLElement*>::iterator it = tileElements.begin(); it != tileElements.end(); ++it) {

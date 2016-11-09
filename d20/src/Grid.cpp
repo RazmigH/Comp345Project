@@ -46,7 +46,7 @@ void Grid::addToGrid(spActor actor, int col, int row) {
 
 //replaces a tile with the provided one
 void Grid::setTile(int col, int row, spTile tile) {
-	std::cout << "Setting tile " << col << "x" << row << " to : " << tile->getName() << std::endl;
+	//std::cout << "Setting tile " << col << "x" << row << " to : " << tile->getName() << std::endl;
 	removeChild(tiles[row][col]);
 	tile->setPosition(Tile::TILE_SIZE * col, Tile::TILE_SIZE * row);
 	tiles[row][col] = tile;
@@ -69,6 +69,13 @@ spTile Grid::getTile(int col, int row) {
 };
 spTile Grid::getTile(Vector2 loc) {
 	return getTile(loc.x, loc.y);
+};
+
+spTile Grid::getTile(Event* e) {
+	TouchEvent* te = safeCast<TouchEvent*>(e);
+	Vector2 clickPosition = te->localPosition;
+	Vector2 tilePosition = getTileLocation(clickPosition);
+	return getTile(tilePosition);
 };
 
 int Grid::getCols() {

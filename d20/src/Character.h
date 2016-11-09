@@ -120,6 +120,11 @@ public:
 
 	int inflictDamage(Character &);
 	
+	//anims
+	void setUp();
+	void setDown();
+	void setLeft();
+	void setRight();
 private:
 	virtual void levelUp();
 	int calcModifier(int) const;

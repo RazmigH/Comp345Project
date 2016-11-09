@@ -10,12 +10,13 @@ public:
 	static const int TILE_SIZE = 32;
 	static const string IDENTIFIER;
 
-	Tile(std::string = "blank", bool solid = false, int col = 0, int row = 0);
+	Tile(std::string = "transparent", bool solid = false, int col = 0, int row = 0);
 	Tile(const spTile);
 	~Tile();
 
 	void setImage(std::string, int col = 0, int row = 0);
 	void setImage(const ResAnim*, int col = 0, int row = 0);
+	string getImageName() const;
 	bool isSolid();
 	void isSolid(bool);
 	bool isEntryTile();

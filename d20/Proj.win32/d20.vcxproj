@@ -118,10 +118,12 @@
     <ClCompile Include="..\src\Character.cpp" />
     <ClCompile Include="..\src\CharacterDao.cpp" />
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
+    <ClCompile Include="..\src\CharacterPicker.cpp" />
     <ClCompile Include="..\src\Chest.cpp" />
     <ClCompile Include="..\src\ChestEditPane.cpp" />
     <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
+    <ClCompile Include="..\src\DynamicGrid.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
     <ClCompile Include="..\src\EquipableItem.cpp" />
     <ClCompile Include="..\src\InputDialog.cpp" />
@@ -151,10 +153,12 @@
     <ClInclude Include="..\src\Character.h" />
     <ClInclude Include="..\src\CharacterDao.h" />
     <ClInclude Include="..\src\CharacterDisplay.h" />
+    <ClInclude Include="..\src\CharacterPicker.h" />
     <ClInclude Include="..\src\Chest.h" />
     <ClInclude Include="..\src\ChestEditPane.h" />
     <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
+    <ClInclude Include="..\src\DynamicGrid.h" />
     <ClInclude Include="..\src\Enhancement.h" />
     <ClInclude Include="..\src\EquipableItem.h" />
     <ClInclude Include="..\src\InputDialog.h" />

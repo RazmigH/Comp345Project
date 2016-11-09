@@ -117,13 +117,7 @@
     <ClCompile Include="..\src\Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\ItemCreation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Enhancement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ItemContainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\DefaultEditPane.cpp">
@@ -158,6 +152,12 @@
     </ClCompile>
     <ClCompile Include="..\src\UsableItem.cpp">
       <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DynamicGrid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterPicker.cpp">
+      <Filter>Source Files\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -218,12 +218,6 @@
     <ClInclude Include="..\src\TextButton.h">
       <Filter>Header Files\Helpful Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\ItemContainer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ItemCreation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Enhancement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -262,6 +256,12 @@
     </ClInclude>
     <ClInclude Include="..\src\UsableItem.h">
       <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DynamicGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterPicker.h">
+      <Filter>Header Files\Character</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
