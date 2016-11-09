@@ -41,7 +41,7 @@ Character* CharacterDao::XmlToCharacter(XMLElement* element) {
 
 	temp = element->FirstChildElement("Name");
 	if (temp != nullptr) {
-		c->setName(c->getName());
+		c->setName(temp->GetText() == nullptr ? "Good luck!" : temp->GetText());  // one more bug fixed: c->getName() 
 	}
 
 	temp = element->FirstChildElement("Level");
@@ -101,7 +101,7 @@ Character* CharacterDao::XmlToCharacter(XMLElement* element) {
 
 	temp = element->FirstChildElement("Hostile");
 	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
-		c->isHostile(i == 1 ? true : false);
+		c->setHostile((i == 1) ? true : false);
 	}
 
 	temp = element->FirstChildElement("Talk");
@@ -119,7 +119,7 @@ XMLElement* CharacterDao::CharacterToXml(Character* c) {
 		root->SetAttribute("id", c->getId());
 	}
 
-	const int ATTRIBUTE_COUNT = 14;
+	const int ATTRIBUTE_COUNT = 15;
 	string attributes[ATTRIBUTE_COUNT][2] = {
 		{ "Class",			classToString(c->getCharacterClass()) },
 		{ "Name",			c->getName() },
@@ -132,7 +132,8 @@ XMLElement* CharacterDao::CharacterToXml(Character* c) {
 		{ "Intelligence",	to_string(c->getStat(Character::Stats::INT)) },
 		{ "Wisdom",			to_string(c->getStat(Character::Stats::WIS)) },
 		{ "Charisma",		to_string(c->getStat(Character::Stats::CHA)) },
-		{ "EquipmentID",	to_string(c->getEquipID()) },
+		{ "EquipmentID",	to_string(c->getEquipID()) }, //that line was missing 
+		{ "InventoryID",    to_string(c->getInvID()) },	
 		{ "Hostile",		c->isHostile() ? "1" : "0" },
 		{ "Talk",			c->getTalk() }
 	};

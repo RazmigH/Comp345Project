@@ -4,15 +4,66 @@
 
 #include "Character.h"
 
-Character::Character(Class characterClass, string characterName, int equipmentID, int inventoryID) 
-	: charClass(characterClass), equipID(equipmentID), invID(inventoryID){
-	setName(characterName);
-	lvl = 1;
-	dead = false;
+Character::Character(
+	Class characterClass, 
+	string characterName, 
+	int level,
+	int equipmentID,
+	int inventoryID,
+	bool hostility,
+	string talk,
+	bool p) 
+	: 
+	charClass(characterClass), 
+	charName(characterName), 
+	equipID(equipmentID),
+	invID(inventoryID),
+	hostile(hostility),
+	strTalk(talk),
+	player(p),
+	dead(false),
+	lvl(1)
+{
 	id = -1;
+	for (int i = lvl; i < level; ++i) {
+		levelUp();
+	}
+
+	// the playr has to be hostile or the monsters won't be able to deal any damage
+	if (isPlayer() && !isHostile()) {
+		cout << "The player must be hostile! Changing to hostile..." << endl;
+		hostile = true;
+	}
+
+	vector<int> scores;
+	scores = rollAbilityScores();
+	//! sort from low to high in order to decide the assigment priority
+	sort(scores.begin(), scores.end());
+	//! ability scores are assigned depending on the priority for the
+	//! character's class: first one is the lowest
+	if (characterClass == FIGHTER) {
+		abilityScores[INT] = scores.at(0);
+		abilityScores[CHA] = scores.at(1);
+		abilityScores[WIS] = scores.at(2);
+		abilityScores[DEX] = scores.at(3);
+		abilityScores[CON] = scores.at(4);
+		abilityScores[STR] = scores.at(5);
+	}
+	else if (characterClass == ARCHER) {
+		abilityScores[INT] = scores.at(0);
+		abilityScores[CHA] = scores.at(1);
+		abilityScores[WIS] = scores.at(2);
+		abilityScores[STR] = scores.at(3);
+		abilityScores[CON] = scores.at(4);
+		abilityScores[DEX] = scores.at(5);
+	}
+	maxHP = 10 + getModifier(CON); //! first lvl hp always 10 + constitution modifier
+	currentHP = maxHP;
+
 }
 
 Character::~Character() {
+
 }
 
 vector<int> Character::rollAbilityScores() const {
@@ -59,12 +110,24 @@ int Character::calcModifier(int num) const {
 }
 
 int Character::takeDmg(int dmg) {
+	if (!isHostile()) {
+		cout << "Cannot attack a non-hostile enemy!";
+		return currentHP;
+	}
+
 	currentHP -= dmg;
-	//! calls notify every time the character gets hit
 	if (currentHP <= 0) {
 		dead = true;
-		cout << "You DIED!";
-		endGame();
+
+		if (isPlayer()) {
+			endGame();
+			return -2;
+		}
+		else {
+			cout << getName() + " was killed!";
+			// drops the loot and has to disapear from the map
+			return -1;
+		}
 	}
 	return currentHP;
 }
@@ -181,12 +244,20 @@ bool Character::validateNewCharacter() {
 	return true;
 }
 
+string Character::getNameCharacterClass() const {
+	switch (charClass) {
+	case FIGHTER: return "Fighter";
+	case ARCHER: return "Archer";
+	default: return "BlaBla";
+	}
+}
+
 void Character::printStats() const {
 	cout << "****Character Info****" << endl;
 	cout << "Id: " << getId() << endl;
 	cout << "Name: " << getName() << endl;
 	cout << "Level: " << getLevel() << endl;
-	cout << "Class: " << getCharacterClass() << endl;
+	cout << "Class: " << getNameCharacterClass() << endl;
 	cout << "Max HP: " << getMaxHP() << endl;
 	cout << "Current HP: " << getHP() << endl;
 	cout << "Strength: " << abilityScores[STR] << endl;
@@ -197,15 +268,28 @@ void Character::printStats() const {
 	cout << "Charisma: " << abilityScores[CHA] << endl;
 	cout << "Equipment ID: " << getEquipID() << endl;
 	cout << "Inventory ID: " << getInvID() << endl;
+	cout << "Talk: " << getTalk() << endl;
+	cout << "Hostile: " << isHostile() << endl;
+	cout << "Player: " << isPlayer() << endl;
 }
 
 
 int Character::getAtkBonus() const {
-	return die.roll20() + getModifier(STR);
+	if (charClass == ARCHER) {
+		return die.roll20() + getModifier(DEX);
+	}
+	else {
+		return die.roll20() + getModifier(STR);
+	}
 }
 
 int Character::getDmgBonus() const {
-	return die.roll6() + getModifier(STR);
+	if (charClass == ARCHER) {
+		return die.roll6() + getModifier(DEX);
+	}
+	else {
+		return die.roll6() + getModifier(STR);
+	}
 }
 
 //! Character::levelUP() -> increases the level, increases the hp, assigns an ability point
@@ -216,12 +300,24 @@ void Character::levelUp() {
 	maxHP += die.roll10() + getModifier(CON);
 	currentHP = maxHP;
 
-	if (lvl % 4 == 0) {
-		if (lvl % 8 == 0) {
-			abilityScores[CON] += 1;
+	if (charClass == ARCHER) {
+		if (lvl % 4 == 0) {
+			if (lvl % 8 == 0) {
+				abilityScores[CON] += 1;
+			}
+			else {
+				abilityScores[DEX] += 1;
+			}
 		}
-		else {
-			abilityScores[STR] += 1;
+	}
+	else {
+		if (lvl % 4 == 0) {
+			if (lvl % 8 == 0) {
+				abilityScores[CON] += 1;
+			}
+			else {
+				abilityScores[STR] += 1;
+			}
 		}
 	}
 }
@@ -231,7 +327,7 @@ bool Character::isHostile() const {
 	return hostile;
 }
 
-void Character::isHostile(bool h) {
+void Character::setHostile(bool h) {
 	hostile = h;
 }
 
@@ -243,18 +339,24 @@ void Character::setTalk(string t) {
 	strTalk = t;
 }
 
-int Character::inflictDamage(int dmg) {
-	if (!isHostile()) {
-		cout << "Cannot attack a non-hostile enemy!";
-		return currentHP;
-	}
+string Character::getName() const{
+	return charName;
+}
 
-	currentHP -= dmg;
-	if (currentHP <= 0) {
-		dead = true;
-		cout << getName() + " was killed!";
-		//getItems();
-		//removeFromMap();
-	}
-	return currentHP;
+void Character::setName(string name) {
+	charName = name;
+}
+
+bool Character::isPlayer() const {
+	return (player == true) ? true : false;
+}
+
+int Character::inflictDamage(Character& c) {
+	
+	int dmg = 0;
+	//! TODO: calc for damage
+
+	c.takeDmg(dmg);
+	
+	return dmg;
 }
