@@ -8,7 +8,7 @@
 #include "MainMenu.h" 
 #include "InputDialog.h"
 
-MapCreator::MapCreator(){
+MapCreator::MapCreator(spMap useMap){
 	setName("Map Creator");
 	addBackButton();
 
@@ -53,15 +53,9 @@ MapCreator::MapCreator(){
 	this->selections = selectGrid;
 
 	//map
-	MapDao* dao = new MapDao();
-	spMap map = dao->getMap("1");// new Map(5, 10);
-	if (!map) {
-		map = new Map(10, 5);
-	}
+	this->map = useMap;
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
-	this->map = map;
-	//map->setTiles(tiles[0]);
 
 	//details pane
 	detailsPane = new Actor();
@@ -175,8 +169,6 @@ void MapCreator::onSelectMapTile(Event* e) {
 		map->setTile(tileLoc, newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
-		cout << "Entry Point (" << map->getEntryPoint().x << "," << map->getEntryPoint().y << endl;
-		cout << "Finish Point (" << map->getExitPoint().x << "," << map->getExitPoint().y << endl;
 		Vector2 loc = map->getTileLocation(tile);
 		if (loc == map->getTileLocation(highlight)) {
 			if (highlight->getParent() == (spActor)map)

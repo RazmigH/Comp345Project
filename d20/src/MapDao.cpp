@@ -3,6 +3,14 @@ using namespace std;
 
 MapDao::MapDao() {
 	xml = new Xml("Maps");
+	if (xml->getElement("-1") == nullptr) {
+		XMLElement* e = xml->createElement("Map");
+		e->SetAttribute("id", "-1");
+		e->SetAttribute("cols", 10);
+		e->SetAttribute("rows", 5);
+		e->SetAttribute("name", "default");
+		xml->addElement(e);
+	}
 }
 
 MapDao::~MapDao() {
@@ -27,8 +35,9 @@ spMap MapDao::getMap(string id) {
 	return nullptr;
 }
 
-int MapDao::addMap(spMap map) {
-	return xml->addElement(MapToXml(map));
+void MapDao::addMap(spMap map) {
+	int id = xml->addElement(MapToXml(map));
+	map->setId(id);
 }
 
 spMap MapDao::XmlToMap(XMLElement* element) {
@@ -42,7 +51,7 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 		map = new Map();
 
 	const char* id = element->Attribute("id");
-	if (id != nullptr)
+	if (id != nullptr && id != "-1")
 		map->setId(stoi(id));
 
 	const char* name = element->Attribute("name");

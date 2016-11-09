@@ -62,6 +62,10 @@ void Layout::addChild(spActor actor) {
 	_view->addChild(actor);
 }
 
+void Layout::removeChild(spActor actor) {
+	_view->removeChild(actor);
+}
+
 Vector2 Layout::getSize() const {
 	return _view->getSize();
 }

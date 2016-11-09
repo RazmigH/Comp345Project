@@ -10,7 +10,7 @@ public:
 	~MapDao();
 	vector<spMap> getMaps();
 	spMap getMap(string);
-	int addMap(spMap c);
+	void addMap(spMap c);
 private:
 	Xml* xml;
 	spMap XmlToMap(XMLElement*);

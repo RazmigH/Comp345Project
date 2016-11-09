@@ -1,6 +1,6 @@
 #include <iostream>
 #include "MainMenu.h"
-#include "MapCreator.h"
+#include "MapPicker.h"
 #include "Play.h"
 
 MainMenu::MainMenu() {
@@ -54,7 +54,7 @@ void MainMenu::onClick(Event* e) {
 	else if (e->target->getName() == "Create a map") {
 		cout << "Create" << endl;
 
-		show(new MapCreator, [=](Event*) {
+		show(new MapPicker, [=](Event*) {
 			MainMenu* temp = new MainMenu;
 			Vector2 size = temp->getSize();
 			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);

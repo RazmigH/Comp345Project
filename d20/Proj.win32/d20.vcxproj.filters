@@ -156,6 +156,9 @@
     <ClCompile Include="..\src\InputDialog.cpp">
       <Filter>Source Files\Helpful Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\MapPicker.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -256,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="..\src\InputDialog.h">
       <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MapPicker.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

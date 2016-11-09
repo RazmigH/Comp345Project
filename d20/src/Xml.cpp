@@ -20,7 +20,6 @@ Xml::Xml(string name) {
 }
 
 Xml::~Xml() {
-	this->saveFile();
 }
 
 //! isEmpty() -> verifies if the Xml document is empty
@@ -49,10 +48,11 @@ XMLElement* Xml::createElement(string name){
 //! addElement(element) -> adds to the root element a new element
 //! if an element with the same id exists, it will be replaced
 //! if the passed element has no id, next_id is used
+//! returns the id of the saved element
 int Xml::addElement(XMLElement* e) {
 	XMLElement* current;
 
-	//if same id already exists, replace it 
+	//if same id already exists, replace the element with e 
 	const char *id = e->Attribute("id");
 	if (id != nullptr) {
 		current = getElement(id);
@@ -67,7 +67,8 @@ int Xml::addElement(XMLElement* e) {
 	}
 
 	getRoot()->InsertEndChild(e);
-	return saveFile();
+	saveFile();
+	return atoi(e->Attribute("id"));
 }
 
 //! getElements() -> returns all of the children of the root node

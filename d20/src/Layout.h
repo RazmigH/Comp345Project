@@ -24,6 +24,7 @@ protected:
 	void fitToWindow(Layout*, bool useMinSize = false);
 	void addBackButton();
 	void addChild(spActor);
+	void removeChild(spActor);
 private:
 	void onBack(Event* e);
 	spActor _view;

@@ -1,0 +1,64 @@
+#include "MapPicker.h"
+#include "TextButton.h"
+#include "MapCreator.h"
+#include <iostream>
+using namespace std;
+
+MapPicker::MapPicker(){
+	setName("Map Picker");
+	setSize(getStage()->getSize());
+	addBackButton();
+
+	spTextButton btn = new TextButton("Ok");
+	btn->setPosition(getWidth() - btn->getWidth() - 5, getHeight() - btn->getHeight() - 5);
+	btn->addEventListener(TouchEvent::CLICK, [=](Event*) {
+		if (!map) { finish(); }
+		else {
+			flow::show(new MapCreator(map));
+		}
+	});
+	addChild(btn);
+
+	highlight = new TextField();
+	highlight->setText("<");
+	highlight->setFontSize(20);
+	highlight->setColor(Color::White);
+	highlight->setPosition(-100, -100);
+	addChild(highlight);
+
+	dao = new MapDao();
+	vector<spMap> maps = dao->getMaps();
+	int y = 5;
+	for (vector<spMap>::iterator it = maps.begin(); it != maps.end(); ++it) {
+		spTextField tf = new TextField();
+		spMap temp = *it;
+		tf->setName(to_string(temp->getId()));
+		tf->setText(temp->getName());
+		tf->setFontSize(20);
+		tf->setColor(Color::White);
+		tf->setAnchor(0.5, 0.5);
+		tf->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
+		tf->setPosition(getWidth() / 2, y);
+		tf->setWidth(100);
+		tf->addClickListener(CLOSURE(this, &MapPicker::onSelect));
+		addChild(tf);
+		y += 25;
+	}
+}
+
+MapPicker::~MapPicker() {
+	delete(dao);
+}
+
+void MapPicker::onSelect(Event* e) {
+	spActor temp = safeSpCast<Actor>(e->target);
+	if (!map || to_string(map->getId()) != temp->getName()) {
+		cout << "Name " << temp->getName() << endl;
+		map = dao->getMap(temp->getName());
+		removeChild(highlight);
+		highlight->setPosition(temp->getX() + temp->getWidth() / 2 + 5, temp->getY());
+		addChild(highlight);
+		cout << "Selected " << map->getName() << endl;
+	}
+}
+

@@ -11,7 +11,7 @@ public:
 	enum CreatorAction {
 		SELECT, TILE_EDIT
 	};
-	MapCreator();
+	MapCreator(spMap);
 	~MapCreator();
 private:
 	spTile selected;
