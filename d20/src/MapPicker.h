@@ -3,10 +3,15 @@
 #include "MapDao.h"
 #include "TextButton.h"
 
+DECLARE_SMART(MapPicker, spMapPicker);
 class MapPicker : public Layout{
 public:
 	MapPicker();
 	~MapPicker();
+
+	spMap getMap();
+
+	void init();
 private:
 	spMap map;
 	MapDao* dao;

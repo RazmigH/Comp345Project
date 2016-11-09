@@ -1,10 +1,15 @@
 #include <iostream>
 #include "MainMenu.h"
 #include "MapPicker.h"
+#include "MapCreator.h"
 #include "CharacterPicker.h"
 #include "Play.h"
 
 MainMenu::MainMenu() {
+	init();
+}
+
+void MainMenu::init() {
 	setName("Main Menu");
 
 	//Amount of menu options
@@ -30,7 +35,7 @@ MainMenu::MainMenu() {
 	for (int i = 0; i < menu_size; i++) {
 		//create textfield
 		spTextField textfield = createTextField(menuTexts[i]);
-		textfield->setPosition(getWidth() / 2, title->getPosition().y + ((i+1) * 50));
+		textfield->setPosition(getWidth() / 2, title->getPosition().y + ((i + 1) * 50));
 		textfield->addClickListener(CLOSURE(this, &MainMenu::onClick));
 		menuItems.push_back(textfield);
 		addChild(textfield);
@@ -42,24 +47,20 @@ MainMenu::MainMenu() {
 void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
-
-		show(new CharacterPicker, [=](Event*) {
-			MainMenu* temp = new MainMenu;
-			Vector2 size = temp->getSize();
-			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);
-			delete(temp);
+		spCharacterPicker picker = new CharacterPicker();
+		spPlay play = new Play();
+		picker->setNext(play);
+		show(picker, [=](Event*) {
 		});
 		//resize window to fit layout
 		//SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 	}
 	else if (e->target->getName() == "Create a map") {
 		cout << "Create" << endl;
-
-		show(new MapPicker, [=](Event*) {
-			MainMenu* temp = new MainMenu;
-			Vector2 size = temp->getSize();
-			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);
-			delete(temp);
+		spMapPicker mapPicker = new MapPicker();
+		spMapCreator creator = new MapCreator(mapPicker);
+		mapPicker->setNext(creator);
+		show(mapPicker, [=](Event*) {
 		});
 	}
 	else if (e->target->getName() == "add wtv") {

@@ -4,6 +4,10 @@
 using namespace std;
 
 MapPicker::MapPicker(){
+	init();
+}
+
+void MapPicker::init() {
 	setName("Map Picker");
 
 	highlight = new TextField();
@@ -13,11 +17,14 @@ MapPicker::MapPicker(){
 
 	okbtn = new TextButton("Ok");
 	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		if (!map) { finish(); }
-		else {
-			flow::show(new MapCreator(map), [=](Event*) {
+		if (map && getNext()) {
+			getNext()->init();
+			flow::show(getNext(), [=](Event*) {
 				load();
 			});
+		}
+		else {
+			finish();
 		}
 	});
 
@@ -71,3 +78,6 @@ void MapPicker::onSelect(Event* e) {
 	}
 }
 
+spMap MapPicker::getMap() {
+	return map;
+}

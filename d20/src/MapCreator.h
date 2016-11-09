@@ -3,16 +3,20 @@
 #include "Layout.h"
 #include "Tile.h"
 #include "Map.h"
+#include "MapPicker.h"
 using namespace std;
 
 //This class is for the map creation window / layout
+DECLARE_SMART(MapCreator, spMapCreator);
 class MapCreator : public Layout {
 public:
 	enum CreatorAction {
 		SELECT, TILE_EDIT
 	};
-	MapCreator(spMap);
+	MapCreator(spMapPicker);
 	~MapCreator();
+
+	void init();
 private:
 	spTile selected;
 	void onSelectTileOption(Event*);
@@ -29,4 +33,5 @@ private:
 	spActor detailsPane;
 	spActor currentDetails;
 	spColorRectSprite highlight;
+	spMapPicker mapSource;
 };

@@ -7,6 +7,10 @@
 
 
 Play::Play(){
+
+}
+
+void Play::init() {
 	setName("Play Layout");
 	addBackButton();
 
@@ -23,12 +27,10 @@ Play::Play(){
 	iDisplay->setSize(96, 320);
 	iDisplay->setPosition(736, 96);
 
-	
+
 	this->map = map;
 
-
 	this->setSize(832, 480);
-
 
 	//center grid in container
 	//sc->setPosition(this->getWidth() / 2, this->getHeight() / 2);
@@ -39,6 +41,7 @@ Play::Play(){
 	//fit children
 	fitToWindow();
 }
+
 Play::~Play() {
 
 }

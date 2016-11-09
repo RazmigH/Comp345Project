@@ -8,6 +8,7 @@ public:
 	InputDialog(string text = "Enter value", string default = "");
 	~InputDialog();
 
+	void init();
 	string getText();
 private: 
 	spTextField input;

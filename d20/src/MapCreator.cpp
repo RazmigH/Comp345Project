@@ -8,7 +8,11 @@
 #include "MainMenu.h" 
 #include "InputDialog.h"
 
-MapCreator::MapCreator(spMap useMap){
+MapCreator::MapCreator(spMapPicker useMap){
+	mapSource = useMap;
+}
+
+void MapCreator::init() {
 	setName("Map Creator");
 	addBackButton();
 
@@ -21,7 +25,7 @@ MapCreator::MapCreator(spMap useMap){
 	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
 	spChest openChest = new Chest(Chest::ChestState::OPEN);
 	spTile tiles[tile_count] = {
-		new Tile("blank"), 
+		new Tile("blank"),
 		new Tile("grass"),
 		new Tile("grass-border", true),
 		closedChest,
@@ -53,7 +57,7 @@ MapCreator::MapCreator(spMap useMap){
 	this->selections = selectGrid;
 
 	//map
-	this->map = useMap;
+	this->map = mapSource->getMap();
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
 
@@ -96,7 +100,7 @@ MapCreator::MapCreator(spMap useMap){
 
 	//position buttons
 	fillBtn->setAnchor(0.5, 0.5);
-	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight()/2 + 25);
+	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight() / 2 + 25);
 
 	//position select 
 	select->setAnchor(0.5, 0.5);

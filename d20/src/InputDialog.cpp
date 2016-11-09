@@ -34,6 +34,10 @@ InputDialog::InputDialog(string text, string default) {
 	addChild(btn);
 }
 
+void InputDialog::init() {
+
+}
+
 
 InputDialog::~InputDialog() {
 

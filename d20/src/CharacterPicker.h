@@ -4,11 +4,13 @@
 #include "DynamicGrid.h"
 #include "TextButton.h"
 
+DECLARE_SMART(CharacterPicker, spCharacterPicker);
 class CharacterPicker : public Layout {
 public:
 	CharacterPicker(string = "Pick a Character");
 	~CharacterPicker();
 	void onSelectCharacter(Event*);
+	void init();
 private:
 	CharacterDao* dao;
 	void load();

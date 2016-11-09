@@ -102,3 +102,12 @@ void Layout::setSize(Vector2 size) {
 	_view->setSize(size);
 	_holder->setSize(size);
 }
+
+void Layout::setNext(spLayout layout) {
+	leadTo = layout;
+}
+
+spLayout Layout::getNext() {
+	cout << "GETNEXT" << endl;
+	return leadTo;
+}

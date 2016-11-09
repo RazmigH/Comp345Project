@@ -1,19 +1,30 @@
 #include "CharacterPicker.h"
 
 CharacterPicker::CharacterPicker(string message) {
-	setName("CharacterPicker");
-
-	okbtn = new TextButton("Ok");
-	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		finish();
-	});
-
 	title = new TextField();
 	title->setText(message);
 	title->setColor(Color::White);
 	title->setFontSize(18);
 	title->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
 	title->setHeight(30);
+	init();
+}
+
+void CharacterPicker::init() {
+	setName("CharacterPicker");
+
+	okbtn = new TextButton("Ok");
+	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
+		cout << "INININNININN " << (character ? 1 : 0) << (getNext() ? 1 : 0) << endl;
+		if (character && getNext()) {
+			cout << "ABABABABABABABB" << endl;
+			getNext()->init();
+			flow::show(getNext(), [=](Event*) {
+				load();
+			});
+		}
+		finish();
+	});
 
 	empty = new Tile("transparent");
 	grid = new DynamicGrid(4, 10, empty);

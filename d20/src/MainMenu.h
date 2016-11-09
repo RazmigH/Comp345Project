@@ -8,6 +8,8 @@ class MainMenu : public Layout {
 public:
 	MainMenu();
 	~MainMenu();
+
+	void init();
 private: 
 	vector<spTextField> menuItems;
 	spTextField createTextField(string);

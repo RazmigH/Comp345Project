@@ -13,11 +13,16 @@ public:
 	Layout();
 	~Layout();
 
+	virtual void init() = 0;
+
 	Vector2 getSize() const;
 	float getWidth() const;
 	float getHeight() const;
 	void setSize(float width, float height);
 	void setSize(Vector2);
+
+	void setNext(spLayout);
+	spLayout getNext();
 protected:
 	Vector2 calculateSize();
 	void fitToWindow(bool useMinSize = false);
@@ -30,4 +35,5 @@ protected:
 private:
 	void onBack(Event* e);
 	spActor _view;
+	spLayout leadTo;
 };
