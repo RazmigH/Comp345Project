@@ -34,7 +34,17 @@ public:
 		ARMOR = 0, SHIELD, WEAPON, BOOTS, RING, HELMET
 	};
 
-	Character(Class = Class::FIGHTER, string name = "Character", int equipmentID = 0, int invID = 0);
+	Character(
+		Class = FIGHTER, 
+		string name = "Generic Character", 
+		int level = 1, 
+		int equipmentID = 0,
+		int invID = 0,
+		bool hostile = false, 
+		string strTalk = "Good luck!",
+		bool player = false
+	);
+
 	~Character(); 
 	
 	virtual int takeDmg(int);
@@ -73,6 +83,11 @@ public:
 	int getEquipID() const;
 	void setEquipID(int);
 
+	//Character Name
+	string getName() const;
+	void setName(string);
+
+	string getNameCharacterClass() const;
 
 	virtual int getAtkBonus() const;
 	virtual int getDmgBonus() const;
@@ -87,9 +102,11 @@ public:
 
 	//hostile
 	bool isHostile() const; 
-	void isHostile(bool);
+	void setHostile(bool);
 
-	int inflictDamage(int);
+	bool isPlayer() const;
+
+	int inflictDamage(Character &);
 	
 private:
 	virtual void levelUp();
@@ -98,6 +115,7 @@ private:
 protected:
 	int id;
 	Class charClass;
+
 	int equipment[NUM_EQUIPMENT];
 	int abilityScores[NUM_STATS];
 	int lvl;
@@ -106,11 +124,13 @@ protected:
 	int equipID;
 	int invID;
 	bool dead;
+	string charName;
+	string strTalk;
+	bool player;
+	bool hostile;
 	
 	vector<int> rollAbilityScores() const;
 	int rollHP() const;
 	void endGame();
 
-	string strTalk;
-	bool hostile;
 };
