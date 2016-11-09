@@ -14,29 +14,31 @@ void app_init(){
 	//test
 	cout << "******************CharTest()*********************" << endl;
 
-	Character test(Character::Class::FIGHTER, "Derp Test1", 1, 1);
-	Character test2(Character::Class::ARCHER, "Derp Test2", 2, 2);
-	Character npc1(Character::Class::FIGHTER, "NPC Test1", 2, 4);
-	Character npc2(Character::Class::FIGHTER, "NPC Test2", 4, 5);
-	npc2.isHostile(true);
+	CharacterDao* dao = new CharacterDao();
+
+	/*
+	Character test(Character::Class::FIGHTER, "Derp Test1", 1, 1, 1);
+	Character test2(Character::Class::ARCHER, "Derp Test2", 2, 2, 2);
+	Character npc1(Character::Class::FIGHTER, "NPC Test1", 3, 4, 4);
+	Character npc2(Character::Class::FIGHTER, "NPC Test2", 3, 5, 5);
+	npc2.setHostile(true);
 	npc2.setTalk("git gud!");
 
-	CharacterDao* dao = new CharacterDao();
 	dao->addCharacter(&test);
 	dao->addCharacter(&test2);
 	dao->addCharacter(&npc1);
 	dao->addCharacter(&npc2);
+	*/
 
-	cout << endl << "*************************************************" << endl;
-	/*
 	vector<Character*> ccs = dao->getCharacters();
 	std::cout << "CHARACTER COUNT: " << ccs.size() << std::endl;
 	for (std::vector<Character*>::iterator it = ccs.begin(); it != ccs.end(); ++it) {
 		Character* c = *it;
-		//c->printStats();
+		c->printStats();
 	}
-	dao->addCharacter(new Character());
-	*/
+
+		
+	cout << endl << "*************************************************" << endl;
 
 	//show main menu
 	spMainMenu menu = new MainMenu;

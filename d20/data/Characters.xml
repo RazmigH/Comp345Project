@@ -3,63 +3,67 @@
         <Class>fighter</Class>
         <Name>Derp Test1</Name>
         <Level>1</Level>
-        <MaxHP>-858993460</MaxHP>
-        <CurrentHP>-858993460</CurrentHP>
-        <Strength>-858993460</Strength>
-        <Constitution>-858993460</Constitution>
-        <Dexterity>-858993460</Dexterity>
-        <Intelligence>-858993460</Intelligence>
-        <Wisdom>-858993460</Wisdom>
-        <Charisma>-858993460</Charisma>
+        <MaxHP>13</MaxHP>
+        <CurrentHP>13</CurrentHP>
+        <Strength>17</Strength>
+        <Constitution>17</Constitution>
+        <Dexterity>12</Dexterity>
+        <Intelligence>9</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>11</Charisma>
         <EquipmentID>1</EquipmentID>
-        <Hostile>1</Hostile>
-        <Talk></Talk>
+        <InventoryID>1</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
     </Character>
     <Character id="2">
         <Class>archer</Class>
         <Name>Derp Test2</Name>
-        <Level>1</Level>
-        <MaxHP>-858993460</MaxHP>
-        <CurrentHP>-858993460</CurrentHP>
-        <Strength>-858993460</Strength>
-        <Constitution>-858993460</Constitution>
-        <Dexterity>-858993460</Dexterity>
-        <Intelligence>-858993460</Intelligence>
-        <Wisdom>-858993460</Wisdom>
-        <Charisma>-858993460</Charisma>
+        <Level>2</Level>
+        <MaxHP>12</MaxHP>
+        <CurrentHP>12</CurrentHP>
+        <Strength>13</Strength>
+        <Constitution>15</Constitution>
+        <Dexterity>18</Dexterity>
+        <Intelligence>10</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
         <EquipmentID>2</EquipmentID>
-        <Hostile>1</Hostile>
-        <Talk></Talk>
+        <InventoryID>2</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
     </Character>
     <Character id="3">
         <Class>fighter</Class>
         <Name>NPC Test1</Name>
-        <Level>1</Level>
-        <MaxHP>-858993460</MaxHP>
-        <CurrentHP>-858993460</CurrentHP>
-        <Strength>-858993460</Strength>
-        <Constitution>-858993460</Constitution>
-        <Dexterity>-858993460</Dexterity>
-        <Intelligence>-858993460</Intelligence>
-        <Wisdom>-858993460</Wisdom>
-        <Charisma>-858993460</Charisma>
-        <EquipmentID>2</EquipmentID>
-        <Hostile>1</Hostile>
-        <Talk></Talk>
+        <Level>3</Level>
+        <MaxHP>11</MaxHP>
+        <CurrentHP>11</CurrentHP>
+        <Strength>16</Strength>
+        <Constitution>13</Constitution>
+        <Dexterity>13</Dexterity>
+        <Intelligence>11</Intelligence>
+        <Wisdom>13</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>4</EquipmentID>
+        <InventoryID>4</InventoryID>
+        <Hostile>0</Hostile>
+        <Talk>Good luck!</Talk>
     </Character>
     <Character id="4">
         <Class>fighter</Class>
         <Name>NPC Test2</Name>
-        <Level>1</Level>
-        <MaxHP>-858993460</MaxHP>
-        <CurrentHP>-858993460</CurrentHP>
-        <Strength>-858993460</Strength>
-        <Constitution>-858993460</Constitution>
-        <Dexterity>-858993460</Dexterity>
-        <Intelligence>-858993460</Intelligence>
-        <Wisdom>-858993460</Wisdom>
-        <Charisma>-858993460</Charisma>
-        <EquipmentID>4</EquipmentID>
+        <Level>3</Level>
+        <MaxHP>12</MaxHP>
+        <CurrentHP>12</CurrentHP>
+        <Strength>14</Strength>
+        <Constitution>14</Constitution>
+        <Dexterity>14</Dexterity>
+        <Intelligence>12</Intelligence>
+        <Wisdom>12</Wisdom>
+        <Charisma>12</Charisma>
+        <EquipmentID>5</EquipmentID>
+        <InventoryID>5</InventoryID>
         <Hostile>1</Hostile>
         <Talk>git gud!</Talk>
     </Character>
