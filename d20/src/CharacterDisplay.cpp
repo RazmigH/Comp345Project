@@ -61,6 +61,7 @@ CharacterDisplay::CharacterDisplay() {
 
 	//Fighter Object and stats
 	Character f(Character::Class::FIGHTER, "Camilo", 1, 1);
+
 	const enum Stats {
 		STR = 0, CON, DEX, INT, WIS, CHA
 	};
