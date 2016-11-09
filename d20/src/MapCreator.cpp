@@ -8,8 +8,8 @@
 #include "MainMenu.h" 
 
 MapCreator::MapCreator(){
-	spMainMenu mainMenu = new MainMenu();
-	setBackButton(mainMenu);
+	setName("Map Creator");
+	addBackButton();
 
 	this->currentAction = CreatorAction::SELECT;
 
@@ -140,7 +140,7 @@ MapCreator::MapCreator(){
 	addChild(topPane);
 
 	//fit children
-	setSize(this->calculateSize());
+	fitToWindow(this, true);
 }
 
 MapCreator::~MapCreator() {

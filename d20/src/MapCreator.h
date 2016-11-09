@@ -30,4 +30,3 @@ private:
 	spActor currentDetails;
 	spColorRectSprite highlight;
 };
-typedef oxygine::intrusive_ptr<MapCreator>spMapCreator;

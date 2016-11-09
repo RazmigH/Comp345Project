@@ -31,12 +31,6 @@
     <Filter Include="Source Files\Item">
       <UniqueIdentifier>{60184c51-7700-49b2-a37c-6ff17bf82eac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\External library">
-      <UniqueIdentifier>{9ff0be6e-94c0-449c-a247-edb5ad63c70c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\External library">
-      <UniqueIdentifier>{aee66392-010d-4aa6-9521-b6386b3a99ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Character">
       <UniqueIdentifier>{0a0b3bd6-25d0-44d6-b87f-88c0a02ac6e0}</UniqueIdentifier>
     </Filter>
@@ -48,6 +42,15 @@
     </Filter>
     <Filter Include="Header Files\Helpful Components">
       <UniqueIdentifier>{3de59528-1a9b-46b1-8d94-2982fc9f1ea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External library">
+      <UniqueIdentifier>{9ff0be6e-94c0-449c-a247-edb5ad63c70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External library\tinyxml">
+      <UniqueIdentifier>{c7097e54-cd1d-4c64-8e20-6580fb145f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External library\flow">
+      <UniqueIdentifier>{1663444c-4389-499b-bc53-31e365be3c12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -99,9 +102,6 @@
     <ClCompile Include="..\src\Enhancement.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\tinyxml2.cpp">
-      <Filter>Source Files\External library</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\CharacterDisplay.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
@@ -140,6 +140,18 @@
     </ClCompile>
     <ClCompile Include="..\src\MapDao.cpp">
       <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tinyxml2.cpp">
+      <Filter>External library\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\oxygine-flow\src\flow\flow.cpp">
+      <Filter>External library\flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Scene.cpp">
+      <Filter>External library\flow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Transition.cpp">
+      <Filter>External library\flow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,9 +200,6 @@
     <ClInclude Include="..\src\Enhancement.h">
       <Filter>Header Files\Item</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\tinyxml2.h">
-      <Filter>Header Files\External library</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\Character.h">
       <Filter>Header Files\Character</Filter>
     </ClInclude>
@@ -229,6 +238,18 @@
     </ClInclude>
     <ClInclude Include="..\src\MapDao.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tinyxml2.h">
+      <Filter>External library\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\oxygine-flow\src\flow\flow.h">
+      <Filter>External library\flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Scene.h">
+      <Filter>External library\flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Transition.h">
+      <Filter>External library\flow</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

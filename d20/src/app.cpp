@@ -3,11 +3,15 @@
 #include "ImageResource.h"
 #include "MainMenu.h"
 #include "CharacterDao.h"
+#include "oxygine-flow.h"
+using namespace oxygine;
 
 void app_preinit(){
 }
 
 void app_init(){
+	flow::init();
+
 	//load resources
 	res::load();
 
@@ -39,19 +43,22 @@ void app_init(){
 	*/
 
 	//show main menu
-	spMainMenu menu = new MainMenu;
-	getStage()->addChild(menu);
-	getStage()->setSize(menu->getSize());
+	flow::show(new MainMenu);
+	//spMainMenu menu = new MainMenu;
+	//getStage()->addChild(menu);
+	//getStage()->setSize(menu->getSize());
 
 	//resize window to fit layout
-	SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
+	//SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 }
 
 void app_update(){
-
+	flow::update();
 }
 
 void app_destroy(){
 	//unload resources
 	res::free();
+
+	flow::free();
 }

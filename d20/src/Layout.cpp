@@ -1,12 +1,18 @@
 #include "Layout.h"
 #include "TextButton.h"
-
+#include "MainMenu.h"
+#include <iostream>
 Layout::Layout() {
+	setName("Layout");
+	_view = new Actor();
+	_view->setName("Layout::_view");
+	_view->attachTo(_holder);
 
+	flow::TransitionMove::assign(this);
 }
 
 Layout::~Layout() {
-
+	//finish();
 }
 
 //Calculates the minimum size an Actor will have to be
@@ -15,7 +21,7 @@ Vector2 Layout::calculateSize() {
 	int maxRequiredHeight = 0;
 	int maxRequiredWidth = 0;
 	
-	for (spActor actor = getFirstChild(); actor != NULL; actor = actor->getNextSibling()) {
+	for (spActor actor = _view->getFirstChild(); actor != NULL; actor = actor->getNextSibling()) {
 		int heightreq = actor->getPosition().y + actor->getHeight();
 		if (heightreq > maxRequiredHeight) {
 			maxRequiredHeight = heightreq;
@@ -30,10 +36,18 @@ Vector2 Layout::calculateSize() {
 	return Vector2(maxRequiredWidth, maxRequiredHeight);
 }
 
-void Layout::setBackButton(spLayout layout) {
-	backLayout = layout;
+void Layout::fitToWindow(bool useMinSize) {
+	fitToWindow(this, useMinSize);
+}
 
-	//create back button
+void Layout::fitToWindow(Layout* layout, bool useMinSize) {
+	if (useMinSize)
+		layout->setSize(layout->calculateSize());
+	getStage()->setSize(layout->getSize());
+	SDL_SetWindowSize(getStage()->getAssociatedWindow(), layout->getWidth(), layout->getHeight());
+}
+
+void Layout::addBackButton() {
 	spTextButton back = new TextButton("back");
 	back->setPosition(5, 5);
 	back->addEventListener(TouchEvent::CLICK, CLOSURE(this, &Layout::onBack));
@@ -41,10 +55,31 @@ void Layout::setBackButton(spLayout layout) {
 }
 
 void Layout::onBack(Event* e) {
-	getStage()->removeChild(this);
-	getStage()->addChild(backLayout);
-	getStage()->setSize(backLayout->getSize());
+	finish();
+}
 
-	//resize window to fit layout
-	SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
+void Layout::addChild(spActor actor) {
+	_view->addChild(actor);
+}
+
+Vector2 Layout::getSize() const {
+	return _view->getSize();
+}
+
+float Layout::getWidth() const {
+	return getSize().x;
+}
+
+float Layout::getHeight() const {
+	return getSize().y;
+}
+
+void Layout::setSize(float width, float height) {
+	setSize(Vector2(width, height));
+}
+
+void Layout::setSize(Vector2 size) {
+	std::cout << "SetSize: " << getName() << " to " << size.x  << "x" << size.y << std::endl;
+	_view->setSize(size);
+	_holder->setSize(size);
 }

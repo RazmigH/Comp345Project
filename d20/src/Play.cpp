@@ -7,8 +7,8 @@
 
 
 Play::Play(){
-	spMainMenu mainMenu = new MainMenu();
-	setBackButton(mainMenu);
+	setName("Play Layout");
+	addBackButton();
 
 	spCharacterDisplay sc = new CharacterDisplay();
 	sc->setSize(96, 320);
@@ -37,7 +37,7 @@ Play::Play(){
 	addChild(map);
 	addChild(iDisplay);
 	//fit children
-	//setSize(this->calculateSize());
+	fitToWindow();
 }
 Play::~Play() {
 
