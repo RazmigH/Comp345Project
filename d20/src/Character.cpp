@@ -3,6 +3,7 @@
 //!
 
 #include "Character.h"
+#include "ImageResource.h"
 
 Character::Character(
 	Class characterClass, 
@@ -60,6 +61,9 @@ Character::Character(
 	maxHP = 10 + getModifier(CON); //! first lvl hp always 10 + constitution modifier
 	currentHP = maxHP;
 
+	setName(charName);
+	setDown();
+	setScale(0.5, 0.5);
 }
 
 Character::~Character() {
@@ -186,6 +190,7 @@ Character::Class Character::getCharacterClass() const {
 void Character::setCharacterClass(Class c)
 {
 	this->charClass = c;
+	setDown();
 }
 
 int Character::getArmor() const {
@@ -360,3 +365,60 @@ int Character::inflictDamage(Character& c) {
 	
 	return dmg;
 }
+
+void Character::setUp() {
+	switch (charClass) {
+	case FIGHTER:
+		setResAnim(res::resources.getResAnim("character"), 0, 4);
+		break;
+	case ARCHER:
+		setResAnim(res::resources.getResAnim("character"), 0, 16);
+		break;
+	default:
+		setResAnim(res::resources.getResAnim("character"), 0, 0);
+		break;
+	}
+}
+
+void Character::setDown() {
+	switch (getCharacterClass()) {
+	case FIGHTER:
+		setResAnim(res::resources.getResAnim("character"), 0, 6);
+		break;
+	case ARCHER:
+		setResAnim(res::resources.getResAnim("character"), 0, 18);
+		break;
+	default:
+		setResAnim(res::resources.getResAnim("character"), 0, 2);
+		break;
+	}
+}
+
+void Character::setLeft() {
+	switch (charClass) {
+	case FIGHTER:
+		setResAnim(res::resources.getResAnim("character"), 0, 5);
+		break;
+	case ARCHER:
+		setResAnim(res::resources.getResAnim("character"), 0, 17);
+		break;
+	default:
+		setResAnim(res::resources.getResAnim("character"), 0, 1);
+		break;
+	}
+}
+
+void Character::setRight() {
+	switch (charClass) {
+	case FIGHTER:
+		setResAnim(res::resources.getResAnim("character"), 0, 7);
+		break;
+	case ARCHER:
+		setResAnim(res::resources.getResAnim("character"), 0, 19);
+		break;
+	default:
+		setResAnim(res::resources.getResAnim("character"), 0, 3);
+		break;
+	}
+}
+

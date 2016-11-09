@@ -11,21 +11,32 @@ CharacterDao::~CharacterDao() {
 	delete(xml);
 }
 
-vector<Character*> CharacterDao::getCharacters() {
-	vector<Character*> chars;
+vector<spCharacter> CharacterDao::getCharacters() {
+	vector<spCharacter> chars;
 	vector<XMLElement*> elements = xml->getElements();
 	for(std::vector<XMLElement*>::iterator it = elements.begin(); it != elements.end(); ++it) {
-		chars.push_back(XmlToCharacter(*it));
+		spCharacter temp = XmlToCharacter(*it);
+		chars.push_back(temp);
 	}
 	return chars;
 }
 
-int CharacterDao::addCharacter(Character* c) {
+spCharacter CharacterDao::getCharacter(string id) {
+		XMLElement* ele = xml->getElement(id);
+		if (ele != nullptr) {
+			cout << "ele was found" << endl;
+			return XmlToCharacter(ele);
+		}
+		cout << "ele was NOT found" << endl;
+		return nullptr;
+}
+
+int CharacterDao::addCharacter(spCharacter c) {
 	return xml->addElement(CharacterToXml(c));
 }
 
-Character* CharacterDao::XmlToCharacter(XMLElement* element) {
-	Character* c = new Character();
+spCharacter CharacterDao::XmlToCharacter(XMLElement* element) {
+	spCharacter c = new Character();
 
 	const char* idstr = element->Attribute("id");
 	if (idstr != nullptr) {
@@ -112,7 +123,7 @@ Character* CharacterDao::XmlToCharacter(XMLElement* element) {
 	return c;
 }
 
-XMLElement* CharacterDao::CharacterToXml(Character* c) {
+XMLElement* CharacterDao::CharacterToXml(spCharacter c) {
 	XMLElement* root = xml->createElement("Character");
 
 	if (c->getId() != -1) {

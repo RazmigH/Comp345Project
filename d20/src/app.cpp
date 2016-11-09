@@ -34,10 +34,10 @@ void app_init(){
 	dao->addCharacter(&npc2);
 	*/
 
-	vector<Character*> ccs = dao->getCharacters();
+	vector<spCharacter> ccs = dao->getCharacters();
 	std::cout << "CHARACTER COUNT: " << ccs.size() << std::endl;
-	for (std::vector<Character*>::iterator it = ccs.begin(); it != ccs.end(); ++it) {
-		Character* c = *it;
+	for (std::vector<spCharacter>::iterator it = ccs.begin(); it != ccs.end(); ++it) {
+		spCharacter c = *it;
 		c->printStats();
 	}
 

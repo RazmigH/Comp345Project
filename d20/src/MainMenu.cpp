@@ -1,6 +1,7 @@
 #include <iostream>
 #include "MainMenu.h"
 #include "MapPicker.h"
+#include "CharacterPicker.h"
 #include "Play.h"
 
 MainMenu::MainMenu() {
@@ -42,7 +43,7 @@ void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
 
-		show(new Play, [=](Event*) {
+		show(new CharacterPicker, [=](Event*) {
 			MainMenu* temp = new MainMenu;
 			Vector2 size = temp->getSize();
 			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);

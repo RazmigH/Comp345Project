@@ -2,6 +2,7 @@
 <resource>
   <set path="images" />
   <atlas>
+    <image file="transparent.png" />
     <image file="blank.png" />
     <image file="grass-border.png" />
     <image file="grass.png" />
@@ -24,6 +25,7 @@
     <image file="chests.png" rows="5" cols="3"/>
     <image file="button.png"/>
     <image file="cursor.png"/>
+    <image file="character.png" rows="21" cols="13"/>
   </atlas>
 
   <set path="fonts" />
