@@ -1,5 +1,5 @@
 <Maps next_id="2">
-    <Map id="1" cols="10" rows="5">
+    <Map id="1" cols="10" rows="5" name="Map12">
         <Chest col="0" row="0">
             <State>open</State>
         </Chest>

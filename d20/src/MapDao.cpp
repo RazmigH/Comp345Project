@@ -45,6 +45,10 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	if (id != nullptr)
 		map->setId(stoi(id));
 
+	const char* name = element->Attribute("name");
+	if (name != nullptr)
+		map->setName(name);
+
 	vector<XMLElement*> tileElements = xml->getChildren(element);
 	for (vector<XMLElement*>::iterator it = tileElements.begin(); it != tileElements.end(); ++it) {
 		XMLElement* tileElement = *it;
@@ -66,11 +70,11 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 XMLElement* MapDao::MapToXml(spMap map) {
 	XMLElement* root = xml->createElement("Map");
 	if (map->getId() != -1) {
-		cout << "Map id is" << map->getId() << endl;
 		root->SetAttribute("id", map->getId());
 	}
 	root->SetAttribute("cols", map->getCols());
 	root->SetAttribute("rows", map->getRows());
+	root->SetAttribute("name", map->getName().c_str());
 
 	for (int r = 0; r < map->getRows(); r++) {
 		for (int c = 0; c < map->getCols(); c++) {

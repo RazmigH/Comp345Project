@@ -153,6 +153,9 @@
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Transition.cpp">
       <Filter>External library\flow</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\InputDialog.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -250,6 +253,9 @@
     </ClInclude>
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Transition.h">
       <Filter>External library\flow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InputDialog.h">
+      <Filter>Header Files\Helpful Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

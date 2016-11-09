@@ -123,6 +123,7 @@
     <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
+    <ClCompile Include="..\src\InputDialog.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
     <ClCompile Include="..\src\ItemContainer.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
     <ClInclude Include="..\src\Enhancement.h" />
+    <ClInclude Include="..\src\InputDialog.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />
     <ClInclude Include="..\src\ItemContainer.h" />

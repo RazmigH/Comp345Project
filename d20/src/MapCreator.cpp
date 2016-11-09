@@ -6,6 +6,7 @@
 #include "ImageResource.h" 
 #include "MapDao.h" 
 #include "MainMenu.h" 
+#include "InputDialog.h"
 
 MapCreator::MapCreator(){
 	setName("Map Creator");
@@ -221,9 +222,12 @@ void MapCreator::resetPts(Event* e) {
 }
 
 void MapCreator::saveMap(Event* e) {
-	MapDao* dao = new MapDao();
-	dao->addMap(map);
-	delete(dao);
-
-	cout << "Saved map" << endl;
+	spInputDialog input = new InputDialog("Enter Map Name", map->getName());
+	flow::show(input, [=](Event*) {
+		MapDao* dao = new MapDao();
+		map->setName(input->getText());
+		dao->addMap(map);
+		delete(dao);
+		cout << "Saved map" << endl;
+	});
 }

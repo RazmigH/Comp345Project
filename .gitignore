@@ -1,4 +1,5 @@
 /lib/*
+
 !/lib/oxygine-flow
 /lib/oxygine-flow/*
 !/lib/oxygine-flow/src
@@ -6,5 +7,13 @@
 !/lib/oxygine-flow/src/flow
 /lib/oxygine-flow/src/flow/*
 !/lib/oxygine-flow/src/flow/Transition.cpp
+
+!/lib/oxygine-framework
+/lib/oxygine-framework/*
+!/lib/oxygine-framework/oxygine
+/lib/oxygine-framework/oxygine/*
+!/lib/oxygine-framework/oxygine/src
+/lib/oxygine-framework/oxygine/src/*
+!/lib/oxygine-framework/oxygine/src/InputText.cpp
 
 /d20/Proj.win32/Debug*
