@@ -5,8 +5,12 @@
 #include "Chest.h"
 #include "ImageResource.h" 
 #include "MapDao.h" 
+#include "MainMenu.h" 
 
 MapCreator::MapCreator(){
+	setName("Map Creator");
+	addBackButton();
+
 	this->currentAction = CreatorAction::SELECT;
 
 	//tile selections
@@ -136,7 +140,7 @@ MapCreator::MapCreator(){
 	addChild(topPane);
 
 	//fit children
-	setSize(this->calculateSize());
+	fitToWindow(this, true);
 }
 
 MapCreator::~MapCreator() {

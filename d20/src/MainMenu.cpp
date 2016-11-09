@@ -4,6 +4,8 @@
 #include "Play.h"
 
 MainMenu::MainMenu() {
+	setName("Main Menu");
+
 	//Amount of menu options
 	const int menu_size = 3;
 
@@ -32,30 +34,32 @@ MainMenu::MainMenu() {
 		menuItems.push_back(textfield);
 		addChild(textfield);
 	}
+
+	fitToWindow(this);
 }
 
 void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
 
-		getStage()->removeChild(this);
-		spPlay mc = new Play();
-		getStage()->addChild(mc);
-		getStage()->setSize(mc->getSize());
-
+		show(new Play, [=](Event*) {
+			MainMenu* temp = new MainMenu;
+			Vector2 size = temp->getSize();
+			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);
+			delete(temp);
+		});
 		//resize window to fit layout
-		SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
+		//SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 	}
 	else if (e->target->getName() == "Create a map") {
 		cout << "Create" << endl;
 
-		getStage()->removeChild(this);
-		spMapCreator mc = new MapCreator();
-		getStage()->addChild(mc);
-		getStage()->setSize(mc->getSize());
-
-		//resize window to fit layout
-		SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
+		show(new MapCreator, [=](Event*) {
+			MainMenu* temp = new MainMenu;
+			Vector2 size = temp->getSize();
+			SDL_SetWindowSize(getStage()->getAssociatedWindow(), size.x, size.y);
+			delete(temp);
+		});
 	}
 	else if (e->target->getName() == "add wtv") {
 		cout << "add" << endl;

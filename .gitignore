@@ -1,2 +1,10 @@
 /lib/*
+!/lib/oxygine-flow
+/lib/oxygine-flow/*
+!/lib/oxygine-flow/src
+/lib/oxygine-flow/src/*
+!/lib/oxygine-flow/src/flow
+/lib/oxygine-flow/src/flow/*
+!/lib/oxygine-flow/src/flow/Transition.cpp
+
 /d20/Proj.win32/Debug*

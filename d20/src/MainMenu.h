@@ -13,4 +13,3 @@ private:
 	spTextField createTextField(string);
 	void onClick(Event*);
 };
-typedef oxygine::intrusive_ptr<MainMenu>spMainMenu;

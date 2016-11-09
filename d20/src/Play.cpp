@@ -3,8 +3,13 @@
 #include "Map.h"
 #include "CharacterDisplay.h"
 #include "InventoryDisplay.h"
+#include "MainMenu.h" 
+
 
 Play::Play(){
+	setName("Play Layout");
+	addBackButton();
+
 	spCharacterDisplay sc = new CharacterDisplay();
 	sc->setSize(96, 320);
 	sc->setPosition(0, 96);
@@ -32,7 +37,7 @@ Play::Play(){
 	addChild(map);
 	addChild(iDisplay);
 	//fit children
-	//setSize(this->calculateSize());
+	fitToWindow();
 }
 Play::~Play() {
 
