@@ -25,6 +25,8 @@ protected:
 	void addBackButton();
 	void addChild(spActor);
 	void removeChild(spActor);
+	void clear();
+	static void clear(spActor);
 private:
 	void onBack(Event* e);
 	spActor _view;

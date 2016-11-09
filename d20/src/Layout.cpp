@@ -47,6 +47,21 @@ void Layout::fitToWindow(Layout* layout, bool useMinSize) {
 	SDL_SetWindowSize(getStage()->getAssociatedWindow(), layout->getWidth(), layout->getHeight());
 }
 
+void Layout::clear() {
+	clear(_view);
+}
+
+void Layout::clear(spActor a) {
+	vector<spActor> actors;
+	for (spActor actor = a->getFirstChild(); actor != NULL; actor = actor->getNextSibling()) {
+		actors.push_back(actor);
+	}
+	for (vector<spActor>::iterator it = actors.begin(); it != actors.end(); ++it) {
+		spActor actor = *it;
+		a->removeChild(actor);
+	}
+}
+
 void Layout::addBackButton() {
 	spTextButton back = new TextButton("back");
 	back->setPosition(5, 5);
