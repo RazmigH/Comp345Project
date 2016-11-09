@@ -119,11 +119,9 @@
     <ClCompile Include="..\src\ChestEditPane.cpp" />
     <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
-    <ClCompile Include="..\src\Enhancement.cpp" />
+    <ClCompile Include="..\src\EquipableItem.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
-    <ClCompile Include="..\src\ItemContainer.cpp" />
-    <ClCompile Include="..\src\ItemCreation.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
     <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -135,6 +133,7 @@
     <ClCompile Include="..\src\MapCreator.cpp" />
     <ClCompile Include="..\src\Tile.cpp" />
     <ClCompile Include="..\src\tinyxml2.cpp" />
+    <ClCompile Include="..\src\UsableItem.cpp" />
     <ClCompile Include="..\src\Xml.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,11 +145,9 @@
     <ClInclude Include="..\src\ChestEditPane.h" />
     <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
-    <ClInclude Include="..\src\Enhancement.h" />
+    <ClInclude Include="..\src\EquipableItem.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />
-    <ClInclude Include="..\src\ItemContainer.h" />
-    <ClInclude Include="..\src\ItemCreation.h" />
     <ClInclude Include="..\src\Play.h" />
     <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Grid.h" />
@@ -161,6 +158,7 @@
     <ClInclude Include="..\src\MapCreator.h" />
     <ClInclude Include="..\src\Tile.h" />
     <ClInclude Include="..\src\tinyxml2.h" />
+    <ClInclude Include="..\src\UsableItem.h" />
     <ClInclude Include="..\src\Xml.h" />
   </ItemGroup>
   <ItemGroup>

@@ -189,7 +189,7 @@ void Character::setCharacterClass(Class c)
 }
 
 int Character::getArmor() const {
-	return 10 + getModifier(DEX);
+	return armor + getModifier(DEX);
 }
 
 int Character::getHP() const {
@@ -273,22 +273,47 @@ void Character::printStats() const {
 	cout << "Player: " << isPlayer() << endl;
 }
 
+int Character::getArmorVar() const {
+	return armor;
+}
 
+void Character::setArmorVar(int val) {
+	armor += val;
+}
+
+int Character::getAtkBonusVar() const {
+	return atkBonus;
+}
+
+void Character::setAtkBonusVar(int val) {
+	atkBonus += val;
+}
+
+int Character::getDmgBonusVar() const {
+	return dmgBonus;
+}
+
+void Character::setDmgBonusVar(int val) {
+	dmgBonus += val;
+}
+
+//! TODO: modify to take in account the weapon for the modifier
 int Character::getAtkBonus() const {
 	if (charClass == ARCHER) {
-		return die.roll20() + getModifier(DEX);
+		return die.roll20() + atkBonus + getModifier(DEX);
 	}
 	else {
-		return die.roll20() + getModifier(STR);
+		return die.roll20() + atkBonus + getModifier(STR);
 	}
 }
 
+//! TODO: modify to take in account the weapon for the modifier
 int Character::getDmgBonus() const {
 	if (charClass == ARCHER) {
-		return die.roll6() + getModifier(DEX);
+		return die.roll6() + dmgBonus + getModifier(DEX);
 	}
 	else {
-		return die.roll6() + getModifier(STR);
+		return die.roll6() + dmgBonus + getModifier(STR);
 	}
 }
 

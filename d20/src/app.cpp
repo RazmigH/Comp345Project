@@ -3,6 +3,8 @@
 #include "ImageResource.h"
 #include "MainMenu.h"
 #include "CharacterDao.h"
+#include "EquipableItem.h"
+#include "UsableItem.h"
 
 void app_preinit(){
 }
@@ -36,8 +38,13 @@ void app_init(){
 		Character* c = *it;
 		c->printStats();
 	}
+	
+	UsableItem potion40 = UsableItem(Item::Usable::POTION, "Health Potion 40 HP", Item::ItemStats::CHP, 40);
+	EquipableItem legendaryWeapon = EquipableItem(Item::Equipable::WEAPON, "Legendary Red Dragon Sword", Item::ItemStats::DMG, 5);
 
-		
+	potion40.printDetails();
+	legendaryWeapon.printDetails();
+	
 	cout << endl << "*************************************************" << endl;
 
 	//show main menu
