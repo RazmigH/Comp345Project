@@ -78,3 +78,6 @@ void CharacterPicker::onSelectCharacter(Event* e) {
 	}
 }
 
+spCharacter CharacterPicker::getCharacter() {
+	return character;
+}

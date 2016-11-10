@@ -2,7 +2,7 @@
 #include "MainMenu.h"
 #include "MapPicker.h"
 #include "MapCreator.h"
-#include "CharacterPicker.h"
+#include "GamePicker.h"
 #include "Play.h"
 
 MainMenu::MainMenu() {
@@ -52,7 +52,7 @@ void MainMenu::init() {
 void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
-		spCharacterPicker picker = new CharacterPicker();
+		spGamePicker picker = new GamePicker();
 		spPlay play = new Play();
 		picker->setNext(play);
 		show(picker, [=](Event*) {
@@ -67,6 +67,7 @@ void MainMenu::onClick(Event* e) {
 		spMapCreator creator = new MapCreator(mapPicker);
 		mapPicker->setNext(creator);
 		show(mapPicker, [=](Event*) {
+			init();
 		});
 	}
 	else if (e->target->getName() == "add wtv") {

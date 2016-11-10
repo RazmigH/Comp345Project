@@ -18,5 +18,4 @@ private:
 	spTextField highlight;
 	spTextButton okbtn;
 	void onSelect(Event*);
-	void load();
 };
