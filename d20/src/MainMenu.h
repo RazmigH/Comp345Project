@@ -10,8 +10,10 @@ public:
 	~MainMenu();
 
 	void init();
-private: 
+private:
+	const int menu_size = 3; //! Amount of menu options
 	vector<spTextField> menuItems;
 	spTextField createTextField(string);
 	void onClick(Event*);
+	spTextField title;
 };

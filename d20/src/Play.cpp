@@ -24,7 +24,6 @@ void Play::init() {
 	iDisplay->setSize(96, 320);
 	iDisplay->setPosition(736, 96);
 
-
 	this->map = map;
 
 	this->setSize(832, 480);

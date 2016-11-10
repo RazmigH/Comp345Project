@@ -6,14 +6,7 @@
 #include "Play.h"
 
 MainMenu::MainMenu() {
-	init();
-}
-
-void MainMenu::init() {
 	setName("Main Menu");
-
-	//Amount of menu options
-	const int menu_size = 3;
 
 	//Place wanted menu options here
 	//Don't forget to add respective click handler (onClick())
@@ -23,21 +16,33 @@ void MainMenu::init() {
 		"add wtv"
 	};
 
-	setSize(400, menu_size * 100);
-
 	//title text
-	spTextField title = createTextField("D20 Game");
+	title = createTextField("D20 Game");
 	title->setFontSize(40);
-	title->setPosition(getWidth() / 2, 50);
-	addChild(title);
 
 	//create menu option textfields
 	for (int i = 0; i < menu_size; i++) {
 		//create textfield
 		spTextField textfield = createTextField(menuTexts[i]);
-		textfield->setPosition(getWidth() / 2, title->getPosition().y + ((i + 1) * 50));
 		textfield->addClickListener(CLOSURE(this, &MainMenu::onClick));
 		menuItems.push_back(textfield);
+	}
+
+	getStage()->setSize(400, menu_size * 100);
+	init();
+}
+
+void MainMenu::init() {
+	this->clear();
+	setSize(getStage()->getSize());
+
+	title->setPosition(getWidth() / 2, 50);
+	addChild(title);
+
+	int i = 0;
+	for (vector<spTextField>::iterator it = menuItems.begin(); it != menuItems.end(); ++it) {
+		spTextField textfield = *it;
+		textfield->setPosition(getWidth() / 2, title->getPosition().y + (((i++) + 1) * 50));
 		addChild(textfield);
 	}
 
@@ -51,6 +56,7 @@ void MainMenu::onClick(Event* e) {
 		spPlay play = new Play(picker);
 		picker->setNext(play);
 		show(picker, [=](Event*) {
+			init();
 		});
 		//resize window to fit layout
 		//SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
