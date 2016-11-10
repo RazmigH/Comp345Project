@@ -10,7 +10,7 @@ public:
 	~Map();
 	Vector2 getEntryPoint();
 	Vector2 getExitPoint();
-	void move(spActor, int col, int row, timeMS = 200);
+	void move(spActor, int col, int row, timeMS = 300);
 	void render(const RenderState &rs);
 
 	int getId();

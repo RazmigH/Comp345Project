@@ -21,10 +21,10 @@ public:
 	Play(spGamePicker);
 
 	void init();
+	void update();
 private:
 	spGamePicker gamePicker;
 	spMap map;
 	spCharacter character;
-
 	spCharacterDisplay sc;
 };
