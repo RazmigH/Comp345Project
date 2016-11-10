@@ -5,7 +5,6 @@ Item::Item( string n, ItemStats s, int b) :
 	bonus(b)
 {
 	setName(n);
-	id = -1;
 }
 
 void Item::printDetails() {
@@ -53,12 +52,3 @@ void Item::setBonus(int val) {
 		bonus += val;
 	}
 }
-
-int Item::getId() {
-	return id;
-}
-
-void Item::setId(int id) {
-	this->id = id;
-}
-
