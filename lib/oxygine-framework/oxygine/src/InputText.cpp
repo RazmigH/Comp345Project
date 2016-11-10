@@ -55,7 +55,7 @@ namespace oxygine
         SDL_StartTextInput();
 #endif
         //log::messageln("InputText::start  %x", this);
-        _txt = "";
+        _txt = ta->getText();
         updateText();
     }
 

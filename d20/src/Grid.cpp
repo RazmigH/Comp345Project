@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Grid.h"
 
 Grid::Grid(int cols, int rows) : rows(rows), cols(cols) {

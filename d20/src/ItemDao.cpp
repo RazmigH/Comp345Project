@@ -1,5 +1,4 @@
 #include "itemDao.h"
-#include <iostream>
 using namespace std;
 
 ItemDao::ItemDao() {

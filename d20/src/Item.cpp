@@ -9,12 +9,12 @@ Item::Item(string n, ItemStats s, int b) :
 }
 
 void Item::printDetails() {
-	cout << "******Item Info******" << endl;
-	cout << "Name: " << getName() << endl;
-	cout << "Category: " << getCategoryStr() << endl;
-	cout << "Type: " << getTypeStr() << endl;
-	cout << "Stat: " << getStatStr() << endl;
-	cout << "Bonus Value: " << getBonus() << endl;
+	log::messageln("******Item Info******");
+	log::messageln("Name: %s", getName());
+	log::messageln("Category: %s", getCategoryStr());
+	log::messageln("Type: %s", getTypeStr());
+	log::messageln("Stat: %s", getStatStr());
+	log::messageln("Bonus Value: %d", getBonus());
 }
 
 string Item::getStatStr() const {

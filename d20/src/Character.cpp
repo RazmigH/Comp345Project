@@ -4,6 +4,7 @@
 
 #include "Character.h"
 #include "GameResource.h"
+#include <iostream>
 
 Character::Character(
 	Class characterClass, 
@@ -32,7 +33,7 @@ Character::Character(
 
 	// the playr has to be hostile or the monsters won't be able to deal any damage
 	if (isPlayer() && !isHostile()) {
-		cout << "The player must be hostile! Changing to hostile..." << endl;
+		log::messageln("The player must be hostile! Changing to hostile...");
 		hostile = true;
 	}
 
@@ -86,11 +87,11 @@ vector<int> Character::rollAbilityScores() const {
 		scores.push_back(stat);
 	}
 	
-	cout << "Character stats roll result: ";
+	log::messageln("Character stats roll result: ");
 	for (int i = 0; i < scores.size(); ++i) {
-		cout << scores.at(i) << " ";
+		log::messageln("%d ",scores.at(i));
 	}
-	cout << endl;
+	log::messageln("");
 
 	return scores;
 }
@@ -115,7 +116,7 @@ int Character::calcModifier(int num) const {
 
 int Character::takeDmg(int dmg) {
 	if (!isHostile()) {
-		cout << "Cannot attack a non-hostile enemy!";
+		log::messageln("Cannot attack a non-hostile enemy!");
 		return currentHP;
 	}
 
@@ -128,7 +129,7 @@ int Character::takeDmg(int dmg) {
 			return -2;
 		}
 		else {
-			cout << getName() + " was killed!";
+			log::messageln("%s was killed!",getName());
 			// drops the loot and has to disapear from the map
 			return -1;
 		}
@@ -219,14 +220,14 @@ bool Character::isDead() const {
 
 //! TODO: prob will not be used for the project
 int Character::statChooser() const {
-	cout << "Please choose the stat: " << endl;
-	cout << "Strength -> 1" << endl;
-	cout << "Condition -> 2" << endl;
-	cout << "Dexterity -> 3" << endl;
-	cout << "Intelligence -> 4" << endl;
-	cout << "Wisdom -> 5" << endl;
-	cout << "Charisma -> 6" << endl;
-	cout << "Input the number corresponding to your choice: ";
+	log::messageln("Please choose the stat: ");
+	log::messageln("Strength -> 1");
+	log::messageln("Condition -> 2");
+	log::messageln("Dexterity -> 3");
+	log::messageln("Intelligence -> 4");
+	log::messageln("Wisdom -> 5");
+	log::messageln("Charisma -> 6");
+	log::messageln("Input the number corresponding to your choice: ");
 	int choice = 1;
 	cin >> choice;
 	switch (choice) {
@@ -236,7 +237,7 @@ int Character::statChooser() const {
 	case 4: return INT; break;
 	case 5: return WIS; break;
 	case 6: return CHA; break;
-	default: cout << "Invalid choice! Try again..." << endl;
+	default: log::messageln("Invalid choice! Try again...");
 	return statChooser();
 	}
 }
@@ -258,24 +259,24 @@ string Character::getNameCharacterClass() const {
 }
 
 void Character::printStats() const {
-	cout << "****Character Info****" << endl;
-	cout << "Id: " << getId() << endl;
-	cout << "Name: " << getName() << endl;
-	cout << "Level: " << getLevel() << endl;
-	cout << "Class: " << getNameCharacterClass() << endl;
-	cout << "Max HP: " << getMaxHP() << endl;
-	cout << "Current HP: " << getHP() << endl;
-	cout << "Strength: " << abilityScores[STR] << endl;
-	cout << "Constitution: " << abilityScores[CON] << endl;
-	cout << "Dexterity: " << abilityScores[DEX] << endl;
-	cout << "Inteligence: " << abilityScores[INT] << endl;
-	cout << "Wisdom: " << abilityScores[WIS] << endl;
-	cout << "Charisma: " << abilityScores[CHA] << endl;
-	cout << "Equipment ID: " << getEquipID() << endl;
-	cout << "Inventory ID: " << getInvID() << endl;
-	cout << "Talk: " << getTalk() << endl;
-	cout << "Hostile: " << isHostile() << endl;
-	cout << "Player: " << isPlayer() << endl;
+	log::messageln("****Character Info****");
+	log::messageln("Id: ");
+	log::messageln("Name: %s", getName());
+	log::messageln("Level: %d", getLevel());
+	log::messageln("Class: %s", getNameCharacterClass());
+	log::messageln("Max HP: %d", getMaxHP());
+	log::messageln("Current HP: %d", getHP());
+	log::messageln("Strength: %d", abilityScores[STR]);
+	log::messageln("Constitution: %d", abilityScores[CON]);
+	log::messageln("Dexterity: %d", abilityScores[DEX]);
+	log::messageln("Inteligence: %d", abilityScores[INT]);
+	log::messageln("Wisdom: %d", abilityScores[WIS]);
+	log::messageln("Charisma: %d", abilityScores[CHA]);
+	log::messageln("Equipment ID: %d", getEquipID());
+	log::messageln("Inventory ID: %d", getInvID());
+	log::messageln("Talk: %s", getTalk());
+	log::messageln("Hostile: %d", isHostile());
+	log::messageln("Player: %d", isPlayer());
 }
 
 int Character::getArmorVar() const {
@@ -326,7 +327,7 @@ int Character::getDmgBonus() const {
 //! every 4 levels (alternates between strength-condition)
 void Character::levelUp() {
 	++lvl;
-	cout << "Level up! Level " << lvl << " reached!" << endl;
+	log::messageln("Level up! Level %d reached!", lvl);
 	maxHP += die.roll10() + getModifier(CON);
 	currentHP = maxHP;
 

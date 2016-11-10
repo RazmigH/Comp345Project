@@ -15,9 +15,7 @@ void CharacterPicker::init() {
 
 	okbtn = new TextButton("Ok");
 	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		cout << "INININNININN " << (character ? 1 : 0) << (getNext() ? 1 : 0) << endl;
 		if (character && getNext()) {
-			cout << "ABABABABABABABB" << endl;
 			getNext()->init();
 			flow::show(getNext(), [=](Event*) {
 				load();

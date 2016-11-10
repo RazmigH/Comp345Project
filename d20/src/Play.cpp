@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Play.h"
 
 Play::Play(spGamePicker picker){
@@ -46,7 +45,6 @@ Play::~Play() {
 }
 
 void Play::update() {
-	cout << "ayo wwattup" << endl;
 	if (character && map) {
 		Vector2 charLoc = map->getTileLocation(character);
 		const Uint8* data = SDL_GetKeyboardState(NULL);

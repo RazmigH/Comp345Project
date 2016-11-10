@@ -1,7 +1,6 @@
 #include "ItemDB.h"
 #include "EquipableItem.h"
 #include <vector>
-#include <iostream>
 #include <fstream>
 
 
@@ -30,20 +29,19 @@ vector<EquipableItem> ItemDB::getDatabase() {
 void ItemDB::storeItem(EquipableItem anitem)
 {
 	DataBase.push_back(anitem);
-	cout << anitem.getName() << " has been added!" << endl;
+	log::messageln("%s has been added!", anitem.getName());
 }
 
 //! method to return equipable items in DB
 void ItemDB::listItem()
 {
-	cout << "All of the following Items are stored in the item database" << endl;
+	log::messageln("All of the following Items are stored in the item database");
 	for (int i = 0; i < DataBase.size(); i++)
 	{
 		DataBase[i].printDetails();
 	}
 
-	cout << "\n End of Database" << endl;
-
+	log::messageln("\n End of Database");
 }
 
 //void ItemDB::saveItems() {

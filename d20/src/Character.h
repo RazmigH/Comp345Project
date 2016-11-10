@@ -6,7 +6,6 @@
 #include <vector>
 #include <algorithm>
 #include <time.h>
-#include <iostream>
 #include <string>
 #include "Die.h"
 #include "Tile.h"

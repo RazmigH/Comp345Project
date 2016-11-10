@@ -5,6 +5,7 @@ InputDialog::InputDialog(string text, string default) {
 	setName("Input Dialog");
 	_dialog = true;
 	setSize(getStage()->getSize());
+	//addBackButton();
 
 	spTextField title = new TextField();
 	title->setText(text);

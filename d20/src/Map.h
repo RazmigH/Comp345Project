@@ -14,8 +14,19 @@ public:
 
 	int getId();
 	void setId(int);
+
+	vector<string> findPath(spTile, spTile);
 private:
 	spColorRectSprite entryHighlight;
 	spColorRectSprite exitHighlight;
 	int id;
+
+	struct Location {
+		int distanceFromTop;
+		int distanceFromLeft;
+		vector<string> path;
+		string status;
+	};
+	Location exploreInDirection(Location, string, spTile goalTile);
+	vector<Vector2> visited;
 };

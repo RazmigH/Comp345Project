@@ -1,7 +1,6 @@
 #include "DefaultEditPane.h"
 #include "GameResource.h"
 #include "TextButton.h"
-#include <iostream>
 
 DefaultEditPane::DefaultEditPane(spTile t) {
 	this->tile = t;
@@ -51,15 +50,9 @@ DefaultEditPane::~DefaultEditPane() {
 
 
 void DefaultEditPane::setStartPoint(Event* e) {
-	std::cout << "Set tile " << tile->getName() << " isEntry to " << !tile->isEntryTile() << std::endl;
 	tile->isEntryTile(!tile->isEntryTile());
-	//spActor mapActor = this->tile->getParent();
-	//spMap map = dynamic_cast<Map*>(mapActor);
 }
 
 void DefaultEditPane::setEndPoint(Event* e) {
-	std::cout << "Set tile " << tile->getName() << " isFinsh to " << !tile->isFinishTile() << std::endl;
 	tile->isFinishTile(!tile->isFinishTile());
-	//spActor mapActor = this->tile->getParent();
-	//spMap map = dynamic_cast<Map*>(mapActor);
 }

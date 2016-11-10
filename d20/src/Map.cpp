@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Map.h"
+#include "queue"
 
 Map::Map(int cols, int rows) : Grid(cols, rows) {
 	entryHighlight = new ColorRectSprite();
@@ -49,15 +49,15 @@ Vector2 Map::getExitPoint() {
 void Map::move(spActor actor, int col, int row, timeMS duration) {
 	//outer bounds check, dont move if attempting to move out of map
 	if (row >= rows || row < 0 || col >= cols || col < 0) {
-		std::cout << "Cant move '" << actor->getObjectID() << "' to " << col << "x" << row << " : Out of bounds" << std::endl;
+		log::messageln("Cant move '%d' to %dx%d : Out of bounds", actor->getObjectID(), col, row);
 	}
 	else {
 		//new tile we are moving to exists
 		spTile tile = tiles[row][col];
-
+		tile->getObjectID();
 		//dont move if tile is solid
 		if (tile->isSolid()) {
-			std::cout << "Cant move '" << actor->getObjectID() << "' to " << col << "x" << row << " : Tile is Solid" << std::endl;
+			log::messageln("Cant move '%d' to %dx%d : Tile is Solid", actor->getObjectID(), col, row);
 		}
 		else {
 			//actor->setPosition(tile->getPosition());
@@ -66,7 +66,7 @@ void Map::move(spActor actor, int col, int row, timeMS duration) {
 
 			//smooth transition to new tile
 			if (actor->getFirstTween() == NULL) {
-				std::cout << "Moving '" << actor->getObjectID() << "' to " << col << "x" << row << std::endl;
+				log::messageln("Moving %d to %dx%d", actor->getObjectID(), col, row);
 
 				actor->addTween(Sprite::TweenPosition(tile->getPosition()), duration);
 			}
@@ -89,4 +89,118 @@ int Map::getId() {
 
 void Map::setId(int id) {
 	this->id = id;
+}
+
+vector<string> Map::findPath(spTile start, spTile end) {
+	Vector2 startPoint = getTileLocation(start);
+	Vector2 endPoint = getTileLocation(end);
+
+	queue<Location> q;
+	Location location;
+	location.distanceFromLeft = startPoint.x;
+	location.distanceFromTop = startPoint.y;
+	location.status = "Start";
+	q.push(location);
+
+	while (q.size() > 0) {
+		Location currentLocation = q.front();
+		q.pop();
+
+		//string sides[4] = {"North", "East", "South", "West"};
+		//for (int i = 0; i < 4; i++) {
+		//string side = sides[i];
+
+		Location newLocation = exploreInDirection(currentLocation, "North", end);
+		if (newLocation.status == "Goal") {
+			return newLocation.path;
+		}
+		else if (newLocation.status == "Valid") {
+			q.push(newLocation);
+		}
+
+		newLocation = exploreInDirection(currentLocation, "East", end);
+		if (newLocation.status == "Goal") {
+			return newLocation.path;
+		}
+		else if (newLocation.status == "Valid") {
+			q.push(newLocation);
+		}
+
+		newLocation = exploreInDirection(currentLocation, "South", end);
+		if (newLocation.status == "Goal") {
+			return newLocation.path;
+		}
+		else if (newLocation.status == "Valid") {
+			q.push(newLocation);
+		}
+
+		newLocation = exploreInDirection(currentLocation, "West", end);
+		if (newLocation.status == "Goal") {
+			return newLocation.path;
+		}
+		else if (newLocation.status == "Valid") {
+			q.push(newLocation);
+		}
+	}
+	//}
+
+	vector<string> empty;
+	return empty;
+}
+
+Map::Location Map::exploreInDirection(Location currentLocation, string direction, spTile goalTile) {
+	//check here if u face problems, deep copy dis shjit
+	vector<string> newPath = currentLocation.path;
+	newPath.push_back(direction);
+
+	int dft = currentLocation.distanceFromTop;
+	int dfl = currentLocation.distanceFromLeft;
+
+	if (direction == "North") {
+		dft -= 1;
+	}
+	else if (direction == "East") {
+		dfl += 1;
+	}
+	else if (direction == "South") {
+		dft += 1;
+	}
+	else if (direction == "West") {
+		dfl -= 1;
+	}
+
+	Location newLocation;
+	newLocation.distanceFromLeft = dfl;
+	newLocation.distanceFromTop = dft;
+	newLocation.path = newPath;
+	newLocation.status = "Unknown";
+
+	bool v = false;
+	for (vector<Vector2>::iterator it = visited.begin(); it != visited.end(); ++it) {
+		Vector2 visitedPlace = *it;
+		if (newLocation.distanceFromLeft == visitedPlace.x && newLocation.distanceFromTop == visitedPlace.y) {
+			v = true;
+			break;
+		}
+	}
+
+
+	if (newLocation.distanceFromLeft < 0 || newLocation.distanceFromLeft >= getCols() ||
+		newLocation.distanceFromTop < 0 || newLocation.distanceFromTop >= getRows()) {
+		newLocation.status = "Invalid";
+	}
+	else {
+		spTile t = getTile(newLocation.distanceFromLeft, newLocation.distanceFromTop);
+		if (newLocation.distanceFromLeft == getTileLocation(goalTile).x && newLocation.distanceFromTop == getTileLocation(goalTile).y) {
+			newLocation.status = "Goal";
+		}
+		else if ((t != NULL && t->isSolid()) || v) {
+			newLocation.status = "Blocked";
+		}
+		else {
+			newLocation.status = "Valid";
+			visited.push_back(Vector2(newLocation.distanceFromLeft, newLocation.distanceFromTop));
+		}
+	}
+	return newLocation;
 }

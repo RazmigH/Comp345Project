@@ -1,5 +1,4 @@
 #include "CharacterDao.h"
-#include <iostream>
 using namespace std;
 
 CharacterDao::CharacterDao(){
@@ -24,10 +23,8 @@ vector<spCharacter> CharacterDao::getCharacters() {
 spCharacter CharacterDao::getCharacter(string id) {
 		XMLElement* ele = xml->getElement(id);
 		if (ele != nullptr) {
-			cout << "ele was found" << endl;
 			return XmlToCharacter(ele);
 		}
-		cout << "ele was NOT found" << endl;
 		return nullptr;
 }
 

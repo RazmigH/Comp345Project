@@ -1,4 +1,3 @@
-#include <iostream>
 #include "MapCreator.h"
 #include "Map.h"
 #include "TextButton.h"
@@ -150,13 +149,13 @@ MapCreator::~MapCreator() {
 void MapCreator::onSelectTileOption(Event* e) {
 	this->currentAction = CreatorAction::TILE_EDIT;
 	selected = selections->getTile(e);
-	cout << "Selected " << selected->getName() << endl;
+	log::messageln("Selected %s", selected->getName());
 }
 
 //event handler for when the select tool is selected
 void MapCreator::onSelectToolClicked(Event* e) {
 	this->currentAction = CreatorAction::SELECT;
-	cout << "Select Tool selected" << selected->getName() << endl;
+	log::messageln("Selected Tool selected %s", selected->getName());
 }
 
 //Event handler for when a tile on the map is clicked
@@ -196,7 +195,6 @@ void MapCreator::onMoveOnMap(Event* e) {
 }
 
 void MapCreator::fill(Event* e) {
-	cout << "fill" << endl;
 	map->setTiles(selected);
 }
 
@@ -208,16 +206,27 @@ void MapCreator::resetPts(Event* e) {
 			tile->isFinishTile(false);
 		}
 	}
-	cout << "Entry and Exit points were reset to default." << endl;
 }
 
 void MapCreator::saveMap(Event* e) {
+	//temp pathfind test
+	log::messageln("Start looking");
+	vector<string> directions = map->findPath(map->getTile(map->getEntryPoint()), map->getTile(map->getExitPoint()));
+	if (!directions.empty())
+		for (vector<string>::iterator it = directions.begin(); it != directions.end(); ++it) {
+			string s = *it;
+			log::message("%s, ", s.c_str());
+		}
+	log::messageln("done looking");
+
+
+	//saveMap
 	spInputDialog input = new InputDialog("Enter Map Name", map->getName());
 	flow::show(input, [=](Event*) {
 		MapDao* dao = new MapDao();
 		map->setName(input->getText());
 		dao->addMap(map);
 		delete(dao);
-		cout << "Saved map" << endl;
+		log::messageln("saved map");
 	});
 }

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Tile.h"
 #include "GameResource.h"
 #include "DefaultEditPane.h"
