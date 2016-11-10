@@ -7,6 +7,7 @@
 #include "CharacterDisplay.h"
 #include "CharacterPicker.h"
 #include "InventoryDisplay.h"
+#include "GamePicker.h"
 #include "MainMenu.h" 
 
 using namespace std;
@@ -17,11 +18,13 @@ class Play : public Layout {
 public:
 	Play();
 	~Play();
-	Play(spCharacterPicker useCharacter);
+	Play(spGamePicker);
 
 	void init();
 private:
+	spGamePicker gamePicker;
 	spMap map;
 	spCharacter character;
 
+	spCharacterDisplay sc;
 };

@@ -4,10 +4,6 @@
 using namespace std;
 
 MapPicker::MapPicker(){
-	init();
-}
-
-void MapPicker::init() {
 	setName("Map Picker");
 
 	highlight = new TextField();
@@ -20,7 +16,7 @@ void MapPicker::init() {
 		if (map && getNext()) {
 			getNext()->init();
 			flow::show(getNext(), [=](Event*) {
-				load();
+				init();
 			});
 		}
 		else {
@@ -28,24 +24,16 @@ void MapPicker::init() {
 		}
 	});
 
-	load();
+	init();
 }
 
-MapPicker::~MapPicker() {
-	delete(dao);
-}
-
-void MapPicker::load() {
-	this->clear();
+void MapPicker::init() {
+	clear();
 
 	setSize(getStage()->getSize());
 	highlight->setPosition(-100, -100);
+
 	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
-
-	addChild(okbtn);
-	addBackButton();
-	addChild(highlight);
-
 	dao = new MapDao();
 	vector<spMap> maps = dao->getMaps();
 	int y = 5;
@@ -64,6 +52,14 @@ void MapPicker::load() {
 		addChild(tf);
 		y += 25;
 	}
+
+	addChild(okbtn);
+	addBackButton();
+	addChild(highlight);
+}
+
+MapPicker::~MapPicker() {
+	delete(dao);
 }
 
 void MapPicker::onSelect(Event* e) {

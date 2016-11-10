@@ -1,41 +1,37 @@
 #include <iostream>
 #include "Play.h"
 
-Play::Play(spCharacterPicker useCharacter){
-	character = useCharacter->getCharacter();
-	
-	init();
+Play::Play(spGamePicker picker){
+	setName("Play Layout");
+
+	gamePicker = picker;
 }
 
 void Play::init() {
-	setName("Play Layout");
-	addBackButton();
-	
-	spCharacterDisplay sc = new CharacterDisplay(character);
-	sc->setSize(96, 320);
-	sc->setPosition(0, 96);
+	clear();
 
-	spMap map = new Map();
-	map->setPosition(96, 96);
-	map->setTiles(new Tile("grass"));
+	character = gamePicker->getCharacter();
+	sc = new CharacterDisplay(character);
 
+	map = gamePicker->getMap();
 
+	//inventory = inventoryDao->getInventory(character->getInvID);
 	spInventoryDisplay iDisplay = new InventoryDisplay();
+
+	sc->setSize(96, 320);
+	sc->setPosition(0, 40);
+
+	map->setPosition(sc->getWidth(), sc->getY());
+
 	iDisplay->setSize(96, 320);
-	iDisplay->setPosition(736, 96);
-
-	this->map = map;
-
-	this->setSize(832, 480);
-
-	//center grid in container
-	//sc->setPosition(this->getWidth() / 2, this->getHeight() / 2);
+	iDisplay->setPosition(map->getX() + map->getWidth(), map->getY());
 
 	addChild(sc);
 	addChild(map);
 	addChild(iDisplay);
-	//fit children
-	fitToWindow();
+	addBackButton();
+
+	fitToWindow(true);
 }
 
 Play::Play()

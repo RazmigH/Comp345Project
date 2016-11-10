@@ -9,8 +9,10 @@ class CharacterPicker : public Layout {
 public:
 	CharacterPicker(string = "Pick a Character");
 	~CharacterPicker();
-	void onSelectCharacter(Event*);
+
 	spCharacter getCharacter();
+
+	void onSelectCharacter(Event*);
 	void init();
 private:
 	CharacterDao* dao;
