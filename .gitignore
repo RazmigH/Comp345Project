@@ -1,4 +1,5 @@
 /lib/*
+!/lib/tinyxml2
 
 !/lib/oxygine-flow
 /lib/oxygine-flow/*
