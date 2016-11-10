@@ -32,8 +32,8 @@ protected:
 	void removeChild(spActor);
 	void clear();
 	static void clear(spActor);
+	spActor _view;
 private:
 	void onBack(Event* e);
-	spActor _view;
 	spLayout leadTo;
 };

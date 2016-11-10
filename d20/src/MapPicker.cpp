@@ -74,3 +74,7 @@ void MapPicker::onSelect(Event* e) {
 spMap MapPicker::getMap() {
 	return map;
 }
+
+void MapPicker::setMap(spMap m) {
+	map = m;
+}

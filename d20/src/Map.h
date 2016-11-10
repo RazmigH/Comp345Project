@@ -15,11 +15,15 @@ public:
 	int getId();
 	void setId(int);
 
+	int getNextMapId();
+	void setNextMapId(int);
+
 	vector<string> findPath(spTile, spTile);
 private:
 	spColorRectSprite entryHighlight;
 	spColorRectSprite exitHighlight;
 	int id;
+	int nextMapId = 1;
 
 	struct Location {
 		int distanceFromTop;

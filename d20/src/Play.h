@@ -22,9 +22,12 @@ public:
 
 	void init();
 	void update();
+	void onKeyDown(Event*);
 private:
 	spGamePicker gamePicker;
 	spMap map;
 	spCharacter character;
 	spCharacterDisplay sc;
+
+	bool once;//! makes sure a key command is not spammed
 };

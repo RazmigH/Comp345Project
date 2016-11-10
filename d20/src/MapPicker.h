@@ -10,6 +10,11 @@ public:
 	~MapPicker();
 
 	spMap getMap();
+	void setMap(spMap);
+
+	MapDao* getMapDao() {
+		return dao;
+	}
 
 	void init();
 private:

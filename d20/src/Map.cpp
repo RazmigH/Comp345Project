@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "queue"
+#include "SDL_keyboard.h"
 
 Map::Map(int cols, int rows) : Grid(cols, rows) {
 	entryHighlight = new ColorRectSprite();
@@ -54,7 +55,7 @@ void Map::move(spActor actor, int col, int row, timeMS duration) {
 	else {
 		//new tile we are moving to exists
 		spTile tile = tiles[row][col];
-		tile->getObjectID();
+
 		//dont move if tile is solid
 		if (tile->isSolid()) {
 			log::messageln("Cant move '%d' to %dx%d : Tile is Solid", actor->getObjectID(), col, row);
@@ -65,7 +66,7 @@ void Map::move(spActor actor, int col, int row, timeMS duration) {
 			//tQueue->add();
 
 			//smooth transition to new tile
-			if (actor->getFirstTween() == NULL) {
+			if (actor->getFirstTween() == NULL && this->getTileLocation(actor) != Vector2(col, row)) {
 				log::messageln("Moving %d to %dx%d", actor->getObjectID(), col, row);
 
 				actor->addTween(Sprite::TweenPosition(tile->getPosition()), duration);
@@ -86,9 +87,15 @@ void Map::render(const RenderState &rs) {
 int Map::getId() {
 	return id;
 }
-
 void Map::setId(int id) {
 	this->id = id;
+}
+
+int Map::getNextMapId() {
+	return nextMapId;
+}
+void Map::setNextMapId(int id) {
+	nextMapId = id;
 }
 
 vector<string> Map::findPath(spTile start, spTile end) {

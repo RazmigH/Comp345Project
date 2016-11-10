@@ -86,3 +86,10 @@ spMap GamePicker::getMap() {
 spCharacter GamePicker::getCharacter() {
 	return characterPicker->getCharacter();
 }
+
+void GamePicker::setMap(spMap m) {
+	mapPicker->setMap(m);
+}
+void GamePicker::setCharacter(spCharacter c) {
+	characterPicker->setCharacter(c);
+}

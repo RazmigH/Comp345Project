@@ -36,12 +36,8 @@ void Play::init() {
 	fitToWindow(true);
 }
 
-Play::Play()
-{
-}
-
 Play::~Play() {
-
+	
 }
 
 void Play::update() {
@@ -65,7 +61,24 @@ void Play::update() {
 			map->move(character, charLoc.x + 1, charLoc.y);
 		}
 		else if (data[SDL_GetScancodeFromKey(SDLK_SPACE)]) {
-			//interact();
+			if (!once) {
+				once = true;
+				if (map->getTileLocation(character) == map->getExitPoint()) {
+					if (map->getNextMapId() != -1 &&
+						character->getFirstTween() == NULL) {
+						//improve 
+						gamePicker->setMap(gamePicker->getMapPicker()->getMapDao()->getMap(to_string(map->getNextMapId())));
+						log::messageln("Show next map id %d", map->getNextMapId());
+						init();
+					}
+					else {
+						log::messageln("Game over");
+					}
+				}
+			}
+		}
+		else {
+			once = false;
 		}
 	}
 }

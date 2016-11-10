@@ -11,6 +11,7 @@ public:
 	~CharacterPicker();
 
 	spCharacter getCharacter();
+	void setCharacter(spCharacter);
 
 	void onSelectCharacter(Event*);
 	void init();

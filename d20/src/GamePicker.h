@@ -10,7 +10,13 @@ public:
 	~GamePicker();
 
 	spMap getMap();
+	void setMap(spMap);
 	spCharacter getCharacter();
+	void setCharacter(spCharacter);
+
+	spMapPicker getMapPicker() {
+		return mapPicker;
+	}
 
 	void init();
 private:
@@ -22,4 +28,6 @@ private:
 	spTextButton okbtn;
 	spTextField mapText;
 	spTextField characterText;
+
+	
 };
