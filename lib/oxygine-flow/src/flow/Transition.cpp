@@ -84,7 +84,7 @@ namespace oxygine
         {
             Vector2 _src = Vector2(0.0f, -(float)getStage()->getHeight() + 0);
             Vector2 _dest = Vector2(0.0f, 0.0f);
-            int _duration = 300;
+            int _duration = 500;
 
 
             spScene target = back ? current : next;
@@ -121,7 +121,7 @@ namespace oxygine
         {
             spScene target = back ? current : next;
 
-            int duration = 300;
+            int duration = 500;
 #if OXYGINE_RENDERER>3
             //target->getHolder()->setAlpha(back ? 255 : 0);
             spTween tween = target->getHolder()->addTween(
@@ -159,7 +159,7 @@ namespace oxygine
             current->getHolder()->insertSiblingAfter(left);
             current->getHolder()->insertSiblingAfter(right);
 
-            int dur = 300;
+            int dur = 500;
             left->setX(-left->getWidth());
             right->setX(getStage()->getWidth());
 

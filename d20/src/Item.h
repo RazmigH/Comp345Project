@@ -25,8 +25,14 @@ public:
 	int getBonus() const;
 	void setBonus(int);
 
+
+	int getId();
+	void setId(int);
 	
 protected:
 	int bonus;
 	ItemStats stat;
+	int id;
+	string name;
 };
+//typedef oxygine::intrusive_ptr<Item>spItem;

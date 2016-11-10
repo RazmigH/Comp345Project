@@ -16,3 +16,5 @@ private:
 	spMap XmlToMap(XMLElement*);
 	XMLElement* MapToXml(spMap);
 };
+
+
