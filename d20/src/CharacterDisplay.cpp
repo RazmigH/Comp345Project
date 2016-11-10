@@ -3,6 +3,24 @@
 #include "Character.h"
 
 CharacterDisplay::CharacterDisplay() {
+	setEmptyDisplay();
+};
+
+CharacterDisplay::CharacterDisplay(spCharacter useCharacter)
+{
+	this->character = useCharacter;
+
+	setEmptyDisplay();
+	displayStats();
+	
+}
+
+CharacterDisplay::~CharacterDisplay() {
+
+
+}
+
+void CharacterDisplay::setEmptyDisplay() {
 	//Make a stone background for the character display using tiles.
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 3; j++)
@@ -57,22 +75,15 @@ CharacterDisplay::CharacterDisplay() {
 	title->setStyle(style);
 	title->setText("Equipement");
 
+	
+
 	addChild(title);
 
-	//Fighter Object and stats
-	Character f(Character::Class::FIGHTER, "Camilo", 1, 1);
+	//displayStats();
 
-	const enum Stats {
-		STR = 0, CON, DEX, INT, WIS, CHA
-	};
-	string stats[] = {"STR: ", 
-					  "CON: ", 
-		              "DEX: ", 
-					  "INT: ", 
-		              "WIS: ", 
-		              "CHA: " };
+}
 
-
+void CharacterDisplay::displayStats() {
 	//Set a Style for the stat display text.
 	TextStyle statStyle;
 	statStyle.font = res::resources.getResFont("font");
@@ -86,51 +97,39 @@ CharacterDisplay::CharacterDisplay() {
 	spTextField strStat = new TextField();
 	strStat->setStyle(statStyle);
 	strStat->setPosition(32, 192);
-	strStat->setText(stats[0] + "10");
+	strStat->setText("STR: " + to_string(character->getStat(Character::Stats::STR)));
 	addChild(strStat);
 
 	spTextField conStat = new TextField();
 	conStat->setStyle(statStyle);
 	conStat->setPosition(32, 208);
-	conStat->setText(stats[1] + "10");
+	conStat->setText("CON: " + to_string(character->getStat(Character::Stats::CON)));
 	addChild(conStat);
-	
+
 	spTextField dexStat = new TextField();
 	dexStat->setStyle(statStyle);
 	dexStat->setPosition(32, 224);
-	dexStat->setText(stats[2] + "10");
+	dexStat->setText("DEX: " + to_string(character->getStat(Character::Stats::DEX)));
 	addChild(dexStat);
-	
+
 	spTextField intStat = new TextField();
 	intStat->setStyle(statStyle);
 	intStat->setPosition(32, 240);
-	intStat->setText(stats[3] + "10");
+	intStat->setText("INT: " + to_string(character->getStat(Character::Stats::INT)));
 	addChild(intStat);
-	
+
 	spTextField wisStat = new TextField();
 	wisStat->setStyle(statStyle);
 	wisStat->setPosition(32, 256);
-	wisStat->setText(stats[4] + "10");
+	wisStat->setText("WIS: " + to_string(character->getStat(Character::Stats::WIS)));
 	addChild(wisStat);
-	
+
 	spTextField charStat = new TextField();
 	charStat->setStyle(statStyle);
 	charStat->setPosition(32, 272);
-	charStat->setText(stats[5] + "10");
+	charStat->setText("CHAR: " + to_string(character->getStat(Character::Stats::CHA)));
 	addChild(charStat);
-	
-
-
-
-
-};
-
-CharacterDisplay::~CharacterDisplay() {
-
-
 }
-
-
 
 
 //Setters for setting the tile

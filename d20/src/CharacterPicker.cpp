@@ -30,6 +30,8 @@ void CharacterPicker::init() {
 	grid = new DynamicGrid(4, 10, empty);
 	grid->addClickListener(CLOSURE(this, &CharacterPicker::onSelectCharacter));
 
+	
+
 	highlight = new ColorRectSprite();
 	highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	highlight->setColor(Color::Lime);
@@ -37,6 +39,7 @@ void CharacterPicker::init() {
 	highlight->setPosition(-100, -100);
 
 	load();
+	
 }
 
 CharacterPicker::~CharacterPicker() {
@@ -62,12 +65,16 @@ void CharacterPicker::load() {
 		grid->add(temp);
 		grid->getLast()->setName(to_string(temp->getId()));
 	}
+
+	spTile tile1 = grid->getTile(0, 0);
+	character = dao->getCharacter(tile1->getName());
 	addChild(grid);
 
 	fitToWindow(true);
 }
 
 void CharacterPicker::onSelectCharacter(Event* e) {
+
 	spTile tile = grid->getTile(e);
 	if (*tile != *empty && tile->getPosition() != highlight->getPosition()) {
 		Vector2 tileLoc = grid->getTileLocation(tile);
@@ -76,5 +83,9 @@ void CharacterPicker::onSelectCharacter(Event* e) {
 		if(character)
 		character->printStats();
 	}
+}
+
+spCharacter CharacterPicker::getCharacter() { 
+	return character;
 }
 

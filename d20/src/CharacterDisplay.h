@@ -2,6 +2,7 @@
 #include "Tile.h"
 #include "TextField.h"
 #include "ImageResource.h"
+#include "Character.h"
 #include "oxygine-framework.h"
 
 using namespace oxygine;
@@ -12,7 +13,12 @@ DECLARE_SMART(CharacterDisplay, spCharacterDisplay);
 class CharacterDisplay : public Actor {
 public:
 	CharacterDisplay();
+	CharacterDisplay(spCharacter character);
 	~CharacterDisplay();
+
+	void setEmptyDisplay();
+
+	void displayStats();
 
 	void setHelm(Tile t);
 	void setArmor(Tile t);
@@ -30,4 +36,5 @@ private:
 	spTile shield;
 	spTile ring;
 	spTile belt;
+	spCharacter character;
 };

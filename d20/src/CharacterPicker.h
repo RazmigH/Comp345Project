@@ -10,6 +10,7 @@ public:
 	CharacterPicker(string = "Pick a Character");
 	~CharacterPicker();
 	void onSelectCharacter(Event*);
+	spCharacter getCharacter();
 	void init();
 private:
 	CharacterDao* dao;

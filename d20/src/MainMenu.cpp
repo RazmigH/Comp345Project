@@ -48,7 +48,7 @@ void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
 		cout << "play" << endl;
 		spCharacterPicker picker = new CharacterPicker();
-		spPlay play = new Play();
+		spPlay play = new Play(picker);
 		picker->setNext(play);
 		show(picker, [=](Event*) {
 		});

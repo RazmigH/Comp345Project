@@ -1,20 +1,17 @@
 #include <iostream>
 #include "Play.h"
-#include "Map.h"
-#include "CharacterDisplay.h"
-#include "InventoryDisplay.h"
-#include "MainMenu.h" 
 
-
-Play::Play(){
-
+Play::Play(spCharacterPicker useCharacter){
+	character = useCharacter->getCharacter();
+	
+	init();
 }
 
 void Play::init() {
 	setName("Play Layout");
 	addBackButton();
-
-	spCharacterDisplay sc = new CharacterDisplay();
+	
+	spCharacterDisplay sc = new CharacterDisplay(character);
 	sc->setSize(96, 320);
 	sc->setPosition(0, 96);
 
@@ -40,6 +37,10 @@ void Play::init() {
 	addChild(iDisplay);
 	//fit children
 	fitToWindow();
+}
+
+Play::Play()
+{
 }
 
 Play::~Play() {
