@@ -126,6 +126,7 @@
     <ClCompile Include="..\src\DynamicGrid.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
     <ClCompile Include="..\src\EquipableItem.cpp" />
+    <ClCompile Include="..\src\GamePicker.cpp" />
     <ClCompile Include="..\src\InputDialog.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="..\src\DynamicGrid.h" />
     <ClInclude Include="..\src\Enhancement.h" />
     <ClInclude Include="..\src\EquipableItem.h" />
+    <ClInclude Include="..\src\GamePicker.h" />
     <ClInclude Include="..\src\InputDialog.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />

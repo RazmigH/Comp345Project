@@ -1,46 +1,73 @@
 #include <iostream>
 #include "Play.h"
-#include "Map.h"
-#include "CharacterDisplay.h"
-#include "InventoryDisplay.h"
-#include "MainMenu.h" 
 
+Play::Play(spGamePicker picker){
+	setName("Play Layout");
 
-Play::Play(){
-
+	gamePicker = picker;
 }
 
 void Play::init() {
-	setName("Play Layout");
-	addBackButton();
+	clear();
 
-	spCharacterDisplay sc = new CharacterDisplay();
-	sc->setSize(96, 320);
-	sc->setPosition(0, 96);
+	character = gamePicker->getCharacter();
+	sc = new CharacterDisplay(character);
 
-	spMap map = new Map();
-	map->setPosition(96, 96);
-	map->setTiles(new Tile("grass"));
+	map = gamePicker->getMap();
 
+	Vector2 start = map->getEntryPoint();
+	map->addToGrid(character, start.x, start.y);
 
+	//inventory = inventoryDao->getInventory(character->getInvID);
 	spInventoryDisplay iDisplay = new InventoryDisplay();
+
+	sc->setSize(96, 320);
+	sc->setPosition(0, 40);
+
+	map->setPosition(sc->getWidth(), sc->getY());
+
 	iDisplay->setSize(96, 320);
-	iDisplay->setPosition(736, 96);
-
-	this->map = map;
-
-	this->setSize(832, 480);
-
-	//center grid in container
-	//sc->setPosition(this->getWidth() / 2, this->getHeight() / 2);
+	iDisplay->setPosition(map->getX() + map->getWidth(), map->getY());
 
 	addChild(sc);
 	addChild(map);
 	addChild(iDisplay);
-	//fit children
-	fitToWindow();
+	addBackButton();
+
+	fitToWindow(true);
+}
+
+Play::Play()
+{
 }
 
 Play::~Play() {
 
+}
+
+void Play::update() {
+	cout << "ayo wwattup" << endl;
+	if (character && map) {
+		Vector2 charLoc = map->getTileLocation(character);
+		const Uint8* data = SDL_GetKeyboardState(NULL);
+		if (data[SDL_GetScancodeFromKey(SDLK_w)]) {
+			character->setUp();
+			map->move(character, charLoc.x, charLoc.y - 1);
+		}
+		else if (data[SDL_GetScancodeFromKey(SDLK_s)]) {
+			character->setDown();
+			map->move(character, charLoc.x, charLoc.y + 1);
+		}
+		else if (data[SDL_GetScancodeFromKey(SDLK_a)]) {
+			character->setLeft();
+			map->move(character, charLoc.x - 1, charLoc.y);
+		}
+		else if (data[SDL_GetScancodeFromKey(SDLK_d)]) {
+			character->setRight();
+			map->move(character, charLoc.x + 1, charLoc.y);
+		}
+		else if (data[SDL_GetScancodeFromKey(SDLK_SPACE)]) {
+			//interact();
+		}
+	}
 }

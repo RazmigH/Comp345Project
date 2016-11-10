@@ -3,6 +3,13 @@
 #include "Layout.h"
 #include "Tile.h"
 #include "Map.h"
+#include "Map.h"
+#include "CharacterDisplay.h"
+#include "CharacterPicker.h"
+#include "InventoryDisplay.h"
+#include "GamePicker.h"
+#include "MainMenu.h" 
+
 using namespace std;
 
 //This class is for the Play option
@@ -11,9 +18,13 @@ class Play : public Layout {
 public:
 	Play();
 	~Play();
+	Play(spGamePicker);
 
 	void init();
+	void update();
 private:
+	spGamePicker gamePicker;
 	spMap map;
-
+	spCharacter character;
+	spCharacterDisplay sc;
 };

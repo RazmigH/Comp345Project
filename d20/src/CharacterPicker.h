@@ -9,6 +9,9 @@ class CharacterPicker : public Layout {
 public:
 	CharacterPicker(string = "Pick a Character");
 	~CharacterPicker();
+
+	spCharacter getCharacter();
+
 	void onSelectCharacter(Event*);
 	void init();
 private:

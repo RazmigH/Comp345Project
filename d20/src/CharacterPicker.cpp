@@ -73,8 +73,11 @@ void CharacterPicker::onSelectCharacter(Event* e) {
 		Vector2 tileLoc = grid->getTileLocation(tile);
 		grid->addToGrid(highlight, tileLoc.x, tileLoc.y);
 		character = dao->getCharacter(tile->getName());
-		if(character)
-		character->printStats();
+		if (character)
+			character->printStats();
 	}
 }
 
+spCharacter CharacterPicker::getCharacter() {
+	return character;
+}
