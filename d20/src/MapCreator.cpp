@@ -209,18 +209,39 @@ void MapCreator::resetPts(Event* e) {
 }
 
 void MapCreator::saveMap(Event* e) {
-	//temp pathfind test
+	//validate
+	//check all tiles set
+	for (int c = 0; c < map->getCols(); c++) {
+		for (int r = 0; r < map->getRows(); r++) {
+			spTile tile = map->getTile(c, r);
+			if (tile->getImageName() == "transparent" || tile->getImageName() == "blank") {
+				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Invalid Map", "You can't leave empty tiles in your map!", NULL);
+				return;
+			}
+		}
+	}
+
+	//check valid path
 	log::messageln("Start looking");
 	vector<string> directions = map->findPath(map->getTile(map->getEntryPoint()), map->getTile(map->getExitPoint()));
-	if (!directions.empty())
-		for (vector<string>::iterator it = directions.begin(); it != directions.end(); ++it) {
-			string s = *it;
-			log::message("%s, ", s.c_str());
-		}
 	log::messageln("done looking");
 
+	//print path for fun, can remove.
+	for (vector<string>::iterator it = directions.begin(); it != directions.end(); ++it) {
+		string s = *it;
+		log::message("%s, ", s.c_str());
+	}
+	if (directions.empty()) {
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Invalid Map", "The player must be able to reach the finish point!", NULL);
+		return;
+	}
 
-	//saveMap
+	if (map->getEntryPoint() == map->getExitPoint()) {
+		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Invalid Map", "The entrance and exit of the map must be in different places!", NULL);
+		return;
+	}
+
+	//map is valid, save it
 	spInputDialog input = new InputDialog("Enter Map Name", map->getName());
 	flow::show(input, [=](Event*) {
 		MapDao* dao = new MapDao();
