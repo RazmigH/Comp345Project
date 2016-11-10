@@ -1,6 +1,5 @@
 #include "MapPicker.h"
 #include "MapCreator.h"
-#include <iostream>
 using namespace std;
 
 MapPicker::MapPicker(){
@@ -65,12 +64,10 @@ MapPicker::~MapPicker() {
 void MapPicker::onSelect(Event* e) {
 	spActor temp = safeSpCast<Actor>(e->target);
 	if (!map || to_string(map->getId()) != temp->getName()) {
-		cout << "Name " << temp->getName() << endl;
 		map = dao->getMap(temp->getName());
 		removeChild(highlight);
 		highlight->setPosition(temp->getX() + temp->getWidth() / 2 + 5, temp->getY());
 		addChild(highlight);
-		cout << "Selected " << map->getName() << endl;
 	}
 }
 

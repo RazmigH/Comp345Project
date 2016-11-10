@@ -2,7 +2,6 @@
 #include "tinyxml2.h"
 #include <string>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 using namespace tinyxml2;

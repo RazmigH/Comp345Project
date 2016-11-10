@@ -1,5 +1,5 @@
 #include "ChestEditPane.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 
 ChestEditPane::ChestEditPane(spChest chest) {
 	id = new TextField();

@@ -13,124 +13,52 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Layouts">
-      <UniqueIdentifier>{41d352aa-ffa6-43e0-9d65-f76b0de7dc13}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Layouts">
-      <UniqueIdentifier>{dec5337d-6f41-4264-857f-f6240ff5438d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Map">
-      <UniqueIdentifier>{a9a8069a-844e-49cd-a5c1-0303a90a62bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Map">
-      <UniqueIdentifier>{27557d7b-af1f-4ac9-9b1e-fcfa8486bcf3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Item">
-      <UniqueIdentifier>{f1889a94-266e-41b0-8ae6-55ccba45b021}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Item">
-      <UniqueIdentifier>{60184c51-7700-49b2-a37c-6ff17bf82eac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Character">
-      <UniqueIdentifier>{0a0b3bd6-25d0-44d6-b87f-88c0a02ac6e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Character">
-      <UniqueIdentifier>{62aadd53-d866-4f92-9680-2660b6b74bd5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Helpful Components">
-      <UniqueIdentifier>{b6ea1149-76a6-4225-a8b4-8a010212d46a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Helpful Components">
-      <UniqueIdentifier>{3de59528-1a9b-46b1-8d94-2982fc9f1ea3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="External library">
-      <UniqueIdentifier>{9ff0be6e-94c0-449c-a247-edb5ad63c70c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="External library\tinyxml">
-      <UniqueIdentifier>{c7097e54-cd1d-4c64-8e20-6580fb145f47}</UniqueIdentifier>
+      <UniqueIdentifier>{4eb6bfce-53e9-44fa-8f13-c50b54c1a0f9}</UniqueIdentifier>
     </Filter>
     <Filter Include="External library\flow">
-      <UniqueIdentifier>{1663444c-4389-499b-bc53-31e365be3c12}</UniqueIdentifier>
+      <UniqueIdentifier>{f5a437d0-acaa-40b0-9243-acc94cb5cab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Layouts">
+      <UniqueIdentifier>{ec2dedd5-d602-4612-b67c-57d29fc84808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Layouts">
+      <UniqueIdentifier>{06af7e24-14e6-4754-9ec1-e528742ebbce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Helpful Components">
+      <UniqueIdentifier>{c8e172db-25f5-4564-9e85-ee0763cee8d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Helpful Components">
+      <UniqueIdentifier>{be669667-1370-45e3-b2c7-293433ea4869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{b7e3a30e-7756-44c6-9346-bf6a4ac7b43e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{b3d2389c-7f4d-439a-9370-aa51e1c282bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External library\tinyxml">
+      <UniqueIdentifier>{fb74b7fd-fa0b-4ecc-ac8e-5b0e49233f3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Character">
+      <UniqueIdentifier>{15dbcf98-0910-4c48-8574-4b92e5bae183}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Character">
+      <UniqueIdentifier>{e01c9d59-a978-4fb5-84eb-bd5e324a90be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Item">
+      <UniqueIdentifier>{b1fe3b0e-61a5-4a1a-af9f-712fc034ed36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Item">
+      <UniqueIdentifier>{d8c4e91b-5871-4335-a9a1-34cc35dd0817}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\app.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ImageResource.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\MainMenu.cpp">
-      <Filter>Source Files\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Layout.cpp">
-      <Filter>Source Files\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\MapCreator.cpp">
-      <Filter>Source Files\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Map.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Play.cpp">
-      <Filter>Source Files\Layouts</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\InventoryDisplay.cpp">
+    <ClCompile Include="..\src\app.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Chest.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\ChestEditPane.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Die.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Item.cpp">
-      <Filter>Source Files\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Enhancement.cpp">
-      <Filter>Source Files\Item</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CharacterDisplay.cpp">
-      <Filter>Source Files\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Character.cpp">
-      <Filter>Source Files\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Grid.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Tile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Xml.cpp">
-      <Filter>Source Files\Helpful Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\TextButton.cpp">
-      <Filter>Source Files\Helpful Components</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Item.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Enhancement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\DefaultEditPane.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\CharacterDao.cpp">
-      <Filter>Source Files\Character</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\MapDao.cpp">
-      <Filter>Source Files\Map</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\tinyxml2.cpp">
-      <Filter>External library\tinyxml</Filter>
     </ClCompile>
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\flow.cpp">
       <Filter>External library\flow</Filter>
@@ -141,103 +69,103 @@
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Transition.cpp">
       <Filter>External library\flow</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\InputDialog.cpp">
+    <ClCompile Include="..\src\GameResource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MainMenu.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layout.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TextButton.cpp">
       <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Map.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Grid.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Xml.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\tinyxml2\tinyxml2.cpp">
+      <Filter>External library\tinyxml</Filter>
     </ClCompile>
     <ClCompile Include="..\src\MapPicker.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Chest.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Character.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterDao.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterDisplay.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CharacterPicker.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InputDialog.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Enhancement.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\EquipableItem.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Item.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemDao.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemDB.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
     <ClCompile Include="..\src\UsableItem.cpp">
       <Filter>Source Files\Item</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\GamePicker.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MapCreator.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Play.cpp">
+      <Filter>Source Files\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ChestEditPane.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DefaultEditPane.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MapDao.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\DynamicGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\CharacterPicker.cpp">
-      <Filter>Source Files\Character</Filter>
+    <ClCompile Include="..\src\InventoryDisplay.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\GamePicker.cpp">
-      <Filter>Source Files\Layouts</Filter>
+    <ClCompile Include="..\src\Die.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ImageResource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MainMenu.h">
-      <Filter>Header Files\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Layout.h">
-      <Filter>Header Files\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MapCreator.h">
-      <Filter>Header Files\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Map.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Play.h">
-      <Filter>Header Files\Layouts</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\InventoryDisplay.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Chest.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\ChestEditPane.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Die.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Item.h">
-      <Filter>Header Files\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Enhancement.h">
-      <Filter>Header Files\Item</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Character.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CharacterDisplay.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Tile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Grid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Xml.h">
-      <Filter>Header Files\Helpful Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\TextButton.h">
-      <Filter>Header Files\Helpful Components</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Enhancement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\DefaultEditPane.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\CharacterDao.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\MapDao.h">
-      <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\tinyxml2.h">
-      <Filter>External library\tinyxml</Filter>
     </ClInclude>
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\flow.h">
       <Filter>External library\flow</Filter>
@@ -248,26 +176,98 @@
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Transition.h">
       <Filter>External library\flow</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\InputDialog.h">
+    <ClInclude Include="..\src\GameResource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MainMenu.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layout.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TextButton.h">
       <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Map.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Grid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Xml.h">
+      <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\lib\tinyxml2\tinyxml2.h">
+      <Filter>External library\tinyxml</Filter>
     </ClInclude>
     <ClInclude Include="..\src\MapPicker.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\Chest.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Character.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterDao.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterDisplay.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CharacterPicker.h">
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InputDialog.h">
+      <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Enhancement.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\EquipableItem.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Item.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemDao.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemDB.h">
       <Filter>Header Files\Item</Filter>
     </ClInclude>
     <ClInclude Include="..\src\UsableItem.h">
       <Filter>Header Files\Item</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\GamePicker.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MapCreator.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Play.h">
+      <Filter>Header Files\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ChestEditPane.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DefaultEditPane.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MapDao.h">
+      <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Die.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\src\DynamicGrid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\CharacterPicker.h">
-      <Filter>Header Files\Character</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\GamePicker.h">
-      <Filter>Header Files\Layouts</Filter>
+    <ClInclude Include="..\src\InventoryDisplay.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

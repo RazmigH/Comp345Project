@@ -4,6 +4,7 @@
 using namespace std;
 
 //This class is for the Main Menu window / layout
+DECLARE_SMART(MainMenu, spMainMenu);
 class MainMenu : public Layout {
 public:
 	MainMenu();

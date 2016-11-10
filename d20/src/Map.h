@@ -1,9 +1,8 @@
 #pragma once
-#include "oxygine-framework.h"
 #include "Grid.h"
-using namespace oxygine;
 
 //contains the functionality of a game map
+DECLARE_SMART(Map, spMap);
 class Map : public Grid {
 public:
 	Map(int cols = 20, int rows = 10);
@@ -20,4 +19,3 @@ private:
 	spColorRectSprite exitHighlight;
 	int id;
 };
-typedef oxygine::intrusive_ptr<Map>spMap;

@@ -1,7 +1,7 @@
 #include "Layout.h"
 #include "TextButton.h"
 #include "MainMenu.h"
-#include <iostream>
+
 Layout::Layout() {
 	setName("Layout");
 	_view = new Actor();
@@ -98,7 +98,6 @@ void Layout::setSize(float width, float height) {
 }
 
 void Layout::setSize(Vector2 size) {
-	std::cout << "SetSize: " << getName() << " to " << size.x  << "x" << size.y << std::endl;
 	_view->setSize(size);
 	_holder->setSize(size);
 }
@@ -108,6 +107,5 @@ void Layout::setNext(spLayout layout) {
 }
 
 spLayout Layout::getNext() {
-	cout << "GETNEXT" << endl;
 	return leadTo;
 }

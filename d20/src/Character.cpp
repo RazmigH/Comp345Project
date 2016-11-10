@@ -3,7 +3,7 @@
 //!
 
 #include "Character.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 
 Character::Character(
 	Class characterClass, 

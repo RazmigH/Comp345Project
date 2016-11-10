@@ -6,6 +6,7 @@ using namespace oxygine;
 
 //this class generates and provides options to manipulate a grid
 //made of equal-sized cells
+DECLARE_SMART(Grid, spGrid);
 class Grid : public Actor {
 public:
 	Grid(int cols, int rows);
@@ -29,4 +30,3 @@ protected:
 	spColorRectSprite highlightRect;
 	bool highlight = false;
 };
-typedef oxygine::intrusive_ptr<Grid>spGrid;

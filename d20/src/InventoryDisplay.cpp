@@ -1,6 +1,6 @@
 #pragma once
 #include "InventoryDisplay.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 
 InventoryDisplay::InventoryDisplay()
 {

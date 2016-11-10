@@ -1,7 +1,7 @@
 #pragma once
 #include "Tile.h"
 #include "TextField.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 #include "Character.h"
 #include "oxygine-framework.h"
 

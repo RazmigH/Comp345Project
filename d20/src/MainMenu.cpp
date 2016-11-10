@@ -1,10 +1,15 @@
-#include <iostream>
 #include "MainMenu.h"
 #include "MapPicker.h"
 #include "MapCreator.h"
 #include "GamePicker.h"
 #include "Play.h"
-
+/*
+Memory leaks
+- leadTo variable in Layout (20) (biggest problem, might be due to oxygine-flow)
+	-> mapPicker->dao->getMap inclickhandler (depends on mapsize)
+- the two getResAnim/getResFont in TextButton.cpp (2)
+- transition.cpp clear() OX_ASSERT(!"not implemented");
+*/
 MainMenu::MainMenu() {
 	setName("Main Menu");
 
@@ -51,27 +56,26 @@ void MainMenu::init() {
 
 void MainMenu::onClick(Event* e) {
 	if (e->target->getName() == "Play") {
-		cout << "play" << endl;
+		log::messageln("Play");
 		spGamePicker picker = new GamePicker();
 		spPlay play = new Play(picker);
 		picker->setNext(play);
 		show(picker, [=](Event*) {
 			init();
 		});
-		//resize window to fit layout
-		//SDL_SetWindowSize(getStage()->getAssociatedWindow(), getStage()->getWidth(), getStage()->getHeight());
 	}
 	else if (e->target->getName() == "Create a map") {
-		cout << "Create" << endl;
+		log::messageln("Create Map");
 		spMapPicker mapPicker = new MapPicker();
 		spMapCreator creator = new MapCreator(mapPicker);
 		mapPicker->setNext(creator);
 		show(mapPicker, [=](Event*) {
 			init();
 		});
+		mapPicker->getObjectID();
 	}
 	else if (e->target->getName() == "add wtv") {
-		cout << "add" << endl;
+		log::messageln("add wtv");
 	}
 }
 

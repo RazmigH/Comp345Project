@@ -1,10 +1,10 @@
 #include "TextButton.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 
 TextButton::TextButton(std::string text) {
-	this->setPriority(10);
-	this->setResAnim(res::resources.getResAnim("button"));
-	this->setSize(88, 30);
+	setPriority(10);
+	setResAnim(res::resources.getResAnim("button"));
+	setSize(88, 30);
 
 	spTextField textfield = new TextField();
 	textfield->attachTo(this);
@@ -19,4 +19,8 @@ TextButton::TextButton(std::string text) {
 	style.hAlign = TextStyle::HALIGN_CENTER;
 	textfield->setStyle(style);
 	textfield->setText(text);
+}
+
+TextButton::~TextButton() {
+
 }

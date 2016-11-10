@@ -15,7 +15,14 @@ namespace oxygine
     namespace flow
     {
 
-        Transition::Transition() : _done(false), _singleDirection(false), _flow(0)
+        void Transition::assign(Scene* scene)
+        {
+            spTransition t = new Transition;
+            scene->setTransitionIn(t);
+            scene->setTransitionOut(t);
+        }
+
+        Transition::Transition() :  _singleDirection(false), _flow(0)
         {
 
         }
@@ -23,9 +30,9 @@ namespace oxygine
         void Transition::run(Flow* f, spScene current, spScene next, bool back)
         {
             _flow = f;
-            _current = current;
-            _next = next;
-            _done = false;
+            //_current = current;
+            //_next = next;
+            //_done = false;
 
             _attach(current, next, back);
             _run(current, next, back);
@@ -35,10 +42,10 @@ namespace oxygine
         {
             t->setDoneCallback([ = ](Event*)
             {
-                _done = true;
+                //_done = true;
                 _clear();
-                _current = 0;
-                _next = 0;
+                //_current = 0;
+                //_next = 0;
                 _flow->phaseEnd();
             });
         }
@@ -59,9 +66,19 @@ namespace oxygine
             }
         }
 
-        void Transition::_run(spScene current, spScene next, bool back)
+        void TransitionSimple::assign(Scene* scene)
         {
-            _done = true;
+            spTransition t = new TransitionSimple;
+            scene->setTransitionIn(t);
+            scene->setTransitionOut(t);
+        }
+
+        void TransitionSimple::_run(spScene current, spScene next, bool back)
+        {
+            spScene target = back ? current : next;
+            spActor holder = target->getHolder();
+            spTween tween = holder->addTween(TweenDummy(), 1);
+            waitTween(tween);
         }
 
         void TransitionMove::assign(Scene* scene)
@@ -84,7 +101,7 @@ namespace oxygine
         {
             Vector2 _src = Vector2(0.0f, -(float)getStage()->getHeight() + 0);
             Vector2 _dest = Vector2(0.0f, 0.0f);
-            int _duration = 300;
+            int _duration = 500;
 
 
             spScene target = back ? current : next;
@@ -121,11 +138,11 @@ namespace oxygine
         {
             spScene target = back ? current : next;
 
-            int duration = 300;
+            int duration = 500;
 #if OXYGINE_RENDERER>3
             //target->getHolder()->setAlpha(back ? 255 : 0);
             spTween tween = target->getHolder()->addTween(
-                                TweenAlphaFade(!back, PostProcessOptions().fullscreen()), duration, 1, false, 0);
+                                TweenAlphaFade(!back, PostProcessOptions().fullscreen().clear(Color(0, 0, 0, 255))), duration, 1, false, 0);
 #elif OXYGINE_RENDERER>2
             //target->getHolder()->setAlpha(back ? 255 : 0);
             spTween tween = target->getHolder()->addTween(
@@ -159,7 +176,7 @@ namespace oxygine
             current->getHolder()->insertSiblingAfter(left);
             current->getHolder()->insertSiblingAfter(right);
 
-            int dur = 300;
+            int dur = 500;
             left->setX(-left->getWidth());
             right->setX(getStage()->getWidth());
 
@@ -371,7 +388,8 @@ namespace oxygine
 
         void TransitionQuads::_clear()
         {
-            _next->getHolder()->attachTo(getStage());
+            OX_ASSERT(!"not implemented");
+            //_next->getHolder()->attachTo(getStage());
 
             _holder->detach();
             _bg->detach();

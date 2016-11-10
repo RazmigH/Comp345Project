@@ -58,7 +58,6 @@ int Xml::addElement(XMLElement* e) {
 		current = getElement(id);
 		if (current != nullptr) {
 			getRoot()->DeleteChild(current);
-			cout << "replacing " << fileName << " #" << id << endl;
 		}
 	}
 	else {

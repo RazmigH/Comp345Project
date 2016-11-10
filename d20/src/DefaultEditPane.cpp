@@ -1,5 +1,5 @@
 #include "DefaultEditPane.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 #include "TextButton.h"
 #include <iostream>
 

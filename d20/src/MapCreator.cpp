@@ -3,7 +3,7 @@
 #include "Map.h"
 #include "TextButton.h"
 #include "Chest.h"
-#include "ImageResource.h" 
+#include "GameResource.h" 
 #include "MapDao.h" 
 #include "MainMenu.h" 
 #include "InputDialog.h"

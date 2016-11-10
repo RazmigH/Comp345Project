@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Tile.h"
-#include "ImageResource.h"
+#include "GameResource.h"
 #include "DefaultEditPane.h"
 #include "Chest.h"
 

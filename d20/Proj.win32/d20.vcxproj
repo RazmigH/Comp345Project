@@ -72,10 +72,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../lib/oxygine-framework//oxygine/src;../../lib//SDL/include;../../lib/oxygine-framework//oxygine/third_party/win32/pthreads/include;../../lib/oxygine-flow/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../lib/oxygine-framework//oxygine/src;../../lib//SDL/include;../../lib/oxygine-framework//oxygine/third_party/win32/pthreads/include;../../lib/oxygine-flow/src;../../lib/tinyxml2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>
       </AdditionalDependencies>
@@ -114,6 +114,7 @@
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\flow.cpp" />
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Scene.cpp" />
     <ClCompile Include="..\..\lib\oxygine-flow\src\flow\Transition.cpp" />
+    <ClCompile Include="..\..\lib\tinyxml2\tinyxml2.cpp" />
     <ClCompile Include="..\src\app.cpp" />
     <ClCompile Include="..\src\Character.cpp" />
     <ClCompile Include="..\src\CharacterDao.cpp" />
@@ -127,24 +128,23 @@
     <ClCompile Include="..\src\Enhancement.cpp" />
     <ClCompile Include="..\src\EquipableItem.cpp" />
     <ClCompile Include="..\src\GamePicker.cpp" />
+    <ClCompile Include="..\src\GameResource.cpp" />
+    <ClCompile Include="..\src\Grid.cpp" />
     <ClCompile Include="..\src\InputDialog.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
     <ClCompile Include="..\src\ItemDao.cpp" />
     <ClCompile Include="..\src\ItemDB.cpp" />
-    <ClCompile Include="..\src\MapDao.cpp" />
-    <ClCompile Include="..\src\MapPicker.cpp" />
-    <ClCompile Include="..\src\Play.cpp" />
-    <ClCompile Include="..\src\TextButton.cpp" />
-    <ClCompile Include="..\src\Grid.cpp" />
-    <ClCompile Include="..\src\ImageResource.cpp" />
     <ClCompile Include="..\src\Layout.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\MainMenu.cpp" />
     <ClCompile Include="..\src\Map.cpp" />
     <ClCompile Include="..\src\MapCreator.cpp" />
+    <ClCompile Include="..\src\MapDao.cpp" />
+    <ClCompile Include="..\src\MapPicker.cpp" />
+    <ClCompile Include="..\src\Play.cpp" />
+    <ClCompile Include="..\src\TextButton.cpp" />
     <ClCompile Include="..\src\Tile.cpp" />
-    <ClCompile Include="..\src\tinyxml2.cpp" />
     <ClCompile Include="..\src\UsableItem.cpp" />
     <ClCompile Include="..\src\Xml.cpp" />
   </ItemGroup>
@@ -152,6 +152,7 @@
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\flow.h" />
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Scene.h" />
     <ClInclude Include="..\..\lib\oxygine-flow\src\flow\Transition.h" />
+    <ClInclude Include="..\..\lib\tinyxml2\tinyxml2.h" />
     <ClInclude Include="..\src\app.h" />
     <ClInclude Include="..\src\Character.h" />
     <ClInclude Include="..\src\CharacterDao.h" />
@@ -165,23 +166,22 @@
     <ClInclude Include="..\src\Enhancement.h" />
     <ClInclude Include="..\src\EquipableItem.h" />
     <ClInclude Include="..\src\GamePicker.h" />
+    <ClInclude Include="..\src\GameResource.h" />
+    <ClInclude Include="..\src\Grid.h" />
     <ClInclude Include="..\src\InputDialog.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />
-    <ClInclude Include="..\src\ItemDB.h" />
     <ClInclude Include="..\src\ItemDao.h" />
-    <ClInclude Include="..\src\MapDao.h" />
-    <ClInclude Include="..\src\MapPicker.h" />
-    <ClInclude Include="..\src\Play.h" />
-    <ClInclude Include="..\src\TextButton.h" />
-    <ClInclude Include="..\src\Grid.h" />
-    <ClInclude Include="..\src\ImageResource.h" />
+    <ClInclude Include="..\src\ItemDB.h" />
     <ClInclude Include="..\src\Layout.h" />
     <ClInclude Include="..\src\MainMenu.h" />
     <ClInclude Include="..\src\Map.h" />
     <ClInclude Include="..\src\MapCreator.h" />
+    <ClInclude Include="..\src\MapDao.h" />
+    <ClInclude Include="..\src\MapPicker.h" />
+    <ClInclude Include="..\src\Play.h" />
+    <ClInclude Include="..\src\TextButton.h" />
     <ClInclude Include="..\src\Tile.h" />
-    <ClInclude Include="..\src\tinyxml2.h" />
     <ClInclude Include="..\src\UsableItem.h" />
     <ClInclude Include="..\src\Xml.h" />
   </ItemGroup>
