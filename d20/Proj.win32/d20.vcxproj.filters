@@ -159,6 +159,12 @@
     <ClCompile Include="..\src\CharacterPicker.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ItemDao.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ItemDB.cpp">
+      <Filter>Source Files\Item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -262,6 +268,12 @@
     </ClInclude>
     <ClInclude Include="..\src\CharacterPicker.h">
       <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemDB.h">
+      <Filter>Header Files\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ItemDao.h">
+      <Filter>Header Files\Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

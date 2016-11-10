@@ -129,6 +129,8 @@
     <ClCompile Include="..\src\InputDialog.cpp" />
     <ClCompile Include="..\src\InventoryDisplay.cpp" />
     <ClCompile Include="..\src\Item.cpp" />
+    <ClCompile Include="..\src\ItemDao.cpp" />
+    <ClCompile Include="..\src\ItemDB.cpp" />
     <ClCompile Include="..\src\MapDao.cpp" />
     <ClCompile Include="..\src\MapPicker.cpp" />
     <ClCompile Include="..\src\Play.cpp" />
@@ -164,6 +166,8 @@
     <ClInclude Include="..\src\InputDialog.h" />
     <ClInclude Include="..\src\InventoryDisplay.h" />
     <ClInclude Include="..\src\Item.h" />
+    <ClInclude Include="..\src\ItemDB.h" />
+    <ClInclude Include="..\src\ItemDao.h" />
     <ClInclude Include="..\src\MapDao.h" />
     <ClInclude Include="..\src\MapPicker.h" />
     <ClInclude Include="..\src\Play.h" />

@@ -8,7 +8,7 @@ public:
 	const enum Equipable { HELMET = 0, ARMOR, SHIELD, RING, BELT, BOOTS, WEAPON };
 	const enum ItemStats { STR = 0, CON, DEX, INT, WIS, CHA, ATK, DMG, ARM, CHP, NUL };
 
-	Item(string name = "Unknown Item",  ItemStats s = NUL, int bonus = 0);
+	Item(string name = "Unknown Item", ItemStats s = NUL, int bonus = 0);
 
 	void printDetails();
 
@@ -25,8 +25,14 @@ public:
 	int getBonus() const;
 	void setBonus(int);
 
-	
+
+	int getId();
+	void setId(int);
+
 protected:
 	int bonus;
 	ItemStats stat;
+	int id;
+	string name;
 };
+//typedef oxygine::intrusive_ptr<Item>spItem;

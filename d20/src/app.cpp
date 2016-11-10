@@ -6,12 +6,14 @@
 #include "EquipableItem.h"
 #include "UsableItem.h"
 #include "oxygine-flow.h"
+#include "ItemDB.h"
+#include "ItemDao.h"
 using namespace oxygine;
 
-void app_preinit(){
+void app_preinit() {
 }
 
-void app_init(){
+void app_init() {
 	flow::init();
 
 	//load resources
@@ -42,13 +44,32 @@ void app_init(){
 		spCharacter c = *it;
 		c->printStats();
 	}
-	
+
 	UsableItem potion40 = UsableItem(Item::Usable::POTION, "Health Potion 40 HP", Item::ItemStats::CHP, 40);
 	EquipableItem legendaryWeapon = EquipableItem(Item::Equipable::WEAPON, "Legendary Red Dragon Sword", Item::ItemStats::DMG, 5);
+	EquipableItem test1 = EquipableItem(Item::Equipable::HELMET, "Helmet of Wisdom", Item::ItemStats::WIS, 3);
+	EquipableItem test2 = EquipableItem(Item::Equipable::RING, "CON Ring", Item::ItemStats::CON, 2);
 
 	potion40.printDetails();
 	legendaryWeapon.printDetails();
-	
+
+	//ItemDB test;
+
+	//test.storeItem(legendaryWeapon);
+	//test.storeItem(test1);
+	//test.storeItem(test2);
+
+	ItemDao* iDao = new ItemDao();
+
+	vector<spItem> ics = iDao->getItems();
+	std::cout << "Item COUNT: " << ics.size() << std::endl;
+	for (std::vector<spItem>::iterator it = ics.begin(); it != ics.end(); ++it) {
+		spItem c = *it;
+		c->printDetails();
+	}
+
+	//	test.listItem();
+	//	test.saveItems();
 	cout << endl << "*************************************************" << endl;
 
 	//show main menu

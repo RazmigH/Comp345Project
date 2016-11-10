@@ -25,6 +25,11 @@ string EquipableItem::getTypeStr() {
 	}
 }
 
+void EquipableItem::setType(Equipable itemType)
+{
+	Item::Equipable equipType(itemType);
+}
+
 void EquipableItem::setStat(ItemStats val) {
 	if (equipType == HELMET) {
 		switch (val) {
@@ -64,4 +69,24 @@ void EquipableItem::setStat(ItemStats val) {
 		case DMG: stat = DMG; break;
 		}
 	}
+	else {
+		switch (val) {
+		case STR: stat = STR; break;
+		case CON: stat = CON; break;
+		case DEX: stat = DEX; break;
+		case INT: stat = INT; break;
+		case WIS: stat = WIS; break;
+		case CHA: stat = CHA; break;
+		case ATK: stat = ATK; break;
+		case DMG: stat = DMG; break;
+		case ARM: stat = ARM; break;
+		}
+	}
 }
+
+
+EquipableItem::EquipableItem() {
+	equipType = EquipableItem::Equipable::HELMET;
+	setStat(ItemStats::WIS);
+}
+EquipableItem::~EquipableItem() {}
