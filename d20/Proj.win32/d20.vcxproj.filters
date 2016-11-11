@@ -156,11 +156,17 @@
     <ClCompile Include="..\src\DynamicGrid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\InventoryDisplay.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\Die.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\InventoryDisplay.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Observable.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Observer.cpp">
+      <Filter>Source Files\Helpful Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -267,7 +273,13 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\InventoryDisplay.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Observable.h">
+      <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Observer.h">
+      <Filter>Header Files\Helpful Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

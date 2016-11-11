@@ -10,9 +10,8 @@ using namespace oxygine;
 DECLARE_SMART(CharacterDisplay, spCharacterDisplay);
 
 //This class is for the Play option
-class CharacterDisplay : public Actor {
+class CharacterDisplay : public Actor, Observer {
 public:
-	CharacterDisplay();
 	CharacterDisplay(spCharacter character);
 	~CharacterDisplay();
 
@@ -20,13 +19,15 @@ public:
 
 	void displayStats();
 
-	void setHelm(Tile t);
-	void setArmor(Tile t);
-	void setBoots(Tile t);
-	void setWeapon(Tile t);
-	void setShield(Tile t);
-	void setRing(Tile t);
-	void setBelt(Tile t);
+	void setHelm(spTile t);
+	void setArmor(spTile t);
+	void setBoots(spTile t);
+	void setWeapon(spTile t);
+	void setShield(spTile t);
+	void setRing(spTile t);
+	void setBelt(spTile t);
+
+	void refresh();
 private:
 	Resources res;
 	spTile helm;

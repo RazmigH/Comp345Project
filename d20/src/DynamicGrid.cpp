@@ -2,6 +2,7 @@
 
 DynamicGrid::DynamicGrid(int cols, int rows, spTile empty) : Grid(cols, rows), empty(empty){
 	setName("Dynamic Grid");
+	setTiles(empty);
 }
 
 DynamicGrid::~DynamicGrid() {
@@ -54,4 +55,8 @@ void DynamicGrid::clear() {
 
 spTile DynamicGrid::getLast() {
 	return last;
+}
+
+bool DynamicGrid::isEmpty(spTile tile) {
+	return *tile == *empty;
 }

@@ -16,5 +16,4 @@ protected:
 	Equipable equipType;
 
 };
-
-typedef oxygine::intrusive_ptr<EquipableItem>spItem;
+typedef oxygine::intrusive_ptr<EquipableItem>spEquipableItem;

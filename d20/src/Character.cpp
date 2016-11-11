@@ -4,6 +4,7 @@
 
 #include "Character.h"
 #include "GameResource.h"
+#include "EquipableItem.h"
 #include <iostream>
 
 Character::Character(
@@ -65,6 +66,16 @@ Character::Character(
 	setName(charName);
 	setDown();
 	setScale(0.5, 0.5);
+
+	//tempInventory = new list<spItem>;
+	//temporary - hardcode inventory
+	tempInventory.push_back(new EquipableItem(Item::Equipable::ARMOR));
+	tempInventory.push_back(new EquipableItem(Item::Equipable::BELT));
+	tempInventory.push_back(new EquipableItem(Item::Equipable::BOOTS));
+	tempInventory.push_back(new EquipableItem(Item::Equipable::HELMET));
+	tempInventory.push_back(new EquipableItem(Item::Equipable::RING));
+	tempInventory.push_back(new EquipableItem(Item::Equipable::SHIELD));
+	//tempInventory.push_back(new EquipableItem(Item::Equipable::WEAPON));
 }
 
 Character::~Character() {
@@ -448,3 +459,23 @@ void Character::setRight() {
 	}
 }
 
+
+//semi-temp
+vector<spItem> Character::getInventory() {
+	return tempInventory;
+}
+vector<spItem> Character::getEquipment() {
+	return tempEquipment;
+}
+void Character::addToInventory(spItem item) {
+	tempInventory.push_back(item);
+	notify();
+}
+
+
+void Character::equip(int atInVector) {
+	spItem item = tempInventory.at(atInVector);
+	tempEquipment.push_back(item);
+	tempInventory.erase(tempInventory.begin() + atInVector);
+	notify();
+}

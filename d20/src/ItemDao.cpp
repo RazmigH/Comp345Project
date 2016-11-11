@@ -44,7 +44,7 @@ spItem ItemDao::XmlToItem(XMLElement* element) {
 
 	XMLElement* temp = element->FirstChildElement("Type");
 	if (temp != nullptr) {
-		c->setType(stringToEquipable(temp->GetText()));
+		//c->setType(stringToEquipable(temp->GetText()));
 	}
 
 	temp = element->FirstChildElement("Name");
@@ -75,7 +75,7 @@ XMLElement* ItemDao::ItemToXml(spItem c) {
 
 	const int ATTRIBUTE_COUNT = 4;
 	string attributes[ATTRIBUTE_COUNT][2] = {
-		{ "Type",			typeToString(c->getType()) },
+		//{ "Type",			typeToString(c->getType()) },
 		{ "Name",			c->getName() },
 		{ "Item Stat",		to_string(c->getStat()) },
 		{ "Bonus",			to_string(c->getBonus()) },
@@ -127,5 +127,4 @@ EquipableItem::ItemStats ItemDao::stringToItemStats(string c) {
 	else if (c == "ARM") { return EquipableItem::ItemStats::ARM; }
 	else if (c == "CHP") { return EquipableItem::ItemStats::CHP; }
 	else { return EquipableItem::ItemStats::NUL; }
-
 }

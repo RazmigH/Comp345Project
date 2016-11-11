@@ -2,21 +2,16 @@
 #include "CharacterDisplay.h"
 #include "Character.h"
 
-CharacterDisplay::CharacterDisplay() {
-	setEmptyDisplay();
-};
-
 CharacterDisplay::CharacterDisplay(spCharacter useCharacter)
 {
-	this->character = useCharacter;
-
+	character = useCharacter;
+	character->attachObserver(this);
 	setEmptyDisplay();
 	displayStats();
 	
 }
 
 CharacterDisplay::~CharacterDisplay() {
-
 
 }
 
@@ -33,31 +28,31 @@ void CharacterDisplay::setEmptyDisplay() {
 
 
 	//Set And display default equipement
-	spTile helm = new Tile("default-helm");
+	helm = new Tile("default-helm");
 	helm->setPosition(32, 64);
 	addChild(helm);
 
-	spTile armor = new Tile("default-armor");
+	armor = new Tile("default-armor");
 	armor->setPosition(32, 96);
 	addChild(armor);
 
-	spTile weapon = new Tile("default-weapon");
+	weapon = new Tile("default-weapon");
 	weapon->setPosition(0, 96);
 	addChild(weapon);
 
-	spTile shield = new Tile("default-shield");
+	shield = new Tile("default-shield");
 	shield->setPosition(64, 96);
 	addChild(shield);
 
-	spTile ring = new Tile("default-ring");
+	ring = new Tile("default-ring");
 	ring->setPosition(64, 128);
 	addChild(ring);
 
-	spTile boots = new Tile("default-boots");
+	boots = new Tile("default-boots");
 	boots->setPosition(32, 128);
 	addChild(boots);
 
-	spTile belt = new Tile("default-belt");
+	belt = new Tile("default-belt");
 	belt->setPosition(0, 128);
 	addChild(belt);
 
@@ -133,31 +128,67 @@ void CharacterDisplay::displayStats() {
 
 
 //Setters for setting the tile
-void CharacterDisplay::setHelm(Tile t)
+void CharacterDisplay::setHelm(spTile t)
 {
-	helm = new Tile(t);
+	removeChild(helm);
+	helm = t;
+	addChild(helm);
 }
-void CharacterDisplay::setArmor(Tile t)
+void CharacterDisplay::setArmor(spTile t)
 {
-	armor = new Tile(t);
+	removeChild(armor);
+	armor = t;
+	addChild(armor);
 }
-void CharacterDisplay::setBoots(Tile t)
+void CharacterDisplay::setBoots(spTile t)
 {
-	boots = new Tile(t);
+	removeChild(boots);
+	boots = t;
+	addChild(boots);
 }
-void CharacterDisplay::setWeapon(Tile t)
+void CharacterDisplay::setWeapon(spTile t)
 {
-	weapon = new Tile(t);
+	removeChild(weapon);
+	weapon = t;
+	addChild(weapon);
 }
-void CharacterDisplay::setShield(Tile t)
+void CharacterDisplay::setShield(spTile t)
 {
-	shield = new Tile(t);
+	removeChild(shield);
+	shield = t;
+	addChild(shield);
 }
-void CharacterDisplay::setRing(Tile t)
+void CharacterDisplay::setRing(spTile t)
 {
-	ring = new Tile(t);
+	removeChild(ring);
+	ring = t;
+	addChild(ring);
 }
-void CharacterDisplay::setBelt(Tile t)
+void CharacterDisplay::setBelt(spTile t)
 {
-	belt = new Tile(t);
+	removeChild(belt);
+	belt = t;
+	addChild(belt);
+}
+
+void CharacterDisplay::refresh() {
+	/*vector<spItem> items = character->getEquipment();
+	for (vector<spItem>::iterator it = items.begin(); it != items.end(); ++it) {
+		spItem item = *it;
+		string typestr = item->getTypeStr();
+		if (typestr == "helmet")
+			setHelm(item);
+		else if (typestr == "armor")
+			setArmor(item);
+		else if (typestr == "shield")
+			setShield(item);
+		else if (typestr == "ring")
+			setRing(item);
+		else if (typestr == "belt")
+			setBelt(item);
+		else if (typestr == "boots")
+			setBoots(item);
+		else if (typestr == "weapon")
+			setWeapon(item);
+	}*/
 }

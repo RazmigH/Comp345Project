@@ -2,7 +2,7 @@
 
 EquipableItem::EquipableItem(Equipable type, string name, ItemStats s, int bonus) :
 	equipType(type), Item(name, s, bonus) {
-
+	setImage(getTypeStr());
 }
 
 string EquipableItem::getCategoryStr() {

@@ -13,6 +13,7 @@ public:
 	spTile remove(int col, int row);
 	void clear();
 	spTile getLast();
+	bool isEmpty(spTile tile);
 private:
 	spTile empty;
 	spTile last;

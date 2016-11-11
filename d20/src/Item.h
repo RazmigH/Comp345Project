@@ -1,5 +1,6 @@
 #pragma once
-#include "Character.h"
+#include "Tile.h"
+#include <string>
 
 class Item : public Tile {
 public:
@@ -11,7 +12,6 @@ public:
 	Item(string name = "Unknown Item", ItemStats s = NUL, int bonus = 0);
 
 	void printDetails();
-
 
 	virtual string getCategoryStr() = 0;
 	virtual string getTypeStr() = 0;
@@ -35,4 +35,4 @@ protected:
 	int id;
 	string name;
 };
-//typedef oxygine::intrusive_ptr<Item>spItem;
+typedef oxygine::intrusive_ptr<Item>spItem;

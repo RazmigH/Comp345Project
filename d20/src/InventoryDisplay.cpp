@@ -2,68 +2,52 @@
 #include "InventoryDisplay.h"
 #include "GameResource.h"
 
-InventoryDisplay::InventoryDisplay()
+InventoryDisplay::InventoryDisplay(spCharacter c) : character(c)
 {
-	//! 3X3 Inventory Grid item.
-	inventoryGrid = new Grid(3, 5);
-
-	//Create event listener for when the user clicks on a grid tile.
-	//inventoryGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &InventoryDisplay::onClickInventorySlot));
-
-
-	//Make a stone background for the character inventory using tiles.
-	for (int i = 0; i < 10; i++) {
-		for (int j = 0; j < 3; j++)
-		{
-			spTile temp = new Tile("stone");
-			temp->setPosition(j * 32, i * 32);
-			inventoryGrid->addChild(temp);
-		}
-	}
-
-	//Sets display for an empty inventory
 	spTextField textfield = new TextField();
-	textfield->setAnchor(0.5, 0.5);
-	textfield->setPosition(32, 10);
-
-
+	textfield->setPosition(2,2);
+	textfield->setHeight(15);
 	TextStyle style;
 	style.font = res::resources.getResFont("font");
 	style.fontSize = 14;
 	style.color = Color::Black;
-	style.vAlign = TextStyle::VALIGN_MIDDLE;
-	style.hAlign = TextStyle::HALIGN_CENTER;
 	textfield->setStyle(style);
 	textfield->setText("Inventory");
 
-	
+	inventoryGrid = new DynamicGrid(3, 5, new Tile("inventory-slot"));
+	inventoryGrid->setPosition(0, textfield->getY() + textfield->getHeight() + 3);
+	inventoryGrid->addClickListener(CLOSURE(this, &InventoryDisplay::onInventoryClick));
+
+	spGrid background = new Grid(3, 10);
+	background->setTiles(new Tile("stone"));
+
+	addChild(background);
 	addChild(inventoryGrid);
-	setEmptyInventory();
 	addChild(textfield);
+
+	character->Character::attachObserver(this);
+	refresh();
 }
 
 InventoryDisplay::~InventoryDisplay()
 {
-
+	character->Character::detachObserver(this);
 }
 
-void InventoryDisplay::setEmptyInventory()
-{
-	inventoryGrid->setTiles(new Tile("inventory-slot"));
+void InventoryDisplay::refresh() {
+	inventoryGrid->clear();
+	vector<spItem> inventory = character->getInventory();
+	for (vector<spItem>::iterator it = inventory.begin(); it != inventory.end(); ++it) {
+		inventoryGrid->add(*it);
+	}
 }
 
-void InventoryDisplay::setInventoryDisplaySlot(spTile tile, int col, int row)
-{
-	inventoryGrid->setTile(col, row, tile);
+void InventoryDisplay::onInventoryClick(Event* e) {
+	spTile tile = inventoryGrid->getTile(e);
+	if (!inventoryGrid->isEmpty(tile)) {
+		Vector2 loc = inventoryGrid->getTileLocation(tile);
+		int vectorPos = loc.y * inventoryGrid->getCols() + loc.x;
+		//character->equip(character->getInventory().at(vectorPos));
+		character->equip(vectorPos);
+	}
 }
-void InventoryDisplay::onClickInventorySlot(Event* e) {
-	//Invoque item's action when clicked.
-	// i.e : Item i = getItemAtPosition(row,rol);
-	//			  i.OnClickAction();
-
-}
-
-//!Method to be implemented
-/*Item InventoryDisplay::getItemInInventoryGrid(int row, int col, int InventoryID) {
-
-}*/

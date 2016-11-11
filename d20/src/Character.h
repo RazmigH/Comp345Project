@@ -9,6 +9,8 @@
 #include <string>
 #include "Die.h"
 #include "Tile.h"
+#include "Observable.h"
+#include "Item.h"
 
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6
@@ -17,7 +19,7 @@ using namespace std;
 
 //! Character class
 DECLARE_SMART(Character, spCharacter);
-class Character : public Tile{
+class Character : public Tile, public Observable{
 
 public:
 	const enum Stats {
@@ -124,6 +126,12 @@ public:
 	void setDown();
 	void setLeft();
 	void setRight();
+
+	//temporary
+	vector<spItem> getInventory();
+	vector<spItem> getEquipment();
+	void addToInventory(spItem);
+	void equip(int); //change to item?
 private:
 	virtual void levelUp();
 	int calcModifier(int) const;
@@ -152,4 +160,7 @@ protected:
 	int rollHP() const;
 	void endGame();
 
+	//temporary
+	vector<spItem> tempInventory;
+	vector<spItem> tempEquipment;
 };

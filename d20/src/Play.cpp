@@ -18,7 +18,7 @@ void Play::init() {
 	map->addToGrid(character, start.x, start.y);
 
 	//inventory = inventoryDao->getInventory(character->getInvID);
-	spInventoryDisplay iDisplay = new InventoryDisplay();
+	spInventoryDisplay iDisplay = new InventoryDisplay(character);
 
 	sc->setSize(96, 320);
 	sc->setPosition(0, 40);
