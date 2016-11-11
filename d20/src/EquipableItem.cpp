@@ -1,8 +1,57 @@
 #include "EquipableItem.h"
+#include <iostream>
 
 EquipableItem::EquipableItem(Equipable type, string name, ItemStats s, int bonus) :
 	equipType(type), Item(name, s, bonus) {
 	setImage(getTypeStr());
+}
+
+EquipableItem* EquipableItem::createEquipableItem() {
+	string n = "";
+	Equipable t = RING;
+	ItemStats s = NUL;
+	int b = 0, option;
+
+	cout << "Please fill the form to create an equipable item" << endl;
+	cout << "Choose an option for item type: 1->Helmet 2->Armor 3->Shield 4->Ring" << endl;
+	cout << "5->Belt 6->Boots 7->Weapon" << endl;
+	cout << "Your choice: ";
+	cin >> option;
+	switch (option) {
+	case 1: t = HELMET;
+	case 2: t = ARMOR;
+	case 3: t = SHIELD;
+	case 4: t = RING;
+	case 5: t = BELT;
+	case 6: t = BOOTS;
+	case 7: t = WEAPON;
+	}
+	cout << "Enter the name of the item: ";
+	cin >> n;
+	
+	cout << "Choose an option for the stat 1->Strength 2->Condition 3->Dexterity " << endl;
+	cout << "4->Intelligenc 5->Wisdom 6->Charisma 7->Attack Bonus 8->Damage Bonus" << endl;
+	cout << "9->Armor Class 10->None" << endl;
+	cout << "Your choice: ";
+	cin >> option;
+
+	switch (option) {
+	case 1: s = STR;
+	case 2: s = CON;
+	case 3: s = DEX;
+	case 4: s = INT;
+	case 5: s = WIS;
+	case 6: s = CHA;
+	case 7: s = ATK;
+	case 8: s = DMG;
+	case 9: s = ARM;
+	case 10: s = NUL;
+	}
+
+	cout << "Enter the bonus amount: ";
+	cin >> b;
+
+	return new EquipableItem(t, n, s, b);
 }
 
 string EquipableItem::getCategoryStr() {

@@ -48,6 +48,7 @@ public:
 
 	~Character(); 
 	
+	static Character* createCharacter();
 	virtual int takeDmg(int);
 
 	//id

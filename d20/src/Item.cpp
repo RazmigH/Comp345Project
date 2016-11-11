@@ -1,4 +1,5 @@
 #include "Item.h"
+#include <iostream>
 
 Item::Item(string n, ItemStats s, int b) :
 	stat(s),

@@ -82,6 +82,45 @@ Character::~Character() {
 
 }
 
+Character* Character::createCharacter() {
+
+	string n = "", t = "Good luck!";
+	Class c = FIGHTER;
+	int lv = 1, option;
+	bool h = false, p = false;
+
+	cout << "Please fill the form to create a character" << endl;
+	cout << "Choose an option for your character class 1->Fighter 2->Archer" << endl;
+	cout << "Your choice: ";
+	cin >> option;
+	switch (option) {
+	case 1: c = FIGHTER;
+	case 2: c = ARCHER;
+	}
+	cout << "Enter the name of your character: ";
+	cin >> n;
+	cout << "Enter the level of your character: ";
+	cin >> lv;
+	cout << "Should your character be hostile 1->Yes 2->No" << endl;
+	cout << "Your choice: ";
+	cin >> option;
+	switch (option) {
+	case 1: h = true;
+	case 2: h = false;
+	}
+	cout << "Enter something your character could say: ";
+	cin >> t;
+	cout << "Is your character a player 1->Yes 2->No" << endl;
+	cout << "Your choice: ";
+	cin >> option;
+	switch (option) {
+	case 1: p = true;
+	case 2: p = false;
+	}
+
+	return new Character(c, n, lv, 0, 0, h, t, p);
+}
+
 vector<int> Character::rollAbilityScores() const {
 	vector<int> scores = {};
 	for (int i = 0; i < NUM_STATS; ++i) {
