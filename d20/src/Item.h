@@ -1,5 +1,6 @@
 #pragma once
 #include "Character.h"
+#include <iostream>
 
 class Item : public Tile {
 public:
