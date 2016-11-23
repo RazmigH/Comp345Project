@@ -7,7 +7,7 @@ using namespace oxygine;
 DECLARE_SMART(Tile, spTile);
 class Tile : public Sprite {
 public:
-	static const int TILE_SIZE = 32;
+	static const int BASE_SPRITE_SIZE = 32;
 	static const string IDENTIFIER;
 
 	Tile(std::string = "transparent", bool solid = false, int col = 0, int row = 0);
@@ -34,7 +34,7 @@ public:
 
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;
-
+	void Tile::doRender(const RenderState& rs);
 private:
 	bool solid;
 

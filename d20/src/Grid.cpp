@@ -7,14 +7,10 @@ Grid::Grid(int cols, int rows) : rows(rows), cols(cols) {
 		tiles.at(i).resize(cols);
 	}
 
-	//set grid size depending on amount of rows/cols (using TILE_SIZE)
-	this->setSize(Vector2(Tile::TILE_SIZE * cols, Tile::TILE_SIZE * rows));
-
 	//initialize the tiles
 	for (int row = 0; row < rows; row++) {
 		for (int col = 0; col < cols; col++) {
 			tiles[row][col] = new Tile();
-			tiles[row][col]->setPosition(Tile::TILE_SIZE * col, Tile::TILE_SIZE * row);
 			addChild(tiles[row][col]);
 		}
 	}
@@ -26,8 +22,8 @@ Grid::~Grid() {
 
 //returns the tile location row/col of the provided coordinates
 Vector2 Grid::getTileLocation(Vector2 position) {
-	int row = position.y / Tile::TILE_SIZE;
-	int col = position.x / Tile::TILE_SIZE;
+	int row = position.y / getTileWidth();
+	int col = position.x / getTileHeight();
 	return Vector2(col, row);
 }
 
@@ -47,7 +43,6 @@ void Grid::addToGrid(spActor actor, int col, int row) {
 void Grid::setTile(int col, int row, spTile tile) {
 	//std::cout << "Setting tile " << col << "x" << row << " to : " << tile->getName() << std::endl;
 	removeChild(tiles[row][col]);
-	tile->setPosition(Tile::TILE_SIZE * col, Tile::TILE_SIZE * row);
 	tiles[row][col] = tile;
 	addChild(tiles[row][col]);
 };
@@ -83,4 +78,24 @@ int Grid::getCols() {
 
 int Grid::getRows() {
 	return rows;
+}
+
+void Grid::update(const UpdateState& us) {
+	float tile_width = getTileWidth();
+	float tile_height = getTileHeight();
+
+	//initialize the tiles
+	for (int col = 0; col < cols; col++) {
+		for (int row = 0; row < rows; row++) {
+			tiles[row][col]->setSize(tile_width, tile_height);
+			tiles[row][col]->setPosition(tile_width * col, tile_height * row);
+		}
+	}
+}
+
+float Grid::getTileWidth() {
+	return getWidth() / cols;
+}
+float Grid::getTileHeight() {
+	return getHeight() / rows;
 }

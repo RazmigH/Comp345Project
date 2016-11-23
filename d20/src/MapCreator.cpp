@@ -2,8 +2,7 @@
 #include "Map.h"
 #include "TextButton.h"
 #include "Chest.h"
-#include "GameResource.h" 
-#include "MapDao.h" 
+#include "GameResource.h"
 #include "MainMenu.h" 
 #include "InputDialog.h"
 
@@ -33,19 +32,18 @@ void MapCreator::init() {
 	selected = tiles[0];
 
 	//create container for tile selection grid
-	spActor selectPane = new Actor();
-	selectPane->setSize(150, 300);
+	selectPane = new Actor();
 
 	//create tile selection grid
-	spGrid selectGrid = new Grid(1, tile_count);
+	selectGrid = new Grid(1, tile_count);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
 
 	//create buttons
-	spTextButton fillBtn = new TextButton("fill");
+	fillBtn = new TextButton("fill");
 	fillBtn->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::fill));
 
 	//add select button
-	spTile select = new Tile("cursor");
+	select = new Tile("cursor");
 	select->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectToolClicked));
 
 	//add option tiles to grid
@@ -62,7 +60,6 @@ void MapCreator::init() {
 
 	//details pane
 	detailsPane = new Actor();
-	detailsPane->setSize(selectPane->getWidth(), selectPane->getHeight());
 
 	detailsTitle = new TextField();
 	detailsTitle->setText("Current Selection");
@@ -76,34 +73,30 @@ void MapCreator::init() {
 	currentDetails = new Actor();
 
 	//save button
-	spTextButton save = new TextButton("Save");
+	save = new TextButton("Save");
 	save->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::saveMap));
 
 	//selection highlight
 	highlight = new ColorRectSprite();
-	highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	highlight->setColor(Color::Red);
 	highlight->setAlpha(50000);
 
 	//top pane
-	spActor topPane = new Actor();
+	topPane = new Actor();
 	topPane->setHeight(50);
-	spTextButton resetPoints = new TextButton("Reset pt.");
+	resetPoints = new TextButton("Reset pt.");
 	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
 	resetPoints->setWidth(100);
 
 	//position selections
 	selectPane->setPosition(0, topPane->getHeight());
 	selectGrid->setAnchor(0.5, 0.5);
-	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
 
 	//position buttons
 	fillBtn->setAnchor(0.5, 0.5);
-	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight() / 2 + 25);
 
 	//position select 
 	select->setAnchor(0.5, 0.5);
-	select->setPosition(selectGrid->getX(), selectGrid->getY() - selectGrid->getHeight() / 2 - 25);
 
 	selectPane->addChild(fillBtn);
 	selectPane->addChild(selectGrid);
@@ -111,34 +104,24 @@ void MapCreator::init() {
 	addChild(selectPane);
 
 	//position map
-	map->setPosition(selectPane->getWidth(), selectPane->getY());
 	addChild(map);
 
 	//position details pane
-	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
-
-	detailsTitle->setPosition(0, 5);
-	detailsTitle->setWidth(detailsPane->getWidth());
 	detailsPane->addChild(detailsTitle);
 
-	currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
-	currentDetails->setWidth(detailsPane->getWidth());
 	detailsPane->addChild(currentDetails);
 
-	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 10);
 	detailsPane->addChild(save);
 
 	addChild(detailsPane);
 
 	//position top pane
-	topPane->setWidth(this->calculateSize().x);
 	resetPoints->setAnchor(0.5, 0.5);
-	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
 	topPane->addChild(resetPoints);
 	addChild(topPane);
 
 	//fit children
-	fitToWindow(this, true);
+	//fitToWindow(this, true);
 }
 
 MapCreator::~MapCreator() {
@@ -244,10 +227,38 @@ void MapCreator::saveMap(Event* e) {
 	//map is valid, save it
 	spInputDialog input = new InputDialog("Enter Map Name", map->getName());
 	flow::show(input, [=](Event*) {
-		MapDao* dao = new MapDao();
 		map->setName(input->getText());
-		dao->addMap(map);
-		delete(dao);
+		res::mapDao->addMap(map);
 		log::messageln("saved map");
 	});
+}
+
+void MapCreator::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	selectPane->setSize(getWidth() * 0.15, getHeight());
+	selectGrid->setWidth(selectPane->getWidth() * 0.35);
+	selectGrid->setHeight(selectGrid->getWidth() * selectGrid->getRows());
+	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
+	select->setSize(selectGrid->getTileWidth(), selectGrid->getTileHeight());
+	select->setPosition(selectPane->getWidth() / 2, selectGrid->getY() - selectGrid->getHeight() / 2 - 25);
+	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight() / 2 + 25);
+
+	map->setWidth(getWidth() * 0.7);
+	map->setHeight(map->getTileWidth() * map->getRows());
+	map->setPosition(selectPane->getX() + selectPane->getWidth(), selectPane->getY());
+	highlight->setSize(map->getTileWidth(), map->getTileHeight());
+
+	detailsPane->setSize(selectPane->getWidth(), selectPane->getHeight());
+	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
+	detailsTitle->setPosition(0, detailsPane->getHeight() / 15);
+	detailsTitle->setWidth(detailsPane->getWidth());
+	currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
+	currentDetails->setWidth(detailsPane->getWidth());
+
+	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 10);
+
+	topPane->setWidth(getWidth());
+	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
 }

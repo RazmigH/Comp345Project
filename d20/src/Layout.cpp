@@ -109,3 +109,9 @@ void Layout::setNext(spLayout layout) {
 spLayout Layout::getNext() {
 	return leadTo;
 }
+
+void Layout::update() {
+	int w, h;
+	SDL_GetWindowSize(getStage()->getAssociatedWindow(), &w, &h);
+	getStage()->setSize(w, h);
+}

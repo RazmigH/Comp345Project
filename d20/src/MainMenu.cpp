@@ -3,6 +3,8 @@
 #include "MapCreator.h"
 #include "GamePicker.h"
 #include "Play.h"
+#include "GameResource.h"
+
 /*
 Memory leaks
 - leadTo variable in Layout (20) (biggest problem, might be due to oxygine-flow)
@@ -23,35 +25,18 @@ MainMenu::MainMenu() {
 
 	//title text
 	title = createTextField("D20 Game");
-	title->setFontSize(40);
+	title->setFont(res::resources.getResFont("font"));
+	addChild(title);
 
 	//create menu option textfields
 	for (int i = 0; i < menu_size; i++) {
 		//create textfield
 		spTextField textfield = createTextField(menuTexts[i]);
+		textfield->setFont(res::resources.getResFont("font"));
 		textfield->addClickListener(CLOSURE(this, &MainMenu::onClick));
 		menuItems.push_back(textfield);
-	}
-
-	getStage()->setSize(400, menu_size * 100);
-	init();
-}
-
-void MainMenu::init() {
-	this->clear();
-	setSize(getStage()->getSize());
-
-	title->setPosition(getWidth() / 2, 50);
-	addChild(title);
-
-	int i = 0;
-	for (vector<spTextField>::iterator it = menuItems.begin(); it != menuItems.end(); ++it) {
-		spTextField textfield = *it;
-		textfield->setPosition(getWidth() / 2, title->getPosition().y + (((i++) + 1) * 50));
 		addChild(textfield);
 	}
-
-	fitToWindow(this);
 }
 
 void MainMenu::onClick(Event* e) {
@@ -93,4 +78,21 @@ spTextField MainMenu::createTextField(string text) {
 	temp->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
 	temp->setName(text);
 	return temp;
+}
+
+void MainMenu::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	title->setPosition(getWidth() / 2, getHeight() / 6);
+	title->setFontSize((getHeight() / 10) * 1.30);
+	title->setHeight((getHeight() / 10) * 1.30);
+
+	spTextField previous = title;
+	for (vector<spTextField>::iterator it = menuItems.begin(); it != menuItems.end(); ++it) {
+		(*it)->setPosition(getWidth() / 2, previous->getY() + previous->getHeight() + 15);
+		(*it)->setFontSize(getHeight() / 10);
+		(*it)->setHeight(getHeight() / 10);
+		previous = *it;
+	}
 }

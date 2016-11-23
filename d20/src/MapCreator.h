@@ -17,6 +17,7 @@ public:
 	~MapCreator();
 
 	void init();
+	void update();
 private:
 	spTile selected;
 	void onSelectTileOption(Event*);
@@ -34,4 +35,14 @@ private:
 	spActor currentDetails;
 	spColorRectSprite highlight;
 	spMapPicker mapSource;
+
+	spActor selectPane;
+	spGrid selectGrid;
+	spTile select;
+
+	spTextButton fillBtn;
+	spTextButton save;
+
+	spActor topPane;
+	spTextButton resetPoints;
 };

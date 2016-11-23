@@ -67,6 +67,7 @@ int Xml::addElement(XMLElement* e) {
 
 	getRoot()->InsertEndChild(e);
 	saveFile();
+	loadFile();
 	return atoi(e->Attribute("id"));
 }
 

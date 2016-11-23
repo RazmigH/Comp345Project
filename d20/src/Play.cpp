@@ -67,7 +67,7 @@ void Play::update() {
 					if (map->getNextMapId() != -1 &&
 						character->getFirstTween() == NULL) {
 						//improve 
-						gamePicker->setMap(gamePicker->getMapPicker()->getMapDao()->getMap(to_string(map->getNextMapId())));
+						gamePicker->setMap(res::mapDao->getMap(to_string(map->getNextMapId())));
 						log::messageln("Show next map id %d", map->getNextMapId());
 						init();
 					}

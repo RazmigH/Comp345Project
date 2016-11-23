@@ -4,13 +4,13 @@
 
 Map::Map(int cols, int rows) : Grid(cols, rows) {
 	entryHighlight = new ColorRectSprite();
-	entryHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	//entryHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	entryHighlight->setColor(Color::LimeGreen);
 	entryHighlight->setAlpha(50000);
 	//addToGrid(entryHighlight, getEntryPoint().x, getEntryPoint().y);
 
 	exitHighlight = new ColorRectSprite();
-	exitHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	//exitHighlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	exitHighlight->setColor(Color::YellowGreen);
 	exitHighlight->setAlpha(50000);
 	//addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
@@ -77,8 +77,8 @@ void Map::move(spActor actor, int col, int row, timeMS duration) {
 
 void Map::render(const RenderState &rs) {
 	Grid::render(rs);
-	addToGrid(entryHighlight, getEntryPoint().x, getEntryPoint().y);
-	addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
+	//addToGrid(entryHighlight, getEntryPoint().x, getEntryPoint().y);
+	//addToGrid(exitHighlight, getExitPoint().x, getExitPoint().y);
 	//entryHighlight->render(rs);
 	//exitHighlight->render(rs);
 	//std::cout << "yo" << std::endl;

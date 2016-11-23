@@ -22,6 +22,9 @@ public:
 	void setTiles(spTile);
 	int getCols();
 	int getRows();
+	float getTileWidth();
+	float getTileHeight();
+	void update(const UpdateState& us);
 protected:
 	int cols;
 	int rows;

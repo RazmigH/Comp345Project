@@ -6,7 +6,7 @@
 const string Tile::IDENTIFIER = "Tile";
 
 Tile::Tile(std::string image, bool solid, int img_row, int img_col) : solid(solid) {
-	setSize(TILE_SIZE, TILE_SIZE);
+	setSize(BASE_SPRITE_SIZE, BASE_SPRITE_SIZE);
 	setImage(image, img_row, img_col);
 	setName(image);
 }
@@ -131,4 +131,11 @@ spTile Tile::getFromXML(XMLElement* element) {
 
 string Tile::getImageName() const{
 	return getResAnim()->getName();
+}
+
+void Tile::doRender(const RenderState& rs) {
+	Sprite::doRender(rs);
+	float wratio = getWidth() / BASE_SPRITE_SIZE;
+	float hratio = getHeight() / BASE_SPRITE_SIZE;
+	setScale(wratio, hratio);
 }

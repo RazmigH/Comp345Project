@@ -29,7 +29,7 @@ void CharacterPicker::init() {
 	grid->addClickListener(CLOSURE(this, &CharacterPicker::onSelectCharacter));
 
 	highlight = new ColorRectSprite();
-	highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
+	//highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
 	highlight->setColor(Color::Lime);
 	highlight->setAlpha(30000);
 	highlight->setPosition(-100, -100);

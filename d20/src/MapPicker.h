@@ -1,7 +1,7 @@
 #pragma once
 #include "Layout.h"
-#include "MapDao.h"
 #include "TextButton.h"
+#include "Map.h"
 
 DECLARE_SMART(MapPicker, spMapPicker);
 class MapPicker : public Layout{
@@ -12,15 +12,16 @@ public:
 	spMap getMap();
 	void setMap(spMap);
 
-	MapDao* getMapDao() {
-		return dao;
-	}
-
 	void init();
+	void update();
 private:
-	spMap map;
-	MapDao* dao;
 	spTextField highlight;
+	vector<spTextField> mapTexts;
+
+	spActor selected;
+	string mapId = "";
+
 	spTextButton okbtn;
+
 	void onSelect(Event*);
 };

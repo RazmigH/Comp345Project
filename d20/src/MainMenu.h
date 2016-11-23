@@ -10,7 +10,7 @@ public:
 	MainMenu();
 	~MainMenu();
 
-	void init();
+	void update();
 private:
 	const int menu_size = 3; //! Amount of menu options
 	vector<spTextField> menuItems;

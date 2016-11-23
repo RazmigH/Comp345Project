@@ -1,5 +1,6 @@
 #include "MapPicker.h"
 #include "MapCreator.h"
+#include "GameResource.h"
 using namespace std;
 
 MapPicker::MapPicker(){
@@ -7,12 +8,12 @@ MapPicker::MapPicker(){
 
 	highlight = new TextField();
 	highlight->setText("<");
-	highlight->setFontSize(20);
-	highlight->setColor(Color::White);
+	highlight->setAnchor(0.5, 0.5);
+	highlight->setFont(res::resources.getResFont("font"));
 
 	okbtn = new TextButton("Ok");
 	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		if (map && getNext()) {
+		if (mapId != "" && getNext()) {
 			getNext()->init();
 			flow::show(getNext(), [=](Event*) {
 				init();
@@ -28,53 +29,67 @@ MapPicker::MapPicker(){
 
 void MapPicker::init() {
 	clear();
+	addChild(okbtn);
+	addChild(highlight);
+	addBackButton();
 
-	setSize(getStage()->getSize());
-	highlight->setPosition(-100, -100);
+	mapTexts.clear();
 
-	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
-	dao = new MapDao();
-	vector<spMap> maps = dao->getMaps();
-	int y = 5;
+	vector<spMap> maps = res::mapDao->getMaps();
+
 	for (vector<spMap>::iterator it = maps.begin(); it != maps.end(); ++it) {
 		spTextField tf = new TextField();
-		spMap temp = *it;
-		tf->setName(to_string(temp->getId()));
-		tf->setText(temp->getName());
-		tf->setFontSize(20);
-		tf->setColor(Color::White);
+		tf->setName(to_string((*it)->getId()));
+		tf->setText((*it)->getName());
 		tf->setAnchor(0.5, 0.5);
 		tf->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
-		tf->setPosition(getWidth() / 2, y);
-		tf->setWidth(100);
 		tf->addClickListener(CLOSURE(this, &MapPicker::onSelect));
+		tf->setFont(res::resources.getResFont("font"));
 		addChild(tf);
-		y += 25;
+		mapTexts.push_back(tf);
 	}
 
-	addChild(okbtn);
-	addBackButton();
-	addChild(highlight);
+	selected = nullptr;
+}
+
+void MapPicker::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
+
+	int x = getWidth() / 2;
+	int y = getHeight() / 8;
+	for (vector<spTextField>::iterator it = mapTexts.begin(); it != mapTexts.end(); ++it) {
+		(*it)->setPosition(x, y);
+		(*it)->setFontSize(getHeight() / 10);
+		(*it)->setHeight(getHeight() / 10);
+		string text = (*it)->getText();
+		(*it)->setWidth((strlen(text.c_str()) * (getHeight() / 10)) * 0.5);
+		y = (*it)->getY() + (*it)->getHeight() + 15;
+	}
+
+	if (selected) {
+		highlight->setFontSize(getHeight() / 10);
+		highlight->setPosition(selected->getX() + selected->getWidth() / 2 + 5, selected->getY() - (selected->getHeight() / 2));
+	}
 }
 
 MapPicker::~MapPicker() {
-	delete(dao);
+
 }
 
 void MapPicker::onSelect(Event* e) {
 	spActor temp = safeSpCast<Actor>(e->target);
-	if (!map || to_string(map->getId()) != temp->getName()) {
-		map = dao->getMap(temp->getName());
-		removeChild(highlight);
-		highlight->setPosition(temp->getX() + temp->getWidth() / 2 + 5, temp->getY());
-		addChild(highlight);
-	}
+	mapId = temp->getName();
+	selected = temp;
 }
 
 spMap MapPicker::getMap() {
+	spMap map = res::mapDao->getMap(mapId);
 	return map;
 }
 
 void MapPicker::setMap(spMap m) {
-	map = m;
+	mapId = m->getId();
 }

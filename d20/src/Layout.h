@@ -13,7 +13,7 @@ public:
 	Layout();
 	~Layout();
 
-	virtual void init() = 0;
+	virtual void init() {};
 
 	Vector2 getSize() const;
 	float getWidth() const;
@@ -23,6 +23,7 @@ public:
 
 	void setNext(spLayout);
 	spLayout getNext();
+	virtual void update();
 protected:
 	Vector2 calculateSize();
 	void fitToWindow(bool useMinSize = false);
