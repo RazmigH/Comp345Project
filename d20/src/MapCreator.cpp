@@ -22,14 +22,15 @@ void MapCreator::init() {
 	//all tiles to appear in tile selection grid
 	spChest closedChest = new Chest(Chest::ChestState::CLOSED);
 	spChest openChest = new Chest(Chest::ChestState::OPEN);
-	spTile tiles[tile_count] = {
+	spTile tiles[tile_count+1] = { 
+		new Tile("cursor"),
 		new Tile("blank"),
 		new Tile("grass"),
 		new Tile("grass-border", true),
 		closedChest,
 		openChest
 	};
-	selected = tiles[0];
+	selectedOption = tiles[1];
 
 	//create container for tile selection grid
 	selectPane = new Actor();
@@ -41,10 +42,6 @@ void MapCreator::init() {
 	//create buttons
 	fillBtn = new TextButton("fill");
 	fillBtn->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::fill));
-
-	//add select button
-	select = new Tile("cursor");
-	select->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectToolClicked));
 
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
@@ -62,13 +59,10 @@ void MapCreator::init() {
 	detailsPane = new Actor();
 
 	detailsTitle = new TextField();
+	detailsTitle->setAnchor(0.5, 0.5);
 	detailsTitle->setText("Current Selection");
-	TextStyle style;
-	style.font = res::resources.getResFont("small");
-	style.color = Color::White;
-	style.vAlign = TextStyle::VALIGN_MIDDLE;
-	style.hAlign = TextStyle::HALIGN_CENTER;
-	detailsTitle->setStyle(style);
+	detailsTitle->setFont(res::resources.getResFont("font"));
+	detailsTitle->setHAlign(TextStyle::HALIGN_MIDDLE);
 
 	currentDetails = new Actor();
 
@@ -95,12 +89,8 @@ void MapCreator::init() {
 	//position buttons
 	fillBtn->setAnchor(0.5, 0.5);
 
-	//position select 
-	select->setAnchor(0.5, 0.5);
-
 	selectPane->addChild(fillBtn);
 	selectPane->addChild(selectGrid);
-	selectPane->addChild(select);
 	addChild(selectPane);
 
 	//position map
@@ -130,25 +120,29 @@ MapCreator::~MapCreator() {
 
 //Event handler for when a tile is clicked in the tile option select pane
 void MapCreator::onSelectTileOption(Event* e) {
-	this->currentAction = CreatorAction::TILE_EDIT;
-	selected = selections->getTile(e);
-	log::messageln("Selected %s", selected->getName());
-}
-
-//event handler for when the select tool is selected
-void MapCreator::onSelectToolClicked(Event* e) {
-	this->currentAction = CreatorAction::SELECT;
-	log::messageln("Selected Tool selected %s", selected->getName());
+	spTile t = selections->getTile(e);
+	if (selections->getTileLocation(t) == Vector2(0, 0)) {
+		this->currentAction = CreatorAction::SELECT;
+		log::messageln("Selected Tool selected %s", selectedOption->getName());
+	}
+	else {
+		this->currentAction = CreatorAction::TILE_EDIT;
+		selectedOption = t;
+		log::messageln("Selected %s", selectedOption->getName());
+	}
 }
 
 //Event handler for when a tile on the map is clicked
 void MapCreator::onSelectMapTile(Event* e) {
 	spTile tile = map->getTile(e);
-	if (this->currentAction == CreatorAction::TILE_EDIT && *tile != *selected) {
-		spTile newTile = selected->clone();
+	if (this->currentAction == CreatorAction::TILE_EDIT && *tile != *selectedOption) {
+		spTile newTile = selectedOption->clone();
 		map->setTile(map->getTileLocation(tile), newTile);
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
+		if (selectedTile && tile->getPosition() == selectedTile->getPosition()) {
+
+		}
 		Vector2 loc = map->getTileLocation(tile);
 		if (loc == map->getTileLocation(highlight)) {
 			if (highlight->getParent() == (spActor)map)
@@ -178,7 +172,7 @@ void MapCreator::onMoveOnMap(Event* e) {
 }
 
 void MapCreator::fill(Event* e) {
-	map->setTiles(selected);
+	map->setTiles(selectedOption);
 }
 
 void MapCreator::resetPts(Event* e) {
@@ -240,9 +234,7 @@ void MapCreator::update() {
 	selectPane->setSize(getWidth() * 0.15, getHeight());
 	selectGrid->setWidth(selectPane->getWidth() * 0.35);
 	selectGrid->setHeight(selectGrid->getWidth() * selectGrid->getRows());
-	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() / 2);
-	select->setSize(selectGrid->getTileWidth(), selectGrid->getTileHeight());
-	select->setPosition(selectPane->getWidth() / 2, selectGrid->getY() - selectGrid->getHeight() / 2 - 25);
+	selectGrid->setPosition(selectPane->getWidth() / 2, selectPane->getHeight() * 0.3);
 	fillBtn->setPosition(selectGrid->getX(), selectGrid->getY() + selectGrid->getHeight() / 2 + 25);
 
 	map->setWidth(getWidth() * 0.7);
@@ -250,14 +242,16 @@ void MapCreator::update() {
 	map->setPosition(selectPane->getX() + selectPane->getWidth(), selectPane->getY());
 	highlight->setSize(map->getTileWidth(), map->getTileHeight());
 
-	detailsPane->setSize(selectPane->getWidth(), selectPane->getHeight());
+	detailsPane->setSize(getWidth() * 0.15, getHeight());
 	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
-	detailsTitle->setPosition(0, detailsPane->getHeight() / 15);
-	detailsTitle->setWidth(detailsPane->getWidth());
+	detailsTitle->setPosition(detailsPane->getWidth() / 2, 5);
+	detailsTitle->setFontSize(getWidth() / 50);
+	detailsTitle->setHeight(getWidth() / 50);
 	currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
 	currentDetails->setWidth(detailsPane->getWidth());
+	currentDetails->setHeight(detailsPane->getHeight() - currentDetails->getY());
 
-	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 10);
+	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 55);
 
 	topPane->setWidth(getWidth());
 	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);

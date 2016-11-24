@@ -1,12 +1,16 @@
 #include "CharacterPicker.h"
+#include "GameResource.h"
 
 CharacterPicker::CharacterPicker(string message) {
 	title = new TextField();
 	title->setText(message);
-	title->setColor(Color::White);
-	title->setFontSize(18);
+	title->setFont(res::resources.getResFont("font"));
 	title->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
-	title->setHeight(30);
+
+	highlight = new ColorRectSprite();
+	highlight->setColor(Color::Lime);
+	highlight->setAlpha(30000);
+
 	init();
 }
 
@@ -15,7 +19,7 @@ void CharacterPicker::init() {
 
 	okbtn = new TextButton("Ok");
 	okbtn->addEventListener(TouchEvent::CLICK, [=](Event*) {
-		if (character && getNext()) {
+		if (characterId != "" && getNext()) {
 			getNext()->init();
 			flow::show(getNext(), [=](Event*) {
 				load();
@@ -28,13 +32,30 @@ void CharacterPicker::init() {
 	grid = new DynamicGrid(4, 10, empty);
 	grid->addClickListener(CLOSURE(this, &CharacterPicker::onSelectCharacter));
 
-	highlight = new ColorRectSprite();
-	//highlight->setSize(Tile::TILE_SIZE, Tile::TILE_SIZE);
-	highlight->setColor(Color::Lime);
-	highlight->setAlpha(30000);
 	highlight->setPosition(-100, -100);
+	grid->addChild(highlight);
 
 	load();
+}
+
+void CharacterPicker::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	title->setPosition(getWidth() / 2 - title->getWidth() / 2, 10);
+	title->setFontSize(getHeight() / 20);
+	title->setHeight(getHeight() / 20);
+
+	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
+	grid->setPosition(getWidth() / 2 - grid->getWidth() / 2, title->getY() + title->getHeight() + 5);
+	grid->setWidth(getWidth() / 3);
+	grid->setHeight(grid->getTileWidth() * grid->getRows());
+
+	if (selected) {
+		log::messageln("moving highlight %d %d", selected->getX(), selected->getY());
+		highlight->setSize(grid->getTileWidth(), grid->getTileHeight());
+		highlight->setPosition(selected->getPosition());
+	}
 }
 
 CharacterPicker::~CharacterPicker() {
@@ -44,41 +65,30 @@ CharacterPicker::~CharacterPicker() {
 void CharacterPicker::load() {
 	this->clear();
 
-	setSize(getStage()->getSize());
 	addBackButton();
-	title->setPosition(getWidth() / 2 - title->getWidth() / 2, 10);
 	addChild(title);
-	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
 	addChild(okbtn);
 	grid->clear();
-	grid->setPosition(getWidth() / 2 - grid->getWidth() / 2, title->getY() + title->getHeight() + 5);
 
-	dao = new CharacterDao();
-	vector<spCharacter> characters = dao->getCharacters();
+	vector<spCharacter> characters = res::characterDao->getCharacters();
 	for (vector<spCharacter>::iterator it = characters.begin(); it != characters.end(); ++it) {
 		spCharacter temp = *it;
 		grid->add(temp);
 		grid->getLast()->setName(to_string(temp->getId()));
 	}
+	grid->addChild(highlight);
 	addChild(grid);
-
-	fitToWindow(true);
 }
 
 void CharacterPicker::onSelectCharacter(Event* e) {
 	spTile tile = grid->getTile(e);
-	if (*tile != *empty && tile->getPosition() != highlight->getPosition()) {
-		Vector2 tileLoc = grid->getTileLocation(tile);
-		grid->addToGrid(highlight, tileLoc.x, tileLoc.y);
-		character = dao->getCharacter(tile->getName());
-		if (character)
-			character->printStats();
-	}
+	characterId = tile->getName();
+	selected = tile;
 }
 
 spCharacter CharacterPicker::getCharacter() {
-	return character;
+	return res::characterDao->getCharacter(characterId);
 }
 void CharacterPicker::setCharacter(spCharacter c) {
-	character = c;
+	characterId = c->getId();
 }

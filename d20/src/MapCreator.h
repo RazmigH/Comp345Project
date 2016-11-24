@@ -19,9 +19,9 @@ public:
 	void init();
 	void update();
 private:
-	spTile selected;
+	spTile selectedOption;
+	spTile selectedTile;
 	void onSelectTileOption(Event*);
-	void onSelectToolClicked(Event*);
 	void onSelectMapTile(Event*);
 	void onMoveOnMap(Event*);
 	void fill(Event*);
@@ -38,7 +38,6 @@ private:
 
 	spActor selectPane;
 	spGrid selectGrid;
-	spTile select;
 
 	spTextButton fillBtn;
 	spTextButton save;

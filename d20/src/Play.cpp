@@ -15,25 +15,15 @@ void Play::init() {
 	map = gamePicker->getMap();
 
 	Vector2 start = map->getEntryPoint();
-	map->addToGrid(character, start.x, start.y);
+	//map->addToGrid(character, start.x, start.y);
 
 	//inventory = inventoryDao->getInventory(character->getInvID);
-	spInventoryDisplay iDisplay = new InventoryDisplay(character);
-
-	sc->setSize(96, 320);
-	sc->setPosition(0, 40);
-
-	map->setPosition(sc->getWidth(), sc->getY());
-
-	iDisplay->setSize(96, 320);
-	iDisplay->setPosition(map->getX() + map->getWidth(), map->getY());
+	iDisplay = new InventoryDisplay(character);
 
 	addChild(sc);
 	addChild(map);
 	addChild(iDisplay);
 	addBackButton();
-
-	fitToWindow(true);
 }
 
 Play::~Play() {
@@ -41,6 +31,19 @@ Play::~Play() {
 }
 
 void Play::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	sc->setSize(getWidth() * 0.2, getHeight());
+	sc->setPosition(0, 40);
+
+	map->setWidth(getWidth() * 0.6);
+	map->setHeight(map->getTileWidth() * map->getRows());
+	map->setPosition(sc->getX() + sc->getWidth(), sc->getY());
+
+	iDisplay->setSize(getWidth() * 0.2, getHeight());
+	iDisplay->setPosition(map->getX() + map->getWidth(), map->getY());
+
 	if (character && map) {
 		Vector2 charLoc = map->getTileLocation(character);
 		const Uint8* data = SDL_GetKeyboardState(NULL);

@@ -1,4 +1,5 @@
 #include "GamePicker.h"
+#include "GameResource.h"
 
 GamePicker::GamePicker() {
 	characterPicker = new CharacterPicker();
@@ -21,14 +22,12 @@ GamePicker::GamePicker() {
 	});
 
 	mapText = new TextField();
-	mapText->setColor(Color::White);
-	mapText->setFontSize(20);
+	mapText->setFont(res::resources.getResFont("font"));
 	mapText->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
 	mapText->setAnchor(0.5, 0.5);
 
 	characterText = new TextField();
-	characterText->setColor(Color::White);
-	characterText->setFontSize(20);
+	mapText->setFont(res::resources.getResFont("font"));
 	characterText->setHAlign(TextStyle::HorizontalAlign::HALIGN_CENTER);
 	characterText->setAnchor(0.5, 0.5);
 
@@ -42,9 +41,6 @@ GamePicker::GamePicker() {
 		}
 	});
 
-	setSize(600, 350);
-	getStage()->setSize(getSize());
-
 	init();
 }
 
@@ -54,17 +50,9 @@ GamePicker::~GamePicker() {
 
 void GamePicker::init() {
 	clear();
-	setSize(getStage()->getSize());
 
 	mapPicker->init();
 	characterPicker->init();
-
-	mapBtn->setPosition(getWidth() * 0.25, getHeight() / 2);
-	charBtn->setPosition(getWidth() * 0.75, getHeight() / 2);
-	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
-
-	mapText->setPosition(mapBtn->getX(), mapBtn->getY() + mapBtn->getHeight() + 10);
-	characterText->setPosition(charBtn->getX(), charBtn->getY() + charBtn->getHeight() + 10);
 
 	mapText->setText(mapPicker->getMap() ? mapPicker->getMap()->getName() : "-");
 	characterText->setText(characterPicker->getCharacter() ? characterPicker->getCharacter()->getName() : "-");
@@ -75,8 +63,6 @@ void GamePicker::init() {
 	addChild(mapText);
 	addChild(characterText);
 	addBackButton();
-
-	fitToWindow();
 }
 
 spMap GamePicker::getMap() {
@@ -92,4 +78,18 @@ void GamePicker::setMap(spMap m) {
 }
 void GamePicker::setCharacter(spCharacter c) {
 	characterPicker->setCharacter(c);
+}
+
+void GamePicker::update() {
+	Layout::update();
+	setSize(getStage()->getSize());
+
+	mapBtn->setPosition(getWidth() * 0.25, getHeight() / 2);
+	charBtn->setPosition(getWidth() * 0.75, getHeight() / 2);
+	okbtn->setPosition(getWidth() - okbtn->getWidth() - 5, getHeight() - okbtn->getHeight() - 5);
+
+	mapText->setPosition(mapBtn->getX(), mapBtn->getY() + mapBtn->getHeight() + 10);
+	mapText->setFontSize(getHeight()  / 15);
+	characterText->setPosition(charBtn->getX(), charBtn->getY() + charBtn->getHeight() + 10);
+	characterText->setFontSize(getHeight() / 15);
 }

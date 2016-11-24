@@ -25,9 +25,6 @@ public:
 	spLayout getNext();
 	virtual void update();
 protected:
-	Vector2 calculateSize();
-	void fitToWindow(bool useMinSize = false);
-	void fitToWindow(Layout*, bool useMinSize = false);
 	void addBackButton();
 	void addChild(spActor);
 	void removeChild(spActor);

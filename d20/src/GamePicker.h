@@ -19,6 +19,7 @@ public:
 	}
 
 	void init();
+	void update();
 private:
 	spCharacterPicker characterPicker;
 	spMapPicker mapPicker;
@@ -28,6 +29,4 @@ private:
 	spTextButton okbtn;
 	spTextField mapText;
 	spTextField characterText;
-
-	
 };

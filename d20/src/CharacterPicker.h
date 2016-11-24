@@ -15,13 +15,15 @@ public:
 
 	void onSelectCharacter(Event*);
 	void init();
+	void update();
 private:
-	CharacterDao* dao;
 	void load();
+	string characterId = "";
+	spActor selected;
+
 	spDynamicGrid grid;
 	spTextButton okbtn;
 	spColorRectSprite highlight;
 	spTile empty;
-	spCharacter character;
 	spTextField title;
 };

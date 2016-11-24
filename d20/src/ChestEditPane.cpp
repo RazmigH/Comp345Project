@@ -4,15 +4,8 @@
 ChestEditPane::ChestEditPane(spChest chest) {
 	id = new TextField();
 	id->setText("Chest");
-	TextStyle style;
-	style.font = res::resources.getResFont("small");
-	style.color = Color::White;
-	style.vAlign = TextStyle::VALIGN_MIDDLE;
-	style.hAlign = TextStyle::HALIGN_CENTER;
-	id->setStyle(style);
-	id->setPosition(0, 0);
-	setWidth(150);
-	id->setWidth(getWidth());
+	id->setFont(res::resources.getResFont("font"));
+	id->setHAlign(TextStyle::HALIGN_CENTER);
 	this->addChild(id);
 }
 
@@ -20,8 +13,8 @@ ChestEditPane::~ChestEditPane() {
 
 }
 
-//isnt called, hardcoding for now
-void ChestEditPane::setWidth(float width) {
-	id->setWidth(width);
-	Actor::setWidth(width);
+void ChestEditPane::update(const UpdateState& us) {
+	id->setPosition(getWidth() / 2, 5);
+	id->setFontSize(getWidth() / 10);
+	id->setHeight(getWidth() / 10);
 }

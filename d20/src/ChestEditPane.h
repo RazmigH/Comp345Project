@@ -9,7 +9,7 @@ class ChestEditPane : public Actor {
 public:
 	ChestEditPane(spChest);
 	~ChestEditPane();
-	void setWidth(float);
+	void update(const UpdateState& us);
 private:
 	spTextField id;
 };

@@ -22,8 +22,8 @@ Grid::~Grid() {
 
 //returns the tile location row/col of the provided coordinates
 Vector2 Grid::getTileLocation(Vector2 position) {
-	int row = position.y / getTileWidth();
-	int col = position.x / getTileHeight();
+	int row = position.y / getTileHeight();
+	int col = position.x / getTileWidth();
 	return Vector2(col, row);
 }
 
@@ -81,10 +81,10 @@ int Grid::getRows() {
 }
 
 void Grid::update(const UpdateState& us) {
+	Actor::update(us);
 	float tile_width = getTileWidth();
 	float tile_height = getTileHeight();
 
-	//initialize the tiles
 	for (int col = 0; col < cols; col++) {
 		for (int row = 0; row < rows; row++) {
 			tiles[row][col]->setSize(tile_width, tile_height);

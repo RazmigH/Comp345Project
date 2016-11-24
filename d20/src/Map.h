@@ -10,7 +10,7 @@ public:
 	Vector2 getEntryPoint();
 	Vector2 getExitPoint();
 	void move(spActor, int col, int row, timeMS = 300);
-	void render(const RenderState &rs);
+	void update(const UpdateState &rs);
 
 	int getId();
 	void setId(int);
