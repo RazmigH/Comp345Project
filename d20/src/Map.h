@@ -18,7 +18,9 @@ public:
 	int getNextMapId();
 	void setNextMapId(int);
 
-	vector<string> findPath(spTile, spTile);
+	vector<string> findPath(spTile start, spTile end);
+
+	vector<spTile> entities;
 private:
 	spColorRectSprite entryHighlight;
 	spColorRectSprite exitHighlight;

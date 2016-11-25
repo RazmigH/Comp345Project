@@ -32,16 +32,33 @@ void MapCreator::init() {
 	};
 	selectedOption = tiles[1];
 
+	//top pane
+	topPane = new Actor();
+	topPane->setHeight(50);
+	resetPoints = new TextButton("Reset pt.");
+	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
+	resetPoints->setWidth(100);
+	resetPoints->setAnchor(0.5, 0.5);
+	topPane->addChild(resetPoints);
+	addChild(topPane);
+
 	//create container for tile selection grid
 	selectPane = new Actor();
+	selectPane->setPosition(0, topPane->getHeight());
 
 	//create tile selection grid
 	selectGrid = new Grid(1, tile_count);
 	selectGrid->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectTileOption));
+	selectGrid->setAnchor(0.5, 0.5);
+	selectPane->addChild(selectGrid);
 
 	//create buttons
 	fillBtn = new TextButton("fill");
 	fillBtn->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::fill));
+	fillBtn->setAnchor(0.5, 0.5);
+	selectPane->addChild(fillBtn);
+
+	addChild(selectPane);
 
 	//add option tiles to grid
 	for (int i = 0; i < tile_count; i++) {
@@ -54,9 +71,11 @@ void MapCreator::init() {
 	this->map = mapSource->getMap();
 	map->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::onSelectMapTile));
 	map->addEventListener(TouchEvent::MOVE, CLOSURE(this, &MapCreator::onMoveOnMap));
+	addChild(map);
 
 	//details pane
 	detailsPane = new Actor();
+	currentDetails = new Actor();
 
 	detailsTitle = new TextField();
 	detailsTitle->setAnchor(0.5, 0.5);
@@ -64,54 +83,20 @@ void MapCreator::init() {
 	detailsTitle->setFont(res::resources.getResFont("font"));
 	detailsTitle->setHAlign(TextStyle::HALIGN_MIDDLE);
 
-	currentDetails = new Actor();
-
 	//save button
 	save = new TextButton("Save");
 	save->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::saveMap));
+
+	detailsPane->addChild(detailsTitle);
+	detailsPane->addChild(currentDetails);
+	detailsPane->addChild(save);
+	addChild(detailsPane);
 
 	//selection highlight
 	highlight = new ColorRectSprite();
 	highlight->setColor(Color::Red);
 	highlight->setAlpha(50000);
-
-	//top pane
-	topPane = new Actor();
-	topPane->setHeight(50);
-	resetPoints = new TextButton("Reset pt.");
-	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
-	resetPoints->setWidth(100);
-
-	//position selections
-	selectPane->setPosition(0, topPane->getHeight());
-	selectGrid->setAnchor(0.5, 0.5);
-
-	//position buttons
-	fillBtn->setAnchor(0.5, 0.5);
-
-	selectPane->addChild(fillBtn);
-	selectPane->addChild(selectGrid);
-	addChild(selectPane);
-
-	//position map
-	addChild(map);
-
-	//position details pane
-	detailsPane->addChild(detailsTitle);
-
-	detailsPane->addChild(currentDetails);
-
-	detailsPane->addChild(save);
-
-	addChild(detailsPane);
-
-	//position top pane
-	resetPoints->setAnchor(0.5, 0.5);
-	topPane->addChild(resetPoints);
-	addChild(topPane);
-
-	//fit children
-	//fitToWindow(this, true);
+	map->addChild(highlight);
 }
 
 MapCreator::~MapCreator() {
@@ -141,24 +126,16 @@ void MapCreator::onSelectMapTile(Event* e) {
 	}
 	else if (this->currentAction == CreatorAction::SELECT) {
 		if (selectedTile && tile->getPosition() == selectedTile->getPosition()) {
-
-		}
-		Vector2 loc = map->getTileLocation(tile);
-		if (loc == map->getTileLocation(highlight)) {
-			if (highlight->getParent() == (spActor)map)
-				map->removeChild(highlight);
 			if (currentDetails->getParent() == (spActor)detailsPane)
 				detailsPane->removeChild(currentDetails);
-			highlight->setPosition(highlight->getX() - 100, highlight->getY() - 100); //invalidate hack
+			selectedTile = nullptr;
 		}
 		else {
-			map->addToGrid(highlight, loc.x, loc.y);
 			if (currentDetails->getParent() == (spActor)detailsPane)
 				detailsPane->removeChild(currentDetails);
 			currentDetails = tile->getEditLayout();
-			currentDetails->setPosition(0, detailsTitle->getY() + detailsTitle->getHeight() + 25);
-			//currentDetails->setWidth(detailsPane->getWidth());
 			detailsPane->addChild(currentDetails);
+			selectedTile = tile;
 		}
 	}
 }
@@ -241,6 +218,12 @@ void MapCreator::update() {
 	map->setHeight(map->getTileWidth() * map->getRows());
 	map->setPosition(selectPane->getX() + selectPane->getWidth(), selectPane->getY());
 	highlight->setSize(map->getTileWidth(), map->getTileHeight());
+	if (selectedTile) {
+		highlight->setPosition(selectedTile->getPosition());
+	}
+	else {
+		highlight->setPosition(-1000, -1000);
+	}
 
 	detailsPane->setSize(getWidth() * 0.15, getHeight());
 	detailsPane->setPosition(map->getX() + map->getWidth(), map->getY());
