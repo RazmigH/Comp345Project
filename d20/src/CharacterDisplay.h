@@ -4,6 +4,7 @@
 #include "GameResource.h"
 #include "Character.h"
 #include "oxygine-framework.h"
+#include <string>
 
 using namespace oxygine;
 
@@ -15,21 +16,9 @@ public:
 	CharacterDisplay(spCharacter character);
 	~CharacterDisplay();
 
-	void setEmptyDisplay();
-
-	void displayStats();
-
-	void setHelm(spTile t);
-	void setArmor(spTile t);
-	void setBoots(spTile t);
-	void setWeapon(spTile t);
-	void setShield(spTile t);
-	void setRing(spTile t);
-	void setBelt(spTile t);
-
 	void refresh();
+	void update(const UpdateState& us);
 private:
-	Resources res;
 	spTile helm;
 	spTile armor;
 	spTile boots;
@@ -38,4 +27,23 @@ private:
 	spTile ring;
 	spTile belt;
 	spCharacter character;
+
+	spTextField title;
+	spGrid grid;
+	spGrid background;
+
+	const Vector2 HELM_SLOT = Vector2(1, 0);
+	const Vector2 WEAPON_SLOT = Vector2(0, 1);
+	const Vector2 BODY_SLOT = Vector2(1, 1);
+	const Vector2 SHIELD_SLOT = Vector2(2, 1);
+	const Vector2 AMULET_SLOT = Vector2(0, 2);
+	const Vector2 BOOTS_SLOT = Vector2(1, 2);
+	const Vector2 RING_SLOT = Vector2(2, 2);
+
+	spTextField strText;
+	spTextField conText;
+	spTextField dexText;
+	spTextField intText;
+	spTextField wisText;
+	spTextField charText;
 };

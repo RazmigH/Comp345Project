@@ -16,9 +16,12 @@ public:
 	~InventoryDisplay();
 
 	void refresh();
+	void update(const UpdateState& us);
 private:
 	spDynamicGrid inventoryGrid;
 	spCharacter character;
+	spTextField title;
+	spGrid background;
 
 	void onInventoryClick(Event*);
 };

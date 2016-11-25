@@ -30,6 +30,5 @@
 
   <set path="fonts" />
   <font file="font.fnt" />
-  <font file="small.fnt" />
-  <font file="24ptblack.fnt" />
+  <font file="black.fnt" />
 </resource>

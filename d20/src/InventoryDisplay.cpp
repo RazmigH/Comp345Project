@@ -4,26 +4,23 @@
 
 InventoryDisplay::InventoryDisplay(spCharacter c) : character(c)
 {
-	spTextField textfield = new TextField();
-	textfield->setPosition(2,2);
-	textfield->setHeight(15);
-	TextStyle style;
-	style.font = res::resources.getResFont("font");
-	style.fontSize = 14;
-	style.color = Color::Black;
-	textfield->setStyle(style);
-	textfield->setText("Inventory");
+	title = new TextField();
+	title->setFont(res::resources.getResFont("font"));
+	title->setHAlign(TextStyle::HALIGN_CENTER);
+	title->setText("Inventory");
 
 	inventoryGrid = new DynamicGrid(3, 5, new Tile("inventory-slot"));
-	inventoryGrid->setPosition(0, textfield->getY() + textfield->getHeight() + 3);
 	inventoryGrid->addClickListener(CLOSURE(this, &InventoryDisplay::onInventoryClick));
+	inventoryGrid->setAnchor(0.5, 0);
 
-	spGrid background = new Grid(3, 10);
+	background = new Grid(3, 10);
 	background->setTiles(new Tile("stone"));
+	background->setPosition(0, 0);
+	background->setPriority(-1);
 
-	addChild(background);
+	addChild(title);
 	addChild(inventoryGrid);
-	addChild(textfield);
+	addChild(background);
 
 	character->Character::attachObserver(this);
 	refresh();
@@ -50,4 +47,18 @@ void InventoryDisplay::onInventoryClick(Event* e) {
 		//character->equip(character->getInventory().at(vectorPos));
 		character->equip(vectorPos);
 	}
+}
+
+void InventoryDisplay::update(const UpdateState& us) {
+	Actor::update(us);
+
+	title->setFontSize(getWidth() / 15);
+	title->setHeight(getWidth() / 15);
+	title->setPosition(getWidth() / 2, 2);
+
+	inventoryGrid->setWidth(getWidth() / 1.5);
+	inventoryGrid->setHeight(inventoryGrid->getTileWidth() * inventoryGrid->getRows());
+	inventoryGrid->setPosition(getWidth() / 2, title->getY() + title->getHeight() + 3);
+
+	background->setSize(getSize());
 }
