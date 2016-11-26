@@ -8,7 +8,7 @@
 #include <time.h>
 #include <string>
 #include "Die.h"
-#include "Tile.h"
+#include "Entity.h"
 #include "Observable.h"
 #include "Item.h"
 
@@ -19,7 +19,7 @@ using namespace std;
 
 //! Character class
 DECLARE_SMART(Character, spCharacter);
-class Character : public Tile, public Observable{
+class Character : public Entity, public Observable{
 
 public:
 	const enum Stats {

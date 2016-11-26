@@ -27,7 +27,7 @@ Vector2 Map::getEntryPoint() {
 		for (int col = 0; col < cols; col++) {
 			spTile tile = tiles[row][col];
 			if (tile->isEntryTile()) {
-				return this->getTileLocation(tile);
+				return Vector2(col, row);
 			}
 		}
 	}
@@ -39,7 +39,7 @@ Vector2 Map::getExitPoint() {
 		for (int col = 0; col < cols; col++) {
 			spTile tile = tiles[row][col];
 			if (tile->isFinishTile()) {
-				return this->getTileLocation(tile);
+				return Vector2(col, row);
 			}
 		}
 	}
@@ -47,7 +47,7 @@ Vector2 Map::getExitPoint() {
 }
 
 //moves a tile to provided location with a transition lasting "duration" milliseconds
-void Map::move(spActor actor, int col, int row, timeMS duration) {
+void Map::move(spEntity actor, int col, int row, timeMS duration) {
 	//outer bounds check, dont move if attempting to move out of map
 	if (row >= rows || row < 0 || col >= cols || col < 0) {
 		log::messageln("Cant move '%d' to %dx%d : Out of bounds", actor->getObjectID(), col, row);
@@ -61,15 +61,13 @@ void Map::move(spActor actor, int col, int row, timeMS duration) {
 			log::messageln("Cant move '%d' to %dx%d : Tile is Solid", actor->getObjectID(), col, row);
 		}
 		else {
-			//actor->setPosition(tile->getPosition());
-			//spTweenQueue tQueue = new TweenQueue();
-			//tQueue->add();
-
 			//smooth transition to new tile
-			if (actor->getFirstTween() == NULL && this->getTileLocation(actor) != Vector2(col, row)) {
-				log::messageln("Moving %d to %dx%d", actor->getObjectID(), col, row);
+			if (actor->getFirstTween() == NULL && !actor->isMoving()) {
+					log::messageln("Moving %d to %dx%d", actor->getObjectID(), col, row);
 
-				actor->addTween(Sprite::TweenPosition(tile->getPosition()), duration);
+					actor->setMoving(duration);
+					actor->setLocation(col, row);
+					actor->addTween(Sprite::TweenPosition(tile->getPosition()), duration);
 			}
 		}
 	}
@@ -83,6 +81,12 @@ void Map::update(const UpdateState &rs) {
 	exitHighlight->setPosition(getExitPoint().x * getTileWidth(), getExitPoint().y * getTileHeight());
 	addChild(entryHighlight);
 	addChild(exitHighlight);
+
+	for (vector<spEntity>::iterator it = entities.begin(); it != entities.end(); ++it) {
+		(*it)->setSize(getTileWidth(), getTileHeight());
+		if(!(*it)->isMoving())
+			(*it)->setPosition((*it)->getLocation().x * getTileWidth(), (*it)->getLocation().y * getTileHeight());
+	}
 }
 
 int Map::getId() {
@@ -211,4 +215,10 @@ Map::Location Map::exploreInDirection(Location currentLocation, string direction
 		}
 	}
 	return newLocation;
+}
+
+void Map::addEntity(spEntity entity) {
+	entities.push_back(entity);
+	entity->setPriority(10000);
+	addChild(entity);
 }

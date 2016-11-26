@@ -126,6 +126,7 @@
     <ClCompile Include="..\src\Die.cpp" />
     <ClCompile Include="..\src\DynamicGrid.cpp" />
     <ClCompile Include="..\src\Enhancement.cpp" />
+    <ClCompile Include="..\src\Entity.cpp" />
     <ClCompile Include="..\src\EquipableItem.cpp" />
     <ClCompile Include="..\src\GamePicker.cpp" />
     <ClCompile Include="..\src\GameResource.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="..\src\Die.h" />
     <ClInclude Include="..\src\DynamicGrid.h" />
     <ClInclude Include="..\src\Enhancement.h" />
+    <ClInclude Include="..\src\Entity.h" />
     <ClInclude Include="..\src\EquipableItem.h" />
     <ClInclude Include="..\src\GamePicker.h" />
     <ClInclude Include="..\src\GameResource.h" />

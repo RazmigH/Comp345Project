@@ -1,5 +1,6 @@
 #pragma once
 #include "Grid.h"
+#include "Entity.h"
 
 //contains the functionality of a game map
 DECLARE_SMART(Map, spMap);
@@ -9,7 +10,7 @@ public:
 	~Map();
 	Vector2 getEntryPoint();
 	Vector2 getExitPoint();
-	void move(spActor, int col, int row, timeMS = 300);
+	void move(spEntity, int col, int row, timeMS = 300);
 	void update(const UpdateState &rs);
 
 	int getId();
@@ -20,7 +21,7 @@ public:
 
 	vector<string> findPath(spTile start, spTile end);
 
-	vector<spTile> entities;
+	void addEntity(spEntity);
 private:
 	spColorRectSprite entryHighlight;
 	spColorRectSprite exitHighlight;
@@ -35,4 +36,7 @@ private:
 	};
 	Location exploreInDirection(Location, string, spTile goalTile);
 	vector<Vector2> visited;
+	
+	Vector2 lastSize;
+	vector<spEntity> entities;
 };

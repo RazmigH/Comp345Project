@@ -13,8 +13,10 @@ void Play::init() {
 	sc = new CharacterDisplay(character);
 
 	map = gamePicker->getMap();
-
 	Vector2 start = map->getEntryPoint();
+
+	character->setLocation(start.x, start.y);
+	map->addEntity(character);
 	//map->addToGrid(character, start.x, start.y);
 
 	//inventory = inventoryDao->getInventory(character->getInvID);

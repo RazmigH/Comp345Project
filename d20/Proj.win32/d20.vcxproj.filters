@@ -168,6 +168,9 @@
     <ClCompile Include="..\src\Observer.cpp">
       <Filter>Source Files\Helpful Components</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Entity.cpp">
+      <Filter>Source Files\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -280,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Observer.h">
       <Filter>Header Files\Helpful Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Entity.h">
+      <Filter>Header Files\Character</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
