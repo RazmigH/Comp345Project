@@ -14,12 +14,15 @@ public:
 
 	void setStartPoint(Event*);
 	void setEndPoint(Event*);
+	void onAddNPC(Event*);
+	void onRemoveNPC(Event*);
 	void update(const UpdateState& us);
 private: 
-	spTile tile;
+	void doNPCButtons();
 
 	spTextField id;
 	spTextButton addNPC;
+	spTextButton removeNPC;
 	spTextButton setstart;
 	spTextButton setend;
 };

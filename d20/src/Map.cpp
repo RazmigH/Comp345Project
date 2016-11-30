@@ -223,6 +223,16 @@ void Map::addEntity(spEntity entity) {
 	addChild(entity);
 }
 
+void Map::removeEntity(spEntity entity) {
+	for (vector<spEntity>::iterator it = entities.begin(); it != entities.end(); ++it) {
+		if (entity == *it) {
+			removeChild(entity);
+			entities.erase(it);
+			break;
+		}
+	}
+}
+
 vector<spEntity> Map::getEntities() {
 	return entities;
 }

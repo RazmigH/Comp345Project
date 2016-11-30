@@ -8,7 +8,7 @@ void Entity::setLocation(int x, int y) {
 	this->pos = Vector2(x, y);
 }
 
-Vector2 Entity::getLocation() {
+Vector2 Entity::getLocation() const{
 	return pos;
 }
 
@@ -33,4 +33,12 @@ void Entity::doUpdate(const UpdateState& us) {
 
 bool Entity::isMoving() {
 	return moving;
+}
+
+bool Entity::operator==(const Entity& other) const {
+	return this->getLocation() == other.getLocation() && Tile::operator==(other);
+}
+
+bool Entity::operator!=(const Entity& other) const {
+	return !(*this == other);
 }
