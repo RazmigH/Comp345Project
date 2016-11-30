@@ -4,6 +4,7 @@
 #include "GameResource.h"
 #include "Character.h"
 #include "oxygine-framework.h"
+#include "EquipableItem.h"
 #include <string>
 
 using namespace oxygine;
@@ -15,6 +16,8 @@ class CharacterDisplay : public Actor, Observer {
 public:
 	CharacterDisplay(spCharacter character);
 	~CharacterDisplay();
+
+	Vector2 resolvePosition(spEquipableItem);
 
 	void refresh();
 	void update(const UpdateState& us);

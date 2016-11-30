@@ -80,6 +80,7 @@ void CharacterDisplay::refresh() {
 	int wis = character->getStat(Character::Stats::WIS);
 	int chari = character->getStat(Character::Stats::CHA);
 
+
 	strText->setText(strText->getText().substr(0, strText->getText().find(" ") + 1) + to_string(str));
 	conText->setText(conText->getText().substr(0, conText->getText().find(" ") + 1) + to_string(con));
 	dexText->setText(dexText->getText().substr(0, dexText->getText().find(" ") + 1) + to_string(dex));
@@ -123,4 +124,25 @@ void CharacterDisplay::update(const UpdateState& us) {
 	charText->setFontSize(getWidth() / 10);
 	charText->setHeight(getWidth() / 10);
 	charText->setPosition(getWidth() / 15, wisText->getY() + wisText->getHeight() + 5);
+}
+
+Vector2 CharacterDisplay::resolvePosition(spEquipableItem i) {
+	switch (i->getType()) {
+		case Item::Equipable::ARMOR:
+			return BODY_SLOT;
+		case Item::Equipable::BELT:
+			return AMULET_SLOT;
+		case Item::Equipable::BOOTS:
+			return BOOTS_SLOT;
+		case Item::Equipable::HELMET:
+			return HELM_SLOT;
+		case Item::Equipable::RING:
+			return RING_SLOT;
+		case Item::Equipable::SHIELD:
+			return SHIELD_SLOT;
+		case Item::Equipable::WEAPON:
+			return WEAPON_SLOT;
+		default:
+			return HELM_SLOT;
+	}
 }
