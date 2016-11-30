@@ -22,6 +22,7 @@ public:
 	vector<string> findPath(spTile start, spTile end);
 
 	void addEntity(spEntity);
+	vector<spEntity> getEntities();
 private:
 	spColorRectSprite entryHighlight;
 	spColorRectSprite exitHighlight;

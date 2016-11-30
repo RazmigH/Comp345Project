@@ -4,6 +4,7 @@
 #include "Tile.h"
 #include "Map.h"
 #include "MapPicker.h"
+#include "EditPane.h"
 using namespace std;
 
 //This class is for the map creation window / layout
@@ -44,4 +45,6 @@ private:
 
 	spActor topPane;
 	spTextButton resetPoints;
+
+	spEditPane getEditPane(spTile);
 };

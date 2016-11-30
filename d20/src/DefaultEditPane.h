@@ -3,12 +3,13 @@
 #include "oxygine-framework.h"
 #include "Tile.h"
 #include "TextButton.h"
+#include "EditPane.h"
 using namespace oxygine;
 
 DECLARE_SMART(DefaultEditPane, spDefaultEditPane);
-class DefaultEditPane : public Actor {
+class DefaultEditPane : public EditPane {
 public:
-	DefaultEditPane(spTile);
+	DefaultEditPane(spTile, spMap);
 	~DefaultEditPane();
 
 	void setStartPoint(Event*);

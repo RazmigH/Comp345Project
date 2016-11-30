@@ -1,7 +1,7 @@
 #include "ChestEditPane.h"
 #include "GameResource.h"
 
-ChestEditPane::ChestEditPane(spChest chest) {
+ChestEditPane::ChestEditPane(spChest chest, spMap map) : EditPane(chest, map) {
 	id = new TextField();
 	id->setText("Chest");
 	id->setFont(res::resources.getResFont("font"));

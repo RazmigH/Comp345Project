@@ -171,6 +171,9 @@
     <ClCompile Include="..\src\Entity.cpp">
       <Filter>Source Files\Character</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\EditPane.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\app.h">
@@ -286,6 +289,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Entity.h">
       <Filter>Header Files\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditPane.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

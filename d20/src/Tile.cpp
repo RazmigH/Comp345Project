@@ -9,9 +9,10 @@ Tile::Tile(std::string image, bool solid, int img_row, int img_col) : solid(soli
 	setSize(BASE_SPRITE_SIZE, BASE_SPRITE_SIZE);
 	setImage(image, img_row, img_col);
 	setName(image);
+	id = "tile";
 }
 
-Tile::Tile(const spTile tile) : solid(tile->solid) {
+Tile::Tile(const spTile tile) : solid(tile->solid), id(tile->getId()) {
 	setSize(tile->getSize());
 	setImage(tile->getResAnim(), tile->getColumn(), tile->getRow());
 	setName(tile->getName());
@@ -60,11 +61,6 @@ bool Tile::operator==(const Tile& other) const {
 
 bool Tile::operator!=(const Tile& other) const {
 	return !(*this == other);
-}
-
-spActor Tile::getEditLayout() {
-	spDefaultEditPane actor = new DefaultEditPane(this);
-	return actor;
 }
 
 tinyxml2::XMLElement* Tile::getXML(Xml* xml) {
@@ -138,4 +134,11 @@ void Tile::doRender(const RenderState& rs) {
 	float wratio = getWidth() / BASE_SPRITE_SIZE;
 	float hratio = getHeight() / BASE_SPRITE_SIZE;
 	setScale(wratio, hratio);
+}
+
+string Tile::getId() {
+	return id;
+}
+void Tile::setId(string id) {
+	this->id = id;
 }

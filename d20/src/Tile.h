@@ -2,6 +2,7 @@
 
 #include "oxygine-framework.h"
 #include "Xml.h"
+#include <string>
 using namespace oxygine;
 
 DECLARE_SMART(Tile, spTile);
@@ -28,15 +29,18 @@ public:
 		spTile tile = new Tile(this->getResAnim()->getName(), this->solid, this->getColumn(), this->getRow());
 		return tile;
 	}
-	virtual spActor getEditLayout();
 	virtual tinyxml2::XMLElement* getXML(Xml*); //! return an XML representation of the tile.
 	static spTile getFromXML(XMLElement*); //! get Tile with properties provided in XML.
 
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;
 	void Tile::doRender(const RenderState& rs);
+
+	string getId();
+	void setId(string);
 private:
 	bool solid;
+	string id;
 
 	bool isEntry = false;
 	bool isFinish = false;

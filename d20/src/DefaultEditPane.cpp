@@ -1,7 +1,7 @@
 #include "DefaultEditPane.h"
 #include "GameResource.h"
 
-DefaultEditPane::DefaultEditPane(spTile t) {
+DefaultEditPane::DefaultEditPane(spTile t, spMap map) : EditPane(t, map) {
 	this->tile = t;
 
 	id = new TextField();

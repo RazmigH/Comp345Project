@@ -222,3 +222,7 @@ void Map::addEntity(spEntity entity) {
 	entity->setPriority(10000);
 	addChild(entity);
 }
+
+vector<spEntity> Map::getEntities() {
+	return entities;
+}

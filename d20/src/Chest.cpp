@@ -4,6 +4,7 @@
 const string Chest::IDENTIFIER = "Chest";
 
 Chest::Chest(ChestState state) : Tile("chests", true), state(state) {
+	setId("chest");
 	setState(state);
 }
 
@@ -18,11 +19,6 @@ Chest::ChestState Chest::getState() {
 void Chest::setState(ChestState state) {
 	this->setColumn(state == ChestState::CLOSED ? 1 : 0);
 	this->setRow(0);
-}
-
-spActor Chest::getEditLayout() {
-	spChestEditPane actor = new ChestEditPane(this);
-	return actor;
 }
 
 tinyxml2::XMLElement* Chest::getXML(Xml* xml) {

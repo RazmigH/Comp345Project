@@ -5,6 +5,9 @@
 #include "GameResource.h"
 #include "MainMenu.h" 
 #include "InputDialog.h"
+#include "DefaultEditPane.h"
+#include "ChestEditPane.h"
+#include "Chest.h"
 
 MapCreator::MapCreator(spMapPicker useMap){
 	mapSource = useMap;
@@ -133,7 +136,7 @@ void MapCreator::onSelectMapTile(Event* e) {
 		else {
 			if (currentDetails->getParent() == (spActor)detailsPane)
 				detailsPane->removeChild(currentDetails);
-			currentDetails = tile->getEditLayout();
+			currentDetails = getEditPane(tile);// tile->getEditLayout();
 			detailsPane->addChild(currentDetails);
 			selectedTile = tile;
 		}
@@ -238,4 +241,22 @@ void MapCreator::update() {
 
 	topPane->setWidth(getWidth());
 	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
+}
+
+spEditPane MapCreator::getEditPane(spTile tile) {
+	string id = tile->getId();
+
+	spEditPane pane;
+
+	if (id == "chest") {
+		spChest chest = dynamic_cast<Chest*>(&(*tile));
+		if(chest)
+			pane = new ChestEditPane(chest, map);
+	}
+
+
+	if (!pane) {
+		pane = new DefaultEditPane(tile, map);
+	}
+	return pane;
 }

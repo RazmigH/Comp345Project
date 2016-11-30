@@ -17,7 +17,6 @@ public:
 	ChestState getState();
 	void setState(ChestState);
 
-	spActor getEditLayout();
 	spTile clone() {
 		spChest tile = new Chest(state);
 		return tile;
