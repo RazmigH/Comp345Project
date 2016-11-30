@@ -5,7 +5,11 @@ Entity::Entity() {
 }
 
 void Entity::setLocation(int x, int y) {
-	this->pos = Vector2(x, y);
+	setLocation(Vector2(x, y));
+}
+
+void Entity::setLocation(Vector2 v) {
+	this->pos = v;
 }
 
 Vector2 Entity::getLocation() const{

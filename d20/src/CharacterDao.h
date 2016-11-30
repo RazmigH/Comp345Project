@@ -13,9 +13,4 @@ public:
 	int addCharacter(spCharacter c);
 private: 
 	Xml* xml;
-	spCharacter XmlToCharacter(XMLElement*);
-	XMLElement* CharacterToXml(spCharacter);
-
-	string classToString(Character::Class);
-	Character::Class stringToClass(string);
 };

@@ -7,6 +7,8 @@
 #include "EquipableItem.h"
 #include <iostream>
 
+const string Character::IDENTIFIER = "Character";
+
 Character::Character(
 	Class characterClass, 
 	string characterName, 
@@ -517,4 +519,165 @@ void Character::equip(int atInVector) {
 	tempEquipment.push_back(item);
 	tempInventory.erase(tempInventory.begin() + atInVector);
 	notify();
+}
+
+tinyxml2::XMLElement* Character::getXML(Xml* xml) {
+	XMLElement* root = xml->createElement(IDENTIFIER);
+
+	if (getId() != -1) {
+		root->SetAttribute("id", getId());
+	}
+	root->SetAttribute("col", getLocation().x);
+	root->SetAttribute("row", getLocation().y);
+
+	const int ATTRIBUTE_COUNT = 15;
+	string attributes[ATTRIBUTE_COUNT][2] = {
+		{ "Class",			classToString(getCharacterClass()) },
+		{ "Name",			getName() },
+		{ "Level",			to_string(getLevel()) },
+		{ "MaxHP",			to_string(getMaxHP()) },
+		{ "CurrentHP",		to_string(getHP()) },
+		{ "Strength",		to_string(getStat(Character::Stats::STR)) },
+		{ "Constitution",	to_string(getStat(Character::Stats::CON)) },
+		{ "Dexterity",		to_string(getStat(Character::Stats::DEX)) },
+		{ "Intelligence",	to_string(getStat(Character::Stats::INT)) },
+		{ "Wisdom",			to_string(getStat(Character::Stats::WIS)) },
+		{ "Charisma",		to_string(getStat(Character::Stats::CHA)) },
+		{ "EquipmentID",	to_string(getEquipID()) }, //that line was missing 
+		{ "InventoryID",    to_string(getInvID()) },
+		{ "Hostile",		isHostile() ? "1" : "0" },
+		{ "Talk",			getTalk() }
+	};
+
+	for (int i = 0; i < ATTRIBUTE_COUNT; i++) {
+		XMLElement* classEle = xml->createElement(attributes[i][0]);
+		classEle->SetText(attributes[i][1].c_str());
+		root->InsertEndChild(classEle);
+	}
+
+	return root;
+}
+
+spTile Character::getFromXML(XMLElement* element) {
+	spCharacter c = new Character();
+
+	const char* idstr = element->Attribute("id");
+	if (idstr != nullptr) {
+		c->setId(atoi(idstr));
+	}
+
+	const char* col = element->Attribute("col");
+	const char* row = element->Attribute("row");
+	if (col != nullptr && row != nullptr) {
+		c->setLocation(stoi(col), stoi(row));
+	}
+
+	int i;
+
+	XMLElement* temp = element->FirstChildElement("Class");
+	if (temp != nullptr) {
+		c->setCharacterClass(stringToClass(temp->GetText()));
+	}
+
+	temp = element->FirstChildElement("Name");
+	if (temp != nullptr) {
+		c->setName(temp->GetText() == nullptr ? "Good luck!" : temp->GetText());  // one more bug fixed: c->getName() 
+	}
+
+	temp = element->FirstChildElement("Level");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setLevel(i);
+	}
+
+	temp = element->FirstChildElement("MaxHP");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setMaxHP(i);
+	}
+
+	temp = element->FirstChildElement("CurrentHP");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setHP(i);
+	}
+
+	temp = element->FirstChildElement("Strength");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::STR, i);
+	}
+
+	temp = element->FirstChildElement("Constitution");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::CON, i);
+	}
+
+	temp = element->FirstChildElement("Dexterity");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::DEX, i);
+	}
+
+	temp = element->FirstChildElement("Intelligence");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::INT, i);
+	}
+
+	temp = element->FirstChildElement("Wisdom");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::WIS, i);
+	}
+
+	temp = element->FirstChildElement("Charisma");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setStat(Character::Stats::CHA, i);
+	}
+
+	temp = element->FirstChildElement("EquipmentID");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setEquipID(i);
+	}
+
+	temp = element->FirstChildElement("InventoryID");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setInvID(i);
+	}
+
+	temp = element->FirstChildElement("Hostile");
+	if (temp != nullptr && temp->QueryIntText(&i) == XML_SUCCESS) {
+		c->setHostile((i == 1) ? true : false);
+	}
+
+	temp = element->FirstChildElement("Talk");
+	if (temp != nullptr) {
+		c->setTalk(temp->GetText() == nullptr ? "" : temp->GetText());
+	}
+
+	return c;
+}
+
+string Character::classToString(Character::Class c) {
+	switch (c) {
+	case Character::Class::FIGHTER:
+		return "fighter";
+		break;
+	case Character::Class::ARCHER:
+		return "archer";
+		break;
+	default:
+		return "Error: undefined Class " + c;
+		break;
+	}
+}
+
+Character::Class Character::stringToClass(string c) {
+	if (c == "fighter") {
+		return Character::Class::FIGHTER;
+	}
+	else if (c == "archer") {
+		return Character::Class::ARCHER;
+	}
+	else {
+		return Character::Class::BLABLA;
+	}
+}
+
+string Character::getIdentifier() {
+	return IDENTIFIER;
 }

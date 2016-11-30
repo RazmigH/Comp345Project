@@ -9,10 +9,9 @@ Tile::Tile(std::string image, bool solid, int img_row, int img_col) : solid(soli
 	setSize(BASE_SPRITE_SIZE, BASE_SPRITE_SIZE);
 	setImage(image, img_row, img_col);
 	setName(image);
-	id = "tile";
 }
 
-Tile::Tile(const spTile tile) : solid(tile->solid), id(tile->getId()) {
+Tile::Tile(const spTile tile) : solid(tile->solid) {
 	setSize(tile->getSize());
 	setImage(tile->getResAnim(), tile->getColumn(), tile->getRow());
 	setName(tile->getName());
@@ -67,6 +66,9 @@ spTile Tile::getFromXML(XMLElement* element) {
 	if (element->Name() == Chest::IDENTIFIER) {
 		return Chest::getFromXML(element);
 	}
+	else if (element->Name() == Character::IDENTIFIER) {
+		return Character::getFromXML(element);
+	}
 
 	spTile tile = new Tile();
 	XMLElement* sprite = element->FirstChildElement("Sprite");
@@ -101,9 +103,6 @@ void Tile::doRender(const RenderState& rs) {
 	setScale(wratio, hratio);
 }
 
-string Tile::getId() {
-	return id;
-}
-void Tile::setId(string id) {
-	this->id = id;
+string Tile::getIdentifier() {
+	return IDENTIFIER;
 }

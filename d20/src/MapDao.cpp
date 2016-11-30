@@ -1,4 +1,5 @@
 #include "MapDao.h"
+#include "Character.h"
 using namespace std;
 
 MapDao::MapDao() {
@@ -76,18 +77,29 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	}
 
 	vector<XMLElement*> tileElements = xml->getChildren(element);
+	int i = 0;
 	for (vector<XMLElement*>::iterator it = tileElements.begin(); it != tileElements.end(); ++it) {
-		XMLElement* tileElement = *it;
-		spTile tile = new Tile();
-		tile = tile->getFromXML(tileElement);
+		if (strcmp((*it)->Name(), "entities") == 0) {
+			vector<XMLElement*> entities = xml->getChildren(*it);
+			for (vector<XMLElement*>::iterator b = entities.begin(); b != entities.end(); ++b) {
+				spTile tile = Tile::getFromXML(*b);
+				spEntity entity = dynamic_cast<Entity*>(&(*tile));
+				map->addEntity(entity);
+			}
+		}
+		else {
+			XMLElement* tileElement = *it;
+			spTile tile = new Tile();
+			tile = tile->getFromXML(tileElement);
 
-		const char* colStr = tileElement->Attribute("col");
-		const char* rowStr = tileElement->Attribute("row");
-		if (colStr != nullptr && rowStr != nullptr)
-			map->setTile(stoi(colStr), stoi(rowStr), tile);
-		//else ignore (as it is currently) or set at 0,0 ?
-		
-		//TODO validate col/row attrs in here or in setTile
+			const char* colStr = tileElement->Attribute("col");
+			const char* rowStr = tileElement->Attribute("row");
+			if (colStr != nullptr && rowStr != nullptr)
+				map->setTile(stoi(colStr), stoi(rowStr), tile);
+			//else ignore (as it is currently) or set at 0,0 ?
+
+			//TODO validate col/row attrs in here or in setTile
+		}
 	}
 
 	return map;
@@ -115,6 +127,14 @@ XMLElement* MapDao::MapToXml(spMap map) {
 			root->InsertEndChild(tileXml);
 		}
 	}
+
+	XMLElement* entities = xml->createElement("entities");
+	vector<spEntity> ents = map->getEntities();
+	for (vector<spEntity>::iterator it = ents.begin(); it != ents.end(); ++it) {
+		XMLElement* entity = (*it)->getXML(xml);
+		entities->InsertEndChild(entity);
+	}
+	root->InsertEndChild(entities);
 
 	return root;
 }

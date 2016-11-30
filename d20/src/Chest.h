@@ -23,6 +23,7 @@ public:
 	}
 	tinyxml2::XMLElement* getXML(Xml*);
 	static spTile getFromXML(XMLElement*);
+	string getIdentifier();
 private:
 	ChestState state;
 	//std::vector<Item> items;

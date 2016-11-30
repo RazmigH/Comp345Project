@@ -22,6 +22,8 @@ DECLARE_SMART(Character, spCharacter);
 class Character : public Entity, public Observable{
 
 public:
+	static const string IDENTIFIER;
+
 	const enum Stats {
 		STR = 0, CON, DEX, INT, WIS, CHA
 	};
@@ -133,9 +135,16 @@ public:
 	vector<spItem> getEquipment();
 	void addToInventory(spItem);
 	void equip(int); //change to item?
+
+	tinyxml2::XMLElement* getXML(Xml*);
+	static spTile getFromXML(XMLElement*);
+	string getIdentifier();
 private:
 	virtual void levelUp();
 	int calcModifier(int) const;
+
+	static string classToString(Character::Class);
+	static Character::Class stringToClass(string);
 	
 protected:
 	int id;

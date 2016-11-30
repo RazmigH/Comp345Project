@@ -31,10 +31,7 @@ public:
 	bool operator==(const Tile&) const;
 	bool operator!=(const Tile&) const;
 	void Tile::doRender(const RenderState& rs);
-
-	string getId();
-	void setId(string);
+	virtual string getIdentifier();
 private:
 	bool solid;
-	string id;
 };

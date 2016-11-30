@@ -5,7 +5,9 @@
 DECLARE_SMART(Entity, spEntity);
 class Entity : public Tile {
 public:
+
 	void setLocation(int x, int y);
+	void setLocation(Vector2);
 	Vector2 getLocation() const;
 	void setMoving(long ms);
 	bool isMoving();

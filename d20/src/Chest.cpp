@@ -4,7 +4,6 @@
 const string Chest::IDENTIFIER = "Chest";
 
 Chest::Chest(ChestState state) : Tile("chests", true), state(state) {
-	setId("chest");
 	setState(state);
 }
 
@@ -48,4 +47,8 @@ spTile Chest::getFromXML(XMLElement* element) {
 		chest->setState(stateXml->GetText() == "open" ? ChestState::OPEN : ChestState::CLOSED);
 	}
 	return chest;
+}
+
+string Chest::getIdentifier() {
+	return IDENTIFIER;
 }
