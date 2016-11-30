@@ -37,22 +37,6 @@ bool Tile::isSolid() {
 	return solid;
 }
 
-bool Tile::isEntryTile() {
-	return isEntry;
-}
-
-bool Tile::isFinishTile() {
-	return isFinish;
-}
-
-void Tile::isEntryTile(bool b) {
-	isEntry = b;
-}
-
-void Tile::isFinishTile(bool b) {
-	isFinish = b;
-}
-
 bool Tile::operator==(const Tile& other) const {
 	return this->getResAnim() == other.getResAnim() &&
 		this->getColumn() == other.getColumn() &&
@@ -75,14 +59,6 @@ tinyxml2::XMLElement* Tile::getXML(Xml* xml) {
 	XMLElement* solid = xml->createElement("Solid");
 	solid->SetText(isSolid() ? "1" : "0");
 	parent->InsertEndChild(solid);
-
-	XMLElement* entry = xml->createElement("Start");
-	entry->SetText(isEntryTile() ? "1" : "0");
-	parent->InsertEndChild(entry);
-
-	XMLElement* finish = xml->createElement("Finish");
-	finish->SetText(isFinishTile() ? "1" : "0");
-	parent->InsertEndChild(finish);
 
 	return parent;
 }
@@ -111,17 +87,6 @@ spTile Tile::getFromXML(XMLElement* element) {
 		tile->isSolid(solid == 1 ? true : false);
 	}
 
-	XMLElement* startXml = element->FirstChildElement("Start");
-	int start;
-	if (startXml != nullptr && startXml->QueryIntText(&start) == XML_SUCCESS) {
-		tile->isEntryTile(start == 1 ? true : false);
-	}
-
-	XMLElement* finishXml = element->FirstChildElement("Finish");
-	int finish;
-	if (finishXml != nullptr && finishXml->QueryIntText(&finish) == XML_SUCCESS) {
-		tile->isFinishTile(finish == 1 ? true : false);
-	}
 	return tile;
 }
 

@@ -26,7 +26,6 @@ private:
 	void onSelectMapTile(Event*);
 	void onMoveOnMap(Event*);
 	void fill(Event*);
-	void resetPts(Event*);
 	void saveMap(Event*);
 	spMap map;
 	spGrid selections;
@@ -44,7 +43,6 @@ private:
 	spTextButton save;
 
 	spActor topPane;
-	spTextButton resetPoints;
 
 	spEditPane getEditPane(spTile);
 };

@@ -35,11 +35,11 @@ DefaultEditPane::~DefaultEditPane() {
 }
 
 void DefaultEditPane::setStartPoint(Event* e) {
-	tile->isEntryTile(!tile->isEntryTile());
+	map->setEntryPoint(map->getTileLocation(tile));
 }
 
 void DefaultEditPane::setEndPoint(Event* e) {
-	tile->isFinishTile(!tile->isFinishTile());
+	map->setExitPoint(map->getTileLocation(tile));
 }
 
 void DefaultEditPane::onAddNPC(Event* e) {

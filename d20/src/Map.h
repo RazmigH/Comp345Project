@@ -8,7 +8,9 @@ class Map : public Grid {
 public:
 	Map(int cols = 20, int rows = 10);
 	~Map();
+	void setEntryPoint(Vector2);
 	Vector2 getEntryPoint();
+	void setExitPoint(Vector2);
 	Vector2 getExitPoint();
 	void move(spEntity, int col, int row, timeMS = 300);
 	void update(const UpdateState &rs);
@@ -25,7 +27,9 @@ public:
 	void removeEntity(spEntity);
 	vector<spEntity> getEntities();
 private:
+	Vector2 entry;
 	spColorRectSprite entryHighlight;
+	Vector2 exit;
 	spColorRectSprite exitHighlight;
 	int id;
 	int nextMapId = 1;

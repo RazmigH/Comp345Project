@@ -20,10 +20,6 @@ public:
 	string getImageName() const;
 	bool isSolid();
 	void isSolid(bool);
-	bool isEntryTile();
-	void isEntryTile(bool);
-	bool isFinishTile();
-	void isFinishTile(bool);
 
 	virtual spTile clone() {
 		spTile tile = new Tile(this->getResAnim()->getName(), this->solid, this->getColumn(), this->getRow());
@@ -41,7 +37,4 @@ public:
 private:
 	bool solid;
 	string id;
-
-	bool isEntry = false;
-	bool isFinish = false;
 };

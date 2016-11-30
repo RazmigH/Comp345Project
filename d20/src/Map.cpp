@@ -16,34 +16,28 @@ Map::Map(int cols, int rows) : Grid(cols, rows) {
 	Actor::addChild(exitHighlight);
 
 	id = -1;
+	entry = Vector2(cols / 2, rows - 1);
+	exit = Vector2(cols / 2, 0);
 }
 
 Map::~Map() {
 
 }
 
+void Map::setEntryPoint(Vector2 v) {
+	entry = v;
+}
+
+void Map::setExitPoint(Vector2 v) {
+	exit = v;
+}
+
 Vector2 Map::getEntryPoint() {
-	for (int row = 0; row < rows; row++) {
-		for (int col = 0; col < cols; col++) {
-			spTile tile = tiles[row][col];
-			if (tile->isEntryTile()) {
-				return Vector2(col, row);
-			}
-		}
-	}
-	return Vector2(cols / 2, rows - 1);
+	return entry;
 }
 
 Vector2 Map::getExitPoint() {
-	for (int row = 0; row < rows; row++) {
-		for (int col = 0; col < cols; col++) {
-			spTile tile = tiles[row][col];
-			if (tile->isFinishTile()) {
-				return Vector2(col, row);
-			}
-		}
-	}
-	return Vector2(cols / 2, 0);
+	return exit;
 }
 
 //moves a tile to provided location with a transition lasting "duration" milliseconds

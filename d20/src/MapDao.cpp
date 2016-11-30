@@ -54,6 +54,16 @@ spMap MapDao::XmlToMap(XMLElement* element) {
 	if (name != nullptr)
 		map->setName(name);
 
+	const char* entrycol = element->Attribute("entrycol");
+	const char* entryrow = element->Attribute("entryrow");
+	if (entrycol != nullptr && entryrow != nullptr)
+		map->setEntryPoint(Vector2(stoi(entrycol), stoi(entryrow)));
+
+	const char* exitcol = element->Attribute("exitcol");
+	const char* exitrow = element->Attribute("exitrow");
+	if (exitcol != nullptr && exitrow != nullptr)
+		map->setExitPoint(Vector2(stoi(exitcol), stoi(exitrow)));
+
 	const char* id = element->Attribute("id");
 	if (id != nullptr) {
 		if (atoi(id) == -1) {
@@ -91,6 +101,10 @@ XMLElement* MapDao::MapToXml(spMap map) {
 	root->SetAttribute("cols", map->getCols());
 	root->SetAttribute("rows", map->getRows());
 	root->SetAttribute("name", map->getName().c_str());
+	root->SetAttribute("entrycol", map->getEntryPoint().x);
+	root->SetAttribute("entryrow", map->getEntryPoint().y);
+	root->SetAttribute("exitcol", map->getExitPoint().x);
+	root->SetAttribute("exitrow", map->getExitPoint().y);
 
 	for (int r = 0; r < map->getRows(); r++) {
 		for (int c = 0; c < map->getCols(); c++) {

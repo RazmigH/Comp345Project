@@ -38,11 +38,6 @@ void MapCreator::init() {
 	//top pane
 	topPane = new Actor();
 	topPane->setHeight(50);
-	resetPoints = new TextButton("Reset pt.");
-	resetPoints->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::resetPts));
-	resetPoints->setWidth(100);
-	resetPoints->setAnchor(0.5, 0.5);
-	topPane->addChild(resetPoints);
 	addChild(topPane);
 
 	//create container for tile selection grid
@@ -155,16 +150,6 @@ void MapCreator::fill(Event* e) {
 	map->setTiles(selectedOption);
 }
 
-void MapCreator::resetPts(Event* e) {
-	for (int r = 0; r < map->getRows(); r++) {
-		for (int c = 0; c < map->getCols(); c++) {
-			spTile tile = map->getTile(c, r);
-			tile->isEntryTile(false);
-			tile->isFinishTile(false);
-		}
-	}
-}
-
 void MapCreator::saveMap(Event* e) {
 	//validate
 	//check all tiles set
@@ -240,7 +225,6 @@ void MapCreator::update() {
 	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 55);
 
 	topPane->setWidth(getWidth());
-	resetPoints->setPosition(topPane->getWidth() / 2, topPane->getHeight() / 2);
 }
 
 spEditPane MapCreator::getEditPane(spTile tile) {
