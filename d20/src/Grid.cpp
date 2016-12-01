@@ -42,7 +42,8 @@ void Grid::addToGrid(spActor actor, int col, int row) {
 //replaces a tile with the provided one
 void Grid::setTile(int col, int row, spTile tile) {
 	//std::cout << "Setting tile " << col << "x" << row << " to : " << tile->getName() << std::endl;
-	removeChild(tiles[row][col]);
+	if (tiles[row][col]->getParent() == this)
+		removeChild(tiles[row][col]);
 	tiles[row][col] = tile;
 	addChild(tiles[row][col]);
 };

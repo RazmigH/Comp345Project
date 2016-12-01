@@ -541,10 +541,20 @@ void Character::removeFromInventory(spItem item) {
 	notify();
 }
 
-
 void Character::equip(spEquipableItem item) {
 	removeFromInventory(item);
 	tempEquipment.push_back(item);
+	notify();
+}
+
+void Character::unequip(spEquipableItem item) {
+	for (vector<spEquipableItem>::iterator it = tempEquipment.begin(); it != tempEquipment.end(); ++it) {
+		if (item->getObjectID() == (*it)->getObjectID()) {
+			tempEquipment.erase(it);
+			break;
+		}
+	}
+	addToInventory(item);
 	notify();
 }
 

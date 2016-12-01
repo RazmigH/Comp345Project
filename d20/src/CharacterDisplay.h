@@ -49,4 +49,6 @@ private:
 	spTextField intText;
 	spTextField wisText;
 	spTextField charText;
+	
+	void onEquipmentClick(Event*);
 };

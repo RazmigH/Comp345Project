@@ -23,6 +23,7 @@ CharacterDisplay::CharacterDisplay(spCharacter useCharacter)
 	grid->setTile(AMULET_SLOT.x, AMULET_SLOT.y, new Tile("default-belt"));
 	grid->setTile(BOOTS_SLOT.x, BOOTS_SLOT.y, new Tile("default-boots"));
 	grid->setTile(RING_SLOT.x, RING_SLOT.y, new Tile("default-ring"));
+	grid->addClickListener(CLOSURE(this, &CharacterDisplay::onEquipmentClick));
 	addChild(grid);
 
 	background = new Grid(4, 10);
@@ -176,5 +177,45 @@ Vector2 CharacterDisplay::resolvePosition(spEquipableItem i) {
 			return WEAPON_SLOT;
 		default:
 			return HELM_SLOT;
+	}
+}
+
+void CharacterDisplay::onEquipmentClick(Event* e) {
+	spTile tile = grid->getTile(e);
+		spEquipableItem item = dynamic_cast<EquipableItem*>(&(*tile));
+	if(item){
+		character->unequip(item);
+		//set back default
+		//in future, would make the default a background
+		string default;
+		log::messageln("ITEM IS OF TYPE %d", item->getType());
+		switch (item->getType()) {
+		case Item::Equipable::ARMOR:
+			default = "default-armor";
+			break;
+		case Item::Equipable::BELT:
+			default = "default-belt";
+			break;
+		case Item::Equipable::BOOTS:
+			default = "default-boots";
+			break;
+		case Item::Equipable::HELMET:
+			default = "default-helm";
+			break;
+		case Item::Equipable::RING:
+			default = "default-ring";
+			break;
+		case Item::Equipable::SHIELD:
+			default = "default-shield";
+			break;
+		case Item::Equipable::WEAPON:
+			default = "default-weapon";
+			break;
+		default:
+			default = "default-weapon";
+			break;
+		}
+		spTile defaultTile = new Tile(default);
+		grid->setTile(resolvePosition(item).x, resolvePosition(item).y, defaultTile);
 	}
 }

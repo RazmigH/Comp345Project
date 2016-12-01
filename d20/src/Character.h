@@ -137,6 +137,7 @@ public:
 	void addToInventory(spItem);
 	void removeFromInventory(spItem);
 	void equip(spEquipableItem);
+	void unequip(spEquipableItem);
 
 	tinyxml2::XMLElement* getXML(Xml*);
 	static spTile getFromXML(XMLElement*);
