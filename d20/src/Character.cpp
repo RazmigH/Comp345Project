@@ -89,12 +89,16 @@ Character::Character(
 	spEquipableItem item6 = new EquipableItem(Item::Equipable::SHIELD);
 	item6->setStat(Item::ItemStats::CON);
 	item6->setBonus(9);
+	spEquipableItem item7 = new EquipableItem(Item::Equipable::HELMET);
+	item7->setStat(Item::ItemStats::CON);
+	item7->setBonus(48);
 	tempInventory.push_back(item1);
 	tempInventory.push_back(item2);
 	tempInventory.push_back(item3);
 	tempInventory.push_back(item4);
 	tempInventory.push_back(item5);
 	tempInventory.push_back(item6);
+	tempInventory.push_back(item7);
 	//tempInventory.push_back(new EquipableItem(Item::Equipable::WEAPON));
 }
 
@@ -550,6 +554,16 @@ void Character::removeFromInventory(spItem item) {
 }
 
 void Character::equip(spEquipableItem item) {
+	log::messageln("EQUIPPING ITEM WITH %d", item->getBonus());
+	//find same object type and unequip
+	for (vector<spEquipableItem>::iterator it = tempEquipment.begin(); it != tempEquipment.end(); ++it) {
+		if (item->getType() == (*it)->getType()) {
+			log::messageln("ALREADY WEARING ITEM WITH %d", (*it)->getBonus());
+			unequip(*it);
+			break;
+		}
+	}
+
 	removeFromInventory(item);
 	tempEquipment.push_back(item);
 	notify();

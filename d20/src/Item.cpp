@@ -47,9 +47,9 @@ void Item::setBonus(int val) {
 		bonus = 0;
 	}
 	// potions for HP can have more than 5 for the bonus value
-	else if (val > 5 && stat != CHP) {
-		bonus += 5;
-	}
+	//else if (val > 5 && stat != CHP) {
+	//	bonus += 5;
+	//}
 	else {
 		bonus += val;
 	}
