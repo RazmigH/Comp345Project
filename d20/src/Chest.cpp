@@ -27,16 +27,6 @@ tinyxml2::XMLElement* Chest::getXML(Xml* xml) {
 	stateXml->SetText(state == ChestState::OPEN ? "open" : "closed");
 	parent->InsertEndChild(stateXml);
 
-	/*
-	XMLElement* entry = xml->createElement("Start");
-	entry->SetText(isEntryTile() ? "1" : "0");
-	parent->InsertEndChild(entry);
-
-	XMLElement* finish = xml->createElement("Finish");
-	finish->SetText(isFinishTile() ? "1" : "0");
-	parent->InsertEndChild(finish);
-	*/
-
 	return parent;
 }
 
@@ -51,4 +41,12 @@ spTile Chest::getFromXML(XMLElement* element) {
 
 string Chest::getIdentifier() {
 	return IDENTIFIER;
+}
+
+void Chest::addItem(spItem item) {
+	items.push_back(item);
+}
+
+void Chest::interact() {
+	log::messageln("CHEST interact");
 }

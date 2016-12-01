@@ -38,6 +38,10 @@ public:
 		ARMOR = 0, SHIELD, WEAPON, BOOTS, RING, HELMET
 	};
 
+	const enum Direction {
+		NORTH = 0, EAST, WEST, SOUTH
+	};
+
 	Character(
 		Class = FIGHTER, 
 		string name = "Generic Character", 
@@ -142,6 +146,9 @@ public:
 	tinyxml2::XMLElement* getXML(Xml*);
 	static spTile getFromXML(XMLElement*);
 	string getIdentifier();
+
+	void interact();
+	Direction getFacing();
 private:
 	virtual void levelUp();
 	int calcModifier(int) const;
@@ -176,4 +183,6 @@ protected:
 	//temporary
 	vector<spItem> tempInventory;
 	vector<spEquipableItem> tempEquipment;
+
+	Direction facing;
 };

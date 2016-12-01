@@ -30,4 +30,5 @@ private:
 	spInventoryDisplay iDisplay;
 
 	bool once;//! makes sure a key command is not spammed
+	spTile getFacedTile();
 };

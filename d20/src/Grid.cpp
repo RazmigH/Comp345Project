@@ -60,6 +60,9 @@ void Grid::setTiles(spTile tile) {
 
 //returns the tile at the provided location
 spTile Grid::getTile(int col, int row) {
+	if (col < 0 || col >= cols || row < 0 || row >= rows) {
+		return nullptr;
+	}
 	return tiles[row][col];
 };
 spTile Grid::getTile(Vector2 loc) {

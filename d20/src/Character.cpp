@@ -474,6 +474,7 @@ void Character::setUp() {
 		setResAnim(res::resources.getResAnim("character"), 0, 0);
 		break;
 	}
+	facing = Direction::NORTH;
 }
 
 void Character::setDown() {
@@ -488,6 +489,7 @@ void Character::setDown() {
 		setResAnim(res::resources.getResAnim("character"), 0, 2);
 		break;
 	}
+	facing = Direction::SOUTH;
 }
 
 void Character::setLeft() {
@@ -502,6 +504,7 @@ void Character::setLeft() {
 		setResAnim(res::resources.getResAnim("character"), 0, 1);
 		break;
 	}
+	facing = Direction::WEST;
 }
 
 void Character::setRight() {
@@ -516,6 +519,11 @@ void Character::setRight() {
 		setResAnim(res::resources.getResAnim("character"), 0, 3);
 		break;
 	}
+	facing = Direction::EAST;
+}
+
+Character::Direction Character::getFacing() {
+	return facing;
 }
 
 

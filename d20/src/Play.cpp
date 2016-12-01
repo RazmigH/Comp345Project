@@ -68,6 +68,7 @@ void Play::update() {
 		else if (data[SDL_GetScancodeFromKey(SDLK_SPACE)]) {
 			if (!once) {
 				once = true;
+
 				if (map->getTileLocation(character) == map->getExitPoint()) {
 					if (map->getNextMapId() != -1 &&
 						character->getFirstTween() == NULL) {
@@ -80,10 +81,46 @@ void Play::update() {
 						log::messageln("Game over");
 					}
 				}
+				else {
+					spTile facedTile = getFacedTile();
+					Vector2 facedLocation = map->getTileLocation(facedTile);
+					if (facedTile) {
+						//check entities
+						bool interacted = false;
+						vector<spEntity> entities = map->getEntities();
+						for (vector<spEntity>::iterator it = entities.begin(); it != entities.end(); ++it) {
+							if ((*it)->getLocation() == facedLocation) {
+								interacted = true;
+								(*it)->interact();
+								break;
+							}
+						}
+
+						//interact with tile otherwise
+						if (!interacted) {
+							facedTile->interact();
+						}
+					}
+				}
 			}
 		}
 		else {
 			once = false;
 		}
 	}
+}
+
+spTile Play::getFacedTile() {
+	Vector2 location = map->getTileLocation(character);
+	switch (character->getFacing()) {
+	case Character::Direction::NORTH:
+		return map->getTile(location.x, location.y - 1);
+	case Character::Direction::EAST:
+		return map->getTile(location.x + 1, location.y);
+	case Character::Direction::SOUTH:
+		return map->getTile(location.x, location.y - 1);
+	case Character::Direction::WEST:
+		return map->getTile(location.x - 1, location.y);
+	}
+	return nullptr;
 }

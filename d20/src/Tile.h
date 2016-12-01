@@ -32,6 +32,8 @@ public:
 	bool operator!=(const Tile&) const;
 	void Tile::doRender(const RenderState& rs);
 	virtual string getIdentifier();
+
+	virtual void interact() {}
 private:
 	bool solid;
 };

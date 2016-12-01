@@ -1,5 +1,6 @@
 #pragma once
 #include "Tile.h"
+#include "Item.h"
 #include <vector>
 
 
@@ -24,7 +25,11 @@ public:
 	tinyxml2::XMLElement* getXML(Xml*);
 	static spTile getFromXML(XMLElement*);
 	string getIdentifier();
+
+	void addItem(spItem);
+	void interact();
 private:
 	ChestState state;
-	//std::vector<Item> items;
+
+	std::vector<spItem> items;
 };

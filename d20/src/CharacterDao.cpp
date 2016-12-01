@@ -32,3 +32,7 @@ spCharacter CharacterDao::getCharacter(string id) {
 int CharacterDao::addCharacter(spCharacter c) {
 	return xml->addElement(c->getXML(xml));
 }
+
+void Character::interact() {
+	log::messageln("CHARACTER INTERACT");
+}
