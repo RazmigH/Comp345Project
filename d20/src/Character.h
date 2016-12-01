@@ -11,6 +11,7 @@
 #include "Entity.h"
 #include "Observable.h"
 #include "Item.h"
+#include "EquipableItem.h"
 
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6
@@ -132,9 +133,10 @@ public:
 
 	//temporary
 	vector<spItem> getInventory();
-	vector<spItem> getEquipment();
+	vector<spEquipableItem> getEquipment();
 	void addToInventory(spItem);
-	void equip(int); //change to item?
+	void removeFromInventory(spItem);
+	void equip(spEquipableItem);
 
 	tinyxml2::XMLElement* getXML(Xml*);
 	static spTile getFromXML(XMLElement*);
@@ -172,5 +174,5 @@ protected:
 
 	//temporary
 	vector<spItem> tempInventory;
-	vector<spItem> tempEquipment;
+	vector<spEquipableItem> tempEquipment;
 };

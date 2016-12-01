@@ -73,6 +73,7 @@ CharacterDisplay::~CharacterDisplay() {
 }
 
 void CharacterDisplay::refresh() {
+	//base stats
 	int str = character->getStat(Character::Stats::STR);
 	int con = character->getStat(Character::Stats::CON);
 	int dex = character->getStat(Character::Stats::DEX);
@@ -80,6 +81,37 @@ void CharacterDisplay::refresh() {
 	int wis = character->getStat(Character::Stats::WIS);
 	int chari = character->getStat(Character::Stats::CHA);
 
+	//equipment
+	vector<spEquipableItem> items = character->getEquipment();
+	for (vector<spEquipableItem>::iterator it = items.begin(); it != items.end(); ++it) {
+		grid->setTile(resolvePosition(*it).x, resolvePosition(*it).y, *it);
+		log::messageln("ITEM type %d BONUS %d", (*it)->getType(), (*it)->getBonus());
+		Item::ItemStats stat = (*it)->getStat();
+		switch (stat) {
+		case Item::ItemStats::STR:
+			log::messageln("STR before %d", str);
+			str += (*it)->getBonus();
+			log::messageln("STR is now %d", str);
+			break;
+		case Item::ItemStats::CON:
+			log::messageln("CON before %d", con);
+			con += (*it)->getBonus();
+			log::messageln("CON is now %d", con);
+			break;
+		case Item::ItemStats::DEX:
+			dex += (*it)->getBonus();
+			break;
+		case Item::ItemStats::INT:
+			inte += (*it)->getBonus();
+			break;
+		case Item::ItemStats::WIS:
+			wis += (*it)->getBonus();
+			break;
+		case Item::ItemStats::CHA:
+			chari += (*it)->getBonus();
+			break;
+		}
+	}
 
 	strText->setText(strText->getText().substr(0, strText->getText().find(" ") + 1) + to_string(str));
 	conText->setText(conText->getText().substr(0, conText->getText().find(" ") + 1) + to_string(con));

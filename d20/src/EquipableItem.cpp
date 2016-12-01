@@ -80,6 +80,8 @@ void EquipableItem::setType(Equipable itemType)
 }
 
 void EquipableItem::setStat(ItemStats val) {
+	stat = val;
+	/* WHAT
 	if (equipType == HELMET) {
 		switch (val) {
 		case INT: stat = INT; break;
@@ -90,7 +92,7 @@ void EquipableItem::setStat(ItemStats val) {
 	else if (equipType == ARMOR || equipType == SHIELD) {
 		switch (val) {
 		case ARM: stat = ARM; break;
-		}
+		} 
 	}
 	else if (equipType == RING) {
 		switch (val) {
@@ -130,7 +132,7 @@ void EquipableItem::setStat(ItemStats val) {
 		case DMG: stat = DMG; break;
 		case ARM: stat = ARM; break;
 		}
-	}
+	}*/
 }
 
 

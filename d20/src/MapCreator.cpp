@@ -231,9 +231,6 @@ spEditPane MapCreator::getEditPane(spTile tile) {
 	spEditPane pane;
 
 	if (tile->getIdentifier() == Chest::IDENTIFIER) {
-		for (int i = 0; i < 100; i++) {
-			log::messageln("YESSSSSSSSSSSSSSSSSS");
-		}
 		spChest chest = dynamic_cast<Chest*>(&(*tile));
 		if(chest)
 			pane = new ChestEditPane(chest, map);

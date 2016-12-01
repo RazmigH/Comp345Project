@@ -1,6 +1,7 @@
 #pragma once
 #include "InventoryDisplay.h"
 #include "GameResource.h"
+#include "EquipableItem.h"
 
 InventoryDisplay::InventoryDisplay(spCharacter c) : character(c)
 {
@@ -42,10 +43,18 @@ void InventoryDisplay::refresh() {
 void InventoryDisplay::onInventoryClick(Event* e) {
 	spTile tile = inventoryGrid->getTile(e);
 	if (!inventoryGrid->isEmpty(tile)) {
-		Vector2 loc = inventoryGrid->getTileLocation(tile);
-		int vectorPos = loc.y * inventoryGrid->getCols() + loc.x;
-		//character->equip(character->getInventory().at(vectorPos));
-		character->equip(vectorPos);
+		//see if equipable
+		spEquipableItem equipable = dynamic_cast<EquipableItem*>(&(*tile));
+		if (equipable) {
+			character->equip(equipable);
+			return;
+		}
+
+		spItem item = dynamic_cast<Item*>(&(*tile));
+		if (item) {
+			//....
+			return;
+		}
 	}
 }
 

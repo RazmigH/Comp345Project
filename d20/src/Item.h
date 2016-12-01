@@ -19,7 +19,7 @@ public:
 	//stat
 	string getStatStr() const;
 	ItemStats getStat();
-	virtual void setStat(ItemStats) = 0;
+	virtual void setStat(ItemStats) = 0; //...
 
 	//bonus
 	int getBonus() const;

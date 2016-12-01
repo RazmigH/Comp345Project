@@ -71,12 +71,30 @@ Character::Character(
 
 	//tempInventory = new list<spItem>;
 	//temporary - hardcode inventory
-	tempInventory.push_back(new EquipableItem(Item::Equipable::ARMOR));
-	tempInventory.push_back(new EquipableItem(Item::Equipable::BELT));
-	tempInventory.push_back(new EquipableItem(Item::Equipable::BOOTS));
-	tempInventory.push_back(new EquipableItem(Item::Equipable::HELMET));
-	tempInventory.push_back(new EquipableItem(Item::Equipable::RING));
-	tempInventory.push_back(new EquipableItem(Item::Equipable::SHIELD));
+	spEquipableItem item1 = new EquipableItem(Item::Equipable::ARMOR);
+	item1->setStat(Item::ItemStats::CON);
+	item1->setBonus(11);
+	spEquipableItem item2 = new EquipableItem(Item::Equipable::BELT);
+	item2->setStat(Item::ItemStats::INT);
+	item2->setBonus(3);
+	spEquipableItem item3 = new EquipableItem(Item::Equipable::BOOTS);
+	item3->setStat(Item::ItemStats::DEX);
+	item3->setBonus(4);
+	spEquipableItem item4 = new EquipableItem(Item::Equipable::HELMET);
+	item4->setStat(Item::ItemStats::CON);
+	item4->setBonus(7);
+	spEquipableItem item5 = new EquipableItem(Item::Equipable::RING);
+	item5->setStat(Item::ItemStats::STR);
+	item5->setBonus(1);
+	spEquipableItem item6 = new EquipableItem(Item::Equipable::SHIELD);
+	item6->setStat(Item::ItemStats::CON);
+	item6->setBonus(9);
+	tempInventory.push_back(item1);
+	tempInventory.push_back(item2);
+	tempInventory.push_back(item3);
+	tempInventory.push_back(item4);
+	tempInventory.push_back(item5);
+	tempInventory.push_back(item6);
 	//tempInventory.push_back(new EquipableItem(Item::Equipable::WEAPON));
 }
 
@@ -505,7 +523,7 @@ void Character::setRight() {
 vector<spItem> Character::getInventory() {
 	return tempInventory;
 }
-vector<spItem> Character::getEquipment() {
+vector<spEquipableItem> Character::getEquipment() {
 	return tempEquipment;
 }
 void Character::addToInventory(spItem item) {
@@ -513,11 +531,20 @@ void Character::addToInventory(spItem item) {
 	notify();
 }
 
+void Character::removeFromInventory(spItem item) {
+	for (vector<spItem>::iterator it = tempInventory.begin(); it != tempInventory.end(); ++it) {
+		if (item->getObjectID() == (*it)->getObjectID()) {
+			tempInventory.erase(it);
+			break;
+		}
+	}
+	notify();
+}
 
-void Character::equip(int atInVector) {
-	spItem item = tempInventory.at(atInVector);
+
+void Character::equip(spEquipableItem item) {
+	removeFromInventory(item);
 	tempEquipment.push_back(item);
-	tempInventory.erase(tempInventory.begin() + atInVector);
 	notify();
 }
 
