@@ -1,4 +1,5 @@
 #include "Play.h"
+#include "Chest.h"
 
 Play::Play(spGamePicker picker){
 	setName("Play Layout");
@@ -98,6 +99,12 @@ void Play::update() {
 
 						//interact with tile otherwise
 						if (!interacted) {
+							//if its a chest, set the character to interchange items with
+							spChest chest = dynamic_cast<Chest*>(&(*facedTile));
+							if (chest) {
+								chest->setCharacter(character);
+							}
+
 							facedTile->interact();
 						}
 					}

@@ -11,12 +11,27 @@ public:
 	ChestDisplay(spChest);
 	~ChestDisplay();
 
-	void onSelectItem(Event*);
+	vector<spItem> getItems();
+
+	//void onSelectItem(Event*);
 	void init();
 	void update();
+
+	void onSelectItem(Event*);
 private:
-	void load();
+	void refreshItems();
+	bool isSelected(spItem);
+	void addSelected(spItem);
+	void removeSelected(spItem);
+
 	spCharacter character;
 	spChest chest;
+
 	spTextField title;
+	spTextButton okbtn;
+	spDynamicGrid grid;
+	spColorRectSprite highlight;
+	vector<vector<spColorRectSprite>> highlights;
+
+	vector<spItem> selected;
 };

@@ -6,17 +6,10 @@
 
 //! Xml(fName, numElem) -> constructor which takes the Xml file name along with the number of elements each node will have
 Xml::Xml(string name) {
+	rootName = name;
 	fileName = name + ".xml";
 
-	//load File
-	if (loadFile() != XML_SUCCESS || isEmpty()) {
-		//create if file doesn't exist or it has no root node (empty)
-		XMLElement* pRoot = this->NewElement(name.c_str());
-		pRoot->SetAttribute("next_id", 1);
-		this->InsertFirstChild(pRoot);
-
-		this->saveFile();
-	}
+	reload();
 }
 
 Xml::~Xml() {
@@ -34,6 +27,18 @@ XMLElement* Xml::getRoot() {
 int Xml::loadFile() {
 	XMLError eResult = LoadFile(fileName.c_str());
 	XMLCheckResult(eResult);
+}
+
+void Xml::reload() {
+	//load File
+	if (loadFile() != XML_SUCCESS || isEmpty()) {
+		//create if file doesn't exist or it has no root node (empty)
+		XMLElement* pRoot = this->NewElement(rootName.c_str());
+		pRoot->SetAttribute("next_id", 1);
+		this->InsertFirstChild(pRoot);
+
+		this->saveFile();
+	}
 }
 
 int Xml::saveFile() {
@@ -67,7 +72,7 @@ int Xml::addElement(XMLElement* e) {
 
 	getRoot()->InsertEndChild(e);
 	saveFile();
-	loadFile();
+	reload();
 	return atoi(e->Attribute("id"));
 }
 

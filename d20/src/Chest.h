@@ -1,8 +1,8 @@
 #pragma once
 #include "Tile.h"
 #include "Item.h"
+#include "Character.h"
 #include <vector>
-
 
 DECLARE_SMART(Chest, spChest);
 class Chest : public Tile {
@@ -27,9 +27,12 @@ public:
 	string getIdentifier();
 
 	void addItem(spItem);
+	void removeItem(spItem);
+	vector<spItem> getItems();
 	void interact();
+	void setCharacter(spCharacter);
 private:
 	ChestState state;
-
-	std::vector<spItem> items;
+	spCharacter character;
+	vector<spItem> items;
 };

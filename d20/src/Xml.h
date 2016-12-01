@@ -18,6 +18,7 @@ public:
 	vector<XMLElement*> getChildren(XMLElement*); //! Returns the direct children of the passed element.
 	XMLElement* getElement(string id);
 private:
+	void reload();
 	int loadFile();
 	int saveFile();
 	bool isEmpty();
@@ -25,4 +26,5 @@ private:
 	int getNextID();
 	int updateNextID();
 	string fileName;
+	string rootName;
 };
