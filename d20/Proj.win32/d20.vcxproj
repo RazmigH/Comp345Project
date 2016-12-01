@@ -121,6 +121,7 @@
     <ClCompile Include="..\src\CharacterDisplay.cpp" />
     <ClCompile Include="..\src\CharacterPicker.cpp" />
     <ClCompile Include="..\src\Chest.cpp" />
+    <ClCompile Include="..\src\ChestDisplay.cpp" />
     <ClCompile Include="..\src\ChestEditPane.cpp" />
     <ClCompile Include="..\src\DefaultEditPane.cpp" />
     <ClCompile Include="..\src\Die.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="..\src\CharacterDisplay.h" />
     <ClInclude Include="..\src\CharacterPicker.h" />
     <ClInclude Include="..\src\Chest.h" />
+    <ClInclude Include="..\src\ChestDisplay.h" />
     <ClInclude Include="..\src\ChestEditPane.h" />
     <ClInclude Include="..\src\DefaultEditPane.h" />
     <ClInclude Include="..\src\Die.h" />
