@@ -1,158 +1,6 @@
 <Maps next_id="4">
     <Map id="-1" cols="10" rows="5" name="default"/>
-    <Map cols="10" rows="5" name="thetruechest" id="3">
-        <Chest col="0" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="1" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="2" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="3" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="4" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="5" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="6" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="7" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="8" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="9" row="0">
-            <State>closed</State>
-        </Chest>
-        <Chest col="0" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="1" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="2" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="3" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="4" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="5" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="6" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="7" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="8" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="9" row="1">
-            <State>closed</State>
-        </Chest>
-        <Chest col="0" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="1" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="2" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="3" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="4" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="5" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="6" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="7" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="8" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="9" row="2">
-            <State>closed</State>
-        </Chest>
-        <Chest col="0" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="1" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="2" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="3" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="4" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="5" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="6" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="7" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="8" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="9" row="3">
-            <State>closed</State>
-        </Chest>
-        <Chest col="0" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="1" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="2" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="3" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="4" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="5" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="6" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="7" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="8" row="4">
-            <State>closed</State>
-        </Chest>
-        <Chest col="9" row="4">
-            <State>closed</State>
-        </Chest>
-    </Map>
-    <Map id="1" cols="10" rows="5" name="chestland" entrycol="0" entryrow="2" exitcol="9" exitrow="2">
+    <Map cols="10" rows="5" name="pyramid" entrycol="0" entryrow="3" exitcol="9" exitrow="3" next="-1" id="3">
         <Tile col="0" row="0">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
@@ -170,243 +18,10 @@
             <Solid>0</Solid>
         </Tile>
         <Chest col="4" row="0">
-            <State>open</State>
+            <State>closed</State>
         </Chest>
         <Chest col="5" row="0">
-            <State>open</State>
-        </Chest>
-        <Tile col="6" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="7" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="8" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="9" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="0" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="1" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Chest col="2" row="1">
-            <State>open</State>
-        </Chest>
-        <Chest col="3" row="1">
-            <State>open</State>
-        </Chest>
-        <Tile col="4" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="5" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Chest col="6" row="1">
-            <State>open</State>
-        </Chest>
-        <Chest col="7" row="1">
-            <State>open</State>
-        </Chest>
-        <Tile col="8" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="9" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="0" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="1" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="2" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="3" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="4" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="5" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="6" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="7" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="8" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="9" row="2">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="0" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="1" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="2" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="3" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="4" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="5" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="6" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="7" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="8" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="9" row="3">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="0" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="1" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="2" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="3" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="4" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="5" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="6" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="7" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="8" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="9" row="4">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <entities>
-            <Character id="2" col="2" row="4">
-                <Class>archer</Class>
-                <Name>Derp Test2</Name>
-                <Level>2</Level>
-                <MaxHP>12</MaxHP>
-                <CurrentHP>12</CurrentHP>
-                <Strength>13</Strength>
-                <Constitution>15</Constitution>
-                <Dexterity>18</Dexterity>
-                <Intelligence>10</Intelligence>
-                <Wisdom>12</Wisdom>
-                <Charisma>12</Charisma>
-                <EquipmentID>2</EquipmentID>
-                <InventoryID>2</InventoryID>
-                <Hostile>0</Hostile>
-                <Talk>Good luck!</Talk>
-            </Character>
-            <Character id="3" col="8" row="2">
-                <Class>fighter</Class>
-                <Name>NPC Test1</Name>
-                <Level>3</Level>
-                <MaxHP>11</MaxHP>
-                <CurrentHP>11</CurrentHP>
-                <Strength>16</Strength>
-                <Constitution>13</Constitution>
-                <Dexterity>13</Dexterity>
-                <Intelligence>11</Intelligence>
-                <Wisdom>13</Wisdom>
-                <Charisma>12</Charisma>
-                <EquipmentID>4</EquipmentID>
-                <InventoryID>4</InventoryID>
-                <Hostile>0</Hostile>
-                <Talk>Good luck!</Talk>
-            </Character>
-        </entities>
-    </Map>
-    <Map id="2" cols="10" rows="5" name="xd" entrycol="0" entryrow="4" exitcol="8" exitrow="2">
-        <Tile col="0" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="1" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="2" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="3" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="4" row="0">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Chest col="5" row="0">
-            <State>open</State>
+            <State>closed</State>
         </Chest>
         <Tile col="6" row="0">
             <Sprite row="0" col="0">grass</Sprite>
@@ -437,9 +52,243 @@
             <Solid>0</Solid>
         </Tile>
         <Tile col="3" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="4" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="5" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="6" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="1">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
         </Tile>
+        <Tile col="8" row="1">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="1">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="2">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="2">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="2" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="3" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="4" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="5" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="6" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="8" row="2">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="2">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="3">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="2" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="3" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="4" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="5" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="6" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="8" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="3">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="2" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="3" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="4" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="5" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="6" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="8" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <entities>
+            <Character id="4" col="3" row="0">
+                <Class>fighter</Class>
+                <Name>NPC Test2</Name>
+                <Level>3</Level>
+                <MaxHP>12</MaxHP>
+                <CurrentHP>12</CurrentHP>
+                <Strength>14</Strength>
+                <Constitution>14</Constitution>
+                <Dexterity>14</Dexterity>
+                <Intelligence>12</Intelligence>
+                <Wisdom>12</Wisdom>
+                <Charisma>12</Charisma>
+                <EquipmentID>5</EquipmentID>
+                <InventoryID>5</InventoryID>
+                <Hostile>1</Hostile>
+                <Talk>git gud!</Talk>
+            </Character>
+            <Character id="1" col="6" row="0">
+                <Class>fighter</Class>
+                <Name>Derp Test1</Name>
+                <Level>1</Level>
+                <MaxHP>13</MaxHP>
+                <CurrentHP>13</CurrentHP>
+                <Strength>17</Strength>
+                <Constitution>17</Constitution>
+                <Dexterity>12</Dexterity>
+                <Intelligence>9</Intelligence>
+                <Wisdom>12</Wisdom>
+                <Charisma>11</Charisma>
+                <EquipmentID>1</EquipmentID>
+                <InventoryID>1</InventoryID>
+                <Hostile>0</Hostile>
+                <Talk>Good luck!</Talk>
+            </Character>
+        </entities>
+    </Map>
+    <Map id="1" cols="10" rows="5" name="chestland" entrycol="0" entryrow="2" exitcol="9" exitrow="2" next="2">
+        <Tile col="0" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="2" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="3" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="4" row="0">
+            <State>open</State>
+        </Chest>
+        <Chest col="5" row="0">
+            <State>open</State>
+        </Chest>
+        <Tile col="6" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="8" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="0">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="1">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="1">
+            <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="2" row="1">
+            <State>open</State>
+        </Chest>
+        <Chest col="3" row="1">
+            <State>open</State>
+        </Chest>
         <Tile col="4" row="1">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
@@ -448,14 +297,12 @@
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
         </Tile>
-        <Tile col="6" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
-        <Tile col="7" row="1">
-            <Sprite row="0" col="0">grass</Sprite>
-            <Solid>0</Solid>
-        </Tile>
+        <Chest col="6" row="1">
+            <State>open</State>
+        </Chest>
+        <Chest col="7" row="1">
+            <State>open</State>
+        </Chest>
         <Tile col="8" row="1">
             <Sprite row="0" col="0">grass</Sprite>
             <Solid>0</Solid>
@@ -582,6 +429,191 @@
         </Tile>
         <Tile col="9" row="4">
             <Sprite row="0" col="0">grass</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <entities/>
+    </Map>
+    <Map id="2" cols="10" rows="5" name="maze" entrycol="0" entryrow="4" exitcol="9" exitrow="0" next="3">
+        <Tile col="0" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="1" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="2" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="3" row="0">
+            <State>open</State>
+        </Chest>
+        <Tile col="4" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="5" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="6" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="7" row="0">
+            <State>open</State>
+        </Chest>
+        <Tile col="8" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="0">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="1" row="1">
+            <State>open</State>
+        </Chest>
+        <Tile col="2" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="3" row="1">
+            <State>open</State>
+        </Chest>
+        <Tile col="4" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="5" row="1">
+            <State>open</State>
+        </Chest>
+        <Tile col="6" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="7" row="1">
+            <State>open</State>
+        </Chest>
+        <Tile col="8" row="1">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="9" row="1">
+            <State>open</State>
+        </Chest>
+        <Tile col="0" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="1" row="2">
+            <State>open</State>
+        </Chest>
+        <Tile col="2" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="3" row="2">
+            <State>open</State>
+        </Chest>
+        <Tile col="4" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="5" row="2">
+            <State>open</State>
+        </Chest>
+        <Tile col="6" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="7" row="2">
+            <State>open</State>
+        </Chest>
+        <Tile col="8" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="2">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="1" row="3">
+            <State>open</State>
+        </Chest>
+        <Tile col="2" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="3" row="3">
+            <State>open</State>
+        </Chest>
+        <Tile col="4" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="5" row="3">
+            <State>open</State>
+        </Chest>
+        <Tile col="6" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="7" row="3">
+            <State>open</State>
+        </Chest>
+        <Chest col="8" row="3">
+            <State>open</State>
+        </Chest>
+        <Tile col="9" row="3">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="0" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="1" row="4">
+            <State>open</State>
+        </Chest>
+        <Tile col="2" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="3" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="4" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Chest col="5" row="4">
+            <State>open</State>
+        </Chest>
+        <Tile col="6" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="7" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="8" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
+            <Solid>0</Solid>
+        </Tile>
+        <Tile col="9" row="4">
+            <Sprite row="0" col="0">grass-border</Sprite>
             <Solid>0</Solid>
         </Tile>
         <entities/>

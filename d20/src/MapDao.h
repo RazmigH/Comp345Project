@@ -11,6 +11,7 @@ public:
 	vector<spMap> getMaps();
 	spMap getMap(string);
 	void addMap(spMap c);
+	void load();
 private:
 	Xml* xml;
 	spMap XmlToMap(XMLElement*);

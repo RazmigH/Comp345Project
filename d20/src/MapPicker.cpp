@@ -35,6 +35,7 @@ void MapPicker::init() {
 
 	mapTexts.clear();
 
+	res::mapDao->load();
 	vector<spMap> maps = res::mapDao->getMaps();
 
 	for (vector<spMap>::iterator it = maps.begin(); it != maps.end(); ++it) {
@@ -91,5 +92,5 @@ spMap MapPicker::getMap() {
 }
 
 void MapPicker::setMap(spMap m) {
-	mapId = m->getId();
+	mapId = to_string(m->getId());
 }

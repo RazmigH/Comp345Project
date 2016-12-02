@@ -1,5 +1,6 @@
 #include "Play.h"
 #include "Chest.h"
+#include "GameOver.h"
 
 Play::Play(spGamePicker picker){
 	setName("Play Layout");
@@ -74,12 +75,15 @@ void Play::update() {
 					if (map->getNextMapId() != -1 &&
 						character->getFirstTween() == NULL) {
 						//improve 
-						gamePicker->setMap(res::mapDao->getMap(to_string(map->getNextMapId())));
+						spMap nextMap = res::mapDao->getMap(to_string(map->getNextMapId()));
+						gamePicker->setMap(nextMap);
 						log::messageln("Show next map id %d", map->getNextMapId());
 						init();
 					}
 					else {
 						log::messageln("Game over");
+						spGameOver gameOverScreen = new GameOver();
+						flow::show(gameOverScreen);
 					}
 				}
 				else {

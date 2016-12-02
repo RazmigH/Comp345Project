@@ -37,7 +37,7 @@ private:
 	Vector2 exit;
 	spColorRectSprite exitHighlight;
 	int id;
-	int nextMapId = 1;
+	int nextMapId = -1;
 
 	struct Location {
 		int distanceFromTop;

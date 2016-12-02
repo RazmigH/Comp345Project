@@ -130,6 +130,7 @@
     <ClCompile Include="..\src\Enhancement.cpp" />
     <ClCompile Include="..\src\Entity.cpp" />
     <ClCompile Include="..\src\EquipableItem.cpp" />
+    <ClCompile Include="..\src\GameOver.cpp" />
     <ClCompile Include="..\src\GamePicker.cpp" />
     <ClCompile Include="..\src\GameResource.cpp" />
     <ClCompile Include="..\src\Grid.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="..\src\Enhancement.h" />
     <ClInclude Include="..\src\Entity.h" />
     <ClInclude Include="..\src\EquipableItem.h" />
+    <ClInclude Include="..\src\GameOver.h" />
     <ClInclude Include="..\src\GamePicker.h" />
     <ClInclude Include="..\src\GameResource.h" />
     <ClInclude Include="..\src\Grid.h" />

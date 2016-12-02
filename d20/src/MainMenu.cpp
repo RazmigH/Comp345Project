@@ -18,9 +18,9 @@ MainMenu::MainMenu() {
 	//Place wanted menu options here
 	//Don't forget to add respective click handler (onClick())
 	const string menuTexts[] = {
-		"Play",
+		"Play", 
 		"Create a map",
-		"add wtv"
+		"(more coming soon)"
 	};
 
 	//title text

@@ -27,6 +27,7 @@ private:
 	void onMoveOnMap(Event*);
 	void fill(Event*);
 	void saveMap(Event*);
+	void setNextMap(Event*);
 	spMap map;
 	spGrid selections;
 	CreatorAction currentAction;
@@ -41,6 +42,7 @@ private:
 
 	spTextButton fillBtn;
 	spTextButton save;
+	spTextButton nextMap;
 
 	spActor topPane;
 

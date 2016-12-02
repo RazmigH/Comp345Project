@@ -29,7 +29,7 @@ void MapCreator::init() {
 		new Tile("cursor"),
 		new Tile("blank"),
 		new Tile("grass"),
-		new Tile("grass-border", true),
+		new Tile("grass-border"),
 		closedChest,
 		openChest
 	};
@@ -85,15 +85,21 @@ void MapCreator::init() {
 	save = new TextButton("Save");
 	save->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::saveMap));
 
+	//save button
+	nextMap = new TextButton("Next Map");
+	nextMap->addEventListener(TouchEvent::CLICK, CLOSURE(this, &MapCreator::setNextMap));
+
 	detailsPane->addChild(detailsTitle);
 	detailsPane->addChild(currentDetails);
 	detailsPane->addChild(save);
+	detailsPane->addChild(nextMap);
 	addChild(detailsPane);
 
 	//selection highlight
 	highlight = new ColorRectSprite();
 	highlight->setColor(Color::Red);
 	highlight->setAlpha(50000);
+	highlight->setPriority(10000);
 	map->addChild(highlight);
 }
 
@@ -223,6 +229,7 @@ void MapCreator::update() {
 	currentDetails->setHeight(detailsPane->getHeight() - currentDetails->getY());
 
 	save->setPosition(detailsPane->getWidth() - save->getWidth() - 5, detailsPane->getHeight() - save->getHeight() - 55);
+	nextMap->setPosition(detailsPane->getWidth() - nextMap->getWidth() - 5, save->getY() - nextMap->getHeight() - 10);
 
 	topPane->setWidth(getWidth());
 }
@@ -241,4 +248,14 @@ spEditPane MapCreator::getEditPane(spTile tile) {
 		pane = new DefaultEditPane(tile, map);
 	}
 	return pane;
+}
+
+void MapCreator::setNextMap(Event* e) {
+	spMapPicker picker = new MapPicker();
+	flow::show(picker, [=](Event*) {
+		spMap pickerMap = picker->getMap();
+		if (pickerMap) {
+			map->setNextMapId(pickerMap->getId());
+		}
+	});
 }
