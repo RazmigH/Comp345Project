@@ -1,0 +1,123 @@
+﻿  winnie_alloc.cpp
+  system_alloc.cpp
+  WebImage.cpp
+  VisualStyle.cpp
+  ImageUtils.cpp
+  AtlasTool.cpp
+  pugixml.cpp
+  AffineTransform.cpp
+  stringUtils.cpp
+  TweenQueue.cpp
+  TweenOutline.cpp
+  TweenGlow.cpp
+  TweenAnim.cpp
+  TweenAlphaFade.cpp
+  Tween.cpp
+  TextBuilder.cpp
+  Node.cpp
+  Aligner.cpp
+  TextField.cpp
+  STDRenderer.cpp
+  Generating Code...
+  Compiling...
+  STDMaterial.cpp
+  Sprite.cpp
+  SlidingActor.cpp
+  Serialize.cpp
+  Stage.cpp
+  Serializable.cpp
+  ResStarlingAtlas.cpp
+  Resources.cpp
+  Resource.cpp
+  ResFontBM.cpp
+  ResFont.cpp
+  ResBuffer.cpp
+  ResAtlasPrebuilt.cpp
+  ResAtlasGeneric.cpp
+  ResAtlas.cpp
+  ResAnim.cpp
+  CreateResourceContext.cpp
+  ProgressBar.cpp
+  Polygon.cpp
+  PointerState.cpp
+  Generating Code...
+  Compiling...
+  ThreadLoader.cpp
+  SingleResAnim.cpp
+  PostProcess.cpp
+  Image.cpp
+  Material.cpp
+  MaskedSprite.cpp
+  MaskedRenderer.cpp
+  key.cpp
+  jsoncpp.cpp
+  InputText.cpp
+  Input.cpp
+  HttpRequestTask.cpp
+  Font.cpp
+  EventDispatcher.cpp
+  Draggable.cpp
+  TreeInspectorPreview.cpp
+  TreeInspectorPage.cpp
+  TreeInspectorLine.cpp
+  TreeInspector.cpp
+  TexturesInspector.cpp
+  Generating Code...
+  Compiling...
+  DeveloperMenu.cpp
+  DebugActor.cpp
+  ZipFileSystem.cpp
+  VideoDriver.cpp
+  UberShaderProgram.cpp
+  ThreadDispatcher.cpp
+  Texture.cpp
+  system_data.cpp
+  STDFileSystem.cpp
+  Restorable.cpp
+  Renderer.cpp
+  oxygine.cpp
+  Object.cpp
+  NativeTexture.cpp
+  Mutex.cpp
+  Mem2Native.cpp
+  log.cpp
+  ImageDataOperations.cpp
+  ImageData.cpp
+  VideoDriverGLES20.cpp
+  Generating Code...
+  Compiling...
+  VideoDriverGL.cpp
+  VertexDeclarationGL.cpp
+  ShaderProgramGL.cpp
+  oxgl.cpp
+  NativeTextureGLES.cpp
+  FileSystem.cpp
+  file.cpp
+  HttpRequestCurlTask.cpp
+  coroutines.cpp
+  ColorRectSprite.cpp
+  Clock.cpp
+  ClipRectActor.cpp
+  Button.cpp
+  Box9Sprite.cpp
+  Blocking.cpp
+  AsyncTask.cpp
+  AnimationFrame.cpp
+f:\documents\dev\visual studio\comp345project\lib\oxygine-framework\oxygine\src\animationframe.cpp(88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+f:\documents\dev\visual studio\comp345project\lib\oxygine-framework\oxygine\src\animationframe.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Actor.cpp
+  Generating Code...
+  cdecode.c
+  unzip.c
+  ioapi_mem.c
+  ioapi.c
+  Generating Code...
+ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+ws2_32.lib(WS2_32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  libjpeg-2015.lib(jaricom.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+libzlib.lib(zlib.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+pthreadVCE2.lib(pthreadVCE2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+SDL2.lib(SDL2.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in libcurl_imp.lib(libcurl.dll); second definition ignored
+  oxygine.vcxproj -> F:\Documents\dev\Visual Studio\Comp345Project\d20\Proj.win32\Debug_v140\oxygine_d.lib
