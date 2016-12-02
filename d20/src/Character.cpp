@@ -69,37 +69,23 @@ Character::Character(
 	setDown();
 	setScale(0.5, 0.5);
 
-	//tempInventory = new list<spItem>;
-	//temporary - hardcode inventory
-	spEquipableItem item1 = new EquipableItem(Item::Equipable::ARMOR);
-	item1->setStat(Item::ItemStats::CON);
-	item1->setBonus(11);
-	spEquipableItem item2 = new EquipableItem(Item::Equipable::BELT);
-	item2->setStat(Item::ItemStats::INT);
-	item2->setBonus(3);
-	spEquipableItem item3 = new EquipableItem(Item::Equipable::BOOTS);
-	item3->setStat(Item::ItemStats::DEX);
-	item3->setBonus(4);
-	spEquipableItem item4 = new EquipableItem(Item::Equipable::HELMET);
-	item4->setStat(Item::ItemStats::CON);
-	item4->setBonus(7);
-	spEquipableItem item5 = new EquipableItem(Item::Equipable::RING);
-	item5->setStat(Item::ItemStats::STR);
-	item5->setBonus(1);
-	spEquipableItem item6 = new EquipableItem(Item::Equipable::SHIELD);
-	item6->setStat(Item::ItemStats::CON);
-	item6->setBonus(9);
-	spEquipableItem item7 = new EquipableItem(Item::Equipable::HELMET);
-	item7->setStat(Item::ItemStats::CON);
-	item7->setBonus(48);
-	tempInventory.push_back(item1);
-	tempInventory.push_back(item2);
-	tempInventory.push_back(item3);
-	tempInventory.push_back(item4);
-	tempInventory.push_back(item5);
-	tempInventory.push_back(item6);
-	tempInventory.push_back(item7);
-	//tempInventory.push_back(new EquipableItem(Item::Equipable::WEAPON));
+
+	const int r1 = (rand() % 7) + 1;
+	for (int i = 0; i < r1; i++) {
+		int r2 = (rand() % 7);
+		Item::Equipable type = static_cast<Item::Equipable>(r2);
+
+		int r3 = (rand() % 11);
+		Item::ItemStats stat = static_cast<Item::ItemStats>(r3);
+
+		int bonus = (rand() % 15) + 1;
+
+		spEquipableItem item = new EquipableItem(type);
+		item->setStat(stat);
+		item->setBonus(bonus);
+
+		tempInventory.push_back(item);
+	}
 }
 
 Character::~Character() {
@@ -478,7 +464,7 @@ void Character::setUp() {
 		setResAnim(res::resources.getResAnim("character"), 0, 0);
 		break;
 	}
-	facing = Direction::NORTH;
+	facing = Map::Direction::NORTH;
 }
 
 void Character::setDown() {
@@ -493,7 +479,7 @@ void Character::setDown() {
 		setResAnim(res::resources.getResAnim("character"), 0, 2);
 		break;
 	}
-	facing = Direction::SOUTH;
+	facing = Map::Direction::SOUTH;
 }
 
 void Character::setLeft() {
@@ -508,7 +494,7 @@ void Character::setLeft() {
 		setResAnim(res::resources.getResAnim("character"), 0, 1);
 		break;
 	}
-	facing = Direction::WEST;
+	facing = Map::Direction::WEST;
 }
 
 void Character::setRight() {
@@ -523,10 +509,10 @@ void Character::setRight() {
 		setResAnim(res::resources.getResAnim("character"), 0, 3);
 		break;
 	}
-	facing = Direction::EAST;
+	facing = Map::Direction::EAST;
 }
 
-Character::Direction Character::getFacing() {
+Map::Direction Character::getFacing() {
 	return facing;
 }
 
@@ -739,4 +725,29 @@ Character::Class Character::stringToClass(string c) {
 
 string Character::getIdentifier() {
 	return IDENTIFIER;
+}
+
+void Character::setInteractFrom(Map::Direction dir) {
+	interactFrom = dir;
+}
+
+void Character::interact() {
+	log::messageln("CHARACTER INTERACT");
+	switch (interactFrom) {
+	case Map::NORTH:
+		setUp();
+		break;
+	case Map::EAST:
+		setRight();
+		break;
+	case Map::SOUTH:
+		setDown();
+		break;
+	case Map::WEST:
+		setLeft();
+		break;
+	default: 
+		setDown();
+		break;
+	}
 }

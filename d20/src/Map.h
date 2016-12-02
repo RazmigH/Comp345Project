@@ -6,6 +6,10 @@
 DECLARE_SMART(Map, spMap);
 class Map : public Grid {
 public:
+	const enum Direction {
+		NORTH = 0, EAST, WEST, SOUTH
+	};
+
 	Map(int cols = 20, int rows = 10);
 	~Map();
 	void setEntryPoint(Vector2);
@@ -26,6 +30,7 @@ public:
 	void addEntity(spEntity);
 	void removeEntity(spEntity);
 	vector<spEntity> getEntities();
+	Map::Direction getDirectionFrom(spTile from, spTile to);
 private:
 	Vector2 entry;
 	spColorRectSprite entryHighlight;

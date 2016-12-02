@@ -12,7 +12,7 @@
 #include "Observable.h"
 #include "Item.h"
 #include "EquipableItem.h"
-
+#include "Map.h"
 #define NUM_STATS 6
 #define NUM_EQUIPMENT 6
 
@@ -36,10 +36,6 @@ public:
 	//put into items when ready
 	const enum Equipment {
 		ARMOR = 0, SHIELD, WEAPON, BOOTS, RING, HELMET
-	};
-
-	const enum Direction {
-		NORTH = 0, EAST, WEST, SOUTH
 	};
 
 	Character(
@@ -148,7 +144,8 @@ public:
 	string getIdentifier();
 
 	void interact();
-	Direction getFacing();
+	void setInteractFrom(Map::Direction);
+	Map::Direction getFacing();
 private:
 	virtual void levelUp();
 	int calcModifier(int) const;
@@ -184,5 +181,6 @@ protected:
 	vector<spItem> tempInventory;
 	vector<spEquipableItem> tempEquipment;
 
-	Direction facing;
+	Map::Direction facing;
+	Map::Direction interactFrom;
 };

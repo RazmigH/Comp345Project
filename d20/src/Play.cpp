@@ -92,6 +92,14 @@ void Play::update() {
 						for (vector<spEntity>::iterator it = entities.begin(); it != entities.end(); ++it) {
 							if ((*it)->getLocation() == facedLocation) {
 								interacted = true;
+								spEntity entity = *it;
+
+								//if its a character, set from which way we are interacting
+								spCharacter c = dynamic_cast<Character*>(&(*entity));
+								if (c) {
+									c->setInteractFrom(map->getDirectionFrom(c, character));
+								}
+
 								(*it)->interact();
 								break;
 							}
@@ -120,13 +128,13 @@ void Play::update() {
 spTile Play::getFacedTile() {
 	Vector2 location = map->getTileLocation(character);
 	switch (character->getFacing()) {
-	case Character::Direction::NORTH:
+	case Map::Direction::NORTH:
 		return map->getTile(location.x, location.y - 1);
-	case Character::Direction::EAST:
+	case Map::Direction::EAST:
 		return map->getTile(location.x + 1, location.y);
-	case Character::Direction::SOUTH:
-		return map->getTile(location.x, location.y - 1);
-	case Character::Direction::WEST:
+	case Map::Direction::SOUTH:
+		return map->getTile(location.x, location.y + 1);
+	case Map::Direction::WEST:
 		return map->getTile(location.x - 1, location.y);
 	}
 	return nullptr;

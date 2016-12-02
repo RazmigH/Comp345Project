@@ -28,7 +28,10 @@ Vector2 Grid::getTileLocation(Vector2 position) {
 }
 
 Vector2 Grid::getTileLocation(spActor actor) {
-	return getTileLocation(actor->getPosition());
+	if (actor)
+		return getTileLocation(actor->getPosition());
+	else
+		return Vector2(0, 0);
 }
 
 //adds an actor to the grid

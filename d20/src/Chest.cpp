@@ -8,14 +8,22 @@ const string Chest::IDENTIFIER = "Chest";
 Chest::Chest(ChestState state) : Tile("chests", true), state(state) {
 	setState(state);
 
-	spEquipableItem item1 = new EquipableItem(Item::Equipable::WEAPON);
-	item1->setStat(Item::ItemStats::STR);
-	item1->setBonus(13);
-	items.push_back(item1);
-	spEquipableItem item2 = new EquipableItem(Item::Equipable::ARMOR);
-	item2->setStat(Item::ItemStats::CON);
-	item2->setBonus(7);
-	items.push_back(item2);
+	const int r1 = (rand() % 100) + 1;
+	for (int i = 0; i < r1; i++) {
+		int r2 = (rand() % 7);
+		Item::Equipable type = static_cast<Item::Equipable>(r2);
+
+		int r3 = (rand() % 11);
+		Item::ItemStats stat = static_cast<Item::ItemStats>(r3);
+
+		int bonus = (rand() % 15) + 1;
+
+		spEquipableItem item = new EquipableItem(type);
+		item->setStat(stat);
+		item->setBonus(bonus);
+
+		items.push_back(item);
+	}
 }
 
 Chest::~Chest() {

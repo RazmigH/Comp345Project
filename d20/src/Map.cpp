@@ -230,3 +230,20 @@ void Map::removeEntity(spEntity entity) {
 vector<spEntity> Map::getEntities() {
 	return entities;
 }
+
+Map::Direction Map::getDirectionFrom(spTile from, spTile to) {
+	Vector2 fromLoc = getTileLocation(from);
+	Vector2 toLoc = getTileLocation(to);
+	//eventually would make this a degrees, to set sprite ++++ rotation of it
+	if (fromLoc.x > toLoc.x)
+		return Direction::WEST;
+	else if (fromLoc.x < toLoc.x)
+		return Direction::EAST;
+	else if (fromLoc.y > toLoc.y)
+		return Direction::NORTH;
+	else if (fromLoc.y < toLoc.y)
+		return Direction::SOUTH;
+	else
+		//err, when on top ?
+		return Direction::SOUTH;
+}
