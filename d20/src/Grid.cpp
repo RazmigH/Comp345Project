@@ -22,8 +22,8 @@ Grid::~Grid() {
 
 //returns the tile location row/col of the provided coordinates
 Vector2 Grid::getTileLocation(Vector2 position) {
-	int row = position.y / getTileHeight();
-	int col = position.x / getTileWidth();
+	int row = (position.y + (getTileHeight() * 0.05)) / getTileHeight();
+	int col = (position.x + (getTileWidth() * 0.05)) / getTileWidth();
 	return Vector2(col, row);
 }
 
